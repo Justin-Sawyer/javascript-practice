@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/assets/css/style.css" type="text/css">
+    <title>JavaScript</title>
+</head>
+<body>
+    <header>
+        <div class="wrapper">
+            <div class="sliding-background numbers">
+            </div>
+        </div>
+    
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <a class="navbar-brand" href="/index.html">JavaScript</a>
+            <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <svg width="1em" height="1em" viewbox="0 0 16 16" class="bi bi-list" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M2.5 11.5A.5.5 0 0 1 3 11h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 7h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 3h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+                </svg>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="math-methods.html">Math: Methods <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item dropdown">       
+                    <a class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Menu
+                        <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li class="dropdown-menu-no-children">
+                                <a class="menu-list" href="/code-examples.html">Code Examples</a>
+                            </li>
+                        
+                            <li class="dropdown-submenu">
+                                <a class="menu-list" href="#">Numbers<span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                <li><a href="/numbers/the-basics.html">The Basics</a></li>
+                                <li><a href="/numbers/number-methods.html">Number Methods</a></li>
+                                <li><a href="/numbers/math-methods.html">Math Methods</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="dropdown-submenu">
+                                <a class="menu-list" href="#">"strings"<span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                <li><a href="/strings/the-basics.html">The Basics</a></li>
+                                <li><a href="/strings/string-methods.html">String Methods</a></li>
+                                <li><a href="/strings/concat-and-interpolation.html">Concatenation & Interpolation</a></li>
+                                <li><a href="/strings/challenges.html">Challenges</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="dropdown-submenu">
+                                <a class="menu-list" href="#">[arrays]<span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                <li><a href="#">[array methods]</a></li>
+                                <li><a href="#">[array literals]</a></li>
+                                </ul>
+                            </li>
+
+                            </ul>
+                        </li>
+                    </ul>
+                <!--
+                <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                </form>-->    
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container body-container">
+            <div class="page-name">
+                <h1>Math Methods:</h1>
+                <p><code>object.nameOfTheMethod(argument);</code></p>
+                <h2>Call methods on the object Math:</h2>
+                    <ol>   
+                        <li>Static Methods: arithmetical functions</li>
+                            <p class="tab">Perform actions on a single unit:</p>
+                            <div class="row">
+                                
+                                <div class="col-11">
+                                    <p class="tab"><code>Math.floor(1.9);</code></p>
+                                    <p id="mathMeth1"></p>
+                                    <pre><code id="resultMathMeth1"></code></pre>
+                                </div>
+                                <div class="col-1">
+                                    <button onclick="mathMethodFloor()">Result</button>
+                                </div> 
+
+                                <div class="col-11">
+                                    <p class="tab"><code>Math.ceil(1.1);</code></p>
+                                    <p id="mathMeth2"></p>
+                                    <pre><code id="resultMathMeth2"></code></pre>
+                                </div>
+                                <div class="col-1">
+                                    <button onclick="mathMethCeil()">Result</button>
+                                </div> 
+                                    
+                                <div class="col-11">
+                                    <p class="tab"><code>Math.round(1.5);</code></p>
+                                    <p id="mathMeth3"></p>
+                                    <pre><code id="resultMathMeth3"></code></pre>
+                                </div>
+                                <div class="col-1">
+                                    <button onclick="mathMethRound()">Result</button>
+                                </div>
+
+                                <div class="col-11">
+                                    <p class="tab"><code>Math.trunc(1.6);</code></p>
+                                    <p id="mathMeth4"></p>
+                                    <pre><code id="resultMathMeth4"></code></pre>
+                                </div>
+                                <div class="col-1">
+                                    <button onclick="mathMethTrunc()">Result</button>
+                                </div>
+                                    
+                                <div class="col-11">
+                                    <p class="tab"><code>Math.sqrt(9);</code></p>
+                                    <p id="mathMeth5"></p>
+                                    <pre><code id="resultMathMeth5"></code></pre>
+                                </div>
+                                <div class="col-1">
+                                    <button onclick="mathMethSqrt()">Result</button>
+                                </div>
+
+                                <div class="col-11">
+                                    <p class="tab"><code>Math.cbrt(27);</code></p>
+                                    <p id="mathMeth6"></p>
+                                    <pre><code id="resultMathMeth6"></code></pre>
+                                </div>
+                                <div class="col-1">
+                                    <button onclick="mathMethCbrt()">Result</button>
+                                </div>
+
+                                <div class="col-11">
+                                    <p class="tab"><code>Math.abs(-4); Math.abs(4);</code></p>
+                                    <p id="mathMeth7-1"></p>
+                                    <pre><code id="resultMathMeth7"></code></pre>
+                                    <p id="mathMeth7-2"></p>
+                                </div>
+                                <div class="col-1">
+                                    <button onclick="mathMethAbs()">Result</button>
+                                </div>
+
+                                <div class="col-11">
+                                    <p class="tab"><code>Math.sign(-9); Math.sign(9);</code></p>
+                                    <p id="mathMeth8-1"></p>
+                                    <pre><code id="resultMathMeth8"></code></pre>
+                                    <p id="mathMeth8-2"></p>
+                                </div>
+                                <div class="col-1">
+                                    <button onclick="mathMethSign()">Result</button>
+                                </div>
+
+                                <div class="col-11">
+                                    <p class="tab"><code>Math.random();</code></p>
+                                    <p id="mathMeth9-1"></p>
+                                    <pre><code id="resultMathMeth9"></code></pre>
+                                    <p id="mathMeth9-2"></p>
+                                </div>
+                                <div class="col-1">
+                                    <button onclick="mathMethRandom()">Result</button>
+                                </div>
+                                    
+                        <li>Static Methods: trigonometrical functions</li>       
+                                
+
+                                <div class="col-11">
+                                    <p class="tab"><code>Math.sin(90);</code></p>
+                                    <p id="mathMeth10-1"></p>
+                                    <pre><code id="resultMathMeth10"></code></pre>
+                                    <p id="mathMeth10-2"></p>
+                                </div>
+                                <div class="col-1">
+                                    <button onclick="mathMethSin()">Result</button>
+                                </div>
+
+                                <div class="col-11">
+                                    <p class="tab"><code>Math.asin(90);</code></p>
+                                    <p id="mathMeth11-1"></p>
+                                    <pre><code id="resultMathMeth11"></code></pre>
+                                    <p id="mathMeth11-2"></p>
+                                </div>
+                                <div class="col-1">
+                                    <button onclick="mathMethAsin()">Result</button>
+                                </div>
+                                    
+                                <div class="col-11">
+                                    <p class="tab"><code>Math.sinh(90);</code></p>
+                                    <p id="mathMeth12-1"></p>
+                                    <pre><code id="resultMathMeth12"></code></pre>
+                                    <p id="mathMeth12-2"></p>
+                                </div>
+                                <div class="col-1">
+                                    <button onclick="mathMethSinh()">Result</button>
+                                </div>
+
+                                <div class="col-11">
+                                    <p class="tab"><code>Math.asinh(90);</code></p>
+                                    <p id="mathMeth13-1"></p>
+                                    <pre><code id="resultMathMeth13"></code></pre>
+                                    <p id="mathMeth13-2"></p>
+                                </div>
+                                <div class="col-1">
+                                    <button onclick="mathMethAsinh()">Result</button>
+                                </div>
+
+                                <div class="col-11">
+                                    <p class="tab"><code>Math.cos(90);</code></p>
+                                    <p id="mathMeth14-1"></p>
+                                    <pre><code id="resultMathMeth14"></code></pre>
+                                    <p id="mathMeth14-2"></p>
+                                </div>
+                                <div class="col-1">
+                                    <button onclick="mathMethCos()">Result</button>
+                                </div>
+
+                                <div class="col-11">
+                                    <p class="tab"><code>Math.acos(90);</code></p>
+                                    <p id="mathMeth15-1"></p>
+                                    <pre><code id="resultMathMeth15"></code></pre>
+                                    <p id="mathMeth15-2"></p>
+                                </div>
+                                <div class="col-1">
+                                    <button onclick="mathMethAcos()">Result</button>
+                                </div>
+
+                                <div class="col-11">
+                                    <p class="tab"><code>Math.cosh(90);</code></p>
+                                    <p id="mathMeth16-1"></p>
+                                    <pre><code id="resultMathMeth16"></code></pre>
+                                    <p id="mathMeth16-2"></p>
+                                </div>
+                                <div class="col-1">
+                                    <button onclick="mathMethCosh()">Result</button>
+                                </div>
+
+                                <div class="col-11">
+                                    <p class="tab"><code>Math.acosh(90);</code></p>
+                                    <p id="mathMeth17-1"></p>
+                                    <pre><code id="resultMathMeth17"></code></pre>
+                                    <p id="mathMeth17-2"></p>
+                                </div>
+                                <div class="col-1">
+                                    <button onclick="mathMethAcosh()">Result</button>
+                                </div>
+
+                                <div class="col-11">
+                                    <p class="tab"><code>Math.tan(90);</code></p>
+                                    <p id="mathMeth18-1"></p>
+                                    <pre><code id="resultMathMeth18"></code></pre>
+                                    <p id="mathMeth18-2"></p>
+                                </div>
+                                <div class="col-1">
+                                    <button onclick="mathMethTan()">Result</button>
+                                </div>
+
+                                <div class="col-11">
+                                    <p class="tab"><code>Math.atan(90);</code></p>
+                                    <p id="mathMeth19-1"></p>
+                                    <pre><code id="resultMathMeth19"></code></pre>
+                                    <p id="mathMeth19-2"></p>
+                                </div>
+                                <div class="col-1">
+                                    <button onclick="mathMethAtan()">Result</button>
+                                </div>
+
+                                <div class="col-11">
+                                    <p class="tab"><code>Math.tanh(90);</code></p>
+                                    <p id="mathMeth20-1"></p>
+                                    <pre><code id="resultMathMeth20"></code></pre>
+                                    <p id="mathMeth20-2"></p>
+                                </div>
+                                <div class="col-1">
+                                    <button onclick="mathMethTanh()">Result</button>
+                                </div>
+
+                                <div class="col-11">
+                                    <p class="tab"><code>Math.atanh(90);</code></p>
+                                    <p id="mathMeth21-1"></p>
+                                    <pre><code id="resultMathMeth21"></code></pre>
+                                    <p id="mathMeth21-2"></p>
+                                </div>
+                                <div class="col-1">
+                                    <button onclick="mathMethAtanh()">Result</button>
+                                </div>
+
+                            <li>Static Methods: "binary" functions</li>
+
+                                <div class="col-11">
+                                    <p class="tab"><code>Math.pow(x, y);</code></p>
+                                    <p id="mathMeth22-1"></p>
+                                    <pre><code id="resultMathMeth22"></code></pre>
+                                    <p id="mathMeth22-2"></p>
+                                </div>
+                                <div class="col-1">
+                                    <button onclick="mathMethPow()">Result</button>
+                                </div>
+
+                                <div class="col-11">
+                                    <p class="tab"><code>Math.max(x, y...);</code></p>
+                                    <p id="mathMeth23-1"></p>
+                                    <pre><code id="resultMathMeth23"></code></pre>
+                                    <p id="mathMeth23-2"></p>
+                                </div>
+                                <div class="col-1">
+                                    <button onclick="mathMethMax()">Result</button>
+                                </div>
+
+                                <div class="col-11">
+                                    <p class="tab"><code>Math.min(x, y...);</code></p>
+                                    <p id="mathMeth24-1"></p>
+                                    <pre><code id="resultMathMeth24"></code></pre>
+                                    <p id="mathMeth24-2"></p>
+                                </div>
+                                <div class="col-1">
+                                    <button onclick="mathMethMin()">Result</button>
+                                </div>
+
+                                <div class="col-11">
+                                    <p class="tab"><code>Math.hypot(x, y...);</code></p>
+                                    <p id="mathMeth25-1"></p>
+                                    <pre><code id="resultMathMeth25"></code></pre>
+                                    <p id="mathMeth25-2"></p>
+                                </div>
+                                <div class="col-1">
+                                    <button onclick="mathMethHypot()">Result</button>
+                                </div>
+
+                            <li>Algorithmic Methods</li>
+                                <div class="col-11">
+                                    <div class="tab"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math" target="_blank" role="button">Find out more</a>
+                                    </div>
+                                </div>
+                        </div>
+                    </ol>
+
+                <h2>Challenges:</h2>
+                
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-6">
+                    <div class="Last-page">
+                        <a class="btn button" style="text-align: left" href="number-methods.html" role="button"><svg width="1em" height="1em" viewbox="0 0 16 16" class="bi bi-caret-left-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M3.86 8.753l5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"/>
+                        </svg> Numbers: Number Methods</a>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="next-page">
+                        <a class="btn button" href="/strings/the-basics.html" role="button">Strings: The Basics <svg width="1em" height="1em" viewbox="0 0 16 16" class="bi bi-caret-right-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+                        </svg></a>
+                    </div>  
+                </div> 
+            </div> 
+        </div>
+    </main>
+
+    <footer>
+        <div class="container-fluid footer-section">
+            <div class="foot-body">
+                <h6>This website was created by Justin Sawyer</h6>
+            </div>
+
+            <div class="container links-and-outside-links">
+                <div class="container website-links">
+                    <p>In-site code links:</p>
+                    <ul class="footer-menu">
+                            <li class="footer-menu-link">
+                                <a class="footer-menu-list" href="code-examples.html">Code Examples</a>
+                            </li>
+                    </ul>
+                </div>
+                <div class="container outside-links">
+                    <p>Off site links</p>
+                    <ul class="footer-menu">
+                        <li class="footer-menu-link">
+                            <a class="footer-menu-list" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math" target="_blank">Math Methods</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/scripts/numbers-in-js/math-methods.js"></script>
+    
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+    <script>
+        $(document).ready(function(){
+        $('.dropdown-submenu a.menu-list').on("click", function(e){
+            $(this).next('ul').toggle();
+            e.stopPropagation();
+            e.preventDefault();
+        });
+        });
+    </script>
+</body>
+</html>

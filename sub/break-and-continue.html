@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.css" type="text/css">
+    <title>JS</title>
+</head>
+<body>
+    <h1>Break and Continue</h1>
+    <h2>let bb = [0, "a", 2, 3, 4, 5];</h2>
+
+
+    <h3>FOR LOOP</h3>
+    <blockquote>
+    <pre><code>
+    for (i=0; i(is less than)bb.length; i++) {
+        if (i===3) {
+            break;
+        }
+        console.log(`i is ${i}: the correct result for for loops using "break"`);
+    } 
+    </code></pre> 
+    In English: 
+    <pre><code>
+    For the array bb above:
+    (set 3 conditions:
+    1) i = 0; "i" should start at index O;
+    2) i is less than bb.length; "i" should only be as long as the array;
+    3) i++; "i" should increment by 1 with each iteration.
+    )   
+    {
+        If "i" becomes strictly equal to 3,
+            {
+                it should stop iterating
+            }
+        The result should be printed to the console
+    }
+    </code></pre>
+    </blockquote>
+
+
+    <h3>FOR... IN LOOP</h3>
+    <blockquote>
+    <pre><code>
+    for (let i in bb) {
+        if (i==3) {
+            break;    
+        }
+        console.log(`i is ${i}: the correct result for for... in loop using "break"`);
+    }
+    </code></pre>
+        
+    In English:
+    <pre><code>
+    For the same array bb above
+    For 
+    (
+    "i" to be the  indices IN the array, as in the first example
+    )   
+    {
+        If "i" becomes equal to 3, 
+            {
+                it should stop iterating
+            }
+    The result should be printed to the console
+    }
+    </code></pre>
+
+    With this loop, "strictly equal to" will not work as the for... in loop treats the array elements as strings, not numbers.
+    </blockquote>
+
+    <h3>FOR... OF LOOP</h3>
+    <blockquote>
+    <pre><code>
+    for(let i of bb) {
+        if (i===3) {
+            break;
+        }
+        console.log(`i is ${i}: the correct result for for... of loop using "break"`);
+    }
+    </code></pre>
+    In English:
+    <pre><code>
+    For
+    (
+    "i" to be the indices OF the array
+    )   
+    {
+            if "i" becomes strictly equal to 3,
+            {
+                it should stop iterating
+            }
+    The result should be printed to the console
+    }
+    </code></pre>
+    </blockquote>
+
+    <h3>WHILE LOOPS</h3>
+    <blockquote>
+    <pre><code>
+    var i=0;
+    while (i(is less than)bb.length) {
+        if (i===3) {
+            break;
+        }
+        console.log(`i is ${i}: the correct result for while loop using "break"`);
+        i++;
+    }
+    </code></pre>
+    In English:
+    <pre><code>
+    In while loops,because the loop only iterates WHILE the condition is set, we need to declare the variable i:
+    Set var i as 0
+    While 
+    (
+    variable "i" is only as long as the length of array bb
+    )
+    {
+        if "i" becomes strictly equal to 3,
+        {
+            it should stop iterating
+        }
+        The result should be printed to the console
+    }
+    </code></pre>
+    </blockquote>
+
+    <h3>DO... WHILE LOOP</h3>
+    <blockquote>
+    <pre><code>
+    var i=0;
+    do {
+        console.log(`i is ${i}: the correct result for do... while loop using "break"`);
+        i++;
+        if (i===3) {
+            break;
+        }
+    } while (i(is less than)bb.length);
+    </code></pre>
+    In English:
+    <pre><code>
+    (Do... while loops run the code at least once before checked to be true)
+    Variable i needs to be REDECLARED as 0
+    do
+    {
+        The result should be printed to the console;
+        "i" should increment by 1 with each run of the loop;
+        {
+            if "i" becomes strictly equal to 3,
+            {
+                it should stop iterating
+            }
+        }
+    }
+    </code></pre>
+    THE ONLY LOOP THAT IS GETTING AND RETURNING THE contents OF THE ARRAY IS THE for... of LOOP. The others just seem to be stating that they exist (or at least, their index positions exist) inside the array. Change any block of code to (i===10) for proof.
+    </blockquote>
+
+    
+    <script src="scripts/loops/break-and-continue.js"></script>
+</body>
+</html>

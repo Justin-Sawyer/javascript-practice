@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/assets/css/style.css" type="text/css">
+    <title>JavaScript</title>
+</head>
+<body>
+    <header>
+        <div class="wrapper">
+            <div class="sliding-background strings">
+            </div>
+        </div>
+    
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <a class="navbar-brand" href="/index.html">JavaScript</a>
+            <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <svg width="1em" height="1em" viewbox="0 0 16 16" class="bi bi-list" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M2.5 11.5A.5.5 0 0 1 3 11h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 7h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 3h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+                </svg>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="string-methods.html">String Methods <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item dropdown">       
+                    <a class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Menu
+                        <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li class="dropdown-menu-no-children">
+                                <a class="menu-list" href="/code-examples.html">Code Examples</a>
+                            </li>
+                        
+                            <li class="dropdown-submenu">
+                                <a class="menu-list" href="#">Numbers <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                <li><a href="/numbers/the-basics.html">The Basics</a></li>
+                                <li><a href="/numbers/number-methods.html">Number Methods</a></li>
+                                <li><a href="/numbers/math-methods.html">Math Methods</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="dropdown-submenu">
+                                <a class="menu-list" href="#">"strings"<span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                <li><a href="/strings/the-basics.html">The Basics</a></li>
+                                <li><a href="/strings/string-methods.html">String Methods</a></li>
+                                <li><a href="/strings/concat-and-interpolation.html">Concatenation & Interpolation</a></li>
+                                <li><a href="/strings/challenges.html">Challenges</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="dropdown-submenu">
+                                <a class="menu-list" href="#">[arrays]<span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                <li><a href="#">[array methods]</a></li>
+                                <li><a href="#">[array literals]</a></li>
+                                </ul>
+                            </li>
+
+                            </ul>
+                        </li>
+                    </ul>
+                <!--
+                <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                </form>-->    
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container body-container">
+            <div class="page-name">
+                <h1>String Methods:</h1>
+                <p><code>object.nameOfTheMethod(argument)</code></p>
+                <p>Javascript uses zero indexing!</p>
+                <p>For this page, all functions will use the following strings:</p>
+                <br>
+                <p>let myLetter = <code>"I went into hospital on the 29th June, 2020. 
+                A day later, I was operated on and had the colostomy bag attached to me.
+                On the 30th September I went back to hospital, where, happily, they removed the colostomy bag.
+                Now, I have just 4 months of preventive chemotherapy to do."</code></p>
+                <p>let imGlad = <code>` I'm glad I'm getting better!`;</code></p>
+                <p>let newImGlad = <code>`I'm glad I'm getting better!`;</code></p>
+                <p>let im = <code>`I'm`;</code></p>
+                <br>
+                <ol>
+                    <li>Retrieving Information:</li>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-5">
+                                <p><code>myLetter.indexOf("o");</code></p>
+                            </div>
+                            <div class="col-4">
+                                <p>First index of "o"</p>
+                            </div>
+                            <div class="col-3">
+                                <button onclick="myLetterIndexOfo()">Try Me</button>
+                            </div>
+                            <pre><code><p id="indexOfo"></p></code></pre>
+
+                            <div class="col-5">
+                                <p><code>myLetter.lastIndexOf("o");</code></p>
+                            </div>
+                            <div class="col-4">
+                                <p>Last index of "o"</p>
+                            </div>
+                            <div class="col-3">
+                                <button onclick="myLetterLastIndexOfo()">Try Me</button>
+                            </div>
+                            <pre><code><p id="lastIndexOfo"></p></code></pre>
+
+                            <div class="col-5">
+                                <p><code>myLetter.slice(#, #);</code></p>
+                            </div>
+                            <div class="col-4">
+                                <p>Return substring from position # until #-1</p>
+                            </div>
+                            <div class="col-3">
+                                <button onclick="myLetterSlice()">Try Me</button>
+                            </div>
+                            <pre><code><p id="slice"></p></code></pre>
+
+                            <div class="col-5">
+                                <p><code>myLetter.charAt(#);</code></p>
+                            </div>
+                            <div class="col-4">
+                                <p>Returns character at position #</p>
+                            </div>
+                            <div class="col-3">
+                                <button onclick="myLetterCharAt()">Try Me</button>
+                            </div>
+                            <pre><code><p id="charAt"></p></code></pre>
+
+                            <div class="col-5">
+                                <p><code>myLetter.charCodeAt(#);</code></p>
+                            </div>
+                            <div class="col-4">
+                                <p>Returns unicode value of character at position #</p>
+                            </div>
+                            <div class="col-3">
+                                <button onclick="myLetterCharCodeAt()">Try Me</button>
+                            </div>
+                            <pre><code><p id="charCodeAt"></p></code></pre>
+
+                            <div class="col-5">
+                                <p><code>myLetter.concat(str1, str2);</code></p>
+                            </div>
+                            <div class="col-4">
+                                <p>Concatenates 2 strings</p>
+                            </div>
+                            <div class="col-3">
+                                <button onclick="myLetterConcat()">Try Me</button>
+                            </div>
+                            <pre><code><p id="concat"></p></code></pre>
+
+                            <div class="col-5">
+                                <p><code>string.match(newString);</code></p>
+                                <p><code>newString.match(string);</code></p>
+                            </div>
+                            <div class="col-4">
+                                <p>Finds out if there is a match within two strings</p>
+                            </div>
+                            <div class="col-3">
+                                <button onclick="myLetterMatch()">Try Me</button>
+                            </div>
+                            <pre><code><p id="match"></p></code></pre>
+
+                            <div class="col-5">
+                                <p><code>string.search(newString);</code></p>
+                                <p><code>newString.search(string);</code></p>
+                            </div>
+                            <div class="col-4">
+                                <p>Returns the index of any EXACT match, or if none found, -1</p>
+                            </div>
+                            <div class="col-3">
+                                <button onclick="myLetterSearch()">Try Me</button>
+                            </div>
+                            <pre><code><p id="search"></p></code></pre>
+
+                            <div class="col-5">
+                                <p><code>myLetter.replace(/exisiting element/, "new element");</code></p>
+                                <p><code>myLetter.replaceAll("existing element", "new element");</code></p>
+                            </div>
+                            <div class="col-4">
+                                <p>Replaces one or all instances of the element</p>
+                            </div>
+                            <div class="col-3">
+                                <button onclick="myLetterReplace()">Try Me</button>
+                            </div>
+                            <pre><code><p id="replace"></p></code></pre>
+
+                            <div class="col-5">
+                                <p><code>myLetter.substr(50);</code></p>
+                                <p><code>myLetter.substr(58, 50);</code></p>
+                            </div>
+                            <div class="col-4">
+                                <p>Returns substring from... to (to is optional)</p>
+                            </div>
+                            <div class="col-3">
+                                <button onclick="myLetterFromTo()">Try Me</button>
+                            </div>
+                            <pre><code><p id="fromTo"></p></code></pre>
+
+                            <div class="col-5">
+                                <p><code>myLetter = myLetter.substr(50, 50);</code></p>
+                            </div>
+                            <div class="col-4">
+                                <p>Changes original string using the same "from... to" effect.</p>
+                            </div>
+                            <div class="col-3">
+                                <button onclick="myLetterStartTo()">Try Me</button>
+                            </div>
+                            <pre><code><p id="startTo"></p></code></pre>
+                            <p id="refresh-page"></p>
+
+                            <div class="col-5">
+                                <p><code>myLetter.toLowerCase();</code></p>
+                            </div>
+                            <div class="col-4">
+                                <p>Converts all to lower case letters.</p>
+                            </div>
+                            <div class="col-3">
+                                <button onclick="myLetterLowerCase()">Try Me</button>
+                            </div>
+                            <pre><code><p id="lowerCase"></p></code></pre>
+
+                            <div class="col-5">
+                                <p><code>myLetter.toUpperCase();</code></p>
+                            </div>
+                            <div class="col-4">
+                                <p>Converts all to upper case letters.</p>
+                            </div>
+                            <div class="col-3">
+                                <button onclick="myLetterUpperCase()">Try Me</button>
+                            </div>
+                            <pre><code><p id="upperCase"></p></code></pre>
+
+                            <div class="col-5">
+                                <p><code>myLetter.split();</code></p>
+                            </div>
+                            <div class="col-4">
+                                <p>Splits according to the (argument). The split point is not included in the returned result.</p>
+                            </div>
+                            <div class="col-3">
+                                <button onclick="myLetterSplit()">Try Me</button>
+                            </div>
+                            <pre><code><p id="split"></p></code></pre>
+
+                            <div class="col-5">
+                                <p><code>myLetter.repeat(#);</code></p>
+                            </div>
+                            <div class="col-4">
+                                <p>Returns new substring repeated # of times.</p>
+                            </div>
+                            <div class="col-3">
+                                <button onclick="myLetterRepeat()">Try Me</button>
+                            </div>
+                            <pre><code><p id="repeat"></p></code></pre>
+                            <p id="repeat2"></p>
+                            <pre><code><p id="repeat3"></p></code></pre>
+                            <p id="repeat4"></p>
+                            <pre><code><p id="repeat5"></p></code></pre>
+
+                            <div class="col-5">
+                                <p><code>myLetter.length;</code></p>
+                            </div>
+                            <div class="col-4">
+                                <p>Returns length of string. No () needed.</p>
+                            </div>
+                            <div class="col-3">
+                                <button onclick="myLetterLength()">Try Me</button>
+                            </div>
+                            <pre><code><p id="length"></p></code></pre>
+
+                        </div>
+                    </div>
+                </ol>
+                <br>
+            </div>           
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-6">
+                    <div class="Last-page">
+                        <a class="btn button" style="text-align: left" href="the-basics.html" role="button"><svg width="1em" height="1em" viewbox="0 0 16 16" class="bi bi-caret-left-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M3.86 8.753l5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"/>
+                        </svg> Strings: The Basics</a>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="next-page">
+                        <a class="btn button" href="/strings/concat-and-interpolation.html" role="button">Strings: Concatenation & Interpolation <svg width="1em" height="1em" viewbox="0 0 16 16" class="bi bi-caret-right-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+                        </svg></a>
+                    </div>  
+                </div> 
+            </div> 
+        </div>
+    </main>
+
+    <footer>
+        <div class="container-fluid footer-section">
+            <div class="foot-body">
+                <h6>This website was created by Justin Sawyer</h6>
+            </div>
+
+            <div class="container links-and-outside-links">
+                <div class="container website-links">
+                    <p>In-site code links:</p>
+                    <ul class="footer-menu">
+                            <li class="footer-menu-link">
+                                <a class="footer-menu-list" href="code-examples.html">Code Examples</a>
+                            </li>
+                    </ul>
+                </div>
+                <div class="container outside-links">
+                    <p>Hi</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/scripts/strings/string-methods.js"></script>
+    
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+    <script>
+        $(document).ready(function(){
+        $('.dropdown-submenu a.menu-list').on("click", function(e){
+            $(this).next('ul').toggle();
+            e.stopPropagation();
+            e.preventDefault();
+        });
+        });
+    </script>
+</body>
+</html>

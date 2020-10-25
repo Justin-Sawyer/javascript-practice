@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/assets/css/style.css" type="text/css">
+    <title>JavaScript</title>
+</head>
+<body>
+    <header>
+        <div class="wrapper">
+            <div class="sliding-background numbers">
+            </div>
+        </div>
+    
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <a class="navbar-brand" href="/index.html">JavaScript</a>
+            <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <svg width="1em" height="1em" viewbox="0 0 16 16" class="bi bi-list" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M2.5 11.5A.5.5 0 0 1 3 11h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 7h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 3h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+                </svg>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="number-methods.html">Math: Number Methods <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item dropdown">       
+                    <a class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Menu
+                        <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li class="dropdown-menu-no-children">
+                                <a class="menu-list" href="/code-examples.html">Code Examples</a>
+                            </li>
+                        
+                            <li class="dropdown-submenu">
+                                <a class="menu-list" href="#">Numbers<span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                <li><a href="/numbers/the-basics.html">The Basics</a></li>
+                                <li><a href="/numbers/number-methods.html">Number Methods</a></li>
+                                <li><a href="/numbers/math-methods.html">Math Methods</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="dropdown-submenu">
+                                <a class="menu-list" href="#">"strings"<span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                <li><a href="/strings/the-basics.html">The Basics</a></li>
+                                <li><a href="/strings/string-methods.html">String Methods</a></li>
+                                <li><a href="/strings/concat-and-interpolation.html">Concatenation & Interpolation</a></li>
+                                <li><a href="/strings/challenges.html">Challenges</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="dropdown-submenu">
+                                <a class="menu-list" href="#">[arrays]<span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                <li><a href="#">[array methods]</a></li>
+                                <li><a href="#">[array literals]</a></li>
+                                </ul>
+                            </li>
+
+                            </ul>
+                        </li>
+                    </ul>
+                <!--
+                <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                </form>-->    
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container body-container">
+            <div class="page-name">
+                <h1>Number Methods:</h1>
+                <p><code>object.nameOfTheMethod(argument);</code></p>
+                <h2>Methods:</h2>
+                    <ol>   
+                        <li><code>Number.parseInt();</code></li>
+                            <p class="tab">Parses a <code>"string"</code> and returns a whole number:</p>
+                            <div class="row">
+                                <div class="col-11">
+                                    <p class="tab"><code>Number.parseInt("1");</code></p>
+                                    <pre><code id="resultParsing1"></code></pre>
+                                </div>
+                                <div class="col-1">
+                                    <button onclick="parsingIntegers()">Result</button>
+                                </div>
+                                <div class="col-11">
+                                    <p class="tab"><code>Number.parseInt("3.14");</code></p>
+                                    <pre><code id="resultParsing2"></code></pre>
+                                    <p id="strangeResultParseInt"></p>
+                                </div>
+                                <div class="col-1">
+                                    <button onclick="parsingDecimals()">Result</button>
+                                </div>
+                                <div class="col-11">
+                                    <p class="tab"><code>Number.parseInt("Hello");</code></p>
+                                    <pre><code id="resultParsing3"></code></pre>
+                                    <p id="strangeResultParseIntNaN"></p>
+                                </div>
+                                <div class="col-1">
+                                    <button onclick="parsingText()">Result</button>
+                                </div>
+                            </div>
+                            
+
+                        <li><code>Number.parseFloat();</code></li>
+                            <p class="tab">Parses a <code>"string"</code> and returns a <code>floating point number</code>:</p>
+                                <div class="row">
+                                    <div class="col-11">
+                                        <p class="tab"><code>Number.parseFloat("1");</code></p>
+                                        <pre><code id="resultParsingFloat1"></code></pre>
+                                    </div>
+                                    <div class="col-1">
+                                        <button onclick="parsingIntegersAsFloats()">Result</button>
+                                    </div>
+                                    <div class="col-11">
+                                        <p class="tab"><code>Number.parseFloat("3.14");</code></p>
+                                        <pre><code id="resultParsingFloat2"></code></pre>
+                                    </div>
+                                    <div class="col-1">
+                                        <button onclick="parsingFloats()">Result</button>
+                                    </div>
+                                    <div class="col-11">
+                                        <p class="tab"><code>Number.parseFloat("Hello");</code></p>
+                                        <p id="strangeResultFloatNaN"></p>
+                                        <pre><code id="resultParsingFloat3"></code></pre>
+                                    </div>
+                                    <div class="col-1">
+                                        <button onclick="parsingTextAsFloat()">Result</button>
+                                    </div>
+                                </div>
+                        
+                        <li><code>Number.is?();</code></li>
+                            <p class="tab">Checks if type is a number or not. Boolean result: True = number. False = not a number.:</p>
+                                <div class="row">
+                                    <div class="col-11">
+                                        <p class="tab"><code>Number.isFinite(123);</code></p>
+                                        <p id="strangeResultCheckNumber"></p>
+                                        <pre><code id="resultCheckNumber1"></code></pre>
+                                    </div>
+                                    <div class="col-1">
+                                        <button onclick="isItFinite()">Result</button>
+                                    </div>
+                                    <div class="col-11">
+                                        <p class="tab"><code>Number.isFinite("123");</code></p>
+                                        <p id="strangeResultCheckNumber2"></p>
+                                        <pre><code id="resultCheckNumber2"></code></pre>
+                                    </div>
+                                    <div class="col-1">
+                                        <button onclick="isItFinite2()">Result</button>
+                                    </div>
+                                    <div class="col-11">
+                                        <p class="tab"><code>Number.isInteger(3);</code></p>
+                                        <p id="strangeResultCheckNumber3"></p>
+                                        <pre><code id="resultCheckNumber3"></code></pre>
+                                    </div>
+                                    <div class="col-1">
+                                        <button onclick="isItInt()">Result</button>
+                                    </div>
+                                    <div class="col-11">
+                                        <p class="tab"><code>Number.isInteger(3.14);</code></p>
+                                        <p id="strangeResultCheckNumber4"></p>
+                                        <pre><code id="resultCheckNumber4"></code></pre>
+                                    </div>
+                                    <div class="col-1">
+                                        <button onclick="isItInt2()">Result</button>
+                                    </div>
+                                    <div class="col-11">
+                                        <p class="tab"><code>Number.isInteger("3.14");</code></p>
+                                        <p id="strangeResultCheckNumber5"></p>
+                                        <pre><code id="resultCheckNumber5"></code></pre>
+                                    </div>
+                                    <div class="col-1">
+                                        <button onclick="isItInt3()">Result</button>
+                                    </div>
+                                    <div class="col-11">
+                                        <p class="tab"><code>Number.isNaN(3);</code></p>
+                                        <p id="strangeResultCheckNumber6"></p>
+                                        <pre><code id="resultCheckNumber6"></code></pre>
+                                    </div>
+                                    <div class="col-1">
+                                        <button onclick="isItNaN()">Result</button>
+                                    </div>
+                                    <div class="col-11">
+                                        <p class="tab"><code>Number.isNaN("3");</code></p>
+                                        <p id="strangeResultCheckNumber7"></p>
+                                        <pre><code id="resultCheckNumber7"></code></pre>
+                                    </div>
+                                    <div class="col-1">
+                                        <button onclick="isItNaN2()">Result</button>
+                                    </div>
+                                    <div id="notTheResult1" style="width:100%;"></div>
+                                    <p id="whyNot1"></p>
+                                    <div class="col-11">
+                                        <p class="tab"><code>Number.isNaN("Hello");</code></p>
+                                        <p id="strangeResultCheckNumber8"></p>
+                                        <pre><code id="resultCheckNumber8"></code></pre>
+                                    </div>
+                                    <div class="col-1">
+                                        <button onclick="isItNaN3()">Result</button>
+                                    </div>
+                                    <div id="notTheResult2" style="width:100%;"></div>
+                                    <p id="whyNot2"></p>
+                                </div>
+
+                        <li><code>variable.toString()</code></li>
+                            <p class="tab">Parses an integer into a <code>"string"</code>:</p>
+                                <div class="row">
+                                    <div class="col-11">
+                                        <p class="tab"><code>1.toString();</code></p>
+                                        <pre><code id="resultToVariableToString1"></code></pre>
+                                    </div>
+                                    <div class="col-1">
+                                        <button onclick="integerToStrNull()">Result</button>
+                                    </div>
+                                    <p id="strangeResultVariableToString1"></p>
+                                
+                                    <div class="col-11">
+                                        <p class="tab"><code>variable.toString();</code></p>
+                                        <pre><code id="resultToVariableToString2"></code></pre>
+                                    </div>
+                                    <div class="col-1">
+                                        <button onclick="integerToStr()">Result</button>
+                                    </div>
+                                    <p id="strangeResultVariableToString2"></p>
+                                </div>
+
+                        <li><code>variable.toFixed(n)</code></li>
+                            <p class="tab">Parses a <code>floating point number</code> into a <code>"string"</code>:</p>
+                                <div class="row">
+                                    <div class="col-11">
+                                        <p class="tab"><code>3.1415926.toFixed(0);</code></p>
+                                        <pre><code id="resultToFixed1"></code></pre>
+                                    </div>
+                                    <div class="col-1">
+                                        <button onclick="floatToFixedNone()">Result</button>
+                                    </div>
+                                    <div class="col-11">
+                                        <p class="tab"><code>3.1415926.toFixed(4);</code></p>
+                                        <pre><code id="resultToFixed2"></code></pre>
+                                    </div>
+                                    <div class="col-1">
+                                        <button onclick="floatToFixedFour()">Result</button>
+                                    </div>
+                                    <div class="col-11">
+                                        <p class="tab"><code>3.1415926.toFixed(10);</code></p>
+                                        <pre><code id="resultToFixed3"></code></pre>
+                                    </div>
+                                    <div class="col-1">
+                                        <button onclick="floatToFixedTen()">Result</button>
+                                    </div>
+                                </div>
+                            <pre><code id="resultToFixed"></code></pre>
+                    </ol>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-6">
+                    <div class="Last-page">
+                        <a class="btn button" style="text-align: left" href="the-basics.html" role="button"><svg width="1em" height="1em" viewbox="0 0 16 16" class="bi bi-caret-left-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M3.86 8.753l5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"/>
+                        </svg> Numbers: The Basics</a>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="next-page">
+                        <a class="btn button" href="math-methods.html" role="button">Numbers: Math Methods <svg width="1em" height="1em" viewbox="0 0 16 16" class="bi bi-caret-right-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+                        </svg></a>
+                    </div>  
+                </div> 
+            </div> 
+        </div>
+    </main>
+
+    <footer>
+        <div class="container-fluid footer-section">
+            <div class="foot-body">
+                <h6>This website was created by Justin Sawyer</h6>
+            </div>
+
+            <div class="container links-and-outside-links">
+                <div class="container website-links">
+                    <p>In-site code links:</p>
+                    <ul class="footer-menu">
+                            <li class="footer-menu-link">
+                                <a class="footer-menu-list" href="code-examples.html">Code Examples</a>
+                            </li>
+                    </ul>
+                </div>
+                <div class="container outside-links">
+                    <p>Hi</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/scripts/numbers-in-js/number-methods.js"></script>
+    
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+    <script>
+        $(document).ready(function(){
+        $('.dropdown-submenu a.menu-list').on("click", function(e){
+            $(this).next('ul').toggle();
+            e.stopPropagation();
+            e.preventDefault();
+        });
+        });
+    </script>
+</body>
+</html>

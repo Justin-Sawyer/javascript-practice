@@ -1,0 +1,297 @@
+/* ---------------------------------- General */
+h1, h2, h3, h4, h5, h6, p, code, li, .link {
+    font-family: Menlo, sans-serif;
+}
+
+h2 {
+    font-size: x-large;
+}
+
+h3 {
+    font-size: larger;
+}
+
+p {
+    margin-bottom: 0;
+}
+
+ul {
+    list-style-type: none;
+}
+
+button,
+.button {
+    font-family: 'Times New Roman', Times, serif;
+    background-color: #047afb;
+    border: 1px solid #047afb;
+    border-radius: 3px;
+    color: white;
+    margin-bottom: 8px;
+    margin-right: 8px;
+    line-height: 1;
+}
+
+button:hover,
+.button:hover {
+    font-family: Menlo, sans-serif;
+    color: white;
+}
+
+table {
+    width: auto;
+    font-family: 'Times New Roman', Times, serif
+}
+
+pre {
+    background-color: beige;
+    width: 100%;
+    padding-left: 8px;
+}
+
+pre code {
+    font-size: 87.5%;
+}
+
+li > code > p,
+li > p {
+    margin: 0;
+}
+
+a:hover {
+    color: #c13e70;
+    text-decoration: none;
+    font-family: Menlo, sans-serif;
+}
+
+blockquote {
+    font-size: 0.75rem;
+    padding-left: 8px;
+    padding-top: 8px;
+}
+
+.col-11,
+.col-8,
+.col-4,
+.col-1 {
+    padding: 0;
+}
+
+.last-page {
+    text-align: left;
+}
+
+.next-page {
+    text-align: right;
+}
+
+/* ---------------------------------- Hero banner */
+.wrapper {
+    overflow: hidden;
+}
+
+.sliding-background {
+    background: url("/assets/images/javascript-header.jpg") repeat-x;
+    height: 250px;;
+    width: 5076px;
+    animation: slide 60s linear infinite;
+}
+
+.dom-examples {
+    background: url("/assets/images/javascript-header-dom-examples.jpg") repeat-x;
+}
+
+.numbers {
+    background: url("/assets/images/javascript-header-numbers.jpg") repeat-x;
+}
+
+.strings {
+    background: url("/assets/images/javascript-header-strings.jpg") repeat-x;
+}
+
+@keyframes slide {
+  0%{
+    transform: translate3d(0, 0, 0);
+  }
+  100%{
+    transform: translate3d(-1692px, 0, 0);
+  }
+}
+
+/* ---------------------------------- Navigation */
+.navbar, 
+.nav-link, 
+.dropdown-toggle, 
+.dropdown-submenu, 
+.dropdown-menu>li, 
+.form-inline {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.navbar, .form-inline, .dropdown-toggle, .dropdown-submenu, .navbar-brand {
+    font-size: 1.5rem;
+}
+
+.navbar, .dropdown-menu, .dropdown-submenu {
+    background-color: #c13e70;
+}
+
+.navbar-light .navbar-brand, .dropdown-toggle, .menu-list {
+    color: white;
+}
+
+.navbar-light .navbar-toggler {
+    color: white;
+    border-color: white;
+}
+
+.navbar-light .navbar-nav .active>.nav-link, 
+.navbar-light .navbar-nav .nav-link.active, 
+.navbar-light .navbar-nav .nav-link.show, 
+.navbar-light .navbar-nav .show>.nav-link {
+    color: #047afb;
+}
+
+.dropdown-menu {
+    padding: 0 12px 12px 12px;
+    margin: 0;
+    border: 0;
+    width: max-content;
+}
+
+.dropdown-submenu {
+  position: relative;
+}
+
+.dropdown-submenu .dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -1px;
+}
+
+li > a:hover {
+    color: black;
+    text-decoration: none;
+    font-family: Menlo, sans-serif;
+}
+
+li > a {
+    color: white;
+    font-size: 1.5rem;
+}
+
+/* ---------------------------------- Body */
+.body-container {
+    width: 70%;
+    margin: auto;
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
+
+.tab {
+    margin-left: 30px;
+    margin-bottom: 8px;
+}
+
+.indented-list {
+    list-style-type: lower-latin;
+}
+
+.codepen-box {
+    margin-bottom: 16px;
+}
+
+/* ---------------------------------- Body Code Examples */
+
+.color-text {
+    margin-bottom: 0;
+}
+
+#blue {
+    color:#047afb;
+}
+
+/* ---------------------------------- Numbers/Math */
+
+.operators {
+    background-color: rgba(193, 62, 112, 0.5);
+    border: 1px solid black;
+    width: 50%;
+    height: auto;
+}
+
+/* ---------------------------------- Footer */
+
+footer {
+    position: absolute;
+    width: 100%;
+}
+.footer-section {
+    background-color: #c13e70;
+    height: auto;
+    color: white;
+    text-decoration: none;
+    bottom: 0;
+}
+
+.links-and-outside-links {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: stretch;
+    align-content: space-between;
+    padding-bottom: 16px;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.foot-body {
+    padding: 8px;
+    width: 70%;
+    margin: auto;
+    text-align: center;
+}
+
+.website-links,
+.outside-links {
+    /*background-color: #047afb;*/
+    width: 49%;
+    display: inline-block;
+    text-align: left;
+}
+
+.footer-menu {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.footer-menu-list {
+    font-size: 1rem;
+}
+
+/* ---------------------------------- Responsiveness */
+@media screen and (max-width:650px) {
+    
+    .body-container,
+    .foot-body {
+        width: 95%;
+        /*padding: 0;*/
+    }
+
+    .links-and-outside-links {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        align-items: center;
+        align-content: space-between;
+    }
+
+    .website-links,
+    .outside-links {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        text-align: center;
+    }
+}

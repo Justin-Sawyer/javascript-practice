@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.css" type="text/css">
+    <title>JS</title>
+</head>
+<body>
+    <h1>Number Methods</h1>
+    <p>console.log(`"NUMBER METHODS"`);
+console.log((3/0), ("Hi"/0), (-3/0));
+
+//NUMBER METHODS
+//object.nameOfTheMethod(argument);
+//sun.isShining(value);
+//Number.isMultiplied(byArgument);
+//But, we are telling the computer to do take an OBJECT - the number - and perform a METHOD - an action - by the ARGUMENT;
+//So, Number.isMultipliedBy(4); would be Number*4 (Object "Number" has Method "isMultipliedBy" the Argument "4")
+
+    // changes a string to an INTEGER (whole number)
+console.log((Number.parseInt("10")), (Number.parseInt("3.14")), (Number.parseInt("Hi")));
+        // Take the string with value (" ") and parse it into a Number
+
+    // changes a string to a FLOATING POINT NUMBER (deimal)
+console.log ((Number.parseFloat("10")), (Number.parseFloat("3.14")), (Number.parseFloat("Hi")));
+        // Take the string with value (" ") and parse it into a Floating Point Number
+
+    // changes an INTEGER to a STRING
+    // notice that the number has to first be declared as a variable.
+let myNum = 10
+console.log(myNum.toString());
+    // changes a FLOATING POINT NUMBER to a string, keeping () number of decImals
+console.log((7.7896675646467578678.toFixed(5)), (1.0.toFixed(10)));
+
+    //is a real number?
+console.log((Number.isFinite(123)), (Number.isFinite(-Infinity)));
+
+    //is Nan?
+console.log(Number.isNaN(3/0));
+        // returns false becuase it is Infinity
+console.log((Number.isNaN(0/0)), (Number.isNaN("a" + 3)));
+
+    //is an Integer (whole number)?
+console.log((Number.isInteger(3)), (Number.isInteger(3.2)), (Number.isInteger("a")));
+    </p>
+
+    <script src="scripts/number-methods.js"></script>
+    
+</body>
+</html>
