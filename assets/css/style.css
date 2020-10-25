@@ -90,22 +90,22 @@ blockquote {
 }
 
 .sliding-background {
-    background: url("/assets/images/javascript-header.jpg") repeat-x;
+    background: url("https://i.imgur.com/xWbtJAE.jpg") repeat-x;
     height: 250px;;
     width: 5076px;
     animation: slide 60s linear infinite;
 }
 
 .dom-examples {
-    background: url("/assets/images/javascript-header-dom-examples.jpg") repeat-x;
+    background: url("https://i.imgur.com/P28hoPy.jpg") repeat-x;
 }
 
 .numbers {
-    background: url("/assets/images/javascript-header-numbers.jpg") repeat-x;
+    background: url("https://i.imgur.com/yRH7zLc.jpg") repeat-x;
 }
 
 .strings {
-    background: url("/assets/images/javascript-header-strings.jpg") repeat-x;
+    background: url("https://i.imgur.com/a7IRjI7.jpg") repeat-x;
 }
 
 @keyframes slide {
