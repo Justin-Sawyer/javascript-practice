@@ -143,3 +143,114 @@ console.log(`console.log(myArray[1][2]) will log the third number from the secon
 
 console.log(`https://repl.it/@JustinSawyer/JavascriptFundamentalsADCMultiDimArrays1-1, 
 https://repl.it/@JustinSawyer/JavascriptFundamentalsADCConcatMultiDim2-1#main.js`);
+
+
+//PAGE
+let membersDogsDAmour = ["Tyla", "Bam Bam", "Jo Dog", "Steve James"];
+
+
+//push
+function pushMembers() {
+    document.getElementById("original1").innerText = `"Original lineup was: + membersDogsDAmour";
+Original lineup was: ${membersDogsDAmour}
+"Original lineup was: + membersDogsDAmour[0] + ", " + membersDogsDAmour[1] + ", " + membersDogsDAmour[2] + and + membersDogsDAmour[3]";
+Original lineup was: ${membersDogsDAmour[0]}, ${membersDogsDAmour[1]}, ${membersDogsDAmour[2]} and ${membersDogsDAmour[3]}`;
+    document.getElementById("comment1").innerHTML = `array.push() returns # of values in <code>[array]</code> when called:`;
+    document.getElementById("push").innerText = `New line up was: + membersDogsDAmour.push("Darryl Bath") members,
+consisting of + membersDogsDAmour[0] + ", " + membersDogsDAmour[1] + ", " + membersDogsDAmour[2] + ", " + membersDogsDAmour[3] + and + membersDogsDAmour[4];
+New line up was: ${membersDogsDAmour.push("Darryl Bath")} members,
+consisting of ${membersDogsDAmour[0]}, ${membersDogsDAmour[1]}, ${membersDogsDAmour[2]}, ${membersDogsDAmour[3]} and ${membersDogsDAmour[4]}`;
+}
+
+//pop
+function popMembers() {
+    let exMember = membersDogsDAmour.pop();
+    document.getElementById("pop").innerText = `let exMember = membersDogsDAmour.pop();
+exMember only joined for one album, 
+then the lineup returned to the original lineup of 
+membersDogsDAmour;
+exMember;
+
+${exMember} only joined for one album, 
+then the lineup returned to the original lineup of 
+${membersDogsDAmour}
+${exMember}`;
+}
+
+//unshift
+function unshiftMembers() {
+    document.getElementById("original2").innerText = `"Original lineup was: + membersDogsDAmour";
+Original lineup was: ${membersDogsDAmour}
+"Original lineup was: + membersDogsDAmour[0] + ", " + membersDogsDAmour[1] + ", " + membersDogsDAmour[2] + and + membersDogsDAmour[3]";
+Original lineup was: ${membersDogsDAmour[0]}, ${membersDogsDAmour[1]}, ${membersDogsDAmour[2]} and ${membersDogsDAmour[3]}`;
+    document.getElementById("comment3").innerHTML = `array.unshift() returns # of values in <code>[array]</code> when called:`;
+    document.getElementById("unshift").innerText = `New line up was: + membersDogsDAmour.unshift("Darryl Bath") members,
+consisting of + membersDogsDAmour[0] + ", " + membersDogsDAmour[1] + ", " + membersDogsDAmour[2] + ", " + membersDogsDAmour[3] + and + membersDogsDAmour[4];
+New line up was: ${membersDogsDAmour.unshift("Darryl Bath")} members,
+consisting of ${membersDogsDAmour[0]}, ${membersDogsDAmour[1]}, ${membersDogsDAmour[2]}, ${membersDogsDAmour[3]} and ${membersDogsDAmour[4]}`;
+}
+
+//shift
+function shiftMembers() {
+    let exMember = membersDogsDAmour.shift();
+    document.getElementById("shift").innerText = `let exMember = membersDogsDAmour.shift();
+exMember only joined for one album, 
+then the lineup returned to the original lineup of 
+membersDogsDAmour;
+exMember;
+
+${exMember} only joined for one album, 
+then the lineup returned to the original lineup of 
+${membersDogsDAmour};
+${exMember}`;
+}
+
+//fill
+function fillMembers() {
+    document.getElementById("fill").innerText = `Original lineup: + membersDogsDAmour;
+Original lineup: ${membersDogsDAmour}
+Darryl Bath replaced Jo Dog:
+membersDogsDAmour.fill("Darryl Bath, 2, 3);
+
+${membersDogsDAmour.fill("Darryl Bath", 2, 3)}
+
+Calling the array returns the array values, not how many variables are in it.
+membersDogsDAmour.length;
+${membersDogsDAmour.length}`;
+}
+
+//slice
+function sliceMembers() {
+    let foundingMember = membersDogsDAmour.slice(0, 1);
+    let otherMembers = membersDogsDAmour.slice(1);
+    document.getElementById("slice").innerText = `let foundingMember = membersDogsDAmour.slice(0, 1);
+let otherMembers = membersDogsDAmour.slice(1);
+foundingMember;
+otherMembers;
+membersDogsDAmour;
+
+${foundingMember}
+${otherMembers}
+${membersDogsDAmour}`;
+}
+
+//splice
+function spliceMembers() {
+    let otherMembers = membersDogsDAmour.splice(1);
+    document.getElementById("splice").innerText = `REMOVE:
+    
+let otherMembers = membersDogsDAmour.splice(1);
+otherMembers;
+membersDogsDAmour;
+
+
+${otherMembers}
+${membersDogsDAmour}
+
+ADD:
+membersDogsDAmour.splice(1, 3, "Bam Bam", "Jo Dog", "Steve James")
+where the first # tells WHERE to start adding, and the second # tells how many to add.
+
+${membersDogsDAmour.splice(1, 3, "Bam Bam", "Jo Dog", "Steve James")}
+${membersDogsDAmour}`;
+}
