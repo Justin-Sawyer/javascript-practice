@@ -88,30 +88,114 @@
                         <div class="container">
                             <div class="row">
 
-                                <div class="col-5">
+                                <div class="col-sm-5">
                                     <p><code>myArray[3];</code></p>
                                     <p><code>myNewArray[3];</code></p>
                                 </div>
-                                <div class="col-4">
+                                <div class="col-sm-4">
                                     <p>Get value at position #3</p>
                                 </div>
-                                <div class="col-3">
+                                <div class="col-sm-3">
                                     <button onclick="accessMyArray()">Try Me</button>
                                 </div>
                                 <pre><code><p id="access"></p></code></pre>
 
-                                <div class="col-5">
-                                    <p><code>myArray.indexOf(4);</code></p>
-                                    <p><code>myNewArray.indexOf("four");</code></p>
+                                <div class="col-sm-5">
+                                    <p><code>myArray.indexOf(item, (start));</code></p>
                                 </div>
-                                <div class="col-4">
+                                <div class="col-sm-4">
                                     <p>Get index of <code>[array]</code> value</p>
                                 </div>
-                                <div class="col-3">
+                                <div class="col-sm-3">
                                     <button onclick="indexMyArray()">Try Me</button>
                                 </div>
                                 <pre><code><p id="index"></p></code></pre>
                                 <p id="note"></p>
+
+                                <div class="col-sm-5">
+                                    <p><code>myArray.valueOf();</code></p>
+                                </div>
+                                <div class="col-sm-4">
+                                    <p>Get values of <code>[array]</code></p>
+                                </div>
+                                <div class="col-sm-3">
+                                    <button onclick="valueMyArray()">Try Me</button>
+                                </div>
+                                <pre><code><p id="value"></p></code></pre>
+                                <p id="note1"></p>
+
+                                <div class="col-sm-5">
+                                    <p><code>typeof(myArray[#]);</code></p>
+                                </div>
+                                <div class="col-sm-4">
+                                    <p>Get data types of values in <code>[array]</code></p>
+                                </div>
+                                <div class="col-sm-3">
+                                    <button onclick="typesMyArray()">Try Me</button>
+                                </div>
+                                <pre><code><p id="types"></p></code></pre>
+                                <p id="note2"></p>
+
+                                <div class="col-sm-5">
+                                    <p><code>Array.isArray(myArray);</code></p>
+                                </div>
+                                <div class="col-sm-4">
+                                    <p>Determines if <code>[array]</code> or not. Returns boolean</p>
+                                </div>
+                                <div class="col-sm-3">
+                                    <button onclick="isArrayMyArray()">Try Me</button>
+                                </div>
+                                <pre><code><p id="isArray"></p></code></pre>
+                                <p id="note3"></p>
+
+                                <div class="col-sm-5">
+                                    <p><code>myArray.entries();</code></p>
+                                </div>
+                                <div class="col-sm-4">
+                                    <p>Iterate through <code>[array]</code> and return key/value</p>
+                                </div>
+                                <div class="col-sm-3">
+                                    <button onclick="entriesMyArray()">Try Me</button>
+                                </div>
+                                <pre><code><p id="entries"></p></code></pre>
+                                <pre><code><p id="note4"></p></code></pre>
+
+                                <div class="col-sm-5">
+                                    <p><code>myArray.forEach(item, index);</code></p>
+                                </div>
+                                <div class="col-sm-4">
+                                    <p>Iterate through <code>[array]</code> and return key/value</p>
+                                </div>
+                                <div class="col-sm-3">
+                                    <button onclick="forEachMyArray()">Try Me</button>
+                                </div>
+                                <pre><code><p id="forEach"></p></code></pre>
+                                <pre><code><p id="note5"></p></code></pre>
+
+                                <div class="col-sm-5">
+                                    <p><code>myArray.keys();</code></p>
+                                </div>
+                                <div class="col-sm-4">
+                                    <p>Iterate through <code>[array]</code> and return keys</p>
+                                </div>
+                                <div class="col-sm-3">
+                                    <button onclick="keysMyArray()">Try Me</button>
+                                </div>
+                                <pre><code><p id="keys"></p></code></pre>
+                                <pre><code><p id="note6"></p></code></pre>
+
+                                <div class="col-sm-5">
+                                    <p><code>myArray.constructor;</code></p>
+                                </div>
+                                <div class="col-sm-4">
+                                    <p>Returns constructor function for an <code>object</code>, thus tells whether 
+                                    something is a Number, a <code>"string"</code> or an <code>[array]</code></p>
+                                </div>
+                                <div class="col-sm-3">
+                                    <button onclick="constructorMyArray()">Try Me</button>
+                                </div>
+                                <pre><code><p id="constructor"></p></code></pre>
+                                <pre><code><p id="note7"></p></code></pre>
 
                             </div>
                         </div>
@@ -119,14 +203,14 @@
             </div> 
             <div class="container">
                 <div class="row">
-                    <div class="col-6">
+                    <div class="col-sm-6">
                         <div class="Last-page">
                             <a class="btn button" style="text-align: left" href="../strings/challenges.html" role="button"><svg width="1em" height="1em" viewbox="0 0 16 16" class="bi bi-caret-left-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                             <path d="M3.86 8.753l5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"/>
                             </svg> Strings: Challenges</a>
                         </div>
                     </div>
-                    <div class="col-6">
+                    <div class="col-sm-6">
                         <div class="next-page">
                             <a class="btn button" href="array-methods.html" role="button">Arrays: Array Methods <svg width="1em" height="1em" viewbox="0 0 16 16" class="bi bi-caret-right-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                             <path d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>

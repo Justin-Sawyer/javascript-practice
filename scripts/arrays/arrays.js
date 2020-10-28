@@ -29,3 +29,96 @@ myNewArray.indexOf("four");
 ` + myNewArray.indexOf("four");
     document.getElementById("note").innerHTML = `Note that we get the value of an <code>[array]</code>'s content using [], while we get its position in the <code>[array]</code> using ()`
 }
+
+//Values
+function valueMyArray() {
+    document.getElementById("value").innerText = `myArray.valueOf();
+${myArray.valueOf()}`;
+}
+
+//Type of value
+function typesMyArray() {
+    document.getElementById("types").innerText = `typeof(myArray[0]);
+${typeof(myArray[0])}
+
+typeof(myArray[1]);
+${typeof(myArray[1])}
+
+typeof(myArray[2]);
+${typeof(myArray[2])}
+
+typeof(myArray[3]);
+${typeof(myArray[3])}
+
+typeof(myArray[4]);
+${typeof(myArray[4])}
+
+typeof(myArray[5]);
+${typeof(myArray[5])}
+
+typeof(myArray[6]);
+${typeof(myArray[6])}
+
+typeof(myArray[7]);
+${typeof(myArray[7])}
+
+typeof(myArray[8]);
+${typeof(myArray[8])}
+
+(Zero indexing!)`;
+}
+
+//Is array? T or F
+function isArrayMyArray() {
+    document.getElementById("isArray").innerText = `Array.isArray(myArray);
+${Array.isArray(myArray)}`;
+}
+
+//Entries - give key/value
+function entriesMyArray() {
+    let fr = myArray.entries()
+    for (x of fr) {
+        document.getElementById("note4").innerHTML += x + "<br>";
+    };
+    document.getElementById("entries").innerText = `let fr = myArray.entries()
+    for (x of fr) {
+        document.getElementById("entries").innerHTML += x + "<br>"
+    }`
+}
+
+//forEach
+function forEachMyArray() {
+    document.getElementById("forEach").innerText = `myArray.forEach(aFunction);
+    function aFunction(item, index) {
+    document.getElementById("forEach").innerHTML += index + ":" + item + "<br>";
+    };`
+
+    myArray.forEach(aFunction);
+    function aFunction(item, index) {
+    document.getElementById("note5").innerHTML += index + ":" + item + "<br>";
+    };
+}
+
+//keys
+function keysMyArray() {
+    document.getElementById("keys").innerText = `let myArrayKeys = myArray.keys();
+    for (x of myArrayKeys) {
+    document.getElementById("keys").innerHTML += x + "<br>";
+};`
+
+    let myArrayKeys = myArray.keys();
+    for (x of myArrayKeys) {
+    document.getElementById("note6").innerHTML += x + "<br>";
+}
+}
+
+//Constructor
+function constructorMyArray() {
+    document.getElementById("constructor").innerHTML = `myArray.constructor
+${myArray.constructor}
+
+Returns 
+function Number() { [native code] } for Numbers,
+function String() { [native code] } for Strings`
+;
+}

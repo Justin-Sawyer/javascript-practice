@@ -250,7 +250,496 @@ ${membersDogsDAmour}
 ADD:
 membersDogsDAmour.splice(1, 3, "Bam Bam", "Jo Dog", "Steve James")
 where the first # tells WHERE to start adding, and the second # tells how many to add.
+So, at position 1, add 3:
 
 ${membersDogsDAmour.splice(1, 3, "Bam Bam", "Jo Dog", "Steve James")}
+${membersDogsDAmour}
+
+splice(x, y, "", "")
+x = where to start
+y = how many to add/remove. If no "", the assumption is to remove
+"", "" = values to be added`;
+}
+
+//reverse
+function reverseMembers() {
+    document.getElementById("reverse").innerText = membersDogsDAmour.reverse();
+}
+
+//sort
+function sortMembers() {
+    let unsortedNumbers = [1, 9, 10, 11, 7, 3, 2, 5, 4, 6, 0, 8];
+    document.getElementById("sort").innerText = `ALPHABETICALLY ASCENDING A > Z:
+To sort: membersDogsDAmour.sort();
+${membersDogsDAmour.sort()}
+Now alphabeticallt sorted, but original array has changed.
+
+Remove all but founder member: membersDogsDAmour.splice(0, 3);
+${membersDogsDAmour.splice(0, 3)}
+
+Return results of original array: membersDogsDAmour;
+${membersDogsDAmour}
+
+Re add other members and return result: membersDogsDAmour.splice(1, 3, "Bam Bam", "Jo Dog", "Steve James");
+membersDogsDAmour;
+${membersDogsDAmour.splice(1, 3, "Bam Bam", "Jo Dog", "Steve James")}
+${membersDogsDAmour}
+
+ALPHABETICALLY DESCENDING Z > A:
+membersDogsDAmour.sort().reverse()
+${membersDogsDAmour.sort().reverse()}
+
+Remove all but founder member: membersDogsDAmour.splice(1, 3);
+${membersDogsDAmour.splice(1, 3)}
+
+Return results of original array: membersDogsDAmour;
+${membersDogsDAmour}
+
+Re add other members and return result: membersDogsDAmour.splice(1, 3, "Bam Bam", "Jo Dog", "Steve James");
+membersDogsDAmour;
+${membersDogsDAmour.splice(1, 3, "Bam Bam", "Jo Dog", "Steve James")}
+${membersDogsDAmour}
+
+NUMERICALLY ASCENDING:
+let unsortedNumbers = [1, 9, 10, 11, 7, 3, 2, 5, 4, 6, 0, 8];
+unsortedNumbers.sort();
+${unsortedNumbers.sort()}
+unsortedNumbers.sort(function(a, b){return a-b});
+${unsortedNumbers.sort(function(a, b){return a-b})}
+
+NUMERICALLY DESCENDING:
+let unsortedNumbers = [1, 9, 10, 11, 7, 3, 2, 5, 4, 6, 0, 8];
+unsortedNumbers.sort();
+${unsortedNumbers.sort()}
+unsortedNumbers.sort(function(a, b){return b-a});
+${unsortedNumbers.sort(function(a, b){return b-a})}`;
+}
+
+//concatenate
+function concatMembers() {
+    let otherMembers = ["Darryl Bath", "Shere", "Ned Christie"];
+    let fullLineup = membersDogsDAmour.concat(otherMembers);
+    document.getElementById("concat").innerText = `let otherMembers = ["Darryl Bath", "Shere", "Ned Christie"];
+let fullLineup = membersDogsDAmour.concat(otherMembers);
+
+fullLineup;
+${fullLineup};
+
+membersDogsDAmour;
 ${membersDogsDAmour}`;
+}
+
+//copyWithin
+function copyWithinMembers() {
+    document.getElementById("copyW").innerText = `INDEX 0
+membersDogsDAmour.copyWithin(0, 0, 1);
+${membersDogsDAmour.copyWithin(0, 0, 1)}
+
+membersDogsDAmour.copyWithin(0, 0, 2);
+${membersDogsDAmour.copyWithin(0, 0, 2)}
+
+membersDogsDAmour.copyWithin(0, 0, 3);
+${membersDogsDAmour.copyWithin(0, 0, 3)}
+
+membersDogsDAmour.copyWithin(0, 0, 4);
+${membersDogsDAmour.copyWithin(0, 0, 4)}
+
+membersDogsDAmour.copyWithin(0, 1, 0);
+${membersDogsDAmour.copyWithin(0, 1, 0)}
+
+membersDogsDAmour.copyWithin(0, 1, 1);
+${membersDogsDAmour.copyWithin(0, 1, 1)}
+
+membersDogsDAmour.copyWithin(0, 1, 2);
+${membersDogsDAmour.copyWithin(0, 1, 2)}
+Array changed
+membersDogsDAmour.splice(0, 1, "Tyla");
+${membersDogsDAmour.splice(0, 1, "Tyla")}
+membersDogsDAmour;
+${membersDogsDAmour}
+
+membersDogsDAmour.copyWithin(0, 1, 3);
+${membersDogsDAmour.copyWithin(0, 1, 3)}
+Array changed
+membersDogsDAmour.splice(0, 2, "Tyla", "Bam Bam");
+${membersDogsDAmour.splice(0, 2, "Tyla", "Bam Bam")}
+membersDogsDAmour;
+${membersDogsDAmour}
+
+membersDogsDAmour.copyWithin(0, 1, 4);
+${membersDogsDAmour.copyWithin(0, 1, 4)}
+Array changed
+membersDogsDAmour.splice(0, 3, "Tyla", "Bam Bam", Jo Dog");
+${membersDogsDAmour.splice(0, 3, "Tyla", "Bam Bam", "Jo Dog")}
+membersDogsDAmour;
+${membersDogsDAmour}
+
+membersDogsDAmour.copyWithin(0, 2, O);
+${membersDogsDAmour.copyWithin(0, 2, 0)}
+
+membersDogsDAmour.copyWithin(0, 2, 2);
+${membersDogsDAmour.copyWithin(0, 2, 2)}
+
+membersDogsDAmour.copyWithin(0, 2, 3);
+${membersDogsDAmour.copyWithin(0, 2, 3)}
+
+membersDogsDAmour.copyWithin(0, 2, 4);
+${membersDogsDAmour.copyWithin(0, 2, 4)}
+Array changed
+membersDogsDAmour.splice(0, 2, "Tyla", "Bam Bam");
+${membersDogsDAmour.splice(0, 2, "Tyla", "Bam Bam")}
+membersDogsDAmour;
+${membersDogsDAmour}
+
+membersDogsDAmour.copyWithin(0, 3, O);
+${membersDogsDAmour.copyWithin(0, 3, 0)}
+
+membersDogsDAmour.copyWithin(0, 3, 2);
+${membersDogsDAmour.copyWithin(0, 3, 2)}
+
+membersDogsDAmour.copyWithin(0, 3, 3);
+${membersDogsDAmour.copyWithin(0, 3, 3)}
+
+membersDogsDAmour.copyWithin(0, 3, 4);
+${membersDogsDAmour.copyWithin(0, 3, 4)}
+Array changed
+membersDogsDAmour.splice(0, 1, "Tyla");
+${membersDogsDAmour.splice(0, 1, "Tyla")}
+membersDogsDAmour;
+${membersDogsDAmour}
+
+membersDogsDAmour.copyWithin(0, 4, O);
+${membersDogsDAmour.copyWithin(0, 4, 0)}
+
+membersDogsDAmour.copyWithin(0, 4, 2);
+${membersDogsDAmour.copyWithin(0, 4, 2)}
+
+membersDogsDAmour.copyWithin(0, 4, 3);
+${membersDogsDAmour.copyWithin(0, 4, 3)}
+
+membersDogsDAmour.copyWithin(0, 4, 4);
+${membersDogsDAmour.copyWithin(0, 4, 4)}
+
+INDEX 1
+membersDogsDAmour.copyWithin(1, 0, 1);
+${membersDogsDAmour.copyWithin(1, 0, 1)}
+Array changed
+membersDogsDAmour.splice(1, 1, "Bam Bam");
+${membersDogsDAmour.splice(1, 1, "Bam Bam")}
+membersDogsDAmour;
+${membersDogsDAmour}
+
+membersDogsDAmour.copyWithin(1, 0, 2);
+${membersDogsDAmour.copyWithin(1, 0, 2)}
+Array changed
+membersDogsDAmour.splice(1, 2, "Bam Bam", Jo Dog");
+${membersDogsDAmour.splice(1, 2, "Bam Bam", "Jo Dog")}
+membersDogsDAmour;
+${membersDogsDAmour}
+
+membersDogsDAmour.copyWithin(1, 0, 3);
+${membersDogsDAmour.copyWithin(1, 0, 3)}
+Array changed
+membersDogsDAmour.splice(1, 3, "Bam Bam", Jo Dog", "Steve James");
+${membersDogsDAmour.splice(1, 3, "Bam Bam", "Jo Dog", "Steve James")}
+membersDogsDAmour;
+${membersDogsDAmour}
+
+membersDogsDAmour.copyWithin(1, 0, 4);
+${membersDogsDAmour.copyWithin(1, 0, 4)}
+Array changed
+membersDogsDAmour.splice(1, 3, "Bam Bam", Jo Dog", "Steve James");
+${membersDogsDAmour.splice(1, 3, "Bam Bam", "Jo Dog", "Steve James")}
+membersDogsDAmour;
+${membersDogsDAmour}
+
+membersDogsDAmour.copyWithin(1, 1, 0);
+${membersDogsDAmour.copyWithin(1, 1, 0)}
+
+membersDogsDAmour.copyWithin(1, 1, 1);
+${membersDogsDAmour.copyWithin(1, 1, 1)}
+
+membersDogsDAmour.copyWithin(1, 1, 2);
+${membersDogsDAmour.copyWithin(1, 1, 2)}
+
+membersDogsDAmour.copyWithin(1, 1, 3);
+${membersDogsDAmour.copyWithin(1, 1, 3)}
+
+membersDogsDAmour.copyWithin(1, 1, 4);
+${membersDogsDAmour.copyWithin(1, 1, 4)}
+
+membersDogsDAmour.copyWithin(1, 2, O);
+${membersDogsDAmour.copyWithin(1, 2, 0)}
+
+membersDogsDAmour.copyWithin(1, 2, 2);
+${membersDogsDAmour.copyWithin(1, 2, 2)}
+
+membersDogsDAmour.copyWithin(1, 2, 3);
+${membersDogsDAmour.copyWithin(1, 2, 3)}
+Array changed
+membersDogsDAmour.splice(1, 1, "Bam Bam");
+${membersDogsDAmour.splice(1, 1, "Bam Bam")}
+membersDogsDAmour;
+${membersDogsDAmour}
+
+membersDogsDAmour.copyWithin(1, 2, 4);
+${membersDogsDAmour.copyWithin(1, 2, 4)}
+Array changed
+membersDogsDAmour.splice(1, 2, "Bam Bam", "Jo Dog");
+${membersDogsDAmour.splice(1, 2, "Bam Bam", "Jo Dog")}
+membersDogsDAmour;
+${membersDogsDAmour}
+
+membersDogsDAmour.copyWithin(1, 3, O);
+${membersDogsDAmour.copyWithin(1, 3, 0)}
+
+membersDogsDAmour.copyWithin(1, 3, 2);
+${membersDogsDAmour.copyWithin(1, 3, 2)}
+
+membersDogsDAmour.copyWithin(1, 3, 3);
+${membersDogsDAmour.copyWithin(1, 3, 3)}
+
+membersDogsDAmour.copyWithin(1, 3, 4);
+${membersDogsDAmour.copyWithin(1, 3, 4)}
+Array changed
+membersDogsDAmour.splice(1, 1, "Bam Bam");
+${membersDogsDAmour.splice(1, 1, "Bam Bam")}
+membersDogsDAmour;
+${membersDogsDAmour}
+
+membersDogsDAmour.copyWithin(1, 4, O);
+${membersDogsDAmour.copyWithin(1, 4, 0)}
+
+membersDogsDAmour.copyWithin(1, 4, 2);
+${membersDogsDAmour.copyWithin(1, 4, 2)}
+
+membersDogsDAmour.copyWithin(1, 4, 3);
+${membersDogsDAmour.copyWithin(1, 4, 3)}
+
+membersDogsDAmour.copyWithin(1, 4, 4);
+${membersDogsDAmour.copyWithin(1, 4, 4)}
+
+INDEX 2
+membersDogsDAmour.copyWithin(2, 0, 1);
+${membersDogsDAmour.copyWithin(2, 0, 1)}
+Array changed
+membersDogsDAmour.splice(2, 1, "Jo Dog");
+${membersDogsDAmour.splice(2, 1, "Jo Dog")}
+membersDogsDAmour;
+${membersDogsDAmour}
+
+membersDogsDAmour.copyWithin(2, 0, 2);
+${membersDogsDAmour.copyWithin(2, 0, 2)}
+Array changed
+membersDogsDAmour.splice(2, 2, "Jo Dog", "Steve James");
+${membersDogsDAmour.splice(2, 2, "Jo Dog", "Steve James")}
+membersDogsDAmour;
+${membersDogsDAmour}
+
+membersDogsDAmour.copyWithin(2, 0, 3);
+${membersDogsDAmour.copyWithin(2, 0, 3)}
+Array changed
+membersDogsDAmour.splice(2, 2, "Jo Dog", "Steve James");
+${membersDogsDAmour.splice(2, 2, "Jo Dog", "Steve James")}
+membersDogsDAmour;
+${membersDogsDAmour}
+
+membersDogsDAmour.copyWithin(2, 0, 4);
+${membersDogsDAmour.copyWithin(2, 0, 4)}
+Array changed
+membersDogsDAmour.splice(2, 2, "Jo Dog", "Steve James");
+${membersDogsDAmour.splice(2, 2, "Jo Dog", "Steve James")}
+membersDogsDAmour;
+${membersDogsDAmour}
+
+membersDogsDAmour.copyWithin(2, 1, 0);
+${membersDogsDAmour.copyWithin(2, 1, 0)}
+
+membersDogsDAmour.copyWithin(2, 1, 1);
+${membersDogsDAmour.copyWithin(2, 1, 1)}
+
+membersDogsDAmour.copyWithin(2, 1, 2);
+${membersDogsDAmour.copyWithin(2, 1, 2)}
+Array changed
+membersDogsDAmour.splice(2, 1, "Jo Dog");
+${membersDogsDAmour.splice(2, 1, "Jo Dog")}
+membersDogsDAmour;
+${membersDogsDAmour}
+
+membersDogsDAmour.copyWithin(2, 1, 3);
+${membersDogsDAmour.copyWithin(2, 1, 3)}
+Array changed
+membersDogsDAmour.splice(2, 2, "Jo Dog", "Steve James");
+${membersDogsDAmour.splice(2, 2, "Jo Dog", "Steve James")}
+membersDogsDAmour;
+${membersDogsDAmour}
+
+membersDogsDAmour.copyWithin(2, 1, 4);
+${membersDogsDAmour.copyWithin(2, 1, 4)}
+Array changed
+membersDogsDAmour.splice(2, 2, "Jo Dog", "Steve James");
+${membersDogsDAmour.splice(2, 2, "Jo Dog", "Steve James")}
+membersDogsDAmour;
+${membersDogsDAmour}
+
+membersDogsDAmour.copyWithin(2, 2, O);
+${membersDogsDAmour.copyWithin(2, 2, 0)}
+
+membersDogsDAmour.copyWithin(2, 2, 2);
+${membersDogsDAmour.copyWithin(2, 2, 2)}
+
+membersDogsDAmour.copyWithin(2, 2, 3);
+${membersDogsDAmour.copyWithin(2, 2, 3)}
+
+membersDogsDAmour.copyWithin(2, 2, 4);
+${membersDogsDAmour.copyWithin(2, 2, 4)}
+
+membersDogsDAmour.copyWithin(2, 3, O);
+${membersDogsDAmour.copyWithin(2, 3, 0)}
+
+membersDogsDAmour.copyWithin(2, 3, 2);
+${membersDogsDAmour.copyWithin(2, 3, 2)}
+
+membersDogsDAmour.copyWithin(2, 3, 3);
+${membersDogsDAmour.copyWithin(2, 3, 3)}
+
+membersDogsDAmour.copyWithin(2, 3, 4);
+${membersDogsDAmour.copyWithin(2, 3, 4)}
+Array changed
+membersDogsDAmour.splice(2, 1, "Jo Dog");
+${membersDogsDAmour.splice(2, 1, "Jo Dog")}
+membersDogsDAmour;
+${membersDogsDAmour}
+
+membersDogsDAmour.copyWithin(2, 4, O);
+${membersDogsDAmour.copyWithin(2, 4, 0)}
+
+membersDogsDAmour.copyWithin(2, 4, 2);
+${membersDogsDAmour.copyWithin(2, 4, 2)}
+
+membersDogsDAmour.copyWithin(2, 4, 3);
+${membersDogsDAmour.copyWithin(2, 4, 3)}
+
+membersDogsDAmour.copyWithin(2, 4, 4);
+${membersDogsDAmour.copyWithin(2, 4, 4)}
+
+INDEX 3
+membersDogsDAmour.copyWithin(3, 0, 1);
+${membersDogsDAmour.copyWithin(3, 0, 1)}
+Array changed
+membersDogsDAmour.splice(3, 1, "Steve James");
+${membersDogsDAmour.splice(3, 1, "Steve James")}
+membersDogsDAmour;
+${membersDogsDAmour}
+
+membersDogsDAmour.copyWithin(3, 0, 2);
+${membersDogsDAmour.copyWithin(3, 0, 2)}
+Array changed
+membersDogsDAmour.splice(3, 1, "Steve James");
+${membersDogsDAmour.splice(3, 1, "Steve James")}
+membersDogsDAmour;
+${membersDogsDAmour}
+
+membersDogsDAmour.copyWithin(3, 0, 3);
+${membersDogsDAmour.copyWithin(3, 0, 3)}
+Array changed
+membersDogsDAmour.splice(3, 1, "Steve James");
+${membersDogsDAmour.splice(3, 1, "Steve James")}
+membersDogsDAmour;
+${membersDogsDAmour}
+
+membersDogsDAmour.copyWithin(3, 0, 4);
+${membersDogsDAmour.copyWithin(3, 0, 4)}
+Array changed
+membersDogsDAmour.splice(3, 1, "Steve James");
+${membersDogsDAmour.splice(3, 1, "Steve James")}
+membersDogsDAmour;
+${membersDogsDAmour}
+
+membersDogsDAmour.copyWithin(3, 1, 0);
+${membersDogsDAmour.copyWithin(3, 1, 0)}
+
+membersDogsDAmour.copyWithin(3, 1, 1);
+${membersDogsDAmour.copyWithin(3, 1, 1)}
+
+membersDogsDAmour.copyWithin(3, 1, 2);
+${membersDogsDAmour.copyWithin(3, 1, 2)}
+Array changed
+membersDogsDAmour.splice(3, 1, "Steve James");
+${membersDogsDAmour.splice(3, 1, "Steve James")}
+membersDogsDAmour;
+${membersDogsDAmour}
+
+membersDogsDAmour.copyWithin(3, 1, 3);
+${membersDogsDAmour.copyWithin(3, 1, 3)}
+Array changed
+membersDogsDAmour.splice(3, 1, "Steve James");
+${membersDogsDAmour.splice(3, 1, "Steve James")}
+membersDogsDAmour;
+${membersDogsDAmour}
+
+membersDogsDAmour.copyWithin(3, 1, 4);
+${membersDogsDAmour.copyWithin(3, 1, 4)}
+Array changed
+membersDogsDAmour.splice(3, 1, "Steve James");
+${membersDogsDAmour.splice(3, 1, "Steve James")}
+membersDogsDAmour;
+${membersDogsDAmour}
+
+membersDogsDAmour.copyWithin(3, 2, O);
+${membersDogsDAmour.copyWithin(3, 2, 0)}
+Array changed
+membersDogsDAmour.splice(3, 1, "Steve James");
+${membersDogsDAmour.splice(3, 1, "Steve James")}
+membersDogsDAmour;
+${membersDogsDAmour}
+
+membersDogsDAmour.copyWithin(3, 2, 2);
+${membersDogsDAmour.copyWithin(3, 2, 2)}
+Array changed
+membersDogsDAmour.splice(3, 1, "Steve James");
+${membersDogsDAmour.splice(3, 1, "Steve James")}
+membersDogsDAmour;
+${membersDogsDAmour}
+
+membersDogsDAmour.copyWithin(3, 2, 3);
+${membersDogsDAmour.copyWithin(3, 2, 3)}
+Array changed
+membersDogsDAmour.splice(3, 1, "Steve James");
+${membersDogsDAmour.splice(3, 1, "Steve James")}
+membersDogsDAmour;
+${membersDogsDAmour}
+
+membersDogsDAmour.copyWithin(3, 2, 4);
+${membersDogsDAmour.copyWithin(3, 2, 4)}
+Array changed
+membersDogsDAmour.splice(3, 1, "Steve James");
+${membersDogsDAmour.splice(3, 1, "Steve James")}
+membersDogsDAmour;
+${membersDogsDAmour}
+
+membersDogsDAmour.copyWithin(3, 3, O);
+${membersDogsDAmour.copyWithin(3, 3, 0)}
+
+membersDogsDAmour.copyWithin(3, 3, 2);
+${membersDogsDAmour.copyWithin(3, 3, 2)}
+
+membersDogsDAmour.copyWithin(3, 3, 3);
+${membersDogsDAmour.copyWithin(3, 3, 3)}
+
+membersDogsDAmour.copyWithin(3, 3, 4);
+${membersDogsDAmour.copyWithin(3, 3, 4)}
+
+membersDogsDAmour.copyWithin(3, 4, O);
+${membersDogsDAmour.copyWithin(3, 4, 0)}
+
+membersDogsDAmour.copyWithin(3, 4, 2);
+${membersDogsDAmour.copyWithin(3, 4, 2)}
+
+membersDogsDAmour.copyWithin(3, 4, 3);
+${membersDogsDAmour.copyWithin(3, 4, 3)}
+
+membersDogsDAmour.copyWithin(3, 4, 4);
+${membersDogsDAmour.copyWithin(3, 4, 4)}
+`;
 }
