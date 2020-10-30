@@ -122,3 +122,122 @@ function Number() { [native code] } for Numbers,
 function String() { [native code] } for Strings`
 ;
 }
+
+//length
+function lengthMyArray() {
+    document.getElementById("length").innerText = `myArray.length;
+
+${myArray.length}`;
+}
+
+//indexOf
+function indexMyArray() {
+    let x = myArray.indexOf("true");
+    document.getElementById("indexOf").innerText = `let x = myArray.indexOf("true");
+x;
+${x}
+
+myArray.indexOf("true");
+${myArray.indexOf("true")}`;
+    document.getElementById("note9").innerText = `(First example is if you want return the index to a variable. Second is just to get the index of.)
+    
+`
+}
+
+//indexOf
+function lastIndexMyArray() {
+    let x = myArray.lastIndexOf("true");
+    document.getElementById("lastIndexOf").innerText = `let x = myArray.lastIndexOf("true");
+x;
+
+${x}`
+}
+
+//toString
+function toStringMyArray() {
+    let x = myArray.toString();
+    document.getElementById("toString").innerText = `let x = myArray.toString();
+x;
+
+${x}`;
+    document.getElementById("note11").innerText = `Use either "typeof() or .constructor to see the difference:
+typeof(myArray);
+    ${typeof(myArray)}
+typeof(x);
+    ${typeof(x)}
+
+myArray.constructor;
+    ${myArray.constructor}
+x.constructor;
+    ${x.constructor}`
+}
+
+//join
+function joinMyArray() {
+    let x = myArray.join(" ");
+    let y = myArray.join("with the blues in the night");
+    let z = myArray.join();
+    document.getElementById("join").innerText = `let x = myArray.join(" ");
+x;
+${x}
+
+let y = myArray.join("with the blues in the night");
+y;
+${y}
+
+Default:
+let z = myArray.join();
+z;
+${z}`;
+    document.getElementById("note12").innerText = `Use either "typeof() or .constructor to see the difference:
+typeof(myArray);
+    ${typeof(myArray)}
+typeof(x);
+    ${typeof(x)}
+typeof(y);
+    ${typeof(y)}
+typeof(z);
+    ${typeof(z)}
+
+myArray.constructor;
+    ${myArray.constructor}
+x.constructor;
+    ${x.constructor}
+y.constructor;
+    ${y.constructor}
+z.constructor;
+    ${z.constructor}`
+}
+
+function why1() {
+    document.getElementById("why1a").innerHTML = `<p>To manipulate data!</p>
+<p>If I want to make a database of names from a sentence (<code>"string"</code>):</p>
+<p>"My name is Justin Sawyer":</p>
+<p>I can transform the string into an array and then find the key/values for each individual element (word) in the <code>[array]</code></p>`;
+
+    let nameString = "My name is Justin Sawyer";
+    let nameArray = nameString.split(" ");
+    let firstName = nameArray[3];
+    let secondName = nameArray[4];
+    document.getElementById("why1b").innerText = `let nameString = "My name is Justin Sawyer";
+nameString;
+${nameString}
+
+nameString.constructor;
+${nameString.constructor}
+
+let nameArray = nameString.split(" ");
+${nameArray}
+
+nameArray.constructor;
+${nameArray.constructor}
+
+let firstName = nameArray[3];
+let secondName = nameArray[4];
+
+firstName;
+${firstName}
+
+secondName;
+${secondName}`;
+}

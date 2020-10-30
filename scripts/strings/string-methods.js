@@ -254,7 +254,7 @@ myLetter.split(" ");
 
 myLetter.split("30");
 
-` + myLetter.split("30");
+` + myLetter.split("30")
 }
 
 //repeat
@@ -291,5 +291,47 @@ newImGlad.length;
 im.length;
 
 ` + im.length;
+}
+
+function myLetterToArray() {
+    let x = Array.from(myLetter);
+    document.getElementById("array").innerText = `let x = Array.from(myLetter);
+x;
+
+${x}`;
+    document.getElementById("note").innerText = `Use either typeof() or .constructor to see the difference:
+typeof(myLetter);
+    ${typeof(myLetter)}
+typeof(x);
+    ${typeof(x)}
+
+myLetter.constructor;
+    ${myLetter.constructor}
+x.constructor;
+    ${x.constructor}`;
+}
+
+function why1() {
+    let x = [1, 2, 3].join(" is smaller than ");
+    document.getElementById("why1a").innerText = `To manipulate data!`;
+    document.getElementById("why1b").innerText = `[1, 2, 3];
+This is an array:
+${[1, 2, 3]};
+${[1, 2, 3].constructor};
+
+[1, 2, 3].join(" is smaller than ");
+This is a string:
+${[1, 2, 3].join(" is smaller than ")}
+${x.constructor};
+`;
+}
+
+function why2() {
+    document.getElementById("why2").innerHTML = `<p>With <code>[arrays]</code>, it is difficult to manipulate individual elements of items</p>        
+    <p>Example: capitalise the first letter of a word</p>
+    <p>To change the first letter of a word into a capital letter, you cannot use something like</p>
+    <p>.toUpperCaseFirstLetter</p>
+    <p>You need to change the <code>[array]</code> into a <code>"string"</code> so that it is possible to manipulate each element of each item.</p>
+    <br>`
 }
 

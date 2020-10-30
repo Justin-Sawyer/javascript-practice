@@ -84,6 +84,80 @@
                 <p><code>myArray = ["one", "two", 3, 4, true, "true", false, "false"];</code></p>
                 <p><code>let myNewArray = new Array(1, 2, "three", "four");</code></p>
                 <ol>
+                    <li>Declare (create) an array</li>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-sm-5">
+                                    <p><code>let x = [];</code></p>
+                                </div>
+                                <div class="col-sm-4">
+                                    <p>Empty <code>[array]</code></p>
+                                </div>
+                                <div class="col-sm-5">
+                                    <p><code>let y = ["No", "longer", "empty"];</code></p>
+                                </div>
+                                <div class="col-sm-4">
+                                    <p>Filled <code>[array]</code></p>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+
+                    <li>Create an array from a string</li>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-sm-5">
+                                    <a href="../strings/string-methods.html#arrayfrom1">Array.from(string)</a>
+                                </div>
+                                <div class="col-sm-4">
+                                <p>Method 1</p>
+                                </div>
+                                <div class="col-sm-3">
+                                <button onclick="why1()">Why do this?</button>
+                                </div>
+                                <div class="col-sm-5">
+                                    <a href="../strings/string-methods.html#arrayfrom2">string.split(delimiter)</a>
+                                </div>
+                                <div class="col-sm-4">
+                                    <p>Method 2</p>
+                                </div>
+                            </div>
+                            <p id="why1a"></p>
+                            <pre><code><p id="why1b"></p></code></pre>
+                        </div>
+                        <br>
+
+                    <li>Transform an array into a string</li>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-sm-5">
+                                    <a id="arraytostring1"></a>
+                                    <p><code>myArray.toString;</code></p>
+                                </div>
+                                <div class="col-sm-4">
+                                    <p>Converts an <code>[array]</code> into a <code>"string"</code></p>
+                                </div>
+                                <div class="col-sm-3">
+                                    <button onclick="toStringMyArray()">Try Me</button>
+                                </div>
+                                <pre><code><p id="toString"></p></code></pre>
+                                <pre><code><p id="note11"></p></code></pre>
+
+                                <div class="col-sm-5">
+                                    <a id="arraytostring2"></a>
+                                    <p><code>myArray.join(separator);</code></p>
+                                </div>
+                                <div class="col-sm-4">
+                                    <p>Converts an <code>[array]</code> into a <code>"string"</code></p>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div><button onclick="joinMyArray()">Try Me</button></div>
+                                </div>
+                                <pre><code><p id="join"></p></code></pre>
+                                <pre><code><p id="note12"></p></code></pre>
+                            </div>
+                        </div>
+
                     <li>Retrieving Information</li>
                         <div class="container">
                             <div class="row">
@@ -196,6 +270,42 @@
                                 </div>
                                 <pre><code><p id="constructor"></p></code></pre>
                                 <pre><code><p id="note7"></p></code></pre>
+
+                                <div class="col-sm-5">
+                                    <p><code>myArray.length;</code></p>
+                                </div>
+                                <div class="col-sm-4">
+                                    <p>Returns the number of <code>elements</code> in an <code>[array]</code></p>
+                                </div>
+                                <div class="col-sm-3">
+                                    <button onclick="lengthMyArray()">Try Me</button>
+                                </div>
+                                <pre><code><p id="length"></p></code></pre>
+                                <pre><code><p id="note8"></p></code></pre>
+
+                                <div class="col-sm-5">
+                                    <p><code>myArray.indexOf(item, (start));</code></p>
+                                </div>
+                                <div class="col-sm-4">
+                                    <p>Returns the index of <code>elements</code> in an <code>[array]</code></p>
+                                </div>
+                                <div class="col-sm-3">
+                                    <button onclick="indexMyArray()">Try Me</button>
+                                </div>
+                                <pre><code><p id="indexOf"></p></code></pre>
+                                <p id="note9"></p>
+
+                                <div class="col-sm-5">
+                                    <p><code>myArray.lastIndexOf(item, (start));</code></p>
+                                </div>
+                                <div class="col-sm-4">
+                                    <p>Returns the last index of <code>elements</code> in an <code>[array]</code></p>
+                                </div>
+                                <div class="col-sm-3">
+                                    <button onclick="lastIndexMyArray()">Try Me</button>
+                                </div>
+                                <pre><code><p id="lastIndexOf"></p></code></pre>
+                                <pre><code><p id="note10"></p></code></pre>
 
                             </div>
                         </div>
