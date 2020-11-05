@@ -241,3 +241,17 @@ ${firstName}
 secondName;
 ${secondName}`;
 }
+
+//includes
+function includesMyArray() {
+    document.getElementById("includes").innerText = `myArray.includes("true");
+${myArray.includes("true")}
+
+myArray.includes("true", 5);
+${myArray.includes("true", 5)}
+
+myArray.includes("true", 6);
+${myArray.includes("true", 6)}
+False returned as "true" is at position 5 in the array 
+and the search for "true" starts from position 6`;
+}

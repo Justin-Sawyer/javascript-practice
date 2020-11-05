@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../assets/css/style.css" type="text/css">
+    <title>Javascripting</title>
+</head>
+<body>
+    <header>
+        <div class="wrapper">
+            <div class="sliding-background">
+            </div>
+        </div>
+    
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <a class="navbar-brand" href="../index.html">Javascripting</a>
+            <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <svg width="1em" height="1em" viewbox="0 0 16 16" class="bi bi-list" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M2.5 11.5A.5.5 0 0 1 3 11h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 7h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 3h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+                </svg>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="array-methods-2.html">[arrays]: More Array Methods <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item dropdown">       
+                    <a class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Menu
+                        <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li class="dropdown-menu-no-children">
+                                <a class="menu-list" href="../code-examples.html">Code Examples</a>
+                            </li>
+                        
+                            <li class="dropdown-submenu">
+                                <a class="menu-list" href="#">Numbers <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                <li><a href="/numbers/the-basics.html">The Basics</a></li>
+                                <li><a href="/numbers/number-methods.html">Number Methods</a></li>
+                                <li><a href="/numbers/math-methods.html">Math Methods</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="dropdown-submenu">
+                                <a class="menu-list" href="#">"strings"<span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                <li><a href="/strings/the-basics.html">The Basics</a></li>
+                                <li><a href="/strings/string-methods.html">String Methods</a></li>
+                                <li><a href="/strings/concat-and-interpolation.html">Concatenation & Interpolation</a></li>
+                                <li><a href="/strings/challenges.html">Challenges</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="dropdown-submenu">
+                                <a class="menu-list" href="#">[arrays]<span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                <li><a href="the-basics.html">The Basics</a></li>
+                                <li><a href="array-methods.html">Array Methods</a></li>
+                                <li><a href="array-methods-2.html">More Array Methods</a></li>
+                                <li><a href="multi-dimensional-arrays.html">Multidimensional Arrays</a></li>
+                                </ul>
+                            </li>
+
+                            </ul>
+                        </li>
+                    </ul>
+                <!--
+                <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                </form>-->    
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container body-container">
+            <div class="page-name">
+                <h1>Multidimensional Arrays:</h1>
+                <p>For this page, all <code>functions()</code> use the following <code>[arrays]</code> and <code>functions()</code>, which have been declared globally:</p>
+                <br>
+                <p><code>let eng = ["England", ["London"]];</code></p>
+                <pre><code><p id="countries1"></p></code></pre>
+                <p><code>let wal = ["Wales", ["Cardiff"]];</code></p>
+                <pre><code><p id="countries2"></p></code></pre>
+                <p><code>let sco = ["Scotland", ["Edinburgh"]];</code></p>
+                <pre><code><p id="countries3"></p></code></pre>
+                <p><code>let nir = ["Northern Ireland", ["Belfast"]];</code></p>
+                <pre><code><p id="countries4"></p></code></pre>
+                <p><code>let ire = ["Eire", ["Dublin"]];</code></p>
+                <pre><code><p id="countries5"></p></code></pre>
+                <p><code>let britain = new Array(eng, wal, sco);</code></p>
+                <pre><code><p id="countries6"></p></code></pre>
+                <p><code>let ireland = new Array(nir,ire);</code></p>
+                <pre><code><p id="countries7"></p></code></pre>
+                <p><code>let grbr1 = new Array (eng, wal, sco, nir);</code></p>
+                <pre><code><p id="countries8"></p></code></pre>
+                <p><code>let grbr2 = new Array (britain, nir);</code></p>
+                <pre><code><p id="countries9"></p></code></pre>
+                <p><code>let britisles1 = new Array(eng, wal, sco, nir, ire);</code></p>
+                <pre><code><p id="countries10"></p></code></pre>
+                <p><code>let britisles2 = new Array(grbr1, ire);</code></p>
+                <pre><code><p id="countries11"></p></code></pre>
+                <p><code>let britisles3 = new Array(grbr2, ire);</code></p>
+                <pre><code><p id="countries12"></p></code></pre>
+                <p><code>let britisles4 = new Array(britain, nir, ire);</code></p>
+                <pre><code><p id="countries13"></p></code></pre>
+                <p><code>let britisles5 = new Array(britain, ireland);</code></p>
+                <pre><code><p id="countries14"></p></code></pre>
+                <br>
+                
+                <p>Above, we have a series of <code>[arrays]</code> that detail the make up of the British Isles.</p>
+                <p>The British Isles are made up of 5 different nations:</p>
+                <ul>
+                    <li>England</li>
+                    <p class="tab">(capital, London)</p>
+                    <li>Wales</li>
+                    <p class="tab">(capital, Cardiff)</p>
+                    <li>Scotland</li>   
+                    <p class="tab">(capital, Edinburgh)</p>
+                    <li>Northern Ireland</li>
+                    <p class="tab">(capital, Belfast)</p>
+                    <li>Eire</li>   
+                    <p class="tab">(capital, Dublin)</p>
+                </ul>
+                <p>and two land masses:</p>
+                <ul>
+                    <li>Britain</li>
+                    <p class="tab">consisting of:</p>
+                    <ul>
+                        <li class="tab">England</li>
+                        <li class="tab">Wales</li>
+                        <li class="tab">Scotland</li>
+                    </ul>
+                    <li>Ireland</li>
+                    <p class="tab">consisting of:</p>
+                    <ul>
+                        <li class="tab">Northern Ireland</li>
+                        <li class="tab">Eire</li>
+                    </ul>
+                </ul>
+                <br>
+                <p>Each individual conutry is represented in its own multidimensional <code>[array]</code>, containing the country and its capital city.
+                Thus <code>eng</code> is an <code>[array]</code> with 2 dimensions:</p>
+                <br>
+                <p><code>eng</code> = [First-level <code>[array]</code> is the country, "England", [2nd level is its capital, "London"]]</p>
+                <br>
+                <p>Further, as we make up the island of Britain, we now have an <code>[array]</code> of 
+                3 first-level <code>[arrays]</code>, (that is, England, Wales and Scotland), each of these having a sub-array for their capitals.
+                Thus <code>britain</code> is an <code>[array]</code> with 3 entries, but two dimensions for each entry:</p>
+                <br>
+                <p><code>britain</code> = [[First-level <code>[array]</code>, "England", [2nd level, "London"]], [First-level array, "Wales", [2nd level, "Cardiff"]],
+                [First-level <code>[array]</code>, "Scotland", [2nd level, "Edinburgh"]]];</p>
+                <br>
+                <p>Further, to make up the "union" of Great Britain, we can do this in a variety of ways:</p>
+                <ol>
+                    <li>(List each country and (capital))</li>
+                    <p class="tab">((England, (London)), (Wales, (Cardiff)), (Scotland, (Edinburgh)), (Northern Ireland, (Belfast)))</p>
+                    <p class="tab">Result: 4 x two-level <code>[arrays]</code></p>
+                    <li>((List Northern Ireland and its (capital)), plus (each country and (capital) of Britain)))</li>
+                    <p class="tab">((Northern Ireland, (Belfast)), ((England, (London)), (Wales, (Cardiff)), (Scotland, (Edinburgh))))</p>
+                    <p class="tab">Result: 2 x two-level <code>[arrays]</code> (Northern Ireland, Britain), with the first of these (Northern Ireland) holding a 2nd-level <code>[array]</code>
+                     (Belfast) and the second two-level <code>[array]</code> with 2 levels for each item (1st: country, 2nd: capital)</p>
+                </ol>
+                <br>
+                <p>To select and use elements in the <code>[arrays]</code>, we need to know their index 
+                (remember, JavaScript uses zero indexing!)</p>
+                <p>For a one-dimensional <code>[array]</code>, we can just select its "place" within the <code>[array]</code>:</p>
+                <button onclick="findSecond()">Find item in position #2, (thus, index #1)</button>
+                <pre><code><p id="second"></p></code></pre>
+                <p>And so we can for a two-dimensional <code>[array]:</code></p>
+                <button onclick="findLondon()">Find item in position #2, (thus, index #1)</button>
+                <pre><code><p id="london"></p></code></pre>
+                <p>But what happens if that second-level of the <code>[array]</code> contains more than one element?</p>
+                <p class="tab">Lets first <code>push()</code> an entry into the <code>[array]</code>:</p>
+                <button class="tab" onclick="addWestminster()">Push Westminster to [array] "eng"</button>
+                <pre class="tab"><code><p id="westminster"></p></code></pre>
+                <p class="tab">We can see that we now have an array that contains the following:</p>
+                <p class="tab">(England, (London), Westminster)</p>
+                <p class="tab">whereas we want</p>
+                <p class="tab">(England, (London, Westminster))</p>
+                <p class="tab">So let's remove Westminster using the <code>pop()</code> method and then start again:</p>
+                <button class="tab" onclick="popWestminster()">Pop Westminster out of [array] "eng"</button>
+                <pre class="tab"><code><p id="westminster1"></p></code></pre>
+                <p class="tab">And now let's add Westminster using the <code>push()</code> method and with indexing:</p>
+                <button class="tab" onclick="pushWestminster()">Push Westminster to "eng" and into its 2nd level</button>
+                <pre class="tab"><code><p id="westminster2"></p></code></pre>
+                <p>So now how do we get to Westminster? We use multidimensional indexing:</p>
+                <button onclick="findWestminster()">Find Westminster</button>
+                <pre><code><p id="findWestminster"></p></code></pre>
+
+                <p>Now let's add the following London boroughs into the London level (2nd-level) of our <code>[array]</code> "eng" (note, we will not use the keys for this exercise):</p>
+                <table class="table table-sm">
+                    <thead>
+                        <tr>
+                        <th scope="col">Map Number</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Authority</th>
+                        <th scope="col">Control</th>
+                        <th scope="col">Population</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>City of London</td>
+                            <td>Corporation of London</td>
+                            <td>?</td>
+                            <td>7,000</td>
+                        </tr>
+                        <tr>
+                        <th scope="row">2</th>
+                        <td>Westminster</td>
+                        <td>Westminster City Council</td>
+                        <td>Conservative</td>
+                        <td>226,841</td>
+                        </tr>
+                        <tr>
+                        <th scope="row">3</th>
+                        <td>Kensington and Chelsea</td>
+                        <td>Kensington and Chelsea London Borough Council</td>
+                        <td>Conservative</td>
+                        <td>155,594</td>
+                        </tr>
+                        <tr>
+                        <th scope="row">4</th>
+                        <td>Hammersmith and Fulham</td>
+                        <td>Hammersmith and Fulham London Borough Council</td>
+                        <td>Labour</td>
+                        <td>178,685</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <button onclick="addBoroughs()">Add boroughs to [eng]</button>
+                <pre><code><p id="boroughs"></p></code></pre>
+
+                <p>But wait, we now have Westminster listed twice, once on its own and once with its borough details.</p>
+                <button onclick="findIndex()">Find its index</button>
+                <pre><code><p id="index"></p></code></pre>
+
+
+
+                <!--<ol>
+                    <li>Manipulating <code>[arrays]</code></li>
+                        <div class="container">
+                            <div class="row">
+
+                                <div class="col-sm-5">
+                                    <p><code>array.every(function(currentValue, (index), (arr)), (thisValue));</code></p>
+                                </div>
+                                <div class="col-sm-4">
+                                    <p>Checks if all elements in an <code>[array]</code> pass a test (function). Does not alter original <code>[array]</code></p>
+                                </div>
+                                <div class="col-sm-3">
+                                    <button onclick="everyDog()">Try Me</button>
+                                </div>
+                                <pre><code><p id="everyDog1"></p></code></pre>
+                                <p id="comment1"></p>
+                                <pre><code><p id="push"></p></code></pre>
+
+                                <div class="col-sm-5">
+                                    <p><code>array.filter(function(currentValue, (index), (arr)), (thisValue));</code></p>
+                                </div>
+                                <div class="col-sm-4">
+                                    <p>Checks if all elements in an <code>[array]</code> pass a test (function). Filters those that do. Does not alter original <code>[array]</code></p>
+                                </div>
+                                <div class="col-sm-3">
+                                    <button onclick="filterDogs()">Try Me</button>
+                                </div>
+                                <pre><code><p id="filter"></p></code></pre>
+                                <p id="comment2"></p>
+                                <pre><code><p id="filter1"></p></code></pre>
+
+                                <div class="col-sm-5">
+                                    <p><code>array.some(function(currentValue, (index), (arr)), (thisValue));</code></p>
+                                </div>
+                                <div class="col-sm-4">
+                                    <p>Checks if all elements in an <code>[array]</code> pass a test (function). Returns true if ONE passes the test. Does not alter original <code>[array]</code></p>
+                                </div>
+                                <div class="col-sm-3">
+                                    <button onclick="someDogs()">Try Me</button>
+                                </div>
+                                <pre><code><p id="some"></p></code></pre>
+                                <p id="comment3"></p>
+                                <pre><code><p id="some1"></p></code></pre>
+
+                                <div class="col-sm-5">
+                                    <p><code>array.find(function(currentValue, (index), (arr)), (thisValue));</code></p>
+                                </div>
+                                <div class="col-sm-4">
+                                    <p>Checks if all elements in an <code>[array]</code> pass a test (function). If found, returns the found item and then stops. Does not look for more. Does not alter original <code>[array]</code></p>
+                                </div>
+                                <div class="col-sm-3">
+                                    <button onclick="findDogs()">Try Me</button>
+                                </div>
+                                <pre><code><p id="find"></p></code></pre>
+                                <p id="comment4"></p>
+                                <pre><code><p id="find1"></p></code></pre>
+
+                                <div class="col-sm-5">
+                                    <p><code>array.findIndex(function(currentValue, (index), (arr)), (thisValue));</code></p>
+                                </div>
+                                <div class="col-sm-4">
+                                    <p>Checks if all elements in an <code>[array]</code> pass a test (function). If found, returns the found item's index and then stops. Does not look for more. Does not alter original <code>[array]</code></p>
+                                </div>
+                                <div class="col-sm-3">
+                                    <button onclick="findIndexDogs()">Try Me</button>
+                                </div>
+                                <pre><code><p id="findIndex"></p></code></pre>
+                                <p id="comment5"></p>
+                                <pre><code><p id="findIndex1"></p></code></pre>
+
+                                <div class="col-sm-5">
+                                    <p><code>array.reduce(function(currentValue, (index), (arr)), (thisValue));</code></p>
+                                </div>
+                                <div class="col-sm-4">
+                                    <p>Reduces all elements in an <code>[array]</code> to one value. Returns that value. Does not alter original <code>[array]</code></p>
+                                </div>
+                                <div class="col-sm-3">
+                                    <button onclick="reduceDogs()">Try Me</button>
+                                </div>
+                                <pre><code><p id="reduce"></p></code></pre>
+                                <p id="comment6"></p>
+                                <pre><code><p id="reduce1"></p></code></pre>
+
+                                <div class="col-sm-5">
+                                    <p><code>array.reduceRight(function(currentValue, (index), (arr)), (thisValue));</code></p>
+                                </div>
+                                <div class="col-sm-4">
+                                    <p>Reduces all elements in an <code>[array]</code> to one value. Returns that value. Does not alter original <code>[array]</code></p>
+                                </div>
+                                <div class="col-sm-3">
+                                    <button onclick="reduceRightDogs()">Try Me</button>
+                                </div>
+                                <pre><code><p id="reduceRight"></p></code></pre>
+                                <p id="comment7"></p>
+                                <pre><code><p id="reduceRight1"></p></code></pre>
+
+                                <div class="col-sm-5">
+                                    <p><code>array.map(function(currentValue, (index), (arr)), (thisValue));</code></p>
+                                </div>
+                                <div class="col-sm-4">
+                                    <p>Reduces all elements in an <code>[array]</code> to one value. Returns that value. Does not alter original <code>[array]</code></p>
+                                </div>
+                                <div class="col-sm-3">
+                                    <button onclick="mapDogs()">Try Me</button>
+                                </div>
+                                <pre><code><p id="map"></p></code></pre>
+                                <p id="comment8"></p>
+                                <pre><code><p id="map1"></p></code></pre>
+
+                            </div>
+                        </div>
+                </ol> -->              
+            </div> 
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="Last-page">
+                            <a class="btn button" style="text-align: left" href="array-methods-2.html" role="button"><svg width="1em" height="1em" viewbox="0 0 16 16" class="bi bi-caret-left-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3.86 8.753l5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"/>
+                            </svg> Arrays: More Array Methods</a>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="next-page">
+                            <a class="btn button" href="array-methods-2.html" role="button">Arrays: More Array Methods<svg width="1em" height="1em" viewbox="0 0 16 16" class="bi bi-caret-right-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+                            </svg></a>
+                        </div>  
+                    </div> 
+                </div> 
+            </div>       
+        </div>
+    </main>
+
+    <footer>
+        <div class="container-fluid footer-section">
+            <div class="foot-body">
+                <h6>This website was created by Justin Sawyer</h6>
+            </div>
+
+            <div class="container links-and-outside-links">
+                <div class="container website-links">
+                    <p>In-site code links:</p>
+                    <ul class="footer-menu">
+                            <li class="footer-menu-link">
+                                <a class="footer-menu-list" href="code-examples.html">Code Examples</a>
+                            </li>
+                    </ul>
+                </div>
+                <div class="container outside-links">
+                    <p>Hi</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../scripts/arrays/multi-dimensional-arrays.js"></script>
+    
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+    <script>
+        $(document).ready(function(){
+        $('.dropdown-submenu a.menu-list').on("click", function(e){
+            $(this).next('ul').toggle();
+            e.stopPropagation();
+            e.preventDefault();
+        });
+        });
+    </script>
+</body>
+</html>

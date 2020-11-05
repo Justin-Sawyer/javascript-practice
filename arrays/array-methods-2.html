@@ -25,7 +25,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="array-methods.html">[arrays]: Array Methods <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="array-methods-2.html">[arrays]: More Array Methods <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item dropdown">       
                     <a class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Menu
@@ -79,10 +79,24 @@
     <main>
         <div class="container body-container">
             <div class="page-name">
-                <h1>Array Methods:</h1>
-                <p>For this page, all <code>functions</code> use the following <code>[array]</code>, which has been declared globally:</p>
+                <h1>More Array Methods:</h1>
+                <p>These further Array methods are listed separately as they need their own <code>functions()</code> with or without arguments.</p>
+                <p>For this page, all <code>functions()</code> use the following <code>[arrays]</code> and <code>functions()</code>, which have been declared globally:</p>
                 <br>
                 <p><code>membersDogsDAmour = ["Tyla", "Bam Bam", "Jo Dog", "Steve James"];</code></p>
+                <p><code>countUp = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];</code></p>
+                <br>
+                <pre><code>function checkTyla(name) {
+    return name == "Tyla";
+}
+
+function checkCountUp(value) {
+    return value &lt;= 5;
+}
+
+function reduceCountUp(total, num) {
+  return total - num;
+}</code></pre>
                 <br>
                 <ol>
                     <li>Manipulating <code>[arrays]</code></li>
@@ -90,161 +104,108 @@
                             <div class="row">
 
                                 <div class="col-sm-5">
-                                    <p><code>array.push(item1, item2, ..., itemX);</code></p>
+                                    <p><code>array.every(function(currentValue, (index), (arr)), (thisValue));</code></p>
                                 </div>
                                 <div class="col-sm-4">
-                                    <p>Inserts value at end of <code>[array]</code>. Alters original <code>[array]</code></p>
+                                    <p>Checks if all elements in an <code>[array]</code> pass a test (function). Does not alter original <code>[array]</code></p>
                                 </div>
                                 <div class="col-sm-3">
-                                    <button onclick="pushMembers()">Try Me</button>
+                                    <button onclick="everyDog()">Try Me</button>
                                 </div>
-                                <pre><code><p id="original1"></p></code></pre>
+                                <pre><code><p id="everyDog1"></p></code></pre>
                                 <p id="comment1"></p>
                                 <pre><code><p id="push"></p></code></pre>
 
                                 <div class="col-sm-5">
-                                    <p><code>array.pop();</code></p>
-                                    <!--<p><code>array.fill("", #, (#));</code></p>-->
+                                    <p><code>array.filter(function(currentValue, (index), (arr)), (thisValue));</code></p>
                                 </div>
                                 <div class="col-sm-4">
-                                    <p>Removes value at end of <code>[array]</code>. Alters original <code>[array]</code> and returns a new <code>[array]</code></p>
+                                    <p>Checks if all elements in an <code>[array]</code> pass a test (function). Filters those that do. Does not alter original <code>[array]</code></p>
                                 </div>
                                 <div class="col-sm-3">
-                                    <button onclick="popMembers()">Try Me</button>
+                                    <button onclick="filterDogs()">Try Me</button>
                                 </div>
-                                <pre><code><p id="pop"></p></code></pre>
+                                <pre><code><p id="filter"></p></code></pre>
                                 <p id="comment2"></p>
+                                <pre><code><p id="filter1"></p></code></pre>
 
                                 <div class="col-sm-5">
-                                    <p><code>array.unshift(item1, item2, ..., itemX);</code></p>
-                                    <!--<p><code>array.fill("", #, (#));</code></p>-->
+                                    <p><code>array.some(function(currentValue, (index), (arr)), (thisValue));</code></p>
                                 </div>
                                 <div class="col-sm-4">
-                                    <p>Inserts value at start of <code>[array]</code>. Alters original <code>[array]</code></p>
+                                    <p>Checks if all elements in an <code>[array]</code> pass a test (function). Returns true if ONE passes the test. Does not alter original <code>[array]</code></p>
                                 </div>
                                 <div class="col-sm-3">
-                                    <button onclick="unshiftMembers()">Try Me</button>
+                                    <button onclick="someDogs()">Try Me</button>
                                 </div>
-                                <pre><code><p id="original2"></p></code></pre>
+                                <pre><code><p id="some"></p></code></pre>
                                 <p id="comment3"></p>
-                                <pre><code><p id="unshift"></p></code></pre>
+                                <pre><code><p id="some1"></p></code></pre>
 
                                 <div class="col-sm-5">
-                                    <p><code>array.shift();</code></p>
-                                    <!--<p><code>array.fill("", #, (#));</code></p>-->
+                                    <p><code>array.find(function(currentValue, (index), (arr)), (thisValue));</code></p>
                                 </div>
                                 <div class="col-sm-4">
-                                    <p>Removes value at start of <code>[array]</code>. Alters original <code>[array]</code> and returns a new <code>[array]</code></p>
+                                    <p>Checks if all elements in an <code>[array]</code> pass a test (function). If found, returns the found item and then stops. Does not look for more. Does not alter original <code>[array]</code></p>
                                 </div>
                                 <div class="col-sm-3">
-                                    <button onclick="shiftMembers()">Try Me</button>
+                                    <button onclick="findDogs()">Try Me</button>
                                 </div>
-                                <pre><code><p id="shift"></p></code></pre>
+                                <pre><code><p id="find"></p></code></pre>
                                 <p id="comment4"></p>
+                                <pre><code><p id="find1"></p></code></pre>
 
                                 <div class="col-sm-5">
-                                    <p><code>array.fill(value, (start), (end));</code></p>
-                                    <!--<p><code>array.fill("", #, (#));</code></p>-->
+                                    <p><code>array.findIndex(function(currentValue, (index), (arr)), (thisValue));</code></p>
                                 </div>
                                 <div class="col-sm-4">
-                                    <p>Replaces value according to # indices. If no second #, fills to the end of <code>[array]</code></p>
+                                    <p>Checks if all elements in an <code>[array]</code> pass a test (function). If found, returns the found item's index and then stops. Does not look for more. Does not alter original <code>[array]</code></p>
                                 </div>
                                 <div class="col-sm-3">
-                                    <button onclick="fillMembers()">Try Me</button>
+                                    <button onclick="findIndexDogs()">Try Me</button>
                                 </div>
-                                <pre><code><p id="fill"></p></code></pre>
+                                <pre><code><p id="findIndex"></p></code></pre>
                                 <p id="comment5"></p>
+                                <pre><code><p id="findIndex1"></p></code></pre>
 
                                 <div class="col-sm-5">
-                                    <p><code>array.slice((start / -start), (end / -end));</code></p>
-                                    <!--<p><code>array.fill("", #, (#));</code></p>-->
+                                    <p><code>array.reduce(function(currentValue, (index), (arr)), (thisValue));</code></p>
                                 </div>
                                 <div class="col-sm-4">
-                                    <p>Removes value according to # indices. If no second #, fills to the end of <code>[array]</code>. 
-                                    Does not change original <code>[array]</code></p>
+                                    <p>Reduces all elements in an <code>[array]</code> to one value. Returns that value. Does not alter original <code>[array]</code></p>
                                 </div>
                                 <div class="col-sm-3">
-                                    <button onclick="sliceMembers()">Try Me</button>
+                                    <button onclick="reduceDogs()">Try Me</button>
                                 </div>
-                                <pre><code><p id="slice"></p></code></pre>
+                                <pre><code><p id="reduce"></p></code></pre>
                                 <p id="comment6"></p>
+                                <pre><code><p id="reduce1"></p></code></pre>
 
                                 <div class="col-sm-5">
-                                    <p><code>array.splice(index / -index, (howmany), (item1, ....., itemX));</code></p>
-                                    <!--<p><code>array.fill("", #, (#));</code></p>-->
+                                    <p><code>array.reduceRight(function(currentValue, (index), (arr)), (thisValue));</code></p>
                                 </div>
                                 <div class="col-sm-4">
-                                    <p>Adds and/or removes value according to # indices. If no second #, fills to the end of <code>[array]</code>. 
-                                    Alters original <code>[array]</code></p>
+                                    <p>Reduces all elements in an <code>[array]</code> to one value. Returns that value. Does not alter original <code>[array]</code></p>
                                 </div>
                                 <div class="col-sm-3">
-                                    <button onclick="spliceMembers()">Try Me</button>
+                                    <button onclick="reduceRightDogs()">Try Me</button>
                                 </div>
-                                <pre><code><p id="splice"></p></code></pre>
+                                <pre><code><p id="reduceRight"></p></code></pre>
                                 <p id="comment7"></p>
+                                <pre><code><p id="reduceRight1"></p></code></pre>
 
                                 <div class="col-sm-5">
-                                    <p><code>array.reverse();</code></p>
-                                    <!--<p><code>array.fill("", #, (#));</code></p>-->
+                                    <p><code>array.map(function(currentValue, (index), (arr)), (thisValue));</code></p>
                                 </div>
                                 <div class="col-sm-4">
-                                    <p>Reverses original <code>[array]</code></p>
+                                    <p>Reduces all elements in an <code>[array]</code> to one value. Returns that value. Does not alter original <code>[array]</code></p>
                                 </div>
                                 <div class="col-sm-3">
-                                    <button onclick="reverseMembers()">Try Me</button>
+                                    <button onclick="mapDogs()">Try Me</button>
                                 </div>
-                                <pre><code><p id="reverse"></p></code></pre>
+                                <pre><code><p id="map"></p></code></pre>
                                 <p id="comment8"></p>
-
-                                <div class="col-sm-5">
-                                    <p><code>array.sort((compareFunction));</code></p>
-                                    <!--<p><code>array.fill("", #, (#));</code></p>-->
-                                </div>
-                                <div class="col-sm-4">
-                                    <p>Sorts original <code>[array]</code> (either alphabetically or numerically)</p>
-                                </div>
-                                <div class="col-sm-3">
-                                    <button onclick="sortMembers()">Try Me</button>
-                                </div>
-                                <pre><code><p id="sort"></p></code></pre>
-                                <p id="comment9"></p>
-
-                                <div class="col-sm-5">
-                                    <p><code>array.concat(array2, array3, ..., arrayX);</code></p>
-                                    <!--<p><code>array.fill("", #, (#));</code></p>-->
-                                </div>
-                                <div class="col-sm-4">
-                                    <p>Concatenates two <code>[arrays]</code>. Does not change original</p>
-                                </div>
-                                <div class="col-sm-3">
-                                    <button onclick="concatMembers()">Try Me</button>
-                                </div>
-                                <pre><code><p id="concat"></p></code></pre>
-                                <p id="comment10"></p>
-
-                                <div class="col-sm-5">
-                                    <p><code>array.copyWithin(target, (start), (end));</code></p>
-                                </div>
-                                <div class="col-sm-4">
-                                    <p>Copies from within an <code>[array]</code>. Changes original</p>
-                                </div>
-                                <div class="col-sm-3">
-                                    <button onclick="copyWithinMembers()">Try Me</button>
-                                </div>
-                                <pre><code><p id="copyW"></p></code></pre>
-                                <p id="comment11"></p>
-
-                                <div class="col-sm-5">
-                                    <p><code>Array.prototype.name=value;</code></p>
-                                </div>
-                                <div class="col-sm-4">
-                                    <p>Allows you to add new properties and methods to the Array() object</p>
-                                </div>
-                                <div class="col-sm-3">
-                                    <a href="https://www.w3schools.com/js/js_object_prototypes.asp" target="_blank">Read More</a>
-                                </div>
-                                <pre><code><p id="prototype"></p></code></pre>
-                                <p id="prototype1"></p>
+                                <pre><code><p id="map1"></p></code></pre>
 
                             </div>
                         </div>
@@ -261,7 +222,7 @@
                     </div>
                     <div class="col-sm-6">
                         <div class="next-page">
-                            <a class="btn button" href="array-methods-2.html" role="button">Arrays: More Array Methods<svg width="1em" height="1em" viewbox="0 0 16 16" class="bi bi-caret-right-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <a class="btn button" href="multi-dimensional-arrays.html" role="button">Arrays: Multidimensional Arrays<svg width="1em" height="1em" viewbox="0 0 16 16" class="bi bi-caret-right-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                             <path d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
                             </svg></a>
                         </div>  
@@ -293,7 +254,7 @@
         </div>
     </footer>
 
-    <script src="../scripts/arrays/array-methods.js"></script>
+    <script src="../scripts/arrays/array-methods-2.js"></script>
     
     
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

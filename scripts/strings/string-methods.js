@@ -312,26 +312,30 @@ x.constructor;
 }
 
 function why1() {
-    let x = [1, 2, 3].join(" is smaller than ");
+    let x = [1, 2, 3];
+    let y = x.join(" is smaller than ");
     document.getElementById("why1a").innerText = `To manipulate data!`;
-    document.getElementById("why1b").innerText = `[1, 2, 3];
+    document.getElementById("why1b").innerText = `let x = [1, 2, 3];
+let y = x.join(" is smaller than ");
+x;
 This is an array:
-${[1, 2, 3]};
-${[1, 2, 3].constructor};
-
-[1, 2, 3].join(" is smaller than ");
-This is a string:
-${[1, 2, 3].join(" is smaller than ")}
+${x};
 ${x.constructor};
+x[0] + " is smaller than " + x[1] + " is smaller than " + x[2];
+${x[0]} is smaller than ${x[1]} is smaller than ${x[2]}
+
+x.join(" is smaller than ");
+This is a string:
+${x.join(" is smaller than ")}
+${y.constructor};
 `;
+    document.getElementById("why1c").innerHTML = `<p>With <code>[arrays]</code>, it is difficult to manipulate individual elements of items</p>        
+<p>Example: capitalise the first letter of a word</p>
+<p>To change the first letter of a word into a capital letter, you cannot use something like</p>
+<p>.toUpperCaseFirstLetter</p>
+<p>You need to change the <code>[array]</code> into a <code>"string"</code> so that it is possible to manipulate each element of each item.</p>
+<br>`;
 }
 
-function why2() {
-    document.getElementById("why2").innerHTML = `<p>With <code>[arrays]</code>, it is difficult to manipulate individual elements of items</p>        
-    <p>Example: capitalise the first letter of a word</p>
-    <p>To change the first letter of a word into a capital letter, you cannot use something like</p>
-    <p>.toUpperCaseFirstLetter</p>
-    <p>You need to change the <code>[array]</code> into a <code>"string"</code> so that it is possible to manipulate each element of each item.</p>
-    <br>`
-}
+
 
