@@ -360,7 +360,7 @@ ${eng[1][1]}`;
 }
 
 function addBoroughs() {
-    let city = [1, "City of London", "Corporation of London", "?", 7,000];
+    let city = [1, "City of London", "Corporation of London", "?", 7,003];
     let westminster = [2, "Westminster", "Westminster City Council", "Conservative", 226,841];
     let kensington = [3, "Kensington and Chelsea", "Kensington and Chelsea London Borough Council", "Conservative", 155,594];
     let hammersmith = [4, "Hammersmith and Fulham", "Hammersmith and Fulham London Borough Council", "Labour", 178,685];
@@ -380,7 +380,7 @@ eng = ["England", ["London", ["Westminster"], [city], [westminster], [kensington
         London
         Westminster
             city
-                (1, "City of London", "Corporation of London", "?", 7,000)
+                (1, "City of London", "Corporation of London", "?", 7,003)
             westminster
                 (2, "Westminster", "Westminster City Council", "Conservative", 226,841)
             kensington
@@ -406,11 +406,75 @@ function findIndex() {
     ${indexOfRemainingArray};
     innerIndex;
     ${innerIndex}`;
+    document.getElementById("explanation").innerText = `We use .findIndex with the sub array as its currentValue function and from there we look inside the sub array for Westminster.
+We can see from this that Westminster is located at index #1 of the first array and index #1 of the second array:
+Effectively, Westminster is located at 
+eng[1][1]
+
+We know we have found Westminster rather than the array westminster (containing the map number etc) because we searched for
+"Westminster" the string
+rather than
+westminster the array.
+
+We can also see in the console that "Westminster" is indeed in this position.`;
+    console.log(`Where is Westminster?
+Open the array to see:`);
+console.log(eng);
 }
 
-//console.log(eng[1]);
-//console.log(eng[1].push("Westminster"));
-//console.log(eng);
-//console.log(eng[0]);
-//console.log(eng[1]);
-//console.log(eng[1][1]);
+function removeUsingSplice() {
+    let spliceEng = eng[1].splice(1, 1)
+    document.getElementById("splice-or-filter").innerText = `Remove entry at position 1 (and stop removing at position 1) at index #1:
+let spliceEng = eng[1].splice(1, 1);
+spliceEng;
+${spliceEng}
+
+And show what remains in array eng:
+eng;
+${eng}
+
+(Check array contents in the console)`;
+    console.clear();
+    console.log(`Open array to check for "Westminster" at index #1 of the first sub-array (thus [1][1]):`);
+    
+    for (let i = 0; i < eng[1].length; i++) {
+    console.log(i, eng[1][i]);
+    }
+
+    document.getElementById("explanation1").innerText = `Note: splice() alters the original array, thus "Westminster" has been returned into its own array`
+}
+
+function removeUsingFilter() {
+    let newEng = eng[1].filter(town => town !== 'Westminster')
+    document.getElementById("splice-or-filter").innerText = `let newEng = eng[1].filter(town => town !== 'Westminster');
+newEng;
+${newEng}
+
+eng;
+${eng}`;
+    document.getElementById("explanation1").innerText = `Note: filter() does not alter the original array. Instead, a new array [newEng] has been created in which "Westminster" is not among the contents, while the original array [eng] still contains "Westminster".`
+}
+
+function removeUsingSplice2() {
+    //eng[1][1].splice(4, 2, 7003);
+    eng[1][2].splice(4, 2, 226831);
+    eng[1][3].splice(4, 2, 155594);
+    eng[1][4].splice(4, 2, 178685);
+    document.getElementById("splice").innerText = `eng[1][1];
+${eng[1][1]}; (is [eng] with erroneous entries)
+eng[1][1].splice(4, 2, 7003);
+${eng[1][1].splice(4, 2, 7003)}; (are the two erroneous entries, removed and replaced with 7003)
+${eng[1][1]};
+
+eng[1][2].splice(4, 2, 226831);
+${eng[1][2]};
+
+eng[1][3].splice(4, 2, 155594);
+${eng[1][3]};
+
+eng[1][4].splice(4, 2, 178685);
+${eng[1][4]}`;
+    for (let i = 0; i < eng[1].length; i++) {
+    console.log(i, eng[1][i]);
+    }
+}
