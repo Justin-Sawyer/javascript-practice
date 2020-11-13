@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../assets/css/style.css" type="text/css">
+    <title>Javascripting</title>
+</head>
+<body>
+    <header>
+        <div class="wrapper">
+            <div class="sliding-background">
+            </div>
+        </div>
+    
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <a class="navbar-brand" href="../index.html">Javascripting</a>
+            <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <svg width="1em" height="1em" viewbox="0 0 16 16" class="bi bi-list" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M2.5 11.5A.5.5 0 0 1 3 11h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 7h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 3h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+                </svg>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="conditionals.html">Booleans: Conditionals <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item dropdown">       
+                    <a class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Menu
+                        <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li class="dropdown-menu-no-children">
+                                <a class="menu-list" href="../code-examples.html">Code Examples</a>
+                            </li>
+                        
+                            <li class="dropdown-submenu">
+                                <a class="menu-list" href="#">Numbers <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                <li><a href="/numbers/the-basics.html">The Basics</a></li>
+                                <li><a href="/numbers/number-methods.html">Number Methods</a></li>
+                                <li><a href="/numbers/math-methods.html">Math Methods</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="dropdown-submenu">
+                                <a class="menu-list" href="#">"strings"<span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                <li><a href="/strings/the-basics.html">The Basics</a></li>
+                                <li><a href="/strings/string-methods.html">String Methods</a></li>
+                                <li><a href="/strings/concat-and-interpolation.html">Concatenation & Interpolation</a></li>
+                                <li><a href="/strings/challenges.html">Challenges</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="dropdown-submenu">
+                                <a class="menu-list" href="#">[arrays]<span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                <li><a href="/arrays/the-basics.html">The Basics</a></li>
+                                <li><a href="/arrays/array-methods.html">Array Methods</a></li>
+                                <li><a href="/arrays/array-methods-2.html">More Array Methods</a></li>
+                                <li><a href="/arrays/multi-dimensional-arrays.html">Multidimensional Arrays</a></li>
+                                <li><a href="/arrays/challenges.html">Challenges</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="dropdown-submenu">
+                                <a class="menu-list" href="#">Booleans<span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                <li><a href="/booleans/the-basics.html">The Basics</a></li>
+                                <li><a href="/booleans/conditionals.html">Conditionals</a></li>
+                                </ul>
+                            </li>
+
+                            </ul>
+                        </li>
+                    </ul>
+                <!--
+                <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                </form>-->    
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container body-container">
+            <div class="page-name">
+                <h1>Conditionals:</h1>
+                <p>As <code>booleans</code> are either true or false, they allow conditions such as:</p>
+                <p>If x is true, do y, otherwise do z</p>
+                <p>The condition does not have to be a one-off, it can be multiple:</p>
+                <p>If a || / &&  b is true, do z</p>
+                <p>Once the condition is found to be false, then the code skips the condition and either stops or runs an alternative condition:</p>
+                <br>
+                <pre><code><p class="example"></p></code></pre>
+                <br>
+                <p>Let's run this as a piece of code, and alert the answer:</p>
+                <br>
+                <p>What is the answer to Life, the Universe and Everything?</p>
+                <input id="answer">
+                <button type="button" onclick="theAnswer()">Submit</button>
+                <pre><code><p id="answerCode"></p></code></pre>
+                <br>
+                <p>From here, we could add another "clause" to the code:</p>
+                <pre><code><p>if (y == 42 || y == "ask the mice")</p></code></pre>
+                <br>
+                <p>What is the answer to Life, the Universe and Everything?</p>
+                <input id="answer1">
+                <button type="button" onclick="theAnswer1()">Submit</button>
+                <pre><code><p id="answerCode1"></p></code></pre>
+                <br>
+                <p>There are many ways to express these conditions in code:</p>
+                <ol>
+                    <li><code>If... else</code>:</li>
+                    <pre><code><p class="example"></p></code></pre>
+                    <p class="tab">Our first example. This states that IF the submitted text is 42, then an alert saying
+                     "Got your towel, hitchhiker?" should be displayed. ELSE (ie. in all other cases) the alert should read, "What was the question?"</p>
+                    <p>From this example we added the second clause using a Boolean conditional, <code>||</code>:</p>
+                    <pre><code><p id="example2"></p></code></pre>
+                    <p>Thus, IF the submitted text is 42 OR "ask the mice"...</p>
+                    <p>We can also express this in a different way:</p>
+                    <br>
+                    <li><code>Else... if</code>:</li>
+                    <pre><code><p id="answer2"></p></code></pre>
+                    <p>We have added the clause <code>else if (y = "Zaphod knows!")</code>, thus we now have 3 "options" 
+                    plus one "fall-back option":</p>
+                    <br>
+                    <p>What is the answer to Life, the Universe and Everything?</p>
+                    <input id="answer3">
+                    <button type="button" onclick="theAnswer3()">Submit</button>
+                    <br>
+                    <p>However, we have to be a bit careful with these statements, as once the code finds the FIRST truth, it will skip to the end of the code:</p>
+                    <pre><code><p id="lessThan1"></p></code></pre>
+                    <p>does NOT give the same answer as</p>
+                    <pre><code><p id="lessThan2"></p></code></pre>
+                    <button onclick="lessThanAlert1()">2&gt5 else if 2&gt1</button><button onclick="lessThanAlert2()">2&lt5 else if 2&gt1</button>
+                    <p>Even if we know that BOTH are true in the second example, the code has found its first truth and stopped.</p>
+                    
+                    
+                    <ul>
+                        <li><code>&lt</code></li>
+                        <p class="tab">Is less than</p>
+                        <pre><code><p id="islessthan"></p></code></pre>
+
+                        <li><code>&lt=</code></li>
+                        <p class="tab">Is less than or equal to</p>
+                        <pre><code><p id="islessorequalto"></p></code></pre>
+
+                        <li><code>&gt</code></li>
+                        <p class="tab">Is greater than</p>
+                        <pre><code><p id="isgreaterthan"></p></code></pre>
+
+                        <li><code>&gt=</code></li>
+                        <p class="tab">Is greater than or equal to</p>
+                        <pre><code><p id="isgreaterorequalto"></p></code></pre>
+
+                        <li><code>==</code></li>
+                        <p class="tab">Is the same as</p>
+                        <pre><code><p id="isequalto"></p></code></pre>
+
+                        <li><code>===</code></li>
+                        <p class="tab">Is identical to</p>
+                        <pre><code><p id="isidenticalto"></p></code></pre>
+
+                        <li><code>!=</code></li>
+                        <p class="tab">Is not the same as</p>
+                        <pre><code><p id="isnotequalto"></p></code></pre>
+
+                        <li><code>!==</code></li>
+                        <p class="tab">Is not identical to</p>
+                        <pre><code><p id="isnotidenticalto"></p></code></pre>
+
+                    </ul>
+                    <li>Methods:</li>
+                    <ul>
+                        <li><code>Boolean()</code></li>
+                        <pre><code><p id="boolean"></p></code></pre>
+                    </ul>
+                    <li>Operators:</li>
+                    <ul>
+                        <li><code>&&</code></li>
+                        <p class="tab">Returns <code>true</code> if both sides of the argument are <strong>true</strong> (that is, different to "the same")</p>
+                        <pre><code><p id="andand"></p></code></pre>
+                        <li><code>||</code></li>
+                        <p class="tab">Returns <code>true</code> if one side of the argument is <strong>true</strong> (that is, different to "the same")</p>
+                        <pre><code><p id="oror"></p></code></pre>
+                        <li><code>!</code></li>
+                        <p class="tab">Negates the result:</p>
+                        <pre><code><p id="negates"></p></code></pre>
+                    </ul>
+                </ol>
+                             
+            </div> 
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="Last-page">
+                            <a class="btn button" style="text-align: left" href="the-basics.html" role="button"><svg width="1em" height="1em" viewbox="0 0 16 16" class="bi bi-caret-left-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3.86 8.753l5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"/>
+                            </svg> Booleans: The Basics</a>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="next-page">
+                            <a class="btn button" href="array-methods.html" role="button">Arrays: Array Methods <svg width="1em" height="1em" viewbox="0 0 16 16" class="bi bi-caret-right-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+                            </svg></a>
+                        </div>  
+                    </div> 
+                </div> 
+            </div>       
+        </div>
+    </main>
+
+    <footer>
+        <div class="container-fluid footer-section">
+            <div class="foot-body">
+                <h6>This website was created by Justin Sawyer</h6>
+            </div>
+
+            <div class="container links-and-outside-links">
+                <div class="container website-links">
+                    <p>In-site code links:</p>
+                    <ul class="footer-menu">
+                            <li class="footer-menu-link">
+                                <a class="footer-menu-list" href="code-examples.html">Code Examples</a>
+                            </li>
+                    </ul>
+                </div>
+                <div class="container outside-links">
+                    <p>Hi</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../scripts/booleans/conditionals.js"></script>
+    
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+    <script>
+        $(document).ready(function(){
+        $('.dropdown-submenu a.menu-list').on("click", function(e){
+            $(this).next('ul').toggle();
+            e.stopPropagation();
+            e.preventDefault();
+        });
+        });
+    </script>
+</body>
+</html>

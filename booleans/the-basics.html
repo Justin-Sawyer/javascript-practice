@@ -25,7 +25,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="challenges.html">[arrays]: Challenges <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="the-basics.html">Booleans: The Basics <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item dropdown">       
                     <a class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Menu
@@ -57,19 +57,19 @@
                             <li class="dropdown-submenu">
                                 <a class="menu-list" href="#">[arrays]<span class="caret"></span></a>
                                 <ul class="dropdown-menu">
-                                <li><a href="the-basics.html">The Basics</a></li>
-                                <li><a href="array-methods.html">Array Methods</a></li>
-                                <li><a href="array-methods-2.html">More Array Methods</a></li>
-                                <li><a href="multi-dimensional-arrays.html">Multidimensional Arrays</a></li>
-                                <li><a href="challenges.html">Challenges</a></li>
+                                <li><a href="/arrays/the-basics.html">The Basics</a></li>
+                                <li><a href="/arrays/array-methods.html">Array Methods</a></li>
+                                <li><a href="/arrays/array-methods-2.html">More Array Methods</a></li>
+                                <li><a href="/arrays/multi-dimensional-arrays.html">Multidimensional Arrays</a></li>
+                                <li><a href="/arrays/challenges.html">Challenges</a></li>
                                 </ul>
                             </li>
 
                             <li class="dropdown-submenu">
                                 <a class="menu-list" href="#">Booleans<span class="caret"></span></a>
                                 <ul class="dropdown-menu">
-                                <li><a href="../booleans/the-basics.html">The Basics</a></li>
-                                <li><a href="../booleans/conditionals.html">Conditionals</a></li>
+                                <li><a href="/booleans/the-basics.html">The Basics</a></li>
+                                <li><a href="/booleans/conditionals.html">Conditionals</a></li>
                                 </ul>
                             </li>
 
@@ -88,44 +88,88 @@
     <main>
         <div class="container body-container">
             <div class="page-name">
-                <h1>Challenges:</h1>
-                <p>Flatten the <code>[arrays]</code>:</p>
-                <p class="codepen" data-editable data-height="265" data-theme-id="dark" data-default-tab="js,result" data-user="JustinSawyer" data-slug-hash="vYKQQOb" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Flatten arrays">
-                <span>See the Pen <a href="https://codepen.io/JustinSawyer/pen/vYKQQOb">
-                Flatten arrays</a> by Justin Sawyer (<a href="https://codepen.io/JustinSawyer">@JustinSawyer</a>)
-                on <a href="https://codepen.io">CodePen</a>.</span>
-                </p>
-                <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+                <h1>The Basics:</h1>
+                <p><code>Booleans</code> are either true or false. They are a data type. They can be stored in <code>[arrays]</code>. When
+                they are, they are stored WITHOUT "".</p>
                 <br>
+                <p><code>myArray = ["one", "two", 3, 4, true, "true", false, "false"];</code></p>
+                <p>where true and false are booleans, but "true" and "false" are strings:</p>
+                <pre><code><p id="typeof"></p></code></pre>
+                <br>
+                <ol>
+                    <li>Comparators:</li>
+                    <ul>
+                        <li><code>&lt</code></li>
+                        <p class="tab">Is less than</p>
+                        <pre><code><p id="islessthan"></p></code></pre>
 
-                <p>Add <code>[arrays]</code> "city, "westminster", "kensington" and "hammersmith" to the end of the sub array inside <code>[array]</code> "eng" and log the result in the console:</p>
-                <p class="codepen" data-editable data-height="602" data-theme-id="dark" data-default-tab="js,result" data-user="JustinSawyer" data-slug-hash="vYKQQOb" style="height: 602px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Add arrays to index point in  array">
-                <span>See the Pen <a href="https://codepen.io/JustinSawyer/pen/vYKQQOb">
-                Add arrays to index point in  array</a> by Justin Sawyer (<a href="https://codepen.io/JustinSawyer">@JustinSawyer</a>)
-                on <a href="https://codepen.io">CodePen</a>.</span>
-                </p>
-                <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
-            
-        
+                        <li><code>&lt=</code></li>
+                        <p class="tab">Is less than or equal to</p>
+                        <pre><code><p id="islessorequalto"></p></code></pre>
+
+                        <li><code>&gt</code></li>
+                        <p class="tab">Is greater than</p>
+                        <pre><code><p id="isgreaterthan"></p></code></pre>
+
+                        <li><code>&gt=</code></li>
+                        <p class="tab">Is greater than or equal to</p>
+                        <pre><code><p id="isgreaterorequalto"></p></code></pre>
+
+                        <li><code>==</code></li>
+                        <p class="tab">Is the same as</p>
+                        <pre><code><p id="isequalto"></p></code></pre>
+
+                        <li><code>===</code></li>
+                        <p class="tab">Is identical to</p>
+                        <pre><code><p id="isidenticalto"></p></code></pre>
+
+                        <li><code>!=</code></li>
+                        <p class="tab">Is not the same as</p>
+                        <pre><code><p id="isnotequalto"></p></code></pre>
+
+                        <li><code>!==</code></li>
+                        <p class="tab">Is not identical to</p>
+                        <pre><code><p id="isnotidenticalto"></p></code></pre>
+
+                    </ul>
+                    <li>Methods:</li>
+                    <ul>
+                        <li><code>Boolean()</code></li>
+                        <pre><code><p id="boolean"></p></code></pre>
+                    </ul>
+                    <li>Operators:</li>
+                    <ul>
+                        <li><code>&&</code></li>
+                        <p class="tab">Returns <code>true</code> if both sides of the argument are <strong>true</strong> (that is, different to "the same")</p>
+                        <pre><code><p id="andand"></p></code></pre>
+                        <li><code>||</code></li>
+                        <p class="tab">Returns <code>true</code> if one side of the argument is <strong>true</strong> (that is, different to "the same")</p>
+                        <pre><code><p id="oror"></p></code></pre>
+                        <li><code>!</code></li>
+                        <p class="tab">Negates the result:</p>
+                        <pre><code><p id="negates"></p></code></pre>
+                    </ul>
+                </ol>             
+            </div> 
+
             <div class="container">
                 <div class="row">
                     <div class="col-sm-6">
                         <div class="Last-page">
-                            <a class="btn button" style="text-align: left" href="multi-dimensional-arrays.html" role="button"><svg width="1em" height="1em" viewbox="0 0 16 16" class="bi bi-caret-left-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <a class="btn button" style="text-align: left" href="../strings/challenges.html" role="button"><svg width="1em" height="1em" viewbox="0 0 16 16" class="bi bi-caret-left-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                             <path d="M3.86 8.753l5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"/>
-                            </svg> Arrays: Multidimensional Arrays</a>
+                            </svg> Strings: Challenges</a>
                         </div>
                     </div>
                     <div class="col-sm-6">
                         <div class="next-page">
-                            <a class="btn button" href="challenges.html" role="button">Arrays: Challenges<svg width="1em" height="1em" viewbox="0 0 16 16" class="bi bi-caret-right-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <a class="btn button" href="conditionals.html" role="button">Booleans: Conditionals <svg width="1em" height="1em" viewbox="0 0 16 16" class="bi bi-caret-right-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                             <path d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
                             </svg></a>
                         </div>  
                     </div> 
                 </div> 
             </div>       
-        </div>
         </div>
     </main>
 
@@ -151,7 +195,7 @@
         </div>
     </footer>
 
-    <script src="../scripts/arrays/challenges.js"></script>
+    <script src="../scripts/booleans/booleans.js"></script>
     
     
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
