@@ -105,13 +105,25 @@
                 <pre><code><p id="answerCode"></p></code></pre>
                 <br>
                 <p>From here, we could add another "clause" to the code:</p>
-                <pre><code><p>if (y == 42 || y == "ask the mice")</p></code></pre>
+                <pre><code><p>if (y == 42 || y == "mice")</p></code></pre>
                 <br>
                 <p>What is the answer to Life, the Universe and Everything?</p>
                 <input id="answer1">
                 <button type="button" onclick="theAnswer1()">Submit</button>
                 <pre><code><p id="answerCode1"></p></code></pre>
                 <br>
+                <p>And again, we can add another clause. This time, we add <code>&&</code>. However, here, we will most often need 2 variables
+                (not the case for a mathematical code block, since there are various ways to achieve an answer in maths: (6+5)=(10+1)):</p>
+                <pre><code><p>if (x == 42 && y == "mice")</p></code></pre>
+                <br>
+                <p>What is the answer to Life, the Universe and Everything?</p>
+                <input id="answer42">
+                <p>Who should I ask for the answer?</p>
+                <input id="answerMice">
+                <button type="button" onclick="theAnswer2()">Submit</button>
+                <pre><code><p id="answerCode2"></p></code></pre>
+                <br>
+
                 <p>There are many ways to express these conditions in code:</p>
                 <ol>
                     <li><code>If... else</code>:</li>
@@ -120,7 +132,7 @@
                      "Got your towel, hitchhiker?" should be displayed. ELSE (ie. in all other cases) the alert should read, "What was the question?"</p>
                     <p>From this example we added the second clause using a Boolean conditional, <code>||</code>:</p>
                     <pre><code><p id="example2"></p></code></pre>
-                    <p>Thus, IF the submitted text is 42 OR "ask the mice"...</p>
+                    <p>Thus, IF the submitted text is 42 OR "mice"...</p>
                     <p>We can also express this in a different way:</p>
                     <br>
                     <li><code>Else... if</code>:</li>
@@ -132,15 +144,64 @@
                     <input id="answer3">
                     <button type="button" onclick="theAnswer3()">Submit</button>
                     <br>
+                    <br>
                     <p>However, we have to be a bit careful with these statements, as once the code finds the FIRST truth, it will skip to the end of the code:</p>
                     <pre><code><p id="lessThan1"></p></code></pre>
                     <p>does NOT give the same answer as</p>
                     <pre><code><p id="lessThan2"></p></code></pre>
                     <button onclick="lessThanAlert1()">2&gt5 else if 2&gt1</button><button onclick="lessThanAlert2()">2&lt5 else if 2&gt1</button>
                     <p>Even if we know that BOTH are true in the second example, the code has found its first truth and stopped.</p>
+                    <br>
+                    <li>The Ternary Operator:</li>
+                    <p class="tab"><code>condition ? expression1 : expression2</code></p>
+                    <p class="tab">where <code>condition</code> is the variable (y == 42)</p>
+                    <p class="tab"><code>expression 1</code> is the <code>if</code> and</p>
+                    <p class="tab"><code>expression 2</code> is the <code>else</code>:</p>
+                    <pre><code><p id="ternary"></p></code></pre>
+                    <br>
+                    <p>What is the answer to Life, the Universe and Everything?</p>
+                    <input id="answer4">
+                    <button type="button" onclick="theAnswer4()">Submit</button>
+                    <br>
+                    <br>
+                    <li>Nested Conditions:</li>
+                    <p>The above are very good for "black and white" answers. But nested conditions offer more nuance:</p>
+                    <pre><code><p id="nested"></p></code></pre>
+                    <button type="button" onclick="tryMe()">Try Me</button>
+                    <p>You'll notice that both statements get alerted. Since the first condition is true, the code runs this statement and then continues
+                    to the next statement. Since this is also true, the code runs the second statement aswell.</p>
+                    <p>However, again, there are caveats to this code:</p>
+                    <pre><code><p id="nested2"></p></code></pre>
+                    <button type="button" onclick="tryMe2()">Try Me</button>
+                    <p>Here, the <code>else</code> statement has been alerted, EVEN THOUGH the second <code>if</code> statement is true. The code has found 
+                    the first <code>if</code> condition to be false, and thus skips to the <code>else</code> condition.</p>
+                    <br>
+                    <p>We can go further. Here, we add a second <code>else</code> to the second <code>if</code> statement:</p>
+                    <pre><code><p id="nested3"></p></code></pre>
+                    <button type="button" onclick="tryMe3()">Try Me</button>
+                    <p>Since 5 is indeed greater than 2, the first <code>if</code> statement is alerted, and the code then proceeds to the next, nested segment of 
+                    the code block. And since 1 is NOT greater than 3, the nested <code>else</code> statement is alerted.</p>
+                    <p>This, then, in the real world, would be a perfect way to create an online quiz.</p>
+                    <p>Let's try just that!</p>
+                    <br>
+                    <p>Q1: What is the answer to Life, the Universe and Everything?</p>
+                    <input id="q1">
+                    <p id="q1r"></p>
+                    <p>Q2: Who should I ask for the answer?</p>
+                    <input id="q2">
+                    <p id="q2r"></p>
+                    <p>Q3: What is written in reassuring letters on the cover of the guide?</p>
+                    <input id="q3">
+                    <p id="q3r"></p>
+                    <p>Q4: Who designed the Norwegian fjords?</p>
+                    <input id="q4">
+                    <p id="q4r"></p>
+                    <button type="button" onclick="hitchhikerQuiz()">Submit</button>
+                    <br>
+                    <pre><code><p id="quiz"></p></code></pre>
+
                     
-                    
-                    <ul>
+                    <!--<ul>
                         <li><code>&lt</code></li>
                         <p class="tab">Is less than</p>
                         <pre><code><p id="islessthan"></p></code></pre>
@@ -190,7 +251,7 @@
                         <li><code>!</code></li>
                         <p class="tab">Negates the result:</p>
                         <pre><code><p id="negates"></p></code></pre>
-                    </ul>
+                    </ul>-->
                 </ol>
                              
             </div> 
