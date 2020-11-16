@@ -254,6 +254,49 @@ It has to be assigned as a variable.`);
 }`;
 }
 
+//3 (to base#)
+function integerToStrBase() {
+    let a = 12;
+    let b = 13;
+    let c = 22;
+    let d = 15;
+
+    let num1 = a.toString();
+
+    /* binary system */
+    let num2 = b.toString(2);
+
+    /* octal system */
+    let num3 = c.toString(8);
+
+    /* hexadecimal system */
+    let num4 = d.toString(16);
+    alert("The number 12 in base 10 is " + num1);
+    alert("The number 13 in base 2 is " + num2);
+    alert("The number 22 in base 8 is " + num3);
+    alert("The number 15 in base 16 is " + num4);
+
+    document.getElementById("resultToVariableToStringBase").innerText = `let a = 12;
+let b = 13;
+let c = 22;
+let d = 15;
+
+let num1 = a.toString();
+
+/* binary system */
+let num2 = b.toString(2);
+
+/* octal system */
+let num3 = c.toString(8);
+
+/* hexadecimal system */
+let num4 = d.toString(16);
+alert("The number 12 in base 10 is " + num1);
+alert("The number 13 in base 2 is " + num2);
+alert("The number 22 in base 8 is " + num3);
+alert("The number 15 in base 16 is " + num4);`
+}
+
 //variable.toFixed()
 //1
 function floatToFixedNone() {

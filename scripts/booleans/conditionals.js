@@ -384,3 +384,104 @@ Whichever, you're a true Hitchhiker!";
 }
 </script>`
 })();
+
+//Switch
+(function swtch() {
+    document.getElementById("switch").innerText = `let fruit = "banana";
+
+switch (fruit) {
+    case 'apple': alert("The fruit is a apple");
+    break;
+  
+    case "lemon": alert("The fruit is a lemon");
+    break;
+	
+    case "strawberry": alert("The fruit is a strawberry");
+    break;
+	
+    case "banana": alert("The fruit is a banana");
+    break;
+    
+    default: alert("This is the default value when none of the cases were true. In other words, you chose a different fruit!");
+}`;
+})();
+
+function fruit() {
+    let y, text;
+    y = document.getElementById("fruit").value;
+    let fruit = "banana";
+    switch (y) {
+        case 'apple': text = "The fruit is an apple";
+        break;
+    
+        case "lemon": text = "The fruit is a lemon";
+        break;
+        
+        case "strawberry": text = "The fruit is a strawberry";
+        break;
+        
+        case "banana": text = "The fruit is a banana";
+        break;
+        
+        default: text = "This is the default value when none of the cases were true. In other words, you chose a different fruit!";
+    }
+    alert(text);
+    document.getElementById("fruitr").innerText = `let y, text;
+y = document.getElementById("fruit").value;
+let fruit = "banana";
+switch (y) {
+    case 'apple': text = "The fruit is an apple";
+    break;
+
+    case "lemon": text = "The fruit is a lemon";
+    break;
+    
+    case "strawberry": text = "The fruit is a strawberry";
+    break;
+    
+    case "banana": text = "The fruit is a banana";
+    break;
+    
+    default: text = "This is the default value when none of the cases were true. In other words, you chose a different fruit!";
+}
+alert(text);`
+}
+
+function fruit1() {
+    let f;
+    f = document.getElementById("fruit1").value;
+    let fruit1 = "banana";
+    switch (f) {
+        case 'apple': alert("The fruit is an apple");
+        
+    
+        case "lemon": alert("The fruit is a lemon");
+        
+        
+        case "strawberry": alert("The fruit is a strawberry");
+        
+        
+        case "banana": alert("The fruit is a banana");
+        
+        
+        default: alert("This is the default value when none of the cases were true. In other words, you chose a different fruit!");
+    };
+    document.getElementById("fruit1r").innerText = `let f;
+f = document.getElementById("fruit1").value;
+let fruit1 = "banana";
+switch (f) {
+    case 'apple': alert("The fruit is an apple");
+    
+
+    case "lemon": alert("The fruit is a lemon");
+    
+    
+    case "strawberry": alert("The fruit is a strawberry");
+    
+    
+    case "banana": alert("The fruit is a banana");
+    
+    
+    default: alert("This is the default value when none of the cases were true. In other words, you chose a different fruit!");
+}`
+}

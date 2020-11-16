@@ -254,7 +254,12 @@ myLetter.split(" ");
 
 myLetter.split("30");
 
-` + myLetter.split("30")
+` + myLetter.split("30") + `
+
+myLetter.split("a", 4);
+
+` + myLetter.split("a", 4); + `
+In this last case, we tell the code to split at each "a", and then to stop at the 4th occurence of the letter "a".`
 }
 
 //repeat
