@@ -3,8 +3,12 @@ h1, h2, h3, h4, h5, h6, p, code, li, .link {
     font-family: Menlo, sans-serif;
 }
 
+h1 {
+    font-size: 7vw;
+}
+
 h2 {
-    font-size: x-large;
+    font-size: 5vw;
 }
 
 h3 {
