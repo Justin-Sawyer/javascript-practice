@@ -112,4 +112,68 @@ https://repl.it/@JustinSawyer/break2
 https://repl.it/@JustinSawyer/break3-with-igors-answers
 https://repl.it/@JustinSawyer/break-solutions#index.html`);
 
+//----------------------------------------------------------------------------   Break and continue
+//For loop
+(function forLoop() {
+    document.getElementById("forLoop").innerText = `for (let statement 1; statement 2; statement 3) {
+    code block to be executed {
+        break;
+    };
+    alert/log etc;
+}`;
+})();
+
+(function dogsAlbums() {
+    /*let dogsAlbums = ["(Un)authorised Bootleg Album", "Dynamite Jet Saloon", "Errol Flynn", "Straight", "More Unchartered Heights Of Disgrace"];
+    let i;
+    for (i=0; i<dogsAlbums.length; i++) {
+        if (i === 3) {
+            break;
+        };
+        alert(dogsAlbums[i]);
+    };*/
+    document.getElementById("dogsAlbums").innerText = `let dogsAlbums = ["(Un)authorised Bootleg Album", "Dynamite Jet Saloon", "Errol Flynn", "Straight", "More Unchartered Heights Of Disgrace"];
+let i;
+    for (i=0; i<dogsAlbums.length; i++) {
+        if (i === 3) {
+            break;
+        };
+        alert(dogsAlbums[i]);
+    };`
+})();
+
+function tryMe() {
+    let dogsAlbums = ["(Un)authorised Bootleg Album", "Dynamite Jet Saloon", "Errol Flynn", "Straight", "More Unchartered Heights Of Disgrace"];
+    let i;
+    for (i=0; i<dogsAlbums.length; i++) {
+        if (i === 3) {
+            break;
+        };
+        //alert(dogsAlbums[i]);
+        document.getElementById("result").innerText = dogsAlbums[i] + ` is the correct answer!`;
+        document.getElementById("result").style.color = "#c13e70";
+    };
+}
+
+function tryMe2() {
+    let dogsAlbums = ["(Un)authorised Bootleg Album", "Dynamite Jet Saloon", "Errol Flynn", "Straight", "More Unchartered Heights Of Disgrace"];
+    let i;
+    for (i=0; i<dogsAlbums.length; i++) {
+        if (i === "Errol Flynn") {
+            break;
+        };
+        //alert(dogsAlbums[i]);
+        document.getElementById("result").innerText = dogsAlbums[i] + ` is NOT the correct answer!`;;
+        document.getElementById("result").style.color = "#c13e70";
+    };
+}
+
+//For in loop
+(function dogsAlbumsForIn() {
+    let dogsAlbums = ["(Un)authorised Bootleg Album", "Dynamite Jet Saloon", "Errol Flynn", "Straight", "More Unchartered Heights Of Disgrace"];
+    let i;
+})();
+
+
+
 

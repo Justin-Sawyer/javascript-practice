@@ -70,7 +70,21 @@
                                 <ul class="dropdown-menu">
                                 <li><a href="/booleans/the-basics.html">The Basics</a></li>
                                 <li><a href="/booleans/conditionals.html">Conditionals</a></li>
+                                <li><a href="/booleans/conversions.html">Conversions</a></li>
                                 <li><a href="/booleans/challenges.html">Challenges</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="dropdown-menu-no-children">
+                                <a class="menu-list" href="../type-conversion.html">Type Conversion</a>
+                            </li>
+
+                            <li class="dropdown-submenu">
+                                <a class="menu-list" href="#">Loops<span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                <li><a href="../loops/the-basics.html">The Basics</a></li>
+                                <li><a href="../loops/loops.html">Loops</a></li>
+                                <li><a href="../loops/break-and-continue.html">Loops</a></li>
                                 </ul>
                             </li>
 
@@ -98,149 +112,6 @@
                 </p>
                 <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
                 <br>
-
-
-
-                <!--<p>As <code>booleans</code> are either true or false, they allow conditions such as:</p>
-                <p>If x is true, do y, otherwise do z</p>
-                <p>The condition does not have to be a one-off, it can be multiple:</p>
-                <p>If a || / &&  b is true, do z</p>
-                <p>Once the condition is found to be false, then the code skips the condition and either stops or runs an alternative condition:</p>
-                <br>
-                <pre><code><p class="example"></p></code></pre>
-                <br>
-                <p>Let's run this as a piece of code, and alert the answer:</p>
-                <br>
-                <p>What is the answer to Life, the Universe and Everything?</p>
-                <input id="answer">
-                <button type="button" onclick="theAnswer()">Submit</button>
-                <pre><code><p id="answerCode"></p></code></pre>
-                <br>
-                <p>From here, we could add another "clause" to the code:</p>
-                <pre><code><p>if (y == 42 || y == "mice")</p></code></pre>
-                <br>
-                <p>What is the answer to Life, the Universe and Everything?</p>
-                <input id="answer1">
-                <button type="button" onclick="theAnswer1()">Submit</button>
-                <pre><code><p id="answerCode1"></p></code></pre>
-                <br>
-                <p>And again, we can add another clause. This time, we add <code>&&</code>. However, here, we will most often need 2 variables
-                (not the case for a mathematical code block, since there are various ways to achieve an answer in maths: (6+5)=(10+1)):</p>
-                <pre><code><p>if (x == 42 && y == "mice")</p></code></pre>
-                <br>
-                <p>What is the answer to Life, the Universe and Everything?</p>
-                <input id="answer42">
-                <p>Who should I ask for the answer?</p>
-                <input id="answerMice">
-                <button type="button" onclick="theAnswer2()">Submit</button>
-                <pre><code><p id="answerCode2"></p></code></pre>
-                <br>
-
-                <p>There are many ways to express these conditions in code:</p>
-                <ol>
-                    <li><code>If... else</code>:</li>
-                    <pre><code><p class="example"></p></code></pre>
-                    <p class="tab">Our first example. This states that IF the submitted text is 42, then an alert saying
-                     "Got your towel, hitchhiker?" should be displayed. ELSE (ie. in all other cases) the alert should read, "What was the question?"</p>
-                    <p>From this example we added the second clause using a Boolean conditional, <code>||</code>:</p>
-                    <pre><code><p id="example2"></p></code></pre>
-                    <p>Thus, IF the submitted text is 42 OR "mice"...</p>
-                    <p>We can also express this in a different way:</p>
-                    <br>
-                    <li><code>Else... if</code>:</li>
-                    <pre><code><p id="answer2"></p></code></pre>
-                    <p>We have added the clause <code>else if (y = "Zaphod knows!")</code>, thus we now have 3 "options" 
-                    plus one "fall-back option":</p>
-                    <br>
-                    <p>What is the answer to Life, the Universe and Everything?</p>
-                    <input id="answer3">
-                    <button type="button" onclick="theAnswer3()">Submit</button>
-                    <br>
-                    <br>
-                    <p>However, we have to be a bit careful with these statements, as once the code finds the FIRST truth, it will skip to the end of the code:</p>
-                    <pre><code><p id="lessThan1"></p></code></pre>
-                    <p>does NOT give the same answer as</p>
-                    <pre><code><p id="lessThan2"></p></code></pre>
-                    <button onclick="lessThanAlert1()">2&gt5 else if 2&gt1</button><button onclick="lessThanAlert2()">2&lt5 else if 2&gt1</button>
-                    <p>Even if we know that BOTH are true in the second example, the code has found its first truth and stopped.</p>
-                    <br>
-                    <li>The Ternary Operator:</li>
-                    <p class="tab"><code>condition ? expression1 : expression2</code></p>
-                    <p class="tab">where <code>condition</code> is the variable (y == 42)</p>
-                    <p class="tab"><code>expression 1</code> is the <code>if</code> and</p>
-                    <p class="tab"><code>expression 2</code> is the <code>else</code>:</p>
-                    <pre><code><p id="ternary"></p></code></pre>
-                    <br>
-                    <p>What is the answer to Life, the Universe and Everything?</p>
-                    <input id="answer4">
-                    <button type="button" onclick="theAnswer4()">Submit</button>
-                    <br>
-                    <br>
-                    <li>Nested Conditions:</li>
-                    <p>The above are very good for "black and white" answers. But nested conditions offer more nuance:</p>
-                    <pre><code><p id="nested"></p></code></pre>
-                    <button type="button" onclick="tryMe()">Try Me</button>
-                    <p>You'll notice that both statements get alerted. Since the first condition is true, the code runs this statement and then continues
-                    to the next statement. Since this is also true, the code runs the second statement aswell.</p>
-                    <p>However, again, there are caveats to this code:</p>
-                    <pre><code><p id="nested2"></p></code></pre>
-                    <button type="button" onclick="tryMe2()">Try Me</button>
-                    <p>Here, the <code>else</code> statement has been alerted, EVEN THOUGH the second <code>if</code> statement is true. The code has found 
-                    the first <code>if</code> condition to be false, and thus skips to the <code>else</code> condition.</p>
-                    <br>
-                    <p>We can go further. Here, we add a second <code>else</code> to the second <code>if</code> statement:</p>
-                    <pre><code><p id="nested3"></p></code></pre>
-                    <button type="button" onclick="tryMe3()">Try Me</button>
-                    <p>Since 5 is indeed greater than 2, the first <code>if</code> statement is alerted, and the code then proceeds to the next, nested segment of 
-                    the code block. And since 1 is NOT greater than 3, the nested <code>else</code> statement is alerted.</p>
-                    <p>This, then, in the real world, would be a perfect way to create an online quiz.</p>
-                    <p>Let's try just that!</p>
-                    <br>
-                    <p>Q1: What is the answer to Life, the Universe and Everything?</p>
-                    <input id="q1">
-                    <p id="q1r"></p>
-                    <p>Q2: Who should I ask for the answer?</p>
-                    <input id="q2">
-                    <p id="q2r"></p>
-                    <p>Q3: What is written in reassuring letters on the cover of the guide?</p>
-                    <input id="q3">
-                    <p id="q3r"></p>
-                    <p>Q4: Who designed the Norwegian fjords?</p>
-                    <input id="q4">
-                    <p id="q4r"></p>
-                    <button type="button" onclick="hitchhikerQuiz()">Submit</button>
-                    <br>
-                    <pre><code><p id="quiz"></p></code></pre>
-                    <br>
-                    <br>
-                    <p>The code above looks complicated, and indeed it is. But effectively, it is 3 nested conditions within the first condition:</p>
-                    <p class="codepen" data-height="393" data-theme-id="dark" data-default-tab="js" data-user="JustinSawyer" data-slug-hash="gOMEmEM" style="height: 393px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="nested if else explanation">
-                    <span>See the Pen <a href="https://codepen.io/JustinSawyer/pen/gOMEmEM">
-                    nested if else explanation</a> by Justin Sawyer (<a href="https://codepen.io/JustinSawyer">@JustinSawyer</a>)
-                    on <a href="https://codepen.io">CodePen</a>.</span>
-                    </p>
-                    <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
-
-                    <br>
-                    <p>Again, the above code is complicated. Especially so as we are "playing" with numerous variables - the four questions.</p>
-                    <p>For more simple situations, when dealing with one variable, there is a different, simpler solution:</p>
-                    <br>
-                    <li>Switch conditions:</li>
-                    <pre><code><p id="switch"></p></code></pre>
-                    <p>What is your favourite fruit?</p>
-                    <input id="fruit">
-                    <button type="button" onclick="fruit()">Submit</button>
-                    <pre><code><p id="fruitr"></p></code></pre>
-                    <p>The code above translates as:</p>
-                    <p><code>If</code> you choose either an apple, lemon, strawberry or banana, then the alert will alert your choice.</p>
-                    <p><code>Else</code>, the deault will alert.</p>
-                    <p>The <code>break;</code> is important. Without it, the code will run both your answer and anything in the line(s) beneath your choice.</p>
-                    <br>
-                    <p>Q4: What is your favourite fruit?</p>
-                    <input id="fruit1">
-                    <button type="button" onclick="fruit1()">Submit</button>
-                    <pre><code><p id="fruit1r"></p></code></pre>
-                </ol>-->
                              
             </div> 
             <div class="container">
@@ -254,7 +125,7 @@
                     </div>
                     <div class="col-sm-6">
                         <div class="next-page">
-                            <a class="btn button" href="challengess.html" role="button">Booleans: Challenges <svg width="1em" height="1em" viewbox="0 0 16 16" class="bi bi-caret-right-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <a class="btn button" href="../type-conversion.html" role="button">Type Conversion <svg width="1em" height="1em" viewbox="0 0 16 16" class="bi bi-caret-right-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                             <path d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
                             </svg></a>
                         </div>  

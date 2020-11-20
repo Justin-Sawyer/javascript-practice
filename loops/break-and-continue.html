@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../assets/css/style.css" type="text/css">
+    <title>Javascripting</title>
+</head>
+<body>
+    <header>
+        <div class="wrapper">
+            <div class="sliding-background">
+            </div>
+        </div>
+    
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <a class="navbar-brand" href="../index.html">Javascripting</a>
+            <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <svg width="1em" height="1em" viewbox="0 0 16 16" class="bi bi-list" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M2.5 11.5A.5.5 0 0 1 3 11h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 7h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 3h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+                </svg>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="break-and-continue.html">Loops: Break and Continue <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item dropdown">       
+                    <a class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Menu
+                        <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li class="dropdown-menu-no-children">
+                                <a class="menu-list" href="../code-examples.html">Code Examples</a>
+                            </li>
+                        
+                            <li class="dropdown-submenu">
+                                <a class="menu-list" href="#">Numbers <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                <li><a href="/numbers/the-basics.html">The Basics</a></li>
+                                <li><a href="/numbers/number-methods.html">Number Methods</a></li>
+                                <li><a href="/numbers/math-methods.html">Math Methods</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="dropdown-submenu">
+                                <a class="menu-list" href="#">"strings"<span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                <li><a href="/strings/the-basics.html">The Basics</a></li>
+                                <li><a href="/strings/string-methods.html">String Methods</a></li>
+                                <li><a href="/strings/concat-and-interpolation.html">Concatenation & Interpolation</a></li>
+                                <li><a href="/strings/challenges.html">Challenges</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="dropdown-submenu">
+                                <a class="menu-list" href="#">[arrays]<span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                <li><a href="/arrays/the-basics.html">The Basics</a></li>
+                                <li><a href="/arrays/array-methods.html">Array Methods</a></li>
+                                <li><a href="/arrays/array-methods-2.html">More Array Methods</a></li>
+                                <li><a href="/arrays/multi-dimensional-arrays.html">Multidimensional Arrays</a></li>
+                                <li><a href="/arrays/challenges.html">Challenges</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="dropdown-submenu">
+                                <a class="menu-list" href="#">Booleans<span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                <li><a href="/booleans/the-basics.html">The Basics</a></li>
+                                <li><a href="/booleans/conditionals.html">Conditionals</a></li>
+                                <li><a href="/booleans/conversions.html">Conversions</a></li>
+                                <li><a href="/booleans/challenges.html">Challenges</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="dropdown-menu-no-children">
+                                <a class="menu-list" href="type-conversion.html">Type Conversion</a>
+                            </li>
+
+                            <li class="dropdown-submenu">
+                                <a class="menu-list" href="#">Loops<span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                <li><a href="the-basics.html">The Basics</a></li>
+                                <li><a href="loops.html">Loops</a></li>
+                                <li><a href="break-and-continue.html">Break and Continue</a></li>
+                                </ul>
+                            </li>
+
+                            </ul>
+                        </li>
+                    </ul>
+                <!--
+                <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                </form>-->    
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container body-container">
+            <div class="page-name">
+                <h1>Break and Continue:</h1>
+                <ul>
+                    <li>Break:</li>
+                        <p class="tab">Iterating through a loop is useful, but what if we need to stop iterating at a certain point?
+                        To do this, we use the <code>break;</code> statement. Note in the code block below where the statement is in relation to 
+                        what we want the code to do. Our <code>alert</code> etc. needs to be outside of the <code>break</code> statement:</p>
+                        <ol>
+                            <li><code>For</code> loop with <code>break</code>:</li>
+                                <pre><code><p id="forLoop"></p></code></pre>
+                                <p>Let's return to our Dogs d'Amour albums <code>[array]:</code></p>
+                                <br>
+                                <p><code>let dogsAlbums = ["(Un)authorised Bootleg Album", "Dynamite Jet Saloon", "Errol Flynn", "Straight", 
+                                "More Unchartered Heights Of Disgrace"];</code></p>
+                                <br>
+                                <p>We want to <code>break</code> the code block at index #3 - in other words, we want indices 0, 1 and 2, but not index #3:</p>
+                                <pre><code><p id="dogsAlbums"></p></code></pre>
+                                <p>Note that we are looking to stop at an index #, not at a specific enry in the <code>[array]</code>. In other words, we want to know what 
+                                the entry is at the given index #. If we replace the <code>i === 3</code> 
+                                with the name of one of the albums, the loop will not break, but will continue until the <code>.length</code> is at its end:</p>
+                                <button onclick="tryMe()">Try Me (i === 3)</button><button onclick="tryMe2()">Try Me (i === "Errol Flynn")</button>
+                                <p id="result"></p>
+                                <br>
+                                <br>
+
+                            <li><code>For... in</code> loop with <code>break</code>:</li>
+
+                        </ol>
+                        
+                    <!--<pre><code><p id="forLoop"></p></code></pre>
+                    <p>Let's go back to the Dogs d'Amour and make an <code>[array]</code> of their albums:</p>
+                    <code>let dogsAlbums = ["(Un)authorised Bootleg Album", "Dynamite Jet Saloon", "Errol Flynn", "Straight", "More Unchartered Heights Of Disgrace"];</code>
+                    <p>From here, use the <code>for</code> loop to iterate through those albums (open console to see the results):</p>
+                    <pre><code><p id="dogsAlbums"></p></code></pre>
+                    <br>
+
+                    <li><code>For... In</code> Loops:</li>
+                    <pre><code><p id="forInLoop"></p></code></pre>
+                    <p>With this loop, the second and third conditions are implied. These original conditions (<code>i &lt variable.length;  i++</code>) are replaced by the word 
+                    <code>in</code>.</p>
+                    <pre><code><p id="dogsAlbums2"></p></code></pre>
+                    <p><code>For... in</code> lops are good if we need to retrieve work with the index number of each element in an <code>[array]</code>.</p>
+                    <br>
+                    
+                    <li><code>For... Of</code> Loops:</li>
+                    <pre><code><p id="forOfLoop"></p></code></pre>
+                    <p>With this loop, the second and third conditions are implied. These original conditions (<code>i &lt variable.length;  i++</code>) are replaced by the word 
+                    <code>of</code>.</p>
+                    <pre><code><p id="dogsAlbums3"></p></code></pre>
+                    <p><code>For... of</code> loops are good if we need to retrieve and work with the content of an <code>[array]</code>, as the loop retrieves the 
+                    element without needing its index number.</p>
+                    <br>
+
+                    <li><code>While</code> Loops:</li>
+                    <pre><code><p id="whileLoop"></p></code></pre>
+                    <p><code>While</code> loops run code blocks while a condition is true. These original conditions (<code>i &lt variable.length;  i++</code>) are replaced by the word 
+                    <code>of</code>.</p>
+                    <pre><code><p id="dogsAlbums4"></p></code></pre>
+                    <p>Note that with <code>while</code> loops, the variable <code>i</code> needs to be declared, and told where to start from. 
+                    Also in the example above, (and as shown in the console), note where the statement "While loop" is situated. This piece of code 
+                    is written outside of the loop (here, before the loop), otherwise it will be repeated too.
+                    Because <code>i++</code> is stated within the loop itself, anything that does not need to be repeated needs to be stated outside of the loop.</p>
+                    <br>
+
+                    <li><code>Do... while</code> Loops:</li>
+                    <pre><code><p id="doWhileLoop"></p></code></pre>
+                    <pre><code><p id="dogsAlbums5"></p></code></pre>
+                    <p><code>Do... while</code> loops run code blocks once before checking if a condition is true. This means that even if the condition 
+                    is false, the code will run once.</p>
+                    <p>What does it mean, that the code block will run once before checking if it is true? Our variable <code>i</code> is set to <code>0</code> above. 
+                    From our previous loops, we can see that the Dogs d'Amour released 5 albums. Let's now set <code>i = 6</code> to see what happens:</p>
+                    <pre><code><p id="dogsAlbums6"></p></code></pre>
+                    <p>We can see in the console that the code has actually run, and it has found that index #6 does not exist.
+                    We can try the same thing with the <code>while loop:</code></p>
+                    <pre><code><p id="dogsAlbums7"></p></code></pre>
+                    <p>Looking in the console, we can see that the loop for the While loop has not run. All we see is the title "While loop" because this 
+                    was outside of the loop.</p>
+                    <br>
+                    <p>Again, note that with <code>do... while</code> loops, the variable <code>i</code> needs to be declared, and told where to start from. 
+                    Also in the example above, (and as shown in the console), note where the statement "Do... while loop" is situated. This piece of code 
+                    is written outside of the loop (again, here, before the loop), otherwise it will be repeated too.
+                    Because <code>i++</code> is stated within the loop itself, anything that does not need to be repeated needs to be stated outside of the loop.</p>
+                -->
+                </ul>
+            </div>
+
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="Last-page">
+                            <a class="btn button" style="text-align: left" href="loops.html" role="button"><svg width="1em" height="1em" viewbox="0 0 16 16" class="bi bi-caret-left-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3.86 8.753l5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"/>
+                            </svg> Loops: Loops</a>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <!--<div class="next-page">
+                            <a class="btn button" href="challengess.html" role="button">Booleans: Challenges <svg width="1em" height="1em" viewbox="0 0 16 16" class="bi bi-caret-right-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+                            </svg></a>
+                        </div>  -->
+                    </div> 
+                </div> 
+            </div>       
+        </div>
+    </main>
+
+    <footer>
+        <div class="container-fluid footer-section">
+            <div class="foot-body">
+                <h6>This website was created by Justin Sawyer</h6>
+            </div>
+
+            <div class="container links-and-outside-links">
+                <div class="container website-links">
+                    <p>In-site code links:</p>
+                    <ul class="footer-menu">
+                            <li class="footer-menu-link">
+                                <a class="footer-menu-list" href="code-examples.html">Code Examples</a>
+                            </li>
+                    </ul>
+                </div>
+                <div class="container outside-links">
+                    <p>Hi</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../scripts/loops/break-and-continue.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+    <script>
+        $(document).ready(function(){
+        $('.dropdown-submenu a.menu-list').on("click", function(e){
+            $(this).next('ul').toggle();
+            e.stopPropagation();
+            e.preventDefault();
+        });
+        });
+    </script>
+</body>
+</html>
