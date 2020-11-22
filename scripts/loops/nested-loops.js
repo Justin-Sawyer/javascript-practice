@@ -81,3 +81,60 @@ https://repl.it/@JustinSawyer/JavascriptFundamentalsBCNestedLoops2-2
 Infinite Loops
 Normally arise from bad coding. Try to avoid them`);
 
+//-----------------------------------------------------------------------------------------------------------------
+//For loop dogs albums:
+(function nestedLoop() {
+    document.getElementById("nestedLoop").innerText = `for (statement 1; statement 2; statement 3) {
+        code block to be executed
+    for (statement 4; statement 5; statement 6) {
+        code block to be executed
+    }
+}`;
+})();
+
+
+(function forLoopAllDogsAlbums() {
+    console.log(`
+
+List all albums in each of their arrays:
+`);
+    let i;
+    let text = "";
+    let allDogsAlbums = [["The State We're In"], ["(Un)authorised Bootleg Album", "Dynamite Jet Saloon", "Errol Flynn", "Straight", "More Unchartered Heights Of Disgrace"], ["Happy Ever After", "Let Sleeping Dogs Lie", "When Bastards Go To Hell"], ["Swinging The Bottles... The BBC Sessions"]];
+    for (i = 0; i < allDogsAlbums.length; i++) {
+        console.log(allDogsAlbums[i]);
+        text += "[" + allDogsAlbums[i] + "]<br><br>";
+    };
+    document.getElementById("forLoopAllDogsAlbums").innerHTML = text;
+    document.getElementById("resultIndex0").innerText = `[${allDogsAlbums[0]}]`;
+    document.getElementById("resultIndex1").innerText = `[${allDogsAlbums[1]}]`;
+    document.getElementById("resultIndex2").innerText = `[${allDogsAlbums[2]}]`;
+    document.getElementById("resultIndex3").innerText = `[${allDogsAlbums[1]}]`;
+    
+})();
+
+function seeTheCode() {
+    document.getElementById("theCode").innerText = `let i;
+let text = "";
+let allDogsAlbums = [["The State We're In"], ["(Un)authorised Bootleg Album", "Dynamite Jet Saloon", "Errol Flynn", "Straight", "More Unchartered Heights Of Disgrace"], ["Happy Ever After", "Let Sleeping Dogs Lie", "When Bastards Go To Hell"], ["Swinging The Bottles... The BBC Sessions"]];
+    for (i = 0; i < allDogsAlbums.length; i++) {
+        console.log(allDogsAlbums[i]);
+        text += "[" + allDogsAlbums[i] + "]<br><br>";
+    };
+    document.getElementById("forLoopAllDogsAlbums").innerHTML = text;`;
+}
+
+(function allDogsAlbumsNestedLoop() {
+    let allDogsAlbums = [["The State We're In"], ["(Un)authorised Bootleg Album", "Dynamite Jet Saloon", "Errol Flynn", "Straight", "More Unchartered Heights Of Disgrace"], ["Happy Ever After", "Let Sleeping Dogs Lie", "When Bastards Go To Hell"], ["Swinging The Bottles... The BBC Sessions"]];
+    let i;
+    let j;
+    for (i = 0; i < allDogsAlbums.length; i++) {
+        for (j = 0; j < allDogsAlbums[i].length; j++) {
+            console.log(j);
+            //alert(j);
+            //document.getElementById("resultNestedLoop").innerHTML += allDogsAlbums[i] + j + "<br>";
+        }
+    }
+})();
+
+

@@ -104,9 +104,38 @@
     <main>
         <div class="container body-container">
             <div class="page-name">
-                <h1>Break and Continue:</h1>
+                <h1>Nested Loops:</h1>
             </div>
-                <ul>
+                <p>Just as we can have multidimensional <code>"strings"</code> nested <code>[arrays]</code>, we can also have nested <code>loops</code>:</p>
+                <pre><code><p id="nestedLoop"></p></code></pre>
+
+                <p>Let's add to our <code>[array]</code> dogsAlbums, to include their albums outside of their (in?)famous period:</p>
+                <br>
+                <code><p>let allDogsAlbums = [["The State We're In"], ["(Un)authorised Bootleg Album", "Dynamite Jet Saloon", 
+                "Errol Flynn", "Straight", "More Unchartered Heights Of Disgrace"], ["Happy Ever After", "Let Sleeping Dogs Lie", "When Bastards 
+                Go To Hell"], ["Swinging The Bottles... The BBC Sessions"]];</p></code>
+                <br>
+                <p>We can iterate through the <code>[array]</code> using a <code>for</code> loop:</p>
+                <pre><code><p id="forLoopAllDogsAlbums"></p></code></pre>
+                <p>(Open console for a better view of each of the nested <code>[array]</code>'s contents)</p>
+                <button onclick="seeTheCode()">See the code for the for loop</button>
+                <pre><code><p id="theCode"></p></code></pre>
+                
+                <p>So how can we access the inner <code>[arrays]</code> details?</p>
+                <p>Instead of asking for <code>allDogsAlbums[i]</code>, we ask for the code to return the index value:</p>
+                <p><code>allDogsAlbums[0];</code></p>
+                <pre><code><p id="resultIndex0"></p></code></pre>
+                <p><code>allDogsAlbums[1];</code></p>
+                <pre><code><p id="resultIndex1"></p></code></pre>
+                <p><code>allDogsAlbums[2];</code></p>
+                <pre><code><p id="resultIndex2"></p></code></pre>
+                <p><code>allDogsAlbums[3];</code></p>
+                <pre><code><p id="resultIndex3"></p></code></pre>
+                <p>We have used our nested <code>[array]</code> knowledge to access the contents. But how do we work with these nested <code>[arrays]</code>?</p>
+                <p>We use nested <code>loops</code>:</p>
+                <p id="resultNestedLoop"></p>
+                
+                <!--<ul>
                     <li>Break:</li>
                         <p class="tab">Iterating through a loop is useful, but what if we need to stop iterating at a certain point?
                         To do this, we use the <code>break;</code> statement. Note in the code block below where the statement is in relation to 
@@ -235,7 +264,7 @@
                                 <button onclick="tryMe17()">TryMe</button>
                                 <p id="result12"></p>
                         </ol>
-                </ul>
+                </ul>-->
             </div>
 
 
@@ -243,9 +272,9 @@
                 <div class="row">
                     <div class="col-sm-6">
                         <div class="Last-page">
-                            <a class="btn button" style="text-align: left" href="loops.html" role="button"><svg width="1em" height="1em" viewbox="0 0 16 16" class="bi bi-caret-left-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <a class="btn button" style="text-align: left" href="break-and-continue.html" role="button"><svg width="1em" height="1em" viewbox="0 0 16 16" class="bi bi-caret-left-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                             <path d="M3.86 8.753l5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"/>
-                            </svg> Loops: Loops</a>
+                            </svg> Loops: Break and Continue</a>
                         </div>
                     </div>
                     <div class="col-sm-6">
@@ -281,7 +310,7 @@
         </div>
     </footer>
 
-    <script src="../scripts/loops/break-and-continue.js"></script>
+    <script src="../scripts/loops/nested-loops.js"></script>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
