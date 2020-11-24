@@ -133,8 +133,35 @@
                 <pre><code><p id="resultIndex3"></p></code></pre>
                 <p>We have used our nested <code>[array]</code> knowledge to access the contents. But how do we work with these nested <code>[arrays]</code>?</p>
                 <p>We use nested <code>loops</code>:</p>
-                <p id="resultNestedLoop"></p>
-                
+                <pre><code><p id="codeDogsNestedLoop"></p></code></pre>
+                <p>Result:</p>
+                <pre><code><p id="resultDogsNestedLoop"></p></code></pre>
+                <br>
+                <p>let's now add the tracklist to each of the (in?)famous period albums using the <code>push()</code> and <code>splice()</code> methods:</p>
+                <br>
+                <pre><code><p id="pushAndSpliceDogsAlbumTracks"></p></code></pre>
+                <p>Open console to see the individual <code>[arrays]</code> and the result.</p>
+                <br>
+                <p>We used <code>push()</code> to push the album tracks and times into each of the album <code>[arrays]</code>. From there, we 
+                used <code>splice() to cut out the albums in the second <code>[array]</code> (the one containing the five albums)</code> and then to 
+                replace those items with the <code>[arrays] [album name [album tracks and times]]</code>.</p>
+                <p>Now, let's make a couple of playlists, one of songs that are less than or equal to 3:30 in length, that we shall call <code>[shortSongPlayList]</code> 
+                and one of songs longer that 3:30 in length that we shall call <code>[longSongPlayList]</code>:</p>
+                <pre><code><p id="playListsNestedLoop"></p></code></pre>
+                <p>To explain the code:</p>
+                <p>We have already created our <code>[array]</code> containing all the Dogs d'Amour's albums, and its inner <code>[array]</code> containing 
+                their (in?)famous period albums. In that inner <code>[array]</code> we added the song titles and times.</p>
+                <p>The next step is to access those songs from the inner <code>[arrays]</code> and then create our playlist. We did this using firstly the 
+                <code>loop</code> with index <code>i</code> and its conditions (<code>i = 0; i&lt[array].length; i++</code>).</p>
+                <p>However, within this <code>loop</code>, we needed to access our "start point" for the indexing. Thus we use <code>i&ltallDogsAlbums</code>[1]<code>.length</code> as a 
+                condition.</p>
+                <p>Next, we created another <code>loop</code>, this time using <code>j</code> for the index and its conditions (<code>j = 0 etc</code>).</p>
+                <p>But again, we need to access a certain "start point" for the indexing of those <code>[arrays]</code>. Specifically, we are looking for 
+                the <code>[array] containing the <code>[arrays]</code> of songs and times</code>:</p>
+                <pre><code><p id="explainCode"></p></code></pre>
+                <button id="shortSongs">Short Song Playlist</button><button id="longSongs">Long Song Playlist</button>
+                <pre><code><p id="playList"></p></code></pre>
+                <!--<pre><code><p id="longPlayList"></p></code></pre>-->
                 <!--<ul>
                     <li>Break:</li>
                         <p class="tab">Iterating through a loop is useful, but what if we need to stop iterating at a certain point?
