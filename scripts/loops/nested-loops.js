@@ -421,7 +421,7 @@ console.log(allDogsAlbums);`
     ];
     unchartered.push(uncharteredTracks);
 
-    console.clear();
+    //console.clear();
     allDogsAlbums[1].splice(0, 5, bootleg, dynamite, errol, straight, unchartered);
     console.log(allDogsAlbums);
 
@@ -477,38 +477,100 @@ let longSongPlayList = [];
         }
     };
 
-        document.getElementById("shortSongs").addEventListener("click", function() {
-            document.getElementById("playList").innerHTML = "";
-            for (k=0; k<shortSongPlayList.length; k++) {
-                document.getElementById("playList").innerHTML += shortSongPlayList[k] + "<br>";
-            };
-        });
+    //The following lines of code are to print outthe results in a list in the BROWSER:
+    document.getElementById("shortSongs").addEventListener("click", function() {
+        document.getElementById("playList").innerHTML = "";
+        for (k=0; k<shortSongPlayList.length; k++) {
+            document.getElementById("playList").innerHTML += shortSongPlayList[k] + "<br>";
+        };
+    });
 
-        document.getElementById("longSongs").addEventListener("click", function() {
-            document.getElementById("playList").innerHTML = "";
-            for (k=0; k<longSongPlayList.length; k++) {
-                document.getElementById("playList").innerHTML += longSongPlayList[k] + "<br>";
-            };
-        });`
+    document.getElementById("longSongs").addEventListener("click", function() {
+        document.getElementById("playList").innerHTML = "";
+        for (k=0; k<longSongPlayList.length; k++) {
+            document.getElementById("playList").innerHTML += longSongPlayList[k] + "<br>";
+        };
+    });`
+
+    document.getElementById("forOfLoop").innerText = `let newShortPlayList = [];
+let newLongPlayList = [];
+
+    for (let album of allDogsAlbums[1]) {
+    for (let songs of album[1]) {
+        if (songs[1]<=3.3) {
+            newShortPlayList.push(songs);
+        }
+
+        if (songs[1]>3.3) {
+            newLongPlayList.push(songs);
+        }
+    }
+    }
+    console.log(newShortPlayList);
+    console.log(newLongPlayList);`
+
+    //console.clear();
+    let newShortPlayList = [];
+    let newLongPlayList = [];
+    for (let album of allDogsAlbums[1]) {
+        for (let songs of album[1]) {
+            if (songs[1]<=3.3) {
+                newShortPlayList.push(songs);
+                document.getElementById("shortSongs1").addEventListener("click", function() {
+                document.getElementById("playList1").innerHTML = "";
+                    for (a=0; a<newShortPlayList.length; a++) {
+                        document.getElementById("playList1").innerHTML += newShortPlayList[a] + "<br>";
+                    };
+                });
+            }
+
+            if (songs[1]>3.3) {
+                newLongPlayList.push(songs);
+                document.getElementById("longSongs1").addEventListener("click", function() {
+                document.getElementById("playList1").innerHTML = "";
+                    for (a=0; a<newLongPlayList.length; a++) {
+                        document.getElementById("playList1").innerHTML += newLongPlayList[a] + "<br>";
+                    };
+                });
+            }
+        }
+    }
+    console.log(newShortPlayList);
+
+    document.getElementById("nestedForOfLoopSongs").innerHTML = `let newShortPlayList = [];
+let newLongPlayList = [];
+
+    for (let album of allDogsAlbums[1]) {
+        for (let songs of album[1]) {
+            if (songs[1]<=3.3) {
+                newShortPlayList.push(songs);
+
+                //To print out the list of songs in the BROWSER:
+                document.getElementById("shortSongs1").addEventListener("click", function() {
+                document.getElementById("playList1").innerHTML = "";
+                    for (a=0; a<newShortPlayList.length; a++) {
+                        document.getElementById("playList1").innerHTML += newShortPlayList[a] + "<br>";
+                    };
+                });
+
+            }
+
+            if (songs[1]>3.3) {
+                newLongPlayList.push(songs);
+
+                //To print out the list of songs in the BROWSER:
+                document.getElementById("longSongs1").addEventListener("click", function() {
+                document.getElementById("playList1").innerHTML = "";
+                    for (a=0; a<newLongPlayList.length; a++) {
+                        document.getElementById("playList1").innerHTML += newLongPlayList[a] + "<br>";
+                    };
+                });
+
+            }
+        }
+    }
+    console.log(newShortPlayList);`
 })();
-
-/*(function explainCode() {
-    document.getElementById("explainCode").innerText = `[array / index 0
-    index 1 [array / index 0 - loop with index i iterates through this array
-        index 1 [array to access] - loop with index j iterates through these arrays
-    ]
-]
-
-[all albums within this
-    [first album] //- index 0
-    [(in?)famous period albums: //- index 1 of "i" loop... starts at 0 within, stops at end, increments
-        [album title: //-index 0
-            [album songs and times] //- index 1 of "j" loop... starts at 0 within, stops at end, increments
-        ]
-    [other albums]
-    [last album]
-]`
-})();*/
 
 (function explainCode() {
     document.getElementById("explainCode").innerText = `let arr = 
@@ -530,5 +592,7 @@ let longSongPlayList = [];
     ]
 ];`
 })();
+
+
 
 

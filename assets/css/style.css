@@ -1,9 +1,9 @@
 /* ---------------------------------- General */
-h1, h2, h3, h4, h5, h6, p, code, li, .link {
+h1, h2, h3, h4, h5, h6, p, code, a, span, li, .link {
     font-family: Menlo, sans-serif;
 }
 
-h1 {
+/*h1 {
     font-size: 7vw;
 }
 
@@ -13,7 +13,7 @@ h2 {
 
 h3 {
     font-size: larger;
-}
+}*/
 
 p {
     margin-bottom: 0;
@@ -56,8 +56,12 @@ pre {
     padding-left: 8px;
 }
 
-pre code {
+pre > code {
     font-size: 87.5%;
+}
+
+code {
+    font-size: 100%;
 }
 
 li > code > p,
@@ -104,7 +108,7 @@ blockquote {
     animation: slide 60s linear infinite;
 }
 
-.dom-examples {
+/*.dom-examples {
     background: url("../images/javascript-header-dom-examples.jpg") repeat-x;
 }
 
@@ -114,7 +118,7 @@ blockquote {
 
 .strings {
     background: url("../images/javascript-header-strings.jpg") repeat-x;
-}
+}*/
 
 @keyframes slide {
   0%{
