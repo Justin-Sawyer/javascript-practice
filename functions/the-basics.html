@@ -24,9 +24,9 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
+                <!--<li class="nav-item active">
                     <a class="nav-link" href="the-basics.html">Functions: The Basics <span class="sr-only">(current)</span></a>
-                </li>
+                </li>-->
                 <li class="nav-item dropdown">       
                     <a class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Menu
                         <span class="caret"></span></a>
@@ -94,6 +94,7 @@
                                 <a class="menu-list" href="#">Functions<span class="caret"></span></a>
                                 <ul class="dropdown-menu">
                                 <li><a href="the-basics.html">Functions: The Basics</a></li>
+                                <li><a href="function-expressions.html">Functions: Function Expressions</a></li>
                                 </ul>
                             </li>
 
@@ -160,10 +161,47 @@
                 <pre><code><p id="theAnswer"></p></code></pre>
                 <p id="result"></p>
 
-                
-
-
-
+                <p>It is also possible to set a default value for a parameter of the function. We do this by simply assigning that parameter a value:</p>
+                <code>function</code><span style="color:blue"> functionName</span><span>(</span><span style="color:green">a, b=7</span><span>) {</span>
+                <p class="tab" style="color:orange">code to be executed;</p>
+                <p>}</p>
+                <p>However, that default valu will be overridden upon calling the function with a diferent value, as follows:</p>
+                <pre><code><p id="defaultValue"></p></code></pre>
+                <p>Above, although the deafult for b is set to 7, the function will nonetheless return 2*2.</p>
+                <p>Default value are set when we want to be sure that a value is assigned to a parameter, that it will not be undefined.</p>
+                <br>
+                <h2>Calling a <code>function</code>:</h2>
+                <p>Unless the function is self-declaring, it needs to be called. Throughout this website, we have used buttons to call these functions. 
+                The code within these HML buttons contains the <code>function call</code>:</p>
+                <p>&ltbutton onclick="<code>callFunction()</code>"&gt</p>
+                <p>We can tell the <code>function</code>  <strong>what</strong> to run either within or outside of the function. But the <code>function</code> still needs to be called in order to run:</p>
+                <pre><code><p id="returnOutside"></p></code></pre>
+                <p>Result: <span id="call1"></span></p>
+                <p>Above, we called the <code>function</code> and asked it to <span style="color:orange">return(6*7);</span> within the HTML element <code>&ltspan id="call1"&gt&lt/span&gt</code></p>
+                <br>
+                <button onclick="returnInside()">Call the function returnInside()</button>
+                <pre><code><p id="returnInside"></p></code></pre>
+                <p>Result: <span id="call2"></span></p>
+                <p>Again, above, we called the <code>function</code>, but this time we used a button to do so.</p>
+                <p>In both cases, within the <code>function</code> itself is the <span style="color:orange">code block to be executed</span></p>
+                <p>Note that both code blocks do the same thing (they both return 6 multipled by 7). However, since we tell the code to print the results OUTSIDE 
+                of the <code>function</code> in the first example, the code block and result are displayed automatically. We've made a non self declaring function self declare, as it were. Whereas, 
+                in the second example, we use the button to tell the <code>function</code> to run.</p>
+                <br>
+                <h2>The <code>return</code> keyword:</h2>
+                <p>Inserting <code>return</code> into the code will break the code at that point. It will run up to there, but no further:</p>
+                <pre><code><p id="returnFunction"></p></code></pre>
+                <p>Result: <span id="returnFunction1"></span></p>
+                <p>Without the keyword <code>return</code> the code would have run 6*7 and 6+7. But since we asked the code to <code>return</code> 
+                at 6*7, it stops at that point. Use of the term is a good way to stop infinite loops from running. I wish more coders - especially 
+                those who write adverts were aware of this - I'm tired of my computer heating up because of the lack of this keyword!</p>
+                <br>
+                <h2>()</h2>
+                <p>Lets run the same piece of code, but this time let's call the function WITHOUT using the () at the end of the call:</p>
+                <p>Result: <pre><code><span id="returnFunction2"></span></code></pre></p>
+                <p>When we call the <code>function()</code>, result is returned.</p>
+                <p>When we call the <code>function</code>, the code is returned.</p>
+                <br>
                 
             </div>
         </div>
@@ -178,9 +216,9 @@
                     </div>
                     <div class="col-sm-6">
                         <div class="next-page">
-                            <!--<a class="btn button" href="code-examples.html" role="button">Code examples <svg width="1em" height="1em" viewbox="0 0 16 16" class="bi bi-caret-right-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <a class="btn button" href="function-expressions.html" role="button">Functions: Function Expressions <svg width="1em" height="1em" viewbox="0 0 16 16" class="bi bi-caret-right-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                             <path d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
-                            </svg></a>-->
+                            </svg></a>
                         </div>  
                     </div> 
                 </div> 

@@ -1,19 +1,22 @@
 /* ---------------------------------- General */
-h1, h2, h3, h4, h5, h6, p, code, a, span, li, .link {
-    font-family: Menlo, sans-serif;
+body {
+    /*width: 100%;*/
+    margin: 0;
+    padding: 0;
+    /*overflow: auto;*/
 }
 
-/*h1 {
-    font-size: 7vw;
+* {
+    font-family: Menlo, monospace;
+}
+
+h1 {
+    font-size: 32px;
 }
 
 h2 {
-    font-size: 5vw;
+    font-size: 28px;
 }
-
-h3 {
-    font-size: larger;
-}*/
 
 p {
     margin-bottom: 0;
@@ -45,23 +48,10 @@ button:hover,
     color: white;
 }
 
-table {
-    width: auto;
-    font-family: 'Times New Roman', Times, serif
-}
-
 pre {
     background-color: beige;
     width: 100%;
     padding-left: 8px;
-}
-
-pre > code {
-    font-size: 87.5%;
-}
-
-code {
-    font-size: 100%;
 }
 
 li > code > p,
@@ -130,24 +120,17 @@ blockquote {
 }
 
 /* ---------------------------------- Navigation */
-.navbar, 
-.nav-link, 
-.dropdown-toggle, 
-.dropdown-submenu, 
-.dropdown-menu>li, 
-.form-inline {
-    font-family: 'Times New Roman', Times, serif;
-}
+
 
 .navbar, .form-inline, .dropdown-toggle, .dropdown-submenu, .navbar-brand {
-    font-size: 1.5rem;
+    font-size: 24px;
 }
 
 .navbar, .dropdown-menu, .dropdown-submenu {
     background-color: #c13e70;
 }
 
-.navbar-light .navbar-brand, .dropdown-toggle, .menu-list {
+.navbar-light .navbar-brand, .menu-list {
     color: white;
 }
 
@@ -227,6 +210,10 @@ li > a {
     margin-bottom: 16px;
 }
 
+.container-table {
+    overflow: auto;
+}
+
 /* ---------------------------------- Body Code Examples */
 
 .color-text {
@@ -301,8 +288,8 @@ footer {
     
     .body-container,
     .foot-body {
-        width: 95%;
-        /*padding: 0;*/
+        width:95%;
+        padding: 0;
     }
 
     .links-and-outside-links {

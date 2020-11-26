@@ -11,7 +11,7 @@
 <body>
     <header>
         <div class="wrapper">
-            <div class="sliding-background numbers">
+            <div class="sliding-background">
             </div>
         </div>
     
@@ -25,7 +25,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                 <!--<li class="nav-item active">
-                    <a class="nav-link" href="the-basics.html">Numbers: The Basics <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="function-expressions.html">Functions: Function Expressions <span class="sr-only">(current)</span></a>
                 </li>-->
                 <li class="nav-item dropdown">       
                     <a class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Menu
@@ -38,9 +38,9 @@
                             <li class="dropdown-submenu">
                                 <a class="menu-list" href="#">Numbers<span class="caret"></span></a>
                                 <ul class="dropdown-menu">
-                                <li><a href="the-basics.html">The Basics</a></li>
-                                <li><a href="number-methods.html">Number Methods</a></li>
-                                <li><a href="math-methods.html">Math Methods</a></li>
+                                <li><a href="../numbers/the-basics.html">The Basics</a></li>
+                                <li><a href="../numbers/number-methods.html">Number Methods</a></li>
+                                <li><a href="../numbers/math-methods.html">Math Methods</a></li>
                                 </ul>
                             </li>
 
@@ -50,7 +50,7 @@
                                 <li><a href="../strings/the-basics.html">The Basics</a></li>
                                 <li><a href="../strings/string-methods.html">String Methods</a></li>
                                 <li><a href="../strings/concat-and-interpolation.html">Concatenation & Interpolation</a></li>
-                                <li><a href="./strings/challenges.html">Challenges</a></li>
+                                <li><a href="../strings/challenges.html">Challenges</a></li>
                                 </ul>
                             </li>
 
@@ -93,8 +93,8 @@
                             <li class="dropdown-submenu">
                                 <a class="menu-list" href="#">Functions<span class="caret"></span></a>
                                 <ul class="dropdown-menu">
-                                <li><a href="../functions/the-basics.html">Functions: The Basics</a></li>
-                                <li><a href="../functions/function-expressions.html">Functions: Function Expressions</a></li>
+                                <li><a href="the-basics.html">Functions: The Basics</a></li>
+                                <li><a href="function-expressions.html">Functions: Function Expressions</a></li>
                                 </ul>
                             </li>
 
@@ -113,150 +113,82 @@
     <main>
         <div class="container body-container">
             <div class="page-name">
-                <h1>The Basics:</h1>
-                <h2>Number Types:</h2>
-                    <ol>   
-                        <li><code>Integers</code></li>
-                        <p class="tab">Whole numbers</p>
-                        <li><code>Floating Point Numbers</code>, or floats</li>
-                        <p class="tab">Decimal point numbers such as 1.35.</p>
-                        <li><code>Special Numbers Numbers</code>, or floats</li>
-                        <p class="tab">NaN, Infinity, -Infinity, e.</p>
-                        <p class="tab">NaN: Not a Number. Returned if you try math on text, for example.</p>
-                        <p class="tab">e: 1e9 = I billion (1 with 9 zeros); 1e-9 = minus 1 billion.</p>
-                    </ol>
-                    <p>When using numbers in Javascript, they are not wrapped in "". In an <code>[array]</code>, if they are wrapped in ""
-                    they are treated not as numbers but as <code>"strings"</code>. In other words, the sum of "12" + "6" will return NaN, or NotaNumber.</p>
+                <h1>Function Declarations vs Function Expressions:</h1>
+            </div>
+            <div>
                 
-                <h2><code>Expressions:</code></h2>
-                <p>Expressions are sums. So <code>1+3</code> is an expression.
-                The numbers are <code>operands</code> and the arithmetic operator (+-*/ etc) is an <code>operator</code>.</p>
-                <p>Thus:</p>
-                <p><code>operand operator operand = result</code></p>
+                <p>On the <a href="../index.html">Home</a> page of this site, we mentioned briefly about these. Let's try to understand them better here:</p>
+                <br>
+                    <ol>
+                        <li>Function declarations:</li>    
+                        <pre><code><p id="declarations"></p></code></pre>
+                        <p>Within the code to this website I have been using these, except for self declaring functions: these are function expressions. 
+                        More on them below. Function declarations do not require variable assignments. Thus, they must start with the word <code>function</code> 
+                        and must be named.</p>
+                        <br>
 
-                <h2><code>Operators:</code></h2>
-                <ol>
-                    <li>Binary</li>
-                    <p class="tab">Need two operands</p>
-                    <table class="table table-sm">
-                        <thead>
-                            <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">Type</th>
-                            <th scope="col">Example</th>
-                            <th scope="col">Result</th>
-                            <th scope="col">Remark</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                            <th scope="row">+</th>
-                            <td>Addition</td>
-                            <td>10+5</td>
-                            <td>15</td>
-                            <td></td>
-                            </tr>
-                            <tr>
-                            <th scope="row">-</th>
-                            <td>Subtraction</td>
-                            <td>10-5</td>
-                            <td>5</td>
-                            <td></td>
-                            </tr>
-                            <tr>
-                            <th scope="row">*</th>
-                            <td>Multiplication</td>
-                            <td>10*5</td>
-                            <td>50</td>
-                            <td></td>
-                            </tr>
-                            <tr>
-                            <th scope="row">/</th>
-                            <td>Division</td>
-                            <td>10/5</td>
-                            <td>2</td>
-                            <td></td>
-                            </tr>
-                            <tr>
-                            <th scope="row">%</th>
-                            <td>Modulus</td>
-                            <td>10%5</td>
-                            <td>0</td>
-                            <td>Remainder: 10/5=2r0</td>
-                            </tr>
-                            <tr>
-                            <th scope="row">**</th>
-                            <td>Exponentiation</td>
-                            <td>10**5</td>
-                            <td>100000</td>
-                            <td>The Power Of: 10<sup>5</sup></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <li>Unary</li>
-                    <p class="tab">Need one operand</p>
-                    <table class="table table-sm">
-                        <thead>
-                            <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">Type</th>
-                            <th scope="col">Example</th>
-                            <th scope="col">Result</th>
-                            <th scope="col">Remark</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                            <th scope="row">++</th>
-                            <td>Increment</td>
-                            <td>10+*</td>
-                            <td>11</td>
-                            <td>Adds 1</td>
-                            </tr>
-                            <tr>
-                            <th scope="row">--</th>
-                            <td>Decrement</td>
-                            <td>10--</td>
-                            <td>9</td>
-                            <td>Subtracts 1</td>
-                            </tr>
-                            <tr>
-                            <th scope="row">-</th>
-                            <td>Unary Negation</td>
-                            <td></td>
-                            <td>-10</td>
-                            <td>Transforms a + into a -</td>
-                            </tr>
-                            <tr>
-                            <th scope="row">+</th>
-                            <td>Unary Pus</td>
-                            <td></td>
-                            <td>=10</td>
-                            <td>Transforms a - into a +</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </ol>
+                        <li>Function expressions:</li>
+                        <pre><code><p id="expressions"></p></code></pre>
+                        <p>These require variable assignment. Thus, <code>let name = function()</code> where <code>name</code> is the variable and <code>function()</code> 
+                        is what has been assigned to the variable called <code>name</code>. The function itself can be anonymous, as in the case above, or it can be named:</p>
+                        <pre><code><p id="anon"></p></code></pre>
+                        <p>So why is a self declaring function a function expression? Because they declare themselves. Effectively, a self declaring function is saying:</p>
+                        <p>"I'm calling myself" - it has given itself a name, that of "self declare".</p>
+                        <p>It is for this reason that a self declaring <code>function</code> is written within brackets and has further brackets after itself:</p>
+                        <pre><code><p id="self"></p></code></pre>
+                    </ol>
+                    <br>
+                    <p>So what is the difference betxeen the two functions?</p>
+                    <p>Hoisting.</p>
+                    <p>When JavaScript loads, it hoists to the top of the page - it is read first in other words. As JavaScript retains the last instruction, 
+                    it effectively runs the last piece of code.</p>
+                    <pre><code><p id="redeclare1"></p></code></pre>
+                    <p>Result of function foo(): <span id="redeclareResult1"></span></p>
+                    <p>Above, we said that the keyword <code>return</code> causes the code to break, to stop running. Within the <code>function foo()</code> we 
+                    have a <code>return</code>. However, due to hoisting, <code>JavaScript</code> has ignored the first call of the function, and thus overridden the return.</p>
+                    <p>Thus, our reult is 8 instead of 3.</p>
+                    <p>Contrast this with a function expression:</p>
+                    <pre><code><p id="redeclare2"></p></code></pre>
+                    <p>Result of function foob(): <span id="redeclareResult2"></span></p>
+                    <p>Variable <strong>declarations</strong> (<code>var obar</code>) get hoisted, but their <strong>assignments</strong> do not. Thus, the code 
+                    is reading:</p>
+                    <p><code>var obar = undefined;</code></p>
+                    <p><code>var obar = undefined;</code></p>
+                    <p>which means that as the code is looking out for <strong>an</strong> instance of <code>var obar</code>, the first <code>function obar()</code> is returned, and then the code 
+                    breaks.</p>
+                    <p>The same is true in the follwoing instance:</p>
+                    <pre><code><p id="redeclare3"></p></code></pre>
+                    <p>Result of function fooba(): <span id="redeclareResult3"></span></p>
+                    <br>
+                    <p>While with the follwing, nothing is returned as the code is told to <code>return;</code> a variable that has been <strong>declared</strong> but not <strong>assigned</strong>
+                    until <strong>after</strong> the code has stopped:</p>
+                    <pre><code><p id="redeclare4"></p></code></pre>
+                    <p>Result of function foobar(): <span id="redeclareResult4"></span></p>
+                
+
+
+
+                
             </div>
         </div>
         <div class="container">
-            <div class="row">
-                <div class="col-sm-6">
-                    <div class="Last-page">
-                        <a class="btn button" style="text-align: left" href="/code-examples.html" role="button"><svg width="1em" height="1em" viewbox="0 0 16 16" class="bi bi-caret-left-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M3.86 8.753l5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"/>
-                        </svg> Code Examples</a>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="Last-page">
+                            <a class="btn button" style="text-align: left" href="the-basics.html" role="button"><svg width="1em" height="1em" viewbox="0 0 16 16" class="bi bi-caret-left-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3.86 8.753l5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"/>
+                            </svg> Functions: The Basics</a>
+                        </div>
                     </div>
-                </div>
-                <div class="col-sm-6">
-                    <div class="next-page">
-                        <a class="btn button" href="number-methods.html" role="button">Numbers: Number Methods <svg width="1em" height="1em" viewbox="0 0 16 16" class="bi bi-caret-right-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
-                        </svg></a>
-                    </div>  
+                    <!--<div class="col-sm-6">
+                        <div class="next-page">
+                            <a class="btn button" href="scope-and-block.html" role="button">Scope and Block <svg width="1em" height="1em" viewbox="0 0 16 16" class="bi bi-caret-right-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+                            </svg></a>
+                        </div>  
+                    </div> -->
                 </div> 
-            </div> 
-        </div>
+            </div>
     </main>
 
     <footer>
@@ -281,7 +213,8 @@
         </div>
     </footer>
 
-    <script src="../scripts/numbers-in-js/math.js"></script>
+    
+    <script src="../scripts/functions/function-expressions.js"></script>
     
     
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
