@@ -119,161 +119,129 @@
     <main>
         <div class="container body-container">
             <div class="page-name">
-                <h1>The Basics:</h1>
+                <h1>Hoisting, Scope and Block</h1>
             </div>
             <div>
-                <p>For the sake of learning and not getting skewed results, I am scripting each piece of code within its own function.
-                Within the foot of each page, the reader will find associated pages - for example "array methods" will feature in the 
-                foot of the array pages.
-                The reader will also find links to useful sites such as <a href="https://www.w3schools.com/js/default.asp" target="_blank">w3schools/js</a>. However, in the code examples pages, 
-                I hope to write code for each example - for example, all the DOM methods.</p>
-                <h2>Comments within code:</h2>
+            
+                <h2>Hoisting:</h2>
+                    <p>Hoisting means that the relevant code is hoisted to the top of the code block, or script. This means that they are read <strong>before</strong> 
+                    the code is actioned.</p>
+                    <p>One thing to note with hoisting is that the <strong>variable</strong> is hoisted, but not its assigned value. In other words, 
+                    the code reads that the variable <strong>exists</strong>, but does not read what the variable is until that variable is actioned.</p>
+                    <p>Not all types of variable declarations are hoisted:</p>
+                        <ul>
+                            <li><code>var</code>:</li>
+                                <p class="tab"><code>var</code> is hoisted:</p>
+                                <pre><code><p id="varHoist"></p></code></pre>
+                                <button onclick="varHoist()">Is an apple a fruit?</button> <p> <span id="varHoistResult"></span></p>
+                                
+                                <p>Here, we can see that <code>var apple;</code> has been declared <strong>after</strong> we tell the code what to do with apple. 
+                                Because it has been declared as <code>var</code>, it has been hoisted to the top of the code block, and is thus accessible.</p>
+                                <br>
+
+                            <li><code>let</code> and <code>const</code> :</li>
+                                <p class="tab"><code>let</code> and <code>const</code> are NOT hoisted:</p>
+                                <pre><code><p id="letHoist"></p></code></pre>
+                                <button onclick="letHoist()">Is an apple a fruit?</button> <p> <span id="letHoistResult"></span></p>
+                                
+                                <p>Here, we can see that <code>let apple;</code> has been declared <strong>after</strong> we tell the code what to do with apple. 
+                                Because it has been declared as <code>let</code>, it has <strong>not</strong> been hoisted to the top of the code block, and is thus inaccessible.</p>
+                                <p>The same is true for <code>const</code>.</p>
+                                <br>
+                        </ul>
+
+                <h2 id="scope">Scope:</h2>
+                    <p>Scope can be considered as your environment. Declaring things in the global scope is like littering - it should be avoided. 
+                    Declaring things in the local scope is like having a well-ordered book cabinet. Except in certain circumstances, variables should always be declared 
+                    in the local scope - that is, within its own function. </p>
+                    <br>
                     <ol>
-                        <li><code>// This is a single line comment.</code></li>
-                        <li><code><p>/* This is a multi-line comment.</p>
-                        <p>For larger comments that take more sentences. */</p></code></li>
-                    </ol>
+                        <li>Global Scope:</li>
+                            <p>The global scope is effectively your script. If you have a 100 page website and just one <code>JavaScript</code> file, declaring vaiables 
+                            in the global scope can cause huge problems by corrupting code:</p>
+                            <pre><code><p id="global"></p></code></pre>
+                            <p>In the above code, we see that:</p>
+                            <p><code>var</code> = <span id="var"></span></p>
+                            <p>We redeclare var inside the <code>if</code> statement, and expect that Lupin is either a human or a werewolf, depending on whether 
+                            it is a full moon or not:</p>
+                            <br>
+                            <p>It is a full moon. Lupin is currently a  <span id="var1"></span></p>
+                            <br>
+                            <p>The code runs smoothly for when it is a full moon, however:</p>
+                            <br>
+                            <p>It is not a full moon. Lupin is currently a <span id="var2"></span></p>
+                            <br>
+                            <p>The code has been corrupted because we redclared <code>var</code> inside the code block.</p>
+                            <br>
+                            <p>The above is a good example of why we should declare our variables in the local scope rather than the global scope.</p>
+                            <br>
+                        <li>Local Scope:</li>
+                            <p>This is declaring variables <strong>within</strong> your code blocks (functions, in this case:</p>
+                            <pre><code><p id="trueLupin"></p></code></pre>
+                            <p>It is a full moon. Lupin is currently a  <span id="var3"></span></p>
+                            <pre><code><p id="falseLupin"></p></code></pre>
+                            <p>It is a full moon. Lupin is currently a  <span id="var4"></span></p>
+                            <br>
+                            <p>Above, having declared out variable <code>animal</code> <strong>within</strong> the local scope of our 
+                            <code>function</code>, we can see that the results are correct. When it's a full moon, Lupin is a werewolf, when it isn't he is human.</p>
+                            <br>
+                            <p>Another advantage to declaring variables in local scope is memory usage of the computer. As globally declared variable live for the length of 
+                            the script, they are hogging memory. Declaring them locally means that the memory is only being used while the <code>function</code> is running.</p>
+                            <br>
+                            
+                    
+                            <p>On the Home page, we spoke about <a href="index.html#variables">variables</a> and how <code>var</code> can be redeclared, 
+                            while <code>let</code> and <code>const</code> cannot.</p>
+                            <p>Let's reuse our first Lupin block of code, but this time we shall use <code>let</code> instead of <code>var</code>:</p>
+                            <pre><code><p id="globalLet1"></p></code></pre>
+                            <p>It is a full moon. Lupin is currently a  <span id="var5"></span></p>
+                            <p>It is not a full moon. Lupin is currently a  <span id="var6"></span></p>
+                            <br>
+                            <p>We have changed simply one word in the code - the <code>var</code> to <code>let</code> inside the <code>if</code> code block.
+                            However, doing so now returns the result that we want. This is because we have declared <code>let</code> inside the local scope of the 
+                            <code>if</code> code block.</p>
+                            <p>What happens if we do the same, but the other way around?</p>
+                            <pre><code><p id="globalLet2"></p></code></pre>
+                            <p>It is a full moon. Lupin is currently a  <span id="var7">Uncaught SyntaxError: Identifier 'species' has already been declared</span></p>
+                            <p>It is not a full moon. Lupin is currently a  <span id="var8">Uncaught SyntaxError: Identifier 'species' has already been declared</span></p>
+                            <br>
+                            <p>And below, where we have changed both instances of <code>var</code> into <code>let</code>, we can see truly that the scope is local:</p>
+                            <p>The code has completely ignored the globally declared <code>let</code> and returned only the locally scoped <code>let</code>, thus the code block 
+                            functions as it should.</p>
+                            <pre><code><p id="globalLet3"></p></code></pre>
+                            <p>It is a full moon. Lupin is currently a  <span id="var9"></span></p>
+                            <p>It is not a full moon. Lupin is currently a  <span id="var10"></span></p>
+                            <br>
+                    
+                        <li>Block:</li>
+                            <p><code>JavaScript</code> also functions by code blocks. What this means is that, according to how the variable is declared (either as 
+                            <code>var</code>, <code>let</code> or <code>const</code>), code is either blocked (is not accessible) or not:</p>
+                                <ul>
+                                    <li><code>var</code>:</li>
+                                        <pre><code><p id="block1"></p></code></pre>
+                                        <p>Declaring "a" as <code>var</code> means that it is not blocked:</p>
+                                        <p id="block2"></p>
+                                        <br>
 
-                <h2>Outputting code on this website:</h2>
-                    <ol>
-                        <li><code>console.log</code>
-                            <div class="tab">
-                                <p>Writes or returns code in the <code>console</code>. 
-                                To see code here, use the dev tools to inspect these pages and choose "console".</p>
-                                <p>An example:</p>
-                                <button onclick="helloWorldInConsole()">Write "Hello World!" in the console</button>
-                            </div>
-                        </li>
+                                    <li><code>let</code> and <code>const</code>:</li>
+                                        <pre><code><p id="block3"></p></code></pre>
+                                        <p>Declaring "a" as <code>let</code> or <code>const</code> means that it is blocked:</p>
+                                        <p id="block4"></p>
+                                        <br>
 
-                        <li><code>alert</code>
-                            <div class="tab">
-                                <p>Writes or returns code as a popup alert.</p>
-                                <p>An example:</p>
-                                <button onclick="helloWorldAlert()">Alert "Hello World!"</button>
-                            </div>
-                        </li>
+                                </ul>
 
-                        <li><code>document.write</code>
-                            <ol>
-                                <li class="indented-list">Writing text in the browser:
-                                    <div class="tab">
-                                        <p>An example:</p>
-                                        <button onclick="helloWorldBrowserWrite()">Insert "Hello World!" in the browser</button>
-                                        <p id="write-text"></p>
-                                    </div>
-                                </li>
-
-                                <li class="indented-list">Replacing text in the browser:
-                                    <div class="tab">
-                                        <p>An example:</p>
-                                        <button onclick="helloWorldBrowserWriteTextReplace()">Replace text with "Hello World!" in the browser</button>
-                                        <p id="replace-text">This text will be replaced</p>
-                                        <button onclick="resetToOriginal()">Reset</button>
-                                    </div>
-                                </li>
-                            </ol>
-                        </li>
-                    </ol>
-                    <p>Throughout this site, I will use the various methods, but especially <code>document.write();</code> and <code>alert();</code>
-                    because these will not need the reader going to the console. 
-                    At times, I may refer to an outside code host such as codepen:</p>
-                    <div class="codepen-box">
-                        <p class="codepen" data-height="265" data-theme-id="dark" data-default-tab="js,result" data-user="JustinSawyer" data-slug-hash="PozPaKw" 
-                        style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid black; margin: 1em 0; padding: 1em;" 
-                        data-pen-title="PozPaKw">
-                            <span>See the Pen <a href="https://codepen.io/JustinSawyer/pen/PozPaKw">
-                            PozPaKw</a> by Justin Sawyer (<a href="https://codepen.io/JustinSawyer">@JustinSawyer</a>)
-                            on <a href="https://codepen.io">CodePen</a>.</span>
-                        </p>
-                        <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
-                    </div>
-
-                <h2>Variables:</h2>
-                    <ol>
-                        <li><code>var</code>
-                            <div class="tab">
-                                <p><code>var</code> can be redeclared.</p>
-                            </div>
-                        </li>
-
-                        <li><code>let</code>
-                            <div class="tab">
-                                <p><code>let</code> can not be redclared. Common practice dictates that <code>let</code> is the best to use,
-                                so unless stated, all variabled here will be declared using <code>let</code>.</p>
-                            </div>
-                        </li>
-
-                        <li><code>const</code>
-                            <div class="tab">
-                                <p><code>const</code> can not be redeclared. Ever. 
-                                (When I say ever, I mean within its own script and those that communicate with it.)</p>
-                            </div>
-                        </li>
-                    </ol>
-                    <p>They also have different levels of <a href="function-scope.html">scope</a>.</p>
-
-                <h2>Data Types:</h2>
-                    <ol>
-                        <li>Numbers</li>
-                            <ol>
-                                <li class="indented-list"><code>integer</code>
-                                    <div class="tab">
-                                        <p>A real number</p>
-                                    </div>
-                                </li>
-
-                                <li class="indented-list"><code>floating-point number</code> or <code>float</code>
-                                    <div class="tab">
-                                        <p>A number with decimal points.</p>
-                                    </div>
-                                </li>
-
-                                <li class="indented-list">Special numbers
-                                    <div class="tab">
-                                        <p><code>infinity, -infinity, NaN.</code></p>
-                                    </div>
-                                </li>
-                            </ol>
-                        
-                        <li><code>"strings"</code>
-                            <div class="tab">
-                                <p>`Textual data. A sentence, a word, number or character. Always enclosed with some kind of speech marks.
-                                The template literals surrounding this paragraph are the best to use, as they allow much more flexibility when writing code.`</p>
-                            </div>
-                        </li>
-
-                        <li><code>[arrays]</code>
-                            <div class="tab">
-                                <p>[A set. Can be any type of data type, or a mixture of. Always enclosed with square brackets.]</p>
-                            </div>
-                        </li>
-                    </ol>
-
-                <h2>Functions:</h2>
-                    <ol>
-                        <li><code>name function()</code>
-                            <div class="tab">
-                                <p>A function expression.</p>
-                            </div>
-                        </li>
-
-                        <li><code>function name()</code>
-                            <div class="tab">
-                                <p>A function declaration.</p>
-                            </div>
-                        </li>
-                        <p>The two give very different results. More information 
-                        <a href="https://stackoverflow.com/questions/336859/var-functionname-function-vs-function-functionname" target="_blank">here</a>.</p>
-                    </ol>
+                </ol>
+                    
             </div>
         </div>
         <div class="container">
                 <div class="row">
                     <div class="col-sm-6">
                         <div class="Last-page">
-                            <!--<a class="btn button" style="text-align: left" href="string-methods.html" role="button"><svg width="1em" height="1em" viewbox="0 0 16 16" class="bi bi-caret-left-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <a class="btn button" style="text-align: left" href="index.html" role="button"><svg width="1em" height="1em" viewbox="0 0 16 16" class="bi bi-caret-left-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                             <path d="M3.86 8.753l5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"/>
-                            </svg> String methods</a>-->
+                            </svg> Home</a>
                         </div>
                     </div>
                     <div class="col-sm-6">
@@ -309,7 +277,7 @@
         </div>
     </footer>
 
-    <script src="scripts/index.js"></script>
+    <script src="scripts/hoisting-and-scope.js"></script>
     
     
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

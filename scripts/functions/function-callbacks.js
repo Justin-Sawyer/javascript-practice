@@ -1,23 +1,54 @@
-//CALLBACKS
+/*//CALLBACKS
 console.log(`
 CALLBACKS
 Call backs are functions passed into another function as an argument. 
-This callback function is then invoked from inside the outer function to complete some routine or action.`);
+This callback function is then invoked from inside the outer function to complete some routine or action.`);*/
 
-function ask(question, yes, no) {
-    if (confirm(question)) {
-        yes();
-    } else {
-        no();
+function callback() {
+    function ask(question, yes, no) {
+        if (confirm(question)) {
+            yes();
+        } else {
+            no();
+        }
     }
+    function yes() {
+        document.getElementById("callbackAnswer").style.width = "40%";
+        document.getElementById("callbackAnswer").style.color = "yellow";
+        document.getElementById("callbackAnswer").style.backgroundColor = "purple";
+        document.getElementById("callbackAnswer").innerHTML = `<p class="tab">Glad to hear that! 😊</p>`;
+    }
+    function no() {
+        document.getElementById("callbackAnswer").style.width = "25%";
+        document.getElementById("callbackAnswer").style.color = "cyan";
+        document.getElementById("callbackAnswer").style.backgroundColor = "green";
+        document.getElementById("callbackAnswer").innerHTML = `<p class="tab">Oh no! 😢</p>`;
+    }
+    ask("Are you ok?", yes, no);
 }
+document.getElementById("callback").innerText = `function ask(question, yes, no) {
+        if (confirm(question)) {
+            yes();
+        } else {
+            no();
+        }
+    }
+
 function yes() {
-    console.log("Glad to hear that");
+        document.getElementById("callbackAnswer").style.width = "40%";
+        document.getElementById("callbackAnswer").style.color = "yellow";
+        document.getElementById("callbackAnswer").style.backgroundColor = "purple";
+        document.getElementById("callbackAnswer").innerHTML = "<p class="tab">Glad to hear that! 😊</p>";
+    }
+
+    function no() {
+    document.getElementById("callbackAnswer").style.width = "25%";
+    document.getElementById("callbackAnswer").style.color = "cyan";
+    document.getElementById("callbackAnswer").style.backgroundColor = "green";
+    document.getElementById("callbackAnswer").innerHTML = "<p class="tab">Oh no! 😢</p>";
 }
-function no() {
-    console.log("Aie, oh no!");
-}
-ask("Am I the greatest?", yes, no);
+
+ask("Are you ok?", yes, no);`
 
 console.log(`
 The function ask() has 3 paramenters, question, yes and no
@@ -33,4 +64,4 @@ An alert box asks the question and gives us options.
 Depending on the option we choose, the results of the if... else comparators are logged.
 `)
 
-confirm("JavaScript is like a dirty mistress");
+//confirm("JavaScript is like a dirty mistress");

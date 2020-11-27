@@ -30,6 +30,11 @@ ul {
     background-color: #c13e70;
 }
 
+code {
+    color:#c13e70;
+    font-size: 100%;
+}
+
 button,
 .button {
     font-family: 'Times New Roman', Times, serif;
@@ -222,6 +227,10 @@ li > a {
 
 #blue {
     color:#047afb;
+}
+
+#var7, #var8 {
+    color: #c13e70;
 }
 
 /* ---------------------------------- Numbers/Math */
