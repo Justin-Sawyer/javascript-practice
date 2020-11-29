@@ -1,12 +1,17 @@
 function varHoist() {
     apple = "An apple is a fruit";
-    document.getElementById("varHoistResult").innerText = apple;
+    document.getElementById("varHoistResult").style.color = "#c13e70"
+    document.getElementById("varHoistResult").innerText = apple + `
+    
+    `    ;
     var apple;
 }
 document.getElementById("varHoist").innerText = varHoist;
 
-function letHoist() {
-    document.getElementById("letHoistResult").innerText = `Uncaught ReferenceError: Cannot access 'apple' before initialization`;
+function letHoist() {document.getElementById("letHoistResult").style.color = "#c13e70"
+    document.getElementById("letHoistResult").innerText = `Uncaught ReferenceError: Cannot access 'apple' before initialization
+    
+    `;
 }
 document.getElementById("letHoist").innerText = `apple = "An apple is a fruit";
     document.getElementById("letHoistResult").innerText = apple;

@@ -11,7 +11,7 @@
 <body>
     <header>
         <div class="wrapper">
-            <div class="sliding-background numbers">
+            <div class="sliding-background strings">
             </div>
         </div>
     
@@ -25,7 +25,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                 <!--<li class="nav-item active">
-                    <a class="nav-link" href="the-basics.html">Numbers: The Basics <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="the-basics.html">"strings": The Basics <span class="sr-only">(current)</span></a>
                 </li>-->
                 <li class="nav-item dropdown">       
                     <a class="dropdown-toggle" type="button" data-toggle="dropdown">Menu
@@ -40,21 +40,21 @@
                             </li>
                         
                             <li class="dropdown-submenu">
-                                <a class="menu-list" href="#">Numbers<span class="caret"></span></a>
+                                <a class="menu-list" href="#">Numbers <span class="caret"></span></a>
                                 <ul class="dropdown-menu">
-                                <li><a href="the-basics.html">The Basics</a></li>
-                                <li><a href="number-methods.html">Number Methods</a></li>
-                                <li><a href="math-methods.html">Math Methods</a></li>
+                                <li><a href="../numbers/the-basics.html">The Basics</a></li>
+                                <li><a href="../numbers/number-methods.html">Number Methods</a></li>
+                                <li><a href="../numbers/math-methods.html">Math Methods</a></li>
                                 </ul>
                             </li>
 
                             <li class="dropdown-submenu">
                                 <a class="menu-list" href="#">"strings"<span class="caret"></span></a>
                                 <ul class="dropdown-menu">
-                                <li><a href="../strings/the-basics.html">The Basics</a></li>
-                                <li><a href="../strings/string-methods.html">String Methods</a></li>
-                                <li><a href="../strings/concat-and-interpolation.html">Concatenation & Interpolation</a></li>
-                                <li><a href="./strings/challenges.html">Challenges</a></li>
+                                <li><a href="the-basics.html">The Basics</a></li>
+                                <li><a href="string-methods.html">String Methods</a></li>
+                                <li><a href="concat-and-interpolation.html">Concatenation & Interpolation</a></li>
+                                <li><a href="challenges.html">Challenges</a></li>
                                 </ul>
                             </li>
 
@@ -107,8 +107,8 @@
                             <li class="dropdown-submenu">
                                 <a class="menu-list" href="#">Objects<span class="caret"></span></a>
                                 <ul class="dropdown-menu">
-                                <li><a href="../objects/the-basics.html">The Basics</a></li>
-                                <li><a href="../objects/constructor-function.html">Constructor Function</a></li>
+                                <li><a href="the-basics.html">The Basics</a></li>
+                                <li><a href="constructor-function.html">Constructor Function</a></li>
                                 </ul>
                             </li>
 
@@ -127,147 +127,64 @@
     <main>
         <div class="container body-container">
             <div class="page-name">
-                <h1>The Basics:</h1>
-                <h2>Number Types:</h2>
-                    <ol>   
-                        <li><code>Integers</code></li>
-                        <p class="tab">Whole numbers</p>
-                        <li><code>Floating Point Numbers</code>, or floats</li>
-                        <p class="tab">Decimal point numbers such as 1.35.</p>
-                        <li><code>Special Numbers Numbers</code>, or floats</li>
-                        <p class="tab">NaN, Infinity, -Infinity, e.</p>
-                        <p class="tab">NaN: Not a Number. Returned if you try math on text, for example.</p>
-                        <p class="tab">e: 1e9 = I billion (1 with 9 zeros); 1e-9 = minus 1 billion.</p>
-                    </ol>
-                    <p>When using numbers in Javascript, they are not wrapped in "". In an <code>[array]</code>, if they are wrapped in ""
-                    they are treated not as numbers but as <code>"strings"</code>. In other words, the sum of "12" + "6" will return NaN, or NotaNumber.</p>
-                
-                <h2><code>Expressions:</code></h2>
-                <p>Expressions are sums. So <code>1+3</code> is an expression.
-                The numbers are <code>operands</code> and the arithmetic operator (+-*/ etc) is an <code>operator</code>.</p>
-                <p>Thus:</p>
-                <p><code>operand operator operand = result</code></p>
+                <h1>Constructor Function:</h1>
+                <p>We saw how to create an object on the last page, but in life, nothing stands still. Our first piece of code mentioned my favourite car, 
+                the Aston Martin V8 Vantage. But there is a new model and the details within the code need to be updated.</p>
+                <p>And what if the Dogs d'Amour reformed, hired a different guitarit? Again, the code would need to be updated.</p>
+                <p>For our code here, it would perhaps be easy to do that by copying inside of the code. But what if you have an object with 
+                hundreds of <code>key</code> / <code>data</code> properties?</p>
+                <p>Not onlt would it be tedious and time consuming to update all that code manually, as humans we are prone to mistakes and there is 
+                a high probability that we might miss a <code>data</code> value to insert.</p>
+                <p>This is where the <code>constructor function</code> comes in useful:</p>
+                <pre><code><p id="constructorFunction"></p></code></pre>
+                <p>Notice that:</p>
+                    <ul>
+                        <li>Name of function:</li>
+                            <p class="tab">Because it is a <code>constructor function</code>, its name starts with a capital letter.</p>
+                        <li>Function parameters</li>
+                            <p class="tab">On the last page, we listed the <code>key</code> / <code>data</code> values within the <code>Object</code>. The <code>constructor function</code> 
+                            is <i>pretending</i> to be an Object. Its "<code>keys</code>"" are the function parameters.</p>
+                        <li><code>this.key = key;</code>:</li>
+                            <p class="tab">We do not list the <code>data</code> values inside the <code>function</code>. Instead, we will call and assign them 
+                            in a <code>new</code> instance of the Function. Also, unlike with <code>Objects</code>, each <code>key</code> ends with <code>;</code>.</p>
+                        <li>The <code>function expression</code>:</li>
+                            <pre><code><p id="expression"></p></code></pre>
+                            <p class="tab">This is <strong>not</strong> listed within the parameters of the <code>Function</code>.</p>
+                        <li>Declaring the Object:</li>
+                            <p class="tab">We declare and name our variable, then assign <code>new</code> to it, and then call our <code>constructor function</code>:</p>
+                            <pre><code><p id="declaring"></p></code></pre>
+                            <p class="tab">We have also done the same with the link.</p>
+                            <p class="tab">The <code>this.url = url</code> becomes</p>
+                            <pre><code><p id="url"></p></code></pre>
+                        <li>Calling the <code>new</code> instance:</li>
+                            <p class="tab">Our <code>new Band()</code>, being the variable <code>dogsDamour</code> is called thus:</p>
+                            <pre><code><p id="callDogs"></p></code></pre>
+                            <p class="tab">(We called it in this instance using <code>document.getElementById("#").innerText = dogsDamour.name</code> in order to display it below.)</p>
+                            <p>But note that when we call the <code>alert</code>, we are calling the <code>function expression</code>, thus we use <code>dogsDamour.alert()</code>.</p>
 
-                <h2><code>Operators:</code></h2>
-                <ol>
-                    <li>Binary</li>
-                    <p class="tab">Need two operands</p>
-                    <table class="table table-sm">
-                        <thead>
-                            <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">Type</th>
-                            <th scope="col">Example</th>
-                            <th scope="col">Result</th>
-                            <th scope="col">Remark</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                            <th scope="row">+</th>
-                            <td>Addition</td>
-                            <td>10+5</td>
-                            <td>15</td>
-                            <td></td>
-                            </tr>
-                            <tr>
-                            <th scope="row">-</th>
-                            <td>Subtraction</td>
-                            <td>10-5</td>
-                            <td>5</td>
-                            <td></td>
-                            </tr>
-                            <tr>
-                            <th scope="row">*</th>
-                            <td>Multiplication</td>
-                            <td>10*5</td>
-                            <td>50</td>
-                            <td></td>
-                            </tr>
-                            <tr>
-                            <th scope="row">/</th>
-                            <td>Division</td>
-                            <td>10/5</td>
-                            <td>2</td>
-                            <td></td>
-                            </tr>
-                            <tr>
-                            <th scope="row">%</th>
-                            <td>Modulus</td>
-                            <td>10%5</td>
-                            <td>0</td>
-                            <td>Remainder: 10/5=2r0</td>
-                            </tr>
-                            <tr>
-                            <th scope="row">**</th>
-                            <td>Exponentiation</td>
-                            <td>10**5</td>
-                            <td>100000</td>
-                            <td>The Power Of: 10<sup>5</sup></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <li>Unary</li>
-                    <p class="tab">Need one operand</p>
-                    <table class="table table-sm">
-                        <thead>
-                            <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">Type</th>
-                            <th scope="col">Example</th>
-                            <th scope="col">Result</th>
-                            <th scope="col">Remark</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                            <th scope="row">++</th>
-                            <td>Increment</td>
-                            <td>10+*</td>
-                            <td>11</td>
-                            <td>Adds 1</td>
-                            </tr>
-                            <tr>
-                            <th scope="row">--</th>
-                            <td>Decrement</td>
-                            <td>10--</td>
-                            <td>9</td>
-                            <td>Subtracts 1</td>
-                            </tr>
-                            <tr>
-                            <th scope="row">-</th>
-                            <td>Unary Negation</td>
-                            <td></td>
-                            <td>-10</td>
-                            <td>Transforms a + into a -</td>
-                            </tr>
-                            <tr>
-                            <th scope="row">+</th>
-                            <td>Unary Pus</td>
-                            <td></td>
-                            <td>=10</td>
-                            <td>Transforms a - into a +</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </ol>
-            </div>
+                    </ul>
+                    <p>Let's see the result:</p>
+                    <button onclick="band()">The Dogs d'Amour</button>
+                <p id="dogs"></p>
+                    
+                
+            </div>            
         </div>
         <div class="container">
             <div class="row">
                 <div class="col-sm-6">
                     <div class="Last-page">
-                        <a class="btn button" style="text-align: left" href="/code-examples.html" role="button"><svg width="1em" height="1em" viewbox="0 0 16 16" class="bi bi-caret-left-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <a class="btn button" style="text-align: left" href="the-basics.html" role="button"><svg width="1em" height="1em" viewbox="0 0 16 16" class="bi bi-caret-left-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                         <path d="M3.86 8.753l5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"/>
-                        </svg> Code Examples</a>
+                        </svg> Objects: The Basics</a>
                     </div>
                 </div>
                 <div class="col-sm-6">
-                    <div class="next-page">
-                        <a class="btn button" href="number-methods.html" role="button">Numbers: Number Methods <svg width="1em" height="1em" viewbox="0 0 16 16" class="bi bi-caret-right-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <!--<div class="next-page">
+                        <a class="btn button" href="constructor-function.html" role="button">Objects: Constructor Function <svg width="1em" height="1em" viewbox="0 0 16 16" class="bi bi-caret-right-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                         <path d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
                         </svg></a>
-                    </div>  
+                    </div> -->
                 </div> 
             </div> 
         </div>
@@ -289,13 +206,17 @@
                     </ul>
                 </div>
                 <div class="container outside-links">
-                    <p>Hi</p>
+                    <ul class="footer-menu">
+                            <li class="footer-menu-link">
+                                <a class="footer-menu-list" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String#Escape_notation" target="_blank">String Escape Notation</a>
+                            </li>
+                    </ul>
                 </div>
             </div>
         </div>
     </footer>
 
-    <script src="../scripts/numbers-in-js/math.js"></script>
+    <script src="../scripts/objects/constructor-function.js"></script>
     
     
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

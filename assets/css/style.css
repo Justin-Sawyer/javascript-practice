@@ -151,6 +151,10 @@ blockquote {
     color: #047afb;
 }
 
+.menu-list {
+    font-size: 20px;
+}
+
 .dropdown-menu {
     padding: 0 12px 12px 12px;
     margin: 0;
@@ -176,7 +180,6 @@ li > a:hover {
 
 li > a {
     color: white;
-    font-size: 1.5rem;
 }
 
 /* ---------------------------------- Body */
@@ -217,6 +220,14 @@ li > a {
 
 .container-table {
     overflow: auto;
+}
+
+.data-types {
+    color:#047afb;
+}
+
+.data-types:hover {
+    color:#c13e70;
 }
 
 /* ---------------------------------- Body Code Examples */

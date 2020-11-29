@@ -115,13 +115,14 @@
                             </ul>
                         </li>
                     </ul>
-                <!--
-                <form class="form-inline my-2 my-lg-0">
+                
+                <!--<form class="form-inline my-2 my-lg-0">
                 <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                </form>-->    
+                </form>--> 
             </div>
         </nav>
+        
     </header>
 
     <main>
@@ -196,7 +197,7 @@
                         <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
                     </div>
 
-                <h2>Variables:</h2>
+                <h2 id="variables">Variables:</h2>
                     <ol>
                         <li><code>var</code>
                             <div class="tab">
@@ -218,11 +219,11 @@
                             </div>
                         </li>
                     </ol>
-                    <p>They also have different levels of <a href="function-scope.html">scope</a>.</p>
+                    <p>They also have different levels of <a href="hoisting-and-scope.html#scope">scope</a>.</p>
 
-                <h2>Data Types:</h2>
+                <h2 class="data-types">Data Types:</h2>
                     <ol>
-                        <li>Numbers</li>
+                        <li><a class="data-types" href="numbers.html">Numbers</a></li>
                             <ol>
                                 <li class="indented-list"><code>integer</code>
                                     <div class="tab">
@@ -243,16 +244,21 @@
                                 </li>
                             </ol>
                         
-                        <li><code>"strings"</code>
+                        <li><a class="data-types" href="strings.html"><code>"strings"</code></a></li>
                             <div class="tab">
                                 <p>`Textual data. A sentence, a word, number or character. Always enclosed with some kind of speech marks.
                                 The template literals surrounding this paragraph are the best to use, as they allow much more flexibility when writing code.`</p>
                             </div>
-                        </li>
+                        
 
-                        <li><code>[arrays]</code>
+                        <li><a class="data-types" href="strings.html"><code>[arrays]</code></a>
                             <div class="tab">
                                 <p>[A set. Can be any type of data type, or a mixture of. Always enclosed with square brackets.]</p>
+                            </div>
+
+                        <li><a class="data-types" href="objects.html"><code>Objects</code></a></li>
+                            <div class="tab">
+                                <p>Data that represents things rather than values. Object oriented principles are based on objects, instead of the actions and data.</p>
                             </div>
                         </li>
                     </ol>
@@ -270,8 +276,7 @@
                                 <p>A function declaration.</p>
                             </div>
                         </li>
-                        <p>The two give very different results. More information 
-                        <a href="https://stackoverflow.com/questions/336859/var-functionname-function-vs-function-functionname" target="_blank">here</a>.</p>
+                        <p>The two give very different results. More information <a href="/functions/function-expressions.html">here</a>.</p>
                     </ol>
             </div>
         </div>
@@ -286,7 +291,7 @@
                     </div>
                     <div class="col-sm-6">
                         <div class="next-page">
-                            <a class="btn button" href="code-examples.html" role="button">Code examples <svg width="1em" height="1em" viewbox="0 0 16 16" class="bi bi-caret-right-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <a class="btn button" href="code-examples.html" role="button">Code Examples <svg width="1em" height="1em" viewbox="0 0 16 16" class="bi bi-caret-right-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                             <path d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
                             </svg></a>
                         </div>  
@@ -333,5 +338,8 @@
         });
         });
     </script>
+
+    
+    
 </body>
 </html>

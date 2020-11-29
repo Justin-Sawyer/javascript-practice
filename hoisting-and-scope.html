@@ -28,7 +28,7 @@
                     <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
                 </li>-->
                 <li class="nav-item dropdown">       
-                    <a class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Menu
+                    <a class="dropdown-toggle" type="button" data-toggle="dropdown">Menu
                         <span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li class="dropdown-menu-no-children">
@@ -101,6 +101,14 @@
                                 <li><a href="functions/function-expressions.html">Function Expressions</a></li>
                                 <li><a href="functions/function-callbacks.html">Function Callbacks</a></li>
                                 <li><a href="functions/challenges.html">Challenges</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="dropdown-submenu">
+                                <a class="menu-list" href="#">Objects<span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                <li><a href="objects/the-basics.html">The Basics</a></li>
+                                <li><a href="objects/constructor-function.html">Constructor Function</a></li>
                                 </ul>
                             </li>
 
@@ -188,50 +196,50 @@
                             <p>Another advantage to declaring variables in local scope is memory usage of the computer. As globally declared variable live for the length of 
                             the script, they are hogging memory. Declaring them locally means that the memory is only being used while the <code>function</code> is running.</p>
                             <br>
+                    </ol>
                             
+                        <p>On the Home page, we spoke about <a href="index.html#variables">variables</a> and how <code>var</code> can be redeclared, 
+                        while <code>let</code> and <code>const</code> cannot.</p>
+                        <p>Let's reuse our first Lupin block of code, but this time we shall use <code>let</code> instead of <code>var</code>:</p>
+                        <pre><code><p id="globalLet1"></p></code></pre>
+                        <p>It is a full moon. Lupin is currently a  <span id="var5"></span></p>
+                        <p>It is not a full moon. Lupin is currently a  <span id="var6"></span></p>
+                        <br>
+                        <p>We have changed simply one word in the code - the <code>var</code> to <code>let</code> inside the <code>if</code> code block.
+                        However, doing so now returns the result that we want. This is because we have declared <code>let</code> inside the local scope of the 
+                        <code>if</code> code block.</p>
+                        <p>What happens if we do the same, but the other way around?</p>
+                        <pre><code><p id="globalLet2"></p></code></pre>
+                        <p>It is a full moon. Lupin is currently a  <span id="var7">Uncaught SyntaxError: Identifier 'species' has already been declared</span></p>
+                        <p>It is not a full moon. Lupin is currently a  <span id="var8">Uncaught SyntaxError: Identifier 'species' has already been declared</span></p>
+                        <br>
+                        <p>And below, where we have changed both instances of <code>var</code> into <code>let</code>, we can see truly that the scope is local:</p>
+                        <p>The code has completely ignored the globally declared <code>let</code> and returned only the locally scoped <code>let</code>, thus the code block 
+                        functions as it should.</p>
+                        <pre><code><p id="globalLet3"></p></code></pre>
+                        <p>It is a full moon. Lupin is currently a  <span id="var9"></span></p>
+                        <p>It is not a full moon. Lupin is currently a  <span id="var10"></span></p>
+                        <br>
                     
-                            <p>On the Home page, we spoke about <a href="index.html#variables">variables</a> and how <code>var</code> can be redeclared, 
-                            while <code>let</code> and <code>const</code> cannot.</p>
-                            <p>Let's reuse our first Lupin block of code, but this time we shall use <code>let</code> instead of <code>var</code>:</p>
-                            <pre><code><p id="globalLet1"></p></code></pre>
-                            <p>It is a full moon. Lupin is currently a  <span id="var5"></span></p>
-                            <p>It is not a full moon. Lupin is currently a  <span id="var6"></span></p>
-                            <br>
-                            <p>We have changed simply one word in the code - the <code>var</code> to <code>let</code> inside the <code>if</code> code block.
-                            However, doing so now returns the result that we want. This is because we have declared <code>let</code> inside the local scope of the 
-                            <code>if</code> code block.</p>
-                            <p>What happens if we do the same, but the other way around?</p>
-                            <pre><code><p id="globalLet2"></p></code></pre>
-                            <p>It is a full moon. Lupin is currently a  <span id="var7">Uncaught SyntaxError: Identifier 'species' has already been declared</span></p>
-                            <p>It is not a full moon. Lupin is currently a  <span id="var8">Uncaught SyntaxError: Identifier 'species' has already been declared</span></p>
-                            <br>
-                            <p>And below, where we have changed both instances of <code>var</code> into <code>let</code>, we can see truly that the scope is local:</p>
-                            <p>The code has completely ignored the globally declared <code>let</code> and returned only the locally scoped <code>let</code>, thus the code block 
-                            functions as it should.</p>
-                            <pre><code><p id="globalLet3"></p></code></pre>
-                            <p>It is a full moon. Lupin is currently a  <span id="var9"></span></p>
-                            <p>It is not a full moon. Lupin is currently a  <span id="var10"></span></p>
-                            <br>
-                    
-                        <li>Block:</li>
-                            <p><code>JavaScript</code> also functions by code blocks. What this means is that, according to how the variable is declared (either as 
-                            <code>var</code>, <code>let</code> or <code>const</code>), code is either blocked (is not accessible) or not:</p>
-                                <ul>
-                                    <li><code>var</code>:</li>
-                                        <pre><code><p id="block1"></p></code></pre>
-                                        <p>Declaring "a" as <code>var</code> means that it is not blocked:</p>
-                                        <p id="block2"></p>
-                                        <br>
+                <h2>Block:</h2>
+                    <p><code>JavaScript</code> also functions by code blocks. What this means is that, according to how the variable is declared (either as 
+                    <code>var</code>, <code>let</code> or <code>const</code>), code is either blocked (is not accessible) or not:</p>
+                        <ul>
+                            <li><code>var</code>:</li>
+                                <pre><code><p id="block1"></p></code></pre>
+                                <p>Declaring "a" as <code>var</code> means that it is not blocked:</p>
+                                <p id="block2"></p>
+                                <br>
 
-                                    <li><code>let</code> and <code>const</code>:</li>
-                                        <pre><code><p id="block3"></p></code></pre>
-                                        <p>Declaring "a" as <code>let</code> or <code>const</code> means that it is blocked:</p>
-                                        <p id="block4"></p>
-                                        <br>
+                            <li><code>let</code> and <code>const</code>:</li>
+                                <pre><code><p id="block3"></p></code></pre>
+                                <p>Declaring "a" as <code>let</code> or <code>const</code> means that it is blocked:</p>
+                                <p id="block4"></p>
+                                <br>
 
-                                </ul>
+                        </ul>
 
-                </ol>
+                
                     
             </div>
         </div>
@@ -239,14 +247,14 @@
                 <div class="row">
                     <div class="col-sm-6">
                         <div class="Last-page">
-                            <a class="btn button" style="text-align: left" href="index.html" role="button"><svg width="1em" height="1em" viewbox="0 0 16 16" class="bi bi-caret-left-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <a class="btn button" style="text-align: left" href="code-examples.html" role="button"><svg width="1em" height="1em" viewbox="0 0 16 16" class="bi bi-caret-left-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                             <path d="M3.86 8.753l5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"/>
-                            </svg> Home</a>
+                            </svg> Code Examples</a>
                         </div>
                     </div>
                     <div class="col-sm-6">
                         <div class="next-page">
-                            <a class="btn button" href="code-examples.html" role="button">Code examples <svg width="1em" height="1em" viewbox="0 0 16 16" class="bi bi-caret-right-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <a class="btn button" href="numbers/the-basics.html" role="button">Numbers:The Basics <svg width="1em" height="1em" viewbox="0 0 16 16" class="bi bi-caret-right-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                             <path d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
                             </svg></a>
                         </div>  
