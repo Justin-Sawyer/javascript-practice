@@ -11,7 +11,7 @@
 <body>
     <header>
         <div class="wrapper">
-            <div class="sliding-background">
+            <div class="sliding-background strings">
             </div>
         </div>
     
@@ -25,7 +25,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                 <!--<li class="nav-item active">
-                    <a class="nav-link" href="function-expressions.html">Functions: Function Expressions <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="the-basics.html">"strings": The Basics <span class="sr-only">(current)</span></a>
                 </li>-->
                 <li class="nav-item dropdown">       
                     <a class="dropdown-toggle" type="button" data-toggle="dropdown">Menu
@@ -40,7 +40,7 @@
                             </li>
                         
                             <li class="dropdown-submenu">
-                                <a class="menu-list" href="#">Numbers<span class="caret"></span></a>
+                                <a class="menu-list" href="#">Numbers <span class="caret"></span></a>
                                 <ul class="dropdown-menu">
                                 <li><a href="../numbers/the-basics.html">The Basics</a></li>
                                 <li><a href="../numbers/number-methods.html">Number Methods</a></li>
@@ -97,21 +97,21 @@
                             <li class="dropdown-submenu">
                                 <a class="menu-list" href="#">Functions<span class="caret"></span></a>
                                 <ul class="dropdown-menu">
-                                <li><a href="the-basics.html">The Basics</a></li>
-                                <li><a href="function-expressions.html">Function Expressions</a></li>
-                                <li><a href="function-callbacks.html">Function Callbacks</a></li>
-                                <li><a href="challenges.html">Challenges</a></li>
+                                <li><a href="../functions/the-basics.html">The Basics</a></li>
+                                <li><a href="../functions/function-expressions.html">Function Expressions</a></li>
+                                <li><a href="../function-callbacks.html">Function Callbacks</a></li>
+                                <li><a href="../functions/challenges.html">Challenges</a></li>
                                 </ul>
                             </li>
 
                             <li class="dropdown-submenu">
                                 <a class="menu-list" href="#">Objects<span class="caret"></span></a>
                                 <ul class="dropdown-menu">
-                                <li><a href="../objects/the-basics.html">The Basics</a></li>
-                                <li><a href="../objects/constructor-function.html">Constructor Function</a></li>
-                                <li><a href="../objects/object-methods.html">Object Methods</a></li>
-                                <li><a href="../objects/this.html">This</a></li>
-                                <li><a href="../objects/object-values.html">Object Values</a></li>
+                                <li><a href="the-basics.html">The Basics</a></li>
+                                <li><a href="constructor-function.html">Constructor Function</a></li>
+                                <li><a href="object-methods.html">Object Methods</a></li>
+                                <li><a href="this.html">This</a></li>
+                                <li><a href="object-values.html">Object Values</a></li>
                                 </ul>
                             </li>
 
@@ -130,85 +130,71 @@
     <main>
         <div class="container body-container">
             <div class="page-name">
-                <h1>Function Declarations vs Function Expressions:</h1>
+                <h1>Object Methods:</h1>
             </div>
+            
             <div>
-                
-                <p>On the <a href="../index.html">Home</a> page of this site, we mentioned briefly about these. Let's try to understand them better here:</p>
+                <p>We saw how to call an object on the last page, but of course there are other methods, just as is the case for <code>"strings"</code>, 
+                <code>Numbers</code> and <code>[arrays]</code></p>
+                <p>Below are just a few of them, using our <code>Band</code> object from the last page:</p>
+                <pre><code><p id ="bandDetails"></p></code></pre>
                 <br>
-                    <ol>
-                        <li>Function declarations:</li>    
-                        <pre><code><p id="declarations"></p></code></pre>
-                        <p>Within the code to this website I have been using these, except for self declaring functions: these are function expressions. 
-                        More on them below. Function declarations do not require variable assignments. Thus, they must start with the word <code>function</code> 
-                        and must be named.</p>
-                        <br>
-
-                        <li id="functionExpressions">Function expressions:</li>
-                        <pre><code><p id="expressions"></p></code></pre>
-                        <p>These require variable assignment. Thus, <code>let name = function()</code> where <code>name</code> is the variable and <code>function()</code> 
-                        is what has been assigned to the variable called <code>name</code>. The function itself can be anonymous, as in the case above, or it can be named:</p>
-                        <pre><code><p id="anon"></p></code></pre>
-                        <p>So why is a self declaring function a function expression? Because they declare themselves. Effectively, a self declaring function is saying:</p>
-                        <p>"I'm calling myself" - it has given itself a name, that of "self declare".</p>
-                        <p>It is for this reason that a self declaring <code>function</code> is written within brackets and has further brackets after itself:</p>
-                        <pre><code><p id="self"></p></code></pre>
-                    </ol>
-                    <br>
-                    <p>So what is the difference betxeen the two functions?</p>
-                    <p>Hoisting.</p>
-                    <p>When JavaScript loads, it hoists to the top of the page - it is read first in other words. As JavaScript retains the last instruction, 
-                    it effectively runs the last piece of code.</p>
-                    <pre><code><p id="redeclare1"></p></code></pre>
-                    <p>Result of function foo(): <span id="redeclareResult1"></span></p>
-                    <p>Above, we said that the keyword <code>return</code> causes the code to break, to stop running. Within the <code>function foo()</code> we 
-                    have a <code>return</code>. However, due to hoisting, <code>JavaScript</code> has ignored the first call of the function, and thus overridden the return.</p>
-                    <p>Thus, our reult is 8 instead of 3.</p>
-                    <p>Contrast this with a function expression:</p>
-                    <pre><code><p id="redeclare2"></p></code></pre>
-                    <p>Result of function foob(): <span id="redeclareResult2"></span></p>
-                    <p>Variable <strong>declarations</strong> (<code>var obar</code>) get hoisted, but their <strong>assignments</strong> do not. Thus, the code 
-                    is reading:</p>
-                    <p><code>var obar = undefined;</code></p>
-                    <p><code>var obar = undefined;</code></p>
-                    <p>which means that as the code is looking out for <strong>an</strong> instance of <code>var obar</code>, the first <code>function obar()</code> is returned, and then the code 
-                    breaks.</p>
-                    <p>The same is true in the follwoing instance:</p>
-                    <pre><code><p id="redeclare3"></p></code></pre>
-                    <p>Result of function fooba(): <span id="redeclareResult3"></span></p>
-                    <br>
-                    <p>While with the follwing, nothing is returned as the code is told to <code>return;</code> a variable that has been <strong>declared</strong> but not <strong>assigned</strong>
-                    until <strong>after</strong> the code has stopped:</p>
-                    <pre><code><p id="redeclare4"></p></code></pre>
-                    <p>Result of function foobar(): <span id="redeclareResult4"></span></p>
-                    <br>
-                     
-                    <p>Read more about function expressions <a href="https://javascriptweblog.wordpress.com/2010/07/06/function-declarations-vs-function-expressions/" target="_blank">here</a>.</p>
+                <pre><code><p id="methods"></p></code></pre>
+                <br>
+                <p>Above, there are again a few things to note:</p>
+                <ul>
+                    <li><code>typeof </code>:</li>
+                    <ul>
+                        <li>typeof <code>Function</code></li>
+                        <p class="tab">When we call the <code>typeof</code> method on the <strong><code>function Band()</code>, we do not 
+                        include the <code>()</code></strong>. If we do, the result returns <code>undefined</code>.</p>
+                        <li>typeof <code>new Object()</code></li>
+                        <p class="tab">When we call the <code>typeof</code> method on the <strong><code>new Object()</code></strong>, we <strong>can</strong> 
+                        include the <code>()</code> but we don't have to.</p>
+                        <li>typeof <code>variable</code></li>
+                        <p class="tab">Since <code>new Band()</code> has been assigned as a <code>variable</code> called <code>dogsDamour</code>, if we add <code>()</code> 
+                        then console alerts us to the fact that a <code>variable</code> is <strong>not</strong> a <code>function</code>.</p>
+                    </ul>
+                    <li><code>.length</code></li>
+                        <p class="tab">We cannot call <code>.length</code> on the variable itslef. We have to call its <code>key</code> / <code>data</code> 
+                        values. <strong>Or</strong>, we can call its <code>.entries</code></p>
+                        <p class="tab">What happens if one of the <code>data</code> values has not been completed?</p>
+                        <p class="tab">Lets create a new <code>Object</code> from the <code>Band()</code> function, but lets make 
+                        it a 3 piece band, which only released a couple of albums:</p>
+                <pre><code><p id="nirvana"></p></code></pre>
+                        <p class="tab">Now, let's call the <code>.length</code> method again:</p>
+                <pre><code><p id="nirvanaLength"></p></code></pre>
+                        <p class="tab">The code is telling us that there are 13 <code>keys</code> and 13 <code>data</code> entries. And there are... but some of the 
+                        <code>data</code> entries are in fact empty <code>"strings"</code> - we can see this if we study carefully the <code>.entries</code> code. But 
+                        although a computer might read this code perfectly well, it is not very clear to us humans. So let's find a different, better way to get the 
+                        <code>key</code> / <code>data</code> values: lets use a <code>for... in</code> loop (open <code>console</code> to
+                        see the results):</p>
+                <pre><code><p id="nirvanaProperties"></p></code></pre>
+                        <p class="tab">We can also see the results using a <code>for... of loop:</code></p>
+                <pre><code><p id="nirvanaData"></p></code></pre>
+                        <p class="tab">Note the differneces in the two loops, and <a href="../loops/loops.html">see here</a> for a reminder anout their differences.</p>
+                </ul>
                 
-
-
-
-                
-            </div>
+            </div>            
         </div>
         <div class="container">
-                <div class="row">
-                    <div class="col-sm-6">
-                        <div class="Last-page">
-                            <a class="btn button" style="text-align: left" href="the-basics.html" role="button"><svg width="1em" height="1em" viewbox="0 0 16 16" class="bi bi-caret-left-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M3.86 8.753l5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"/>
-                            </svg> Functions: The Basics</a>
-                        </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="Last-page">
+                        <a class="btn button" style="text-align: left" href="constructor-function.html" role="button"><svg width="1em" height="1em" viewbox="0 0 16 16" class="bi bi-caret-left-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M3.86 8.753l5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"/>
+                        </svg> Objects: Constructor Function</a>
                     </div>
-                    <div class="col-sm-6">
-                        <div class="next-page">
-                            <a class="btn button" href="function-callbacks.html" role="button">Functions: Function Callbacks <svg width="1em" height="1em" viewbox="0 0 16 16" class="bi bi-caret-right-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
-                            </svg></a>
-                        </div>  
+                </div>
+                <div class="col-sm-6">
+                    <div class="next-page">
+                        <a class="btn button" href="this.html" role="button">Objects: This <svg width="1em" height="1em" viewbox="0 0 16 16" class="bi bi-caret-right-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+                        </svg></a>
                     </div>
                 </div> 
-            </div>
+            </div> 
+        </div>
     </main>
 
     <footer>
@@ -227,14 +213,17 @@
                     </ul>
                 </div>
                 <div class="container outside-links">
-                    <p>Hi</p>
+                    <ul class="footer-menu">
+                            <li class="footer-menu-link">
+                                <a class="footer-menu-list" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String#Escape_notation" target="_blank">String Escape Notation</a>
+                            </li>
+                    </ul>
                 </div>
             </div>
         </div>
     </footer>
 
-    
-    <script src="../scripts/functions/function-expressions.js"></script>
+    <script src="../scripts/objects/object-methods.js"></script>
     
     
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

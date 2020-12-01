@@ -157,6 +157,8 @@ function Band(name, singer, drummer, guitarist, bassist, album1, album2, album3,
     <p>Their drummer, <code>${dogsDamour.drummer}</code> now lives is Los Angeles.</p>
     <p>Listen to their music by clicking the link:</p> 
     <p><a href="${dogsDamour.url}" target="_blank">The Dogs d'Amour on Apple Music</a>`;
+
+    console.log(typeof dogsDamour, typeof new Band(), typeof Band, Object.keys(dogsDamour).length);
 };
 
 (function expression() {

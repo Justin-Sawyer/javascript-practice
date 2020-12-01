@@ -542,26 +542,26 @@ let newLongPlayList = [];
 
     for (let album of allDogsAlbums[1]) {
         for (let songs of album[1]) {
-            if (songs[1]<=3.3) {
+            if (songs[1]&lt=3.3) {
                 newShortPlayList.push(songs);
 
                 //To print out the list of songs in the BROWSER:
                 document.getElementById("shortSongs1").addEventListener("click", function() {
                 document.getElementById("playList1").innerHTML = "";
-                    for (a=0; a<newShortPlayList.length; a++) {
+                    for (a=0; a&ltnewShortPlayList.length; a++) {
                         document.getElementById("playList1").innerHTML += newShortPlayList[a] + "<br>";
                     };
                 });
 
             }
 
-            if (songs[1]>3.3) {
+            if (songs[1]&gt3.3) {
                 newLongPlayList.push(songs);
 
                 //To print out the list of songs in the BROWSER:
                 document.getElementById("longSongs1").addEventListener("click", function() {
                 document.getElementById("playList1").innerHTML = "";
-                    for (a=0; a<newLongPlayList.length; a++) {
+                    for (a=0; a&ltnewLongPlayList.length; a++) {
                         document.getElementById("playList1").innerHTML += newLongPlayList[a] + "<br>";
                     };
                 });
