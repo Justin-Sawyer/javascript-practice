@@ -25,6 +25,11 @@ p {
 ul {
     list-style-type: none;
 }
+/* Remove styling from buttons in ios
+button {
+    -webkit-appearance: none;
+    border-radius: 0;
+}*/
 
 .btn-default {
     background-color: #c13e70;
