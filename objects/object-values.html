@@ -108,10 +108,11 @@
                                 <a class="menu-list" href="#">Objects<span class="caret"></span></a>
                                 <ul class="dropdown-menu">
                                 <li><a href="the-basics.html">The Basics</a></li>
-                                <li><a href="constructor-function.html">Constructor Function</a></li>
+                                <li><a href="object-constructor.html">Object Constructor</a></li>
                                 <li><a href="object-methods.html">Object Methods</a></li>
-                                <li><a href="this.html">This</a></li>
+                                <li><a href="this.html">Object This</a></li>
                                 <li><a href="object-values.html">Object Values</a></li>
+                                <li><a href="challenges.html">Challenges</a></li>
                                 </ul>
                             </li>
 
@@ -135,7 +136,7 @@
 
             <div class="body-section">
                 <ul>
-                    <li>Finding values:</li>
+                    <li><h2>Finding <code>Object</code> values:</h2></li>
                         <p class="tab">Let's create a new <code>Object</code> that we shall call <code>country</code>:</p>
                         <pre><code><p id="country"></p></code></pre>
                         <ol>
@@ -147,62 +148,61 @@
 
                             <li>Call <code>function()</code>:</li>
                             <pre><code><p id="function"></p></code></pre>
-                            <button onclick="functionCall()">Call Object</button><span> Open console!</span>
+                            <button onclick="functionCall()">Call Function</button><span> Open console!</span>
                             <p id="functionResult"></p>
                             <br>
 
                             <li>Call <code>this.key</code>:</li>
                             <pre><code><p id="thisKey"></p></code></pre>
-                            <button onclick="thisKeyCall()">Call Object</button><span> Open console!</span>
+                            <button onclick="thisKeyCall()">Call this.key</button><span> Open console!</span>
                             <p id="thisKeyResult"></p>
                             <br>
 
                             <li>Call <code>Object.key</code>:</li>
                             <pre><code><p id="objectKey"></p></code></pre>
-                            <button onclick="objectKeyCall()">Call Object</button><span> Open console!</span>
+                            <button onclick="objectKeyCall()">Call Object.key</button><span> Open console!</span>
                             <p id="objectKeyResult"></p>
                             <br>
 
                         </ol>
+                    <p>So, for us to get the <code>values</code>, we call simply the name of the <code>Object</code> and its <code>keys</code> using dot notation. 
+                    If we have multi-level Objects, we use dot notation twice:</p>
+                    <pre><code><p id="monacoRulers"></p></code></pre>
+                    <p>In other words, to access the <code>values</code> of the <code>key</code> "rulers", we call:</p>
+                    <pre><code><p id="rulersCall"></p></code></pre>
+                    <button onclick="objectKeyKeyCall()">Call Object.key.key</button><span> Open console!</span>
+                    <p id="objectKeyKeyResult"></p>
+                    <br>
+
+                    <li><h2>Updating <code>Object</code> values:</h2></li>
+                    <pre><code><p id="updateValueOriginal"></p></code></pre>
+                    <ol>
+                        <li><p>Original value and result:</p></li>
+                        <button onclick="originalValue()">New value and result:</button>
+                        <p id="resultOriginalValue"></p>
+                        <br>
+                        <li>Updated <code>Object</code> values:</li>
+                        <pre><code><p id="updateValueNew"></p></code></pre>
+                        <p>Click the button to see the new value and result:</p>
+                        <button onclick="newValue()">New value and result:</button>
+                        <p id="resultUpdateValue"></p>
+                        <br>
+
+                        <li>Delete <code>Object</code> values:</li>
+                        <pre><code><p id="deleteValue"></p></code></pre>
+                        <p>Click the button to see the new value and result:</p>
+                        <button onclick="deleteValue()">New value and result:</button>
+                        <p id="resultDeleteValue"></p>
+                    </ol>
+                    <br>
+
+
+
                 </ul>
-
-
-                <!--<p>Objects store data, but to reference and access this data we use the <code>this</code> keyword, as we saw on the previous pages.</p>
-                <pre><code><p id="thisExplain"></p></code></pre>
-                <button onclick="thisExplain()">Who are the main characters in The Hitchhikers Guide to the Galaxy?</button>
-                <p id="characters"></p>
-                <br>
-                <p>We can also call these details using the name of the function and the keys (<code>hitchhikers.key()</code>):</p>
-                <pre><code><p id="detailsExplain"></p></code></pre>
-                <button onclick="detailsExplain()">Who are the main characters in The Hitchhikers Guide to the Galaxy?</button>
-                <p id="characters1"></p>
-                <br>
-                <p>So why it <code>this</code> so useful?</p>
-                <p>Maybe we are working on the code and we update the name of the <code>Object</code> but forget to change the code to be executed:</p>
-                <pre><code><p id="detailsExplain1"></p></code></pre>
-                <button onclick="detailsExplain1()">Who are the main characters in The Hitchhikers Guide to the Galaxy?</button>
-                <p id="characters2"></p>
-                <br>
-                <p>But, if we use the <code>this</code> keyword, the not-updated code to be executed still runs:</p>
-                <pre><code><p id="thisExplain1"></p></code></pre>
-                <button onclick="thisExplain1()">Who are the main characters in The Hitchhikers Guide to the Galaxy?</button>
-                <p id="characters3"></p>
-                <br>
-                <p>However, make sure to us <code>this</code> <strong>within</strong> its object. Otherwise if we try not to, as in the code below, we call the <code>[Object Window]</code>.</p>
                 
-                <pre><code><p id="thisOutsideObject"></p></code></pre>
-                <button onclick="thisOutsideObject()">Try Me</button>
-                <p id="thisOutsideObjectResult"></p>
-                <p>(Open <code>console</code> and then click the arrow to see the results)</p>
-                <br>
-                <p><code>this</code> is set when we call (execute) the function, not when we define it.</p>
-                <p>What does this mean?</p> 
-                <p>That it is not <a href="../hoisting-and-scope.html#hoisting">hoisted</a>.</p>
-                <p>Let's create a variable, set that vairable as a function expression of the original <code>Object</code> 
-                and then call the function:</p>
-                <pre><code><p id="newHitchhikers"></p></code></pre>
-                <button onclick="newHitchhikersResult()">Try Me</button>
-                <p id="newHitchhikersResult"></p>-->
+
+
+                
             </div>
                 
             <div class="container">
@@ -215,11 +215,11 @@
                         </div>
                     </div>
                     <div class="col-sm-6">
-                        <!--<div class="next-page">
-                            <a class="btn button" href="object-values.html" role="button">Objects: Object Values <svg width="1em" height="1em" viewbox="0 0 16 16" class="bi bi-caret-right-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <div class="next-page">
+                            <a class="btn button" href="challenges.html" role="button">Objects: Challenges <svg width="1em" height="1em" viewbox="0 0 16 16" class="bi bi-caret-right-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                             <path d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
                             </svg></a>
-                        </div>-->
+                        </div>
                     </div> 
                 </div> 
             </div>

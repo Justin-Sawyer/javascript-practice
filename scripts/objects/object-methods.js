@@ -207,4 +207,17 @@ Result of for... of loop:
     }`
 })();
 
+//-------------------------------------------------- Object Constructor
+(function newObject() {
+    let talkingHeads = new Object();
+        talkingHeads.singer = "David Byrne";
+        talkingHeads.name = "Talking Heads";
+        document.getElementById("result").innerHTML = `The name of this band is <code>${talkingHeads.name}</code> and it is fronted by <code>${talkingHeads.singer}</code>.`;
+    
+    document.getElementById("newObject").innerText = `let talkingHeads = new Object();
+        talkingHeads.singer = "David Byrne";
+        talkingHeads.name = "Talking Heads";
+        document.getElementById("result").innerHTML = "The name of this band is talkingHeads.name and it is fronted by talkingHeads.singer";`
+})();
+
 
