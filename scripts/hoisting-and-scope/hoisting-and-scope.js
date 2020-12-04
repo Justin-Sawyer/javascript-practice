@@ -198,3 +198,4 @@ document.getElementById("block4").innerHTML = "<p id="block2>" + a + "</p>;`;
     document.getElementById("block4").style.color = "#c13e70";
     document.getElementById("block4").innerText = `<p id="block2">Uncaught ReferenceError: a is not defined</p>`;
 })();
+

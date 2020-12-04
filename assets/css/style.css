@@ -177,14 +177,23 @@ blockquote {
   margin-top: -1px;
 }
 
-li > a:hover {
+.dropdown-submenu > ul > li > a:hover {
     color: black;
     text-decoration: none;
     font-family: Menlo, sans-serif;
 }
 
-li > a {
+li > a:hover {
     color: white;
+    text-decoration: none;
+    font-family: Menlo, sans-serif;
+}
+
+.dropdown-submenu > ul > li > a {
+    color:white;
+}
+li > a {
+    color: black;
 }
 
 /* ---------------------------------- Body */
@@ -334,3 +343,38 @@ footer {
         text-align: center;
     }
 }
+
+@media all and (min-width: 992px) {
+    /*.navbar-expand-lg .navbar-nav .dropdown-menu {
+        position: static;
+    }*/
+
+   .list-unstyled >li {
+        padding-left: 24px;
+    }
+
+    .dropdown-menu {
+        border-radius: 0;
+    }
+        
+    .navbar { 
+        padding-top: 0; 
+        padding-bottom: 0; 
+    }
+
+    .navbar .has-megamenu {
+        position:static!important;
+    }
+
+    .navbar .megamenu {
+        left:0; 
+        right:0; 
+        width:100%; 
+        padding:20px;
+    }
+    .navbar .nav-link {
+        padding-top:1rem; padding-bottom:1rem;
+        }
+}
+
+    

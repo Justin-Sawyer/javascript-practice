@@ -1,3 +1,17 @@
+(function example() {
+    document.getElementById("example").innerText = `function checkTyla(name) {
+    return name == "Tyla";
+}
+
+function checkCountUp(value) {
+    return value &lt;= 5;
+}
+
+function reduceCountUp(total, num) {
+  return total - num;
+}` 
+})();
+
 let membersDogsDAmour = ["Tyla", "Bam Bam", "Jo Dog", "Steve James"];
 let countUp = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 

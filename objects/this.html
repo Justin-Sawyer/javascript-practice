@@ -116,6 +116,15 @@
                                 </ul>
                             </li>
 
+                            <li class="dropdown-submenu">
+                                <a class="menu-list" href="#">The DOM<span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                <li><a href="../dom/document-object-model.html">on~</a></li>
+                                <li><a href="../dom/getting-dom-elements.html">Getting DOM Elements</a></li>
+                                <li><a href="../dom/challenges.html">Challenges</a></li>
+                                </ul>
+                            </li>
+
                             </ul>
                         </li>
                     </ul>
@@ -134,49 +143,47 @@
                 <h1>This:</h1>
             </div>
 
-            <div>
-            <p>Objects store data, but to reference and access this data we use the <code>this</code> keyword, as we saw on the previous pages.</p>
-            <pre><code><p id="thisExplain"></p></code></pre>
-            <button onclick="thisExplain()">Who are the main characters in The Hitchhikers Guide to the Galaxy?</button>
-            <p id="characters"></p>
-            <br>
-            <p>We can also call these details using the name of the function and the keys (<code>hitchhikers.key()</code>):</p>
-            <pre><code><p id="detailsExplain"></p></code></pre>
-            <button onclick="detailsExplain()">Who are the main characters in The Hitchhikers Guide to the Galaxy?</button>
-            <p id="characters1"></p>
-            <br>
-            <p>So why it <code>this</code> so useful?</p>
-            <p>Maybe we are working on the code and we update the name of the <code>Object</code> but forget to change the code to be executed:</p>
-            <pre><code><p id="detailsExplain1"></p></code></pre>
-            <button onclick="detailsExplain1()">Who are the main characters in The Hitchhikers Guide to the Galaxy?</button>
-            <p id="characters2"></p>
-            <br>
-            <p>But, if we use the <code>this</code> keyword, the not-updated code to be executed still runs:</p>
-            <pre><code><p id="thisExplain1"></p></code></pre>
-            <button onclick="thisExplain1()">Who are the main characters in The Hitchhikers Guide to the Galaxy?</button>
-            <p id="characters3"></p>
-            <br>
-            <p>However, make sure to us <code>this</code> <strong>within</strong> its object. Otherwise if we try not to, as in the code below, we call the <code>[Object Window]</code>.</p>
-            
-            <pre><code><p id="thisOutsideObject"></p></code></pre>
-            <button onclick="thisOutsideObject()">Try Me</button>
-            <p id="thisOutsideObjectResult"></p>
-            <p>(Open <code>console</code> and then click the arrow to see the results)</p>
-            <br>
-            <p><code>this</code> is set when we call (execute) the function, not when we define it.</p>
-            <p>What does this mean?</p> 
-            <p>That it is not <a href="../hoisting-and-scope.html#hoisting">hoisted</a>.</p>
-            <p>Let's create a variable, set that vairable as a function expression of the original <code>Object</code> 
-            and then call the function:</p>
-            <pre><code><p id="newHitchhikers"></p></code></pre>
-            <button onclick="newHitchhikersResult()">Try Me</button>
-            <p id="newHitchhikersResult"></p>
+            <div class="main-body">
+                <p>Objects store data, but to reference and access this data we use the <code>this</code> keyword, as we saw on the previous pages.</p>
+                <pre><code><p id="thisExplain"></p></code></pre>
+                <button onclick="thisExplain()">Who are the main characters in The Hitchhikers Guide to the Galaxy?</button>
+                <p id="characters"></p>
+                <br>
+                <p>We can also call these details using the name of the function and the keys (<code>hitchhikers.key()</code>):</p>
+                <pre><code><p id="detailsExplain"></p></code></pre>
+                <button onclick="detailsExplain()">Who are the main characters in The Hitchhikers Guide to the Galaxy?</button>
+                <p id="characters1"></p>
+                <br>
+                <p>So why it <code>this</code> so useful?</p>
+                <p>Maybe we are working on the code and we update the name of the <code>Object</code> but forget to change the code to be executed:</p>
+                <pre><code><p id="detailsExplain1"></p></code></pre>
+                <button onclick="detailsExplain1()">Who are the main characters in The Hitchhikers Guide to the Galaxy?</button>
+                <p id="characters2"></p>
+                <br>
+                <p>But, if we use the <code>this</code> keyword, the not-updated code to be executed still runs:</p>
+                <pre><code><p id="thisExplain1"></p></code></pre>
+                <button onclick="thisExplain1()">Who are the main characters in The Hitchhikers Guide to the Galaxy?</button>
+                <p id="characters3"></p>
+                <br>
+                <p>However, make sure to us <code>this</code> <strong>within</strong> its object. Otherwise if we try not to, as in the code below, we call the <code>[Object Window]</code>.</p>
+                
+                <pre><code><p id="thisOutsideObject"></p></code></pre>
+                <button onclick="thisOutsideObject()">Try Me</button>
+                <p id="thisOutsideObjectResult"></p>
+                <p>(Open <code>console</code> and then click the arrow to see the results)</p>
+                <br>
+                <p><code>this</code> is set when we call (execute) the function, not when we define it.</p>
+                <p>What does this mean?</p> 
+                <p>That it is not <a href="../hoisting-and-scope.html#hoisting">hoisted</a>.</p>
+                <p>Let's create a variable, set that vairable as a function expression of the original <code>Object</code> 
+                and then call the function:</p>
+                <pre><code><p id="newHitchhikers"></p></code></pre>
+                <button onclick="newHitchhikersResult()">Try Me</button>
+                <p id="newHitchhikersResult"></p>
             </div>
-                
-                
-                           
         </div>
-        <div class="container">
+
+        <div class="container next-last-page-section">
             <div class="row">
                 <div class="col-sm-6">
                     <div class="Last-page">
@@ -194,6 +201,7 @@
                 </div> 
             </div> 
         </div>
+        
     </main>
 
     <footer>

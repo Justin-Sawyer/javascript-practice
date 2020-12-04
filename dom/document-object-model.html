@@ -11,7 +11,7 @@
 <body>
     <header>
         <div class="wrapper">
-            <div class="sliding-background strings">
+            <div class="sliding-background dom-examples">
             </div>
         </div>
     
@@ -25,10 +25,10 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                 <!--<li class="nav-item active">
-                    <a class="nav-link" href="challenges.html">"strings": Challenges <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="code-examples.html">Code Examples <span class="sr-only">(current)</span></a>
                 </li>-->
                 <li class="nav-item dropdown">       
-                    <a class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Menu
+                    <a class="dropdown-toggle" type="button" data-toggle="dropdown">Menu
                         <span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li class="dropdown-menu-no-children">
@@ -51,10 +51,10 @@
                             <li class="dropdown-submenu">
                                 <a class="menu-list" href="#">"strings"<span class="caret"></span></a>
                                 <ul class="dropdown-menu">
-                                <li><a href="the-basics.html">The Basics</a></li>
-                                <li><a href="string-methods.html">String Methods</a></li>
-                                <li><a href="concat-and-interpolation.html">Concatenation & Interpolation</a></li>
-                                <li><a href="challenges.html">Challenges</a></li>
+                                <li><a href="../strings/the-basics.html">The Basics</a></li>
+                                <li><a href="../strings/string-methods.html">String Methods</a></li>
+                                <li><a href="../strings/concat-and-interpolation.html">Concatenation & Interpolation</a></li>
+                                <li><a href="../strings/challenges.html">Challenges</a></li>
                                 </ul>
                             </li>
 
@@ -74,7 +74,6 @@
                                 <ul class="dropdown-menu">
                                 <li><a href="../booleans/the-basics.html">The Basics</a></li>
                                 <li><a href="../booleans/conditionals.html">Conditionals</a></li>
-                                <li><a href="../booleans/conversions.html">Conversions</a></li>
                                 <li><a href="../booleans/challenges.html">Challenges</a></li>
                                 </ul>
                             </li>
@@ -119,15 +118,15 @@
                             <li class="dropdown-submenu">
                                 <a class="menu-list" href="#">The DOM<span class="caret"></span></a>
                                 <ul class="dropdown-menu">
-                                <li><a href="../dom/document-object-model.html">on~</a></li>
-                                <li><a href="../dom/getting-dom-elements.html">Getting DOM Elements</a></li>
-                                <li><a href="../dom/challenges.html">Challenges</a></li>
+                                <li><a href="document-object-model.html">on~</a></li>
+                                <li><a href="getting-dom-elements.html">Getting DOM Elements</a></li>
+                                <li><a href="challenges.html">Challenges</a></li>
                                 </ul>
                             </li>
 
                             </ul>
                         </li>
-                    </ul>
+                </ul>
                 <!--
                 <form class="form-inline my-2 my-lg-0">
                 <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
@@ -140,35 +139,49 @@
     <main>
         <div class="container body-container">
             <div class="page-name">
-                <h1>Challenges:</h1>
+                <h1>on~:</h1>
             </div>
 
             <div class="main-body">
+                <p>Throughout this site, we have been using DOM Events to either alert, print or display things, either in self-declaring 
+                functions or on the click of a button.</p>
+                <p>The Event used has been <code>onclick</code>. All <code>JavaScript</code> DOM Events start with <code>on</code>.</p>
+                <p>There are many more than this one, however. Below, we'll try a few:</p>
+
                 <ol>
-                    <li>Create a string, name it and display it in the HTML:</li>
-                        <p class="codepen" data-editable data-height="265" data-theme-id="dark" data-default-tab="js,result" data-user="JustinSawyer" data-slug-hash="eYzvmvE" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Create aa string,  name it and display it">
-                        <span>See the Pen <a href="https://codepen.io/JustinSawyer/pen/eYzvmvE">
-                        Create aa string,  name it and display it</a> by Justin Sawyer (<a href="https://codepen.io/JustinSawyer">@JustinSawyer</a>)
-                        on <a href="https://codepen.io">CodePen</a>.</span>
-                        </p>
-                        <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
-                    <br>
-                    <li>Create a string, name it and alert it;</li>
-                        <p class="codepen" data-editable data-height="265" data-theme-id="dark" data-default-tab="js,result" data-user="JustinSawyer" data-slug-hash="LYZWVBp" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Create string, name it, alert it">
-                        <span>See the Pen <a href="https://codepen.io/JustinSawyer/pen/LYZWVBp">
-                        Create string, name it, alert it</a> by Justin Sawyer (<a href="https://codepen.io/JustinSawyer">@JustinSawyer</a>)
-                        on <a href="https://codepen.io">CodePen</a>.</span>
-                        </p>
-                        <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
-                    <br>
-                    <li>Find last index of any character in either string and add second string to it</li>
-                        <p class="codepen" data-editable data-height="265" data-theme-id="dark" data-default-tab="js,result" data-user="JustinSawyer" data-slug-hash="XWKMbLr" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="lastIndexOf1">
-                        <span>See the Pen <a href="https://codepen.io/JustinSawyer/pen/XWKMbLr">
-                        lastIndexOf1</a> by Justin Sawyer (<a href="https://codepen.io/JustinSawyer">@JustinSawyer</a>)
-                        on <a href="https://codepen.io">CodePen</a>.</span>
-                        </p>
-                        <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
-                </ol>    
+                    <li><code>onmouseover</code></li>
+                        <p>Triggers an Event as the mouse hovers over it:</p>
+                        <pre><code><p id="onMouseOverEvent"></p></code></pre>
+                        <button onmouseover="onMouseOverButton()">Mouse over me</button>
+                        <div id="text-mouse-in"></div>
+                        <br>
+                    
+                    <li><code>onmouseout</code></li>
+                        <p>Triggers an Event as the mouse moves away:</p>
+                        <pre><code><p id="onMouseOutEvent"></p></code></pre>
+                        <button onmouseover="secondOnMouseOverButton()" onmouseout="onMouseOutButton()">Mouse over me</button>
+                        <div id="text-mouse-out"></div>
+                        <br>
+
+                    <li><code>onkeydown</code> / <code>onkeyup</code></li>
+                        <p>Triggers an Event as the user types:</p>
+                        <pre><code><p id="onKeyDownEvent"></p></code></pre>
+                        <p>Write something: <input type="text" onkeydown="onKeyDownInput()"></p>
+                        <div id="text-key-down"></div>
+                        <br>
+
+                    <li><code>onkeypress</code></li>
+                        <p>Triggers an Event as the user types:</p>
+                        <pre><code><p id="onKeyPressEvent"></p></code></pre>
+                        <button id="keyPressButton" onclick="keyPressButton()">Double click me</button>
+                        <p id="keyPress"></p>
+                        <p id="easterEgg"></p>
+                        <pre><code><p id="easterEggCode"></p></code></pre>
+                        <p id="explainer"></p>
+                        <br>
+                </ol>
+
+                
             </div>
         </div>
 
@@ -176,20 +189,20 @@
             <div class="row">
                 <div class="col-sm-6">
                     <div class="Last-page">
-                        <a class="btn button" style="text-align: left" href="concat-and-interpolation.html" role="button"><svg width="1em" height="1em" viewbox="0 0 16 16" class="bi bi-caret-left-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <a class="btn button" style="text-align: left" href="../objects/challenges.html" role="button"><svg width="1em" height="1em" viewbox="0 0 16 16" class="bi bi-caret-left-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                         <path d="M3.86 8.753l5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"/>
-                        </svg> Strings: Concatenation & Interpolation</a>
+                        </svg> Objects: Challenges</a>
                     </div>
                 </div>
                 <div class="col-sm-6">
                     <div class="next-page">
-                        <a class="btn button" href="../arrays/the-basics.html" role="button">Arrays: The Basics <svg width="1em" height="1em" viewbox="0 0 16 16" class="bi bi-caret-right-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <a class="btn button" href="selecting-dom-elements.html" role="button">The DOM: Selecting DOM elements <svg width="1em" height="1em" viewbox="0 0 16 16" class="bi bi-caret-right-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                         <path d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
                         </svg></a>
-                    </div>  
+                    </div> 
                 </div> 
             </div> 
-        </div>       
+        </div>
         
     </main>
 
@@ -199,7 +212,7 @@
                 <h6>This website was created by Justin Sawyer</h6>
             </div>
 
-            <div class="container links-and-outside-links">
+            <!--<div class="container links-and-outside-links">
                 <div class="container website-links">
                     <p>In-site code links:</p>
                     <ul class="footer-menu">
@@ -208,14 +221,38 @@
                             </li>
                     </ul>
                 </div>
+
                 <div class="container outside-links">
-                    <p>Hi</p>
+                    <p>Outside code links:</p>
+                    <ul class="footer-menu">
+                            <li class="footer-menu-link">
+                                <a class="footer-menu-list" href="https://www.codegrepper.com/code-examples/javascript/how+to+call+a+function+when+a+button+is+clicked+in+javascript" target="_blank">Call Function with button click</a>
+                            </li>
+                            <li class="footer-menu-link">
+                                <a class="footer-menu-list" href="https://www.willmaster.com/library/web-development/multiple-functions-with-onclick.php" target="_blank">Multiple Functions with one button</a>
+                            </li>
+                            <li>
+                                <a class="footer-menu-list" href="https://www.w3schools.com/jsref/met_document_getelementsbytagname.asp" target="_blank">Get Elements By Tag Name</a>
+                            </li>
+                            <li>
+                                <a class="footer-menu-list" href="https://www.w3schools.com/jsref/met_document_getelementbyid.asp" target="_blank">Get Element By Id</a>
+                            </li>
+                            <li>
+                                <a class="footer-menu-list" href="https://www.w3schools.com/jsref/met_document_getelementsbyclassname.asp" target="_blank">Get Elements By Class Name</a>
+                            </li>
+                            <li>
+                                <a class="footer-menu-list" href="https://www.thesitewizard.com/javascripts/insert-div-block-javascript.shtml" target="_blank">Insert div block or other HTML</a>
+                            </li>
+                    </ul>
                 </div>
-            </div>
+            </div>-->
         </div>
     </footer>
 
-    <script src="../scripts/strings/concat-and-interpolation.js"></script>
+    <script src="../scripts/nav-dropdowns.js"></script>
+    <script src="../scripts/dom/document-object-model.js"></script>
+    <!--<script src="scripts/the-basics/dom-methods-call-object-by-class.js"></script>
+    <script src="scripts/the-basics/dom-methods-call-object-by-tag.js"></script>-->
     
     
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

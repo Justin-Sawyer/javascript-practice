@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="assets/css/style.css" type="text/css">
     <title>Javascripting</title>
 </head>
-<body>
+<body onload="setName()">
     <header>
         <div class="wrapper">
             <div class="sliding-background">
@@ -116,6 +116,15 @@
                                 </ul>
                             </li>
 
+                            <li class="dropdown-submenu">
+                                <a class="menu-list" href="#">The DOM<span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                <li><a href="dom/document-object-model.html">on~</a></li>
+                                <li><a href="dom/getting-dom-elements.html">Getting DOM Elements</a></li>
+                                <li><a href="dom/challenges.html">Challenges</a></li>
+                                </ul>
+                            </li>
+
                             </ul>
                         </li>
                     </ul>
@@ -131,10 +140,10 @@
     <main>
         <div class="container body-container">
             <div class="page-name">
-                <h1>Hoisting, Scope and Block</h1>
+                <h1>Hoisting, Scope, Block and Storage</h1>
             </div>
-            <div>
-            
+
+            <div class="main-body">           
                 <h2 id="hoisting">Hoisting:</h2>
                     <p>Hoisting means that the relevant code is hoisted to the top of the code block, or script. This means that they are read <strong>before</strong> 
                     the code is actioned.</p>
@@ -224,8 +233,15 @@
                         <p>It is a full moon. Lupin is currently a  <span id="var9"></span></p>
                         <p>It is not a full moon. Lupin is currently a  <span id="var10"></span></p>
                         <br>
+
+                <h2 id="scope-and-scripts">Scope and Scripts</h2>
+                    <p>When pages are loaded, the browser concatenates scripts into one big file. Thus, we need to be careful when writing our scripts, 
+                    because effectively, as the script files are now one big file, these scripts can "talk" to each other, and thus skew expected results:</p>
+                    <!--<iframe height="400px" width="100%" src="https://repl.it/@JustinSawyer/JavaScript-Scope-3?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>-->
+                    <p>We can see from the above embed that the two script files are talking to each other, and ths skewing the results. Now, if we simply wrap one of the commands inside a <code>function()</code>, we can see that they no longer communicate together.</p>
+                    <!--<iframe height="400px" width="100%" src="https://repl.it/@JustinSawyer/JavaScript-Scope-3?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>-->
                     
-                <h2>Block:</h2>
+                <h2 id="block">Block:</h2>
                     <p><code>JavaScript</code> also functions by code blocks. What this means is that, according to how the variable is declared (either as 
                     <code>var</code>, <code>let</code> or <code>const</code>), code is either blocked (is not accessible) or not:</p>
                         <ul>
@@ -242,29 +258,60 @@
                                 <br>
 
                         </ul>
+                
+                <h2 id="storage">Storage</h2>
+                    <p>Depending on the browser, there is a limited amount of memory available. Thus, in <code>JavaScript</code>, data 
+                    can either be stored as <code>local strorage</code> or as <code>session storage</code>.</p>
+                    <ul>
+                        <li>Session Storage:</li>
+                        <p class="tab">Session storage is not persistent. It stays in the memory until the page is closed.</p>
+                        <button id="collectClickCount" onclick="collectClickCount()">Click me</button><button id="showClickCount" onclick="showClickCount()">Show click count</button><button id="refreshClickCount" onclick="refreshClickCount()">Reset click count</button>
+                        <p id="resultSessionStorage"></p>
+                        <pre><code><p id="showCodeClickCount"></p></code></pre>
+                        <p>Note that when you set the session storage, you have to set its <code>key</code> / <code>value</code> pairs. It is an <a href="objects/the-basics.html">Object</a>.</p>
+                        <p>Also, when resetting the count, if you do not add the <code>|| 0;</code>, the count returns <code>undefined</code>.</p>
+
+                        <li>Local Storage:</li>
+                        <p class="tab">Local storage <strong>is</strong> persistent. It stays forever in the memory of the page and always shows in the browser:</p>
+                        <p>Enter your name: <input type="text" name="name" placeholder="Your name" id="myName"> <span> 
+                        <button onclick="getName()">Enter</button></span></p>
+                        <p>Now close and then open this page.</p>
+                        <pre><code><p id="resultLocalStorage"></p></code></pre>
+                        <p>In the code block above, you can also see a function called <code>resetName()</code>. It is triggered using the button below:</p>
+                        <button onclick="resetName()">Reset</button>
+                        <p>Now close and then open this page.</p>
+                    </ul>
+                    <p>So why are these storage solutions important?</p>
+                    <p>Imagine a website where you have to sign in. Keeping your log in details can either be good, or bad, depending on the website. 
+                    You might want to keep your details for a personal site, of course. But you probably don't want them stored on the back end of your bank 
+                    company's site!</p>
+                    <p>The storage sessions also help if you need to store details but don't want to declare global variables.</p>
+
 
                 
                     
             </div>
         </div>
-        <div class="container">
-                <div class="row">
-                    <div class="col-sm-6">
-                        <div class="Last-page">
-                            <a class="btn button" style="text-align: left" href="code-examples.html" role="button"><svg width="1em" height="1em" viewbox="0 0 16 16" class="bi bi-caret-left-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M3.86 8.753l5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"/>
-                            </svg> Code Examples</a>
-                        </div>
+
+        <div class="container next-last-page-section">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="Last-page">
+                        <a class="btn button" style="text-align: left" href="code-examples.html" role="button"><svg width="1em" height="1em" viewbox="0 0 16 16" class="bi bi-caret-left-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M3.86 8.753l5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"/>
+                        </svg> Code Examples</a>
                     </div>
-                    <div class="col-sm-6">
-                        <div class="next-page">
-                            <a class="btn button" href="numbers/the-basics.html" role="button">Numbers:The Basics <svg width="1em" height="1em" viewbox="0 0 16 16" class="bi bi-caret-right-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
-                            </svg></a>
-                        </div>  
-                    </div> 
+                </div>
+                <div class="col-sm-6">
+                    <div class="next-page">
+                        <a class="btn button" href="numbers/the-basics.html" role="button">Numbers:The Basics <svg width="1em" height="1em" viewbox="0 0 16 16" class="bi bi-caret-right-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+                        </svg></a>
+                    </div>  
                 </div> 
-            </div>
+            </div> 
+        </div>
+        
     </main>
 
     <footer>
@@ -289,7 +336,8 @@
         </div>
     </footer>
 
-    <script src="scripts/hoisting-and-scope.js"></script>
+    <script src="scripts/hoisting-and-scope/hoisting-and-scope.js"></script>
+    <script src="scripts/hoisting-and-scope/storage.js"></script>
     
     
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
