@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="../assets/css/style.css" type="text/css">
     <title>Javascripting</title>
 </head>
-<body>
+<body class="light" id="changeTheme">
     <header>
         <div class="wrapper">
             <div class="sliding-background dom-examples">
@@ -42,7 +42,7 @@
                             <li class="dropdown-submenu">
                                 <a class="menu-list" href="#">Numbers <span class="caret"></span></a>
                                 <ul class="dropdown-menu">
-                                <li><a href="..//numbers/the-basics.html">The Basics</a></li>
+                                <li><a href="../numbers/the-basics.html">The Basics</a></li>
                                 <li><a href="../numbers/number-methods.html">Number Methods</a></li>
                                 <li><a href="../numbers/math-methods.html">Math Methods</a></li>
                                 </ul>
@@ -140,44 +140,121 @@
     <main>
         <div class="container body-container">
             <div class="page-name">
-                <h1>Challenges:</h1>
+                <h1>Setting CSS from the DOM:</h1>
             </div>
-
+            
             <div class="main-body">
-                <p>Copy the code from the console. Then insert it into the codepen below. Change the code so that var <code>newText</code> 
-                becomes an <code>[array]</code> that concatenates all the <code>"string"</code> values of var <code>text</code>. Then use that
-                 <code>[array]</code> to delete the last entered text entry in the input box:</p>
-                 <p class="codepen" data-editable data-height="265" data-theme-id="dark" data-default-tab="html,result" data-user="JustinSawyer" data-slug-hash="abmdBpr" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="string to array delete last text entry">
-                <span>See the Pen <a href="https://codepen.io/JustinSawyer/pen/abmdBpr">
-                string to array delete last text entry</a> by Justin Sawyer (<a href="https://codepen.io/JustinSawyer">@JustinSawyer</a>)
-                on <a href="https://codepen.io">CodePen</a>.</span>
-                </p>
-                <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+                <p>Up to now, this site has been setting <code>inline</code> CSS in its functions. For example, when we have changed the color of text, we have used:</p>
+                <pre><code><p id="inlineCSS"></p></code></pre>
+                <p>we can of course use this for any standard attribute. We can change an <code>&ltimg&gt</code> source, or URL link, or the styling of a text box...</p>
+                <button class="photo" onclick="switchToPhoto()">Dogs D'Amour band photo</button>
+                <button class="painting" onclick="switchToPainting()">Dogs D'Amour band painting</button>
+                <div class="img"><img id="img" width="80%"></div>
+                <pre><code><p id="explain"></p></code></pre>
+                <p>We can see that we set the <code>src</code> key of the <code>&ltimg&gt</code> tag, which when the page was loaded was not defined. Then, 
+                our code styled the <code>border</code> using inline CSS within the <code>JavaScript</code> code.</p>
+                <p>Incidentally, we also used <code>callback functions</code> within each block of code to call the function <code>explain()</code>, which shows the code.</p>
                 <br>
+                <p>But there is a better way than using <code>inline CSS</code>:</p>
+                <br>
+                <h2><code>classList.add()</code> / <code>classList.remove()</code></h2>
+                <p>The <code>&ltbody&gt</code> element of this page has been assigned both an id and a class:</p>
+                <p class="tab"><code>class="light"</code></p>
+                <p class="tab"><code>id="changeTheme"</code></p>
+                <p>The <code>Javascript</code> has a self-declaring function that changes the theme from <code>.light</code> to <code>.dark</code> depending 
+                on the time. If you are reading this after 7 pm, the background color of this page will be set to black, while the text color will be set to white. It 
+                does this by calling either function <code>light()</code> or <code>dark()</code>.</p>
+                <p>These functions, <code>light()</code> or <code>dark()</code> call on the <strong>id</strong> of the <code>&ltbody&gt</code> element, and then either add or remove (that is, change) the 
+                <strong>class</strong> the element is accorded in the CSS:</p>
+                <pre><code><p id="classListCSS"></p></code></pre>
+                <button onclick="lightTheme()">Change to Light Theme</button>
+                <button onclick="darkTheme()"> Change to Dark Theme</button>
+                
+                
 
+
+                <!--<p>At the <a href="../code-exmple.html">beginning of this site</a>, we used some code to color certain element of our HTML. Let's talk 
+                about these in more detail:</p>
+                
+                <ol>
+                    <li><code>getElementById</code>:</li>
+                        <p class="tab">By far the most used. It targets element ids. In the HTML, we often set <code>id="example"</code>. From <code>JavaScript</code>, 
+                        we target these ids by their name.</p>
+                        <p class="tab">But how does the code know where to look for these elements?</p>
+                        <p class="tab">We use <code>document</code>, for example. Thus:</p>
+                        <pre><code><p id="docTargetId"></p></code></pre>
+                        <p class="tab">Beneath this text is a blank &ltp&gt element with an Id set to "example". Because it is empty, nothing is showing in the browser. 
+                        However, when we target that element with this button:</p>
+                        <pre><code><p id="button"></p></code></pre>
+                        <p class="tab">where <code>onclick="example()"</code> tells the code which function ti run, then clicking the button will result in that function running, and 
+                        as if by magic, the word <code>"Hi"</code> will appear underneath the button:</p>
+                        <button onclick="example()">Click Me</button>
+                        <p class="tab" id="example"></p>
+                        <p class="tab">We also used the same method to color the text, using <code>.style.color = "c13e70";</code></p>
+                        <p class="tab">(There is a better way to style elements in JavaScript, we'll come onto that.</p>
+                        <br>
+                    <li><code>getElementsByClassName</code>:</li>
+                        <p class="tab">Operates much the same as the above, with a few differeces. It would be very rare to have an empty HTML document, 
+                        in which we want to run the same text for every example of that class name. Getting element by their class name is mor about <strong>retrieving</strong> information 
+                        from them. But, when you are looking for the class that contains for example the word "Hi", it would be like searching for a needle in a haystack. Thus, to retrieve 
+                        that information, it is best to loop through it:</p>
+                        <pre><code><p id="exampleClassName"></p></code></pre>
+                        <p class="tab">Note that all entries here are logged to the console. While when we try to display them in the browser, the last entry is displayed:</p>
+                        <button class="double-tab" onclick="lookForExample()">Open console then click me</button>
+                        <p class="double-tab" id="result"></p>
+                        <p class="double-tab" id="see"></p>
+                        <p class="tab">So, just like in a loop, to get the <code>innerText</code> of a specific class, we select the entry using its <code>[#]</code>:</p>
+                        <pre><code><p id="indexClassName"></p></code></pre>
+                        <button class="double-tab" onclick="iterateForResult()">Click for 3rd index instance (place 4) of &ltp class="tab"&gt</button>
+                        <p class="double-tab" id="resultIndexClassName"></p>
+
+                    <li><code>getElementsByTagName</code></li>
+                        <p class="tab">Searches for all entries with a specific HTML tag name. The tag is CAPITALISED. Thus:</p>
+                        <pre><code><p id="tagName"></p></code></pre>
+                        <p class="tab">As there are many elements with the same tag on an HTML page, the same is true here for the above: loop through it.</p>
+                        <br>
+
+                    <li><code>getElementsByName</code></li>
+                        <p class="tab">Returns all elements with that name. Useful for input fields, for example:</p>
+                        <p class="tab">Enter your name: <input type="text" name="name" placeholder="Your name" id="myName"> <span> 
+                        <button class="tab" onclick="valueofName()">Enter</button></span></p>
+                        <pre><code><p id="getName"></p></code></pre>
+                        <button class="tab" onclick="getNameValue()">Get Name Value</button>
+                        <p class="tab" id="resultGetName"></p>
+                        <br>
+                        <p class="tab">In the section on <a href="../hoisting-and-scope.html#storage">storage</a> we learned that we had to assign <code>key</code> / 
+                        <code>value</code> to <a href="../objects/the-basics">Objects</a> in order to retrieve their <code>values</code>. Let's do that now. Click the 
+                        "Click Me" button to see the code and result:</p>
+                        <!--<pre><code><p id="valueofName"></p></code></pre>--
+                        <button class="tab" onclick="showValueOfName()">Click Me</button>
+                        <p class="tab" id="showValueOfName"></p>
+                        <pre><code><p id="valueOfName"></p></code></pre>
+
+                </ol>
+                <p>There are of course many other Methods for the DOM. <a href="https://www.w3schools.com/jsref/dom_obj_event.asp">You can find them here.</a></p>-->
                 
             </div>
         </div>
-
+            
         <div class="container next-last-page-section">
             <div class="row">
                 <div class="col-sm-6">
                     <div class="Last-page">
-                        <a class="btn button" style="text-align: left" href="../objects/challenges.html" role="button"><svg width="1em" height="1em" viewbox="0 0 16 16" class="bi bi-caret-left-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <a class="btn button" style="text-align: left" href="getting-setting-dom-elements.html" role="button"><svg width="1em" height="1em" viewbox="0 0 16 16" class="bi bi-caret-left-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                         <path d="M3.86 8.753l5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"/>
-                        </svg> Objects: Challenges</a>
+                        </svg> The DOM: Getting and Setting DOM Elements</a>
                     </div>
                 </div>
                 <div class="col-sm-6">
-                    <!--<div class="next-page">
-                        <a class="btn button" href="hoisting-and-scope.html" role="button">Hoisting and Scope <svg width="1em" height="1em" viewbox="0 0 16 16" class="bi bi-caret-right-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <div class="next-page">
+                        <a class="btn button" href="challenges.html" role="button">The DOM: Challenges <svg width="1em" height="1em" viewbox="0 0 16 16" class="bi bi-caret-right-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                         <path d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
                         </svg></a>
-                    </div>--> 
+                    </div> 
                 </div> 
             </div> 
-        </div> 
-          
+        </div>
+            
     </main>
 
     <footer>
@@ -224,7 +301,7 @@
     </footer>
 
     <script src="../scripts/nav-dropdowns.js"></script>
-    <script src="../scripts/dom/challenges.js"></script>
+    <script src="../scripts/dom/setting-css-in-dom.js"></script>
     <!--<script src="scripts/the-basics/dom-methods-call-object-by-class.js"></script>
     <script src="scripts/the-basics/dom-methods-call-object-by-tag.js"></script>-->
     

@@ -1,9 +1,9 @@
 /* ---------------------------------- General */
 body {
-    /*width: 100%;*/
+    width: 100%;
     margin: 0;
     padding: 0;
-    /*overflow: auto;*/
+    overflow: auto;
 }
 
 * {
@@ -25,11 +25,11 @@ p {
 ul {
     list-style-type: none;
 }
-/* Remove styling from buttons in ios
+/* Remove styling from buttons in ios */
 button {
     -webkit-appearance: none;
     border-radius: 0;
-}*/
+}
 
 .btn-default {
     background-color: #c13e70;
@@ -265,6 +265,22 @@ li > a {
     border: 1px solid black;
     width: 50%;
     height: auto;
+}
+
+/* ---------------------------------- ClassListCSS Styling */
+
+.img {
+    text-align: center;
+}
+
+.light {
+    background-color: white;
+    color: black;
+}
+
+.dark {
+    background-color: black;
+    color: white;
 }
 
 /* ---------------------------------- Footer */

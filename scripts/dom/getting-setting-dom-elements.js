@@ -111,20 +111,14 @@ function showValueOfName() {
     }
 }
 
-/*(function valueOfName() {
-    document.getElementById("valueOfName").innerText = `function valueofName() {
-    let inputVal = document.getElementsByName("name")[0].value;
-    let nameInMemory = sessionStorage.setItem(name, inputVal);
-}
+//Getting
+(function getting() {
+    document.getElementById("getting").innerText = `let heading = document.getElementsByTagName("h1");`
+})();
 
-function showValueOfName() {
-    let inputVal = document.getElementsByName("name")[0].value;
-    if (inputVal != "" || null) {
-        document.getElementById("showValueOfName").innerText = sessionStorage.getItem(name);
-    } else {
-        document.getElementById("showValueOfName").innerText = "Enter you name in the input box! Then click the button again";
-    }
-}`
-})();*/
+//Setting
+(function setting() {
+    document.getElementById("setting").innerText = `document.getElementsByTagName("h1").innerText = "Your Heading";`
+})();
 
 
