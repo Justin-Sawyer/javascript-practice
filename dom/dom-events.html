@@ -145,6 +145,10 @@
             </div>
             
             <div class="main-body">
+
+                <p>Just as every cause has an effect, so in <code>JavaScript</code> for something to happen, we need to call for it. We have been doing this 
+                so far using either <code>self-declaring functions</code> or using the <code>on</code> method in the DOM.</p>
+                <p>But, we can also tell the code to <strong>listen</strong> for an event. We did this <a href="document-object-model.html#onKeyPressEvent">here</a>, for example.</p>
                 <!--<p>Up to now, this site has been setting <code>inline</code> CSS in its functions. For example, when we have changed the color of text, we have used:</p>
                 <pre><code><p id="inlineCSS"></p></code></pre>
                 <p>we can of course use this for any standard attribute. We can change an <code>&ltimg&gt</code> source, or URL link, or the styling of a text box...</p>
@@ -166,11 +170,11 @@
                 on the time. If you are reading this after 7 pm, the background color of this page will be set to black, while the text color will be set to white. It 
                 does this by calling either function <code>light()</code> or <code>dark()</code>.</p>
                 <p>These functions, <code>light()</code> or <code>dark()</code> call on the <strong>id</strong> of the <code>&ltbody&gt</code> element, and then either add or remove (that is, change) the 
-                <strong>class</strong> the element is accorded in the CSS:</p>
-                <pre><code><p id="classListCSS"></p></code></pre>
+                <strong>class</strong> the element is accorded in the CSS:</p>-->
+                <pre><code><p id="setEventListener"></p></code></pre>
                 <button onclick="lightTheme()">Change to Light Theme</button>
                 <button onclick="darkTheme()"> Change to Dark Theme</button>
-                <br>-->
+                <br>
             </div>
         </div>
             
@@ -240,6 +244,7 @@
 
     <script src="../scripts/nav-dropdowns.js"></script>
     <script src="../scripts/dom/dom-events.js"></script>
+    <script src="../scripts/light-dark-theme-keys.js"></script>
     
     
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
