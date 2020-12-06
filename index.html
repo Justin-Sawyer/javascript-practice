@@ -121,7 +121,9 @@
                                 <a onclick="menuLinks8()" class="menu-list" href="#">The DOM<span class="caret"></span></a>
                                 <ul class="dropdown-menu" id="menu8" style="display:none">
                                 <li><a href="dom/document-object-model.html">on~</a></li>
-                                <li><a href="dom/getting-dom-elements.html">Getting DOM Elements</a></li>
+                                <li><a href="dom/getting-setting-dom-elements.html">Getting and Setting DOM Elements</a></li>
+                                <li><a href="dom/setting-css-in-dom.html">Setting CSS Elements from the DOM</a></li>
+                                <li><a href="dom/dom-events.html">DOM Events</a></li>
                                 <li><a href="dom/challenges.html">Challenges</a></li>
                                 </ul>
                             </li>
@@ -359,20 +361,15 @@
 
 
     <script type="text/javascript">
-/// some script
-
-// jquery ready start
-$(document).ready(function() {
+    // jquery ready start
+    $(document).ready(function() {
 	// jQuery code
-
-	//////////////////////// Prevent closing from click inside dropdown
-    $(document).on('click', '.dropdown-menu', function (e) {
-      e.stopPropagation();
-    });
-    
-	
-}); // jquery end
-</script>
+        //////////////////////// Prevent closing from click inside dropdown
+        $(document).on('click', '.dropdown-menu', function (e) {
+            e.stopPropagation();
+        });	
+    }); // jquery end
+    </script>
 
     
     

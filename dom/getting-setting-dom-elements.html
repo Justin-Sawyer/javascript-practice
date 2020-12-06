@@ -120,7 +120,8 @@
                                 <ul class="dropdown-menu">
                                 <li><a href="document-object-model.html">on~</a></li>
                                 <li><a href="getting-setting-dom-elements.html">Getting and Setting DOM Elements</a></li>
-                                <li><a href="setting-css-in-dom.html">Setting CSS Elements from the Dom</a></li>
+                                <li><a href="setting-css-in-dom.html">Setting CSS Elements from the DOM</a></li>
+                                <li><a href="dom-events.html">DOM Events</a></li>
                                 <li><a href="challenges.html">Challenges</a></li>
                                 </ul>
                             </li>
@@ -187,8 +188,9 @@
 
                     <li><code>getElementsByName</code></li>
                         <p class="tab">Returns all elements with that name. Useful for input fields, for example:</p>
-                        <p class="tab">Enter your name: <input type="text" name="name" placeholder="Your name" id="myName"> <span> 
-                        <button class="tab" onclick="valueofName()">Enter</button></span></p>
+                        <p class="tab">Enter your name: </p>
+                        <input type="text" name="name" placeholder="Your name" id="myName"> 
+                        <button class="tab" onclick="valueofName()">Enter</button>
                         <pre><code><p id="getName"></p></code></pre>
                         <button class="tab" onclick="getNameValue()">Get Name Value</button>
                         <p class="tab" id="resultGetName"></p>
@@ -196,7 +198,6 @@
                         <p class="tab">In the section on <a href="../hoisting-and-scope.html#storage">storage</a> we learned that we had to assign <code>key</code> / 
                         <code>value</code> to <a href="../objects/the-basics">Objects</a> in order to retrieve their <code>values</code>. Let's do that now. Click the 
                         "Click Me" button to see the code and result:</p>
-                        <!--<pre><code><p id="valueofName"></p></code></pre>-->
                         <button class="tab" onclick="showValueOfName()">Click Me</button>
                         <p class="tab" id="showValueOfName"></p>
                         <pre><code><p id="valueOfName"></p></code></pre>
