@@ -45,7 +45,7 @@ Welcome!`);
 
 function setName() {
     let inputVal = document.getElementById("myName").value;
-        if (localStorage.getItem(name) !== "" || null) {
+        if (localStorage.getItem(name) !== "" || localStorage.getItem(name) !== null) {
             alert(`Hi ${localStorage.getItem(name)}, it's good to see you back. 
 You've been away too long!`);
         }
