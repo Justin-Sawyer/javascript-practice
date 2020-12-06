@@ -12,12 +12,12 @@ function button() {
 })();`;
 })();
 
-(function selfDeclaredAlert() {
+/*(function selfDeclaredAlert() {
     alert("Are you ready to learn about functions?");
     document.getElementById("selfDeclaredAlert").innerText = `(function selfDeclaredAlert() {
     alert("Are you ready to learn about functions?");
 })();`;
-})();
+})();*/
 
 function calledFunction() {
     alert(`When you pressed that "Click Me" button, you called this alert via a function.

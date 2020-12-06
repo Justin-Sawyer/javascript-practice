@@ -102,7 +102,6 @@ function onKeyPressEvent() {
            }
         }
     );
-    //alert(text);
     }
 }
 
@@ -127,14 +126,18 @@ document.getElementsByTagName("main")[0].style.backgroundColor = "";
 <p></p>The <code>event listener</code> function calls the second function, which is a <code>callback function</code> - it has been called from the first function.</p>
 <br>
 <p>For our Easter Egg, this is also a <code>call back function</code> - the <code>if</code> statement contains the call for what to do if certain keys are pressed.</p>`;
-    /*document.addEventListener("keyup", function(event) {
-        if (event.key == "Backspace") {
-               whiteTheme();
-               console.log('DELETE was pressed');
-               document.getElementById("text-key-press").innerHTML = "" + "<br>";
-           }
+    //explainerCode();    
+}
+
+function explainerCode() {
+    document.getElementById("explainerCode").innerText = `document.addEventListener("keyup", function(event) {
+    if (event.key == "Backspace") {
+            whiteTheme();
+            console.log('DELETE was pressed');
+            document.getElementById("text-key-press").innerHTML = "" + "<br>";
         }
-    );*/
+    }
+);`
 }
 
 function whiteTheme() {

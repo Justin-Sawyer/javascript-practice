@@ -283,6 +283,21 @@ li > a {
     color: white;
 }
 
+
+.pre-light {
+    background-color: beige;
+    width: 100%;
+    padding-left: 8px;
+}
+
+}
+.pre-dark {
+    background-color: #0A0A24;
+    color: #DEDAA0;
+    width: 100%;
+    padding-left: 8px;
+}
+
 /* ---------------------------------- Footer */
 
 footer {
