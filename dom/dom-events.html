@@ -40,8 +40,8 @@
                             </li>
                         
                             <li class="dropdown-submenu">
-                                <a class="menu-list" href="#">Numbers <span class="caret"></span></a>
-                                <ul class="dropdown-menu">
+                                <a onclick="menuLinks1()" class="menu-list" href="#">Numbers <span class="caret"></span></a>
+                                <ul class="dropdown-menu" id="menu1" style="display:none">
                                 <li><a href="../numbers/the-basics.html">The Basics</a></li>
                                 <li><a href="../numbers/number-methods.html">Number Methods</a></li>
                                 <li><a href="../numbers/math-methods.html">Math Methods</a></li>
@@ -49,8 +49,8 @@
                             </li>
 
                             <li class="dropdown-submenu">
-                                <a class="menu-list" href="#">"strings"<span class="caret"></span></a>
-                                <ul class="dropdown-menu">
+                                <a onclick="menuLinks2()" class="menu-list" href="#">"strings"<span class="caret"></span></a>
+                                <ul class="dropdown-menu" id="menu2" style="display:none">
                                 <li><a href="../strings/the-basics.html">The Basics</a></li>
                                 <li><a href="../strings/string-methods.html">String Methods</a></li>
                                 <li><a href="../strings/concat-and-interpolation.html">Concatenation & Interpolation</a></li>
@@ -59,8 +59,8 @@
                             </li>
 
                             <li class="dropdown-submenu">
-                                <a class="menu-list" href="#">[arrays]<span class="caret"></span></a>
-                                <ul class="dropdown-menu">
+                                <a onclick="menuLinks3()" class="menu-list" href="#">[arrays]<span class="caret"></span></a>
+                                <ul class="dropdown-menu" id="menu3" style="display:none">
                                 <li><a href="../arrays/the-basics.html">The Basics</a></li>
                                 <li><a href="../arrays/array-methods.html">Array Methods</a></li>
                                 <li><a href="../arrays/array-methods-2.html">More Array Methods</a></li>
@@ -70,8 +70,8 @@
                             </li>
 
                             <li class="dropdown-submenu">
-                                <a class="menu-list" href="#">Booleans<span class="caret"></span></a>
-                                <ul class="dropdown-menu">
+                                <a onclick="menuLinks4()" class="menu-list" href="#">Booleans<span class="caret"></span></a>
+                                <ul class="dropdown-menu" id="menu4" style="display:none">
                                 <li><a href="../booleans/the-basics.html">The Basics</a></li>
                                 <li><a href="../booleans/conditionals.html">Conditionals</a></li>
                                 <li><a href="../booleans/challenges.html">Challenges</a></li>
@@ -83,8 +83,8 @@
                             </li>
 
                             <li class="dropdown-submenu">
-                                <a class="menu-list" href="#">Loops<span class="caret"></span></a>
-                                <ul class="dropdown-menu">
+                                <a onclick="menuLinks5()" class="menu-list" href="#">Loops<span class="caret"></span></a>
+                                <ul class="dropdown-menu" id="menu5" style="display:none">
                                 <li><a href="../loops/the-basics.html">The Basics</a></li>
                                 <li><a href="../loops/loops.html">Loops</a></li>
                                 <li><a href="../loops/break-and-continue.html">Break and Continue</a></li>
@@ -94,8 +94,8 @@
                             </li>
 
                             <li class="dropdown-submenu">
-                                <a class="menu-list" href="#">Functions<span class="caret"></span></a>
-                                <ul class="dropdown-menu">
+                                <a onclick="menuLinks6()" class="menu-list" href="#">Functions<span class="caret"></span></a>
+                                <ul class="dropdown-menu" id="menu6" style="display:none">
                                 <li><a href="../functions/the-basics.html">The Basics</a></li>
                                 <li><a href="../functions/function-expressions.html">Function Expressions</a></li>
                                 <li><a href="../function-callbacks.html">Function Callbacks</a></li>
@@ -104,8 +104,8 @@
                             </li>
 
                             <li class="dropdown-submenu">
-                                <a class="menu-list" href="#">Objects<span class="caret"></span></a>
-                                <ul class="dropdown-menu">
+                                <a onclick="menuLinks7()" class="menu-list" href="#">Objects<span class="caret"></span></a>
+                                <ul class="dropdown-menu" id="menu7" style="display:none">
                                 <li><a href="../objects/the-basics.html">The Basics</a></li>
                                 <li><a href="../objects/object-constructor.html">Object Constructor</a></li>
                                 <li><a href="../objects/object-methods.html">Object Methods</a></li>
@@ -116,13 +116,21 @@
                             </li>
 
                             <li class="dropdown-submenu">
-                                <a class="menu-list" href="#">The DOM<span class="caret"></span></a>
-                                <ul class="dropdown-menu">
+                                <a  onclick="menuLinks8()" class="menu-list" href="#">The DOM<span class="caret"></span></a>
+                                <ul class="dropdown-menu" id="menu8" style="display:none">
                                 <li><a href="document-object-model.html">on~</a></li>
                                 <li><a href="getting-setting-dom-elements.html">Getting and Setting DOM Elements</a></li>
                                 <li><a href="setting-css-in-dom.html">Setting CSS Elements from the DOM</a></li>
                                 <li><a href="dom-events.html">DOM Events</a></li>
                                 <li><a href="challenges.html">Challenges</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="dropdown-submenu">
+                                <a onclick="menuLinks9()" class="menu-list" href="#">jQuery<span class="caret"></span></a>
+                                <ul class="dropdown-menu" id="menu9" style="display:none">
+                                <li><a href="../jQuery/dom-from-console.html">Manipulating the DOM from the console</a></li>
+                                <li><a href="../jQuery/jQuery-methods.html">jQuery Methods</a></li>
                                 </ul>
                             </li>
 
@@ -136,10 +144,16 @@
                 </form>-->    
             </div>
         </nav>
+        
     </header>
 
     <main>
         <div class="container body-container">
+            <div class="theme">
+                <button class="btn button" onclick="lightTheme()">Change to Light Theme</button>
+                <button class="btn button" onclick="darkTheme()"> Change to Dark Theme</button>
+            </div>
+            
             <div class="page-name">
                 <h1>DOM Events:</h1>
             </div>

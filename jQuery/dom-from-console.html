@@ -8,13 +8,13 @@
     <link rel="stylesheet" href="../assets/css/style.css" type="text/css">
     <title>Javascripting</title>
 </head>
-<body>
+<body class="light" id="changeTheme">
     <header>
         <div class="wrapper">
             <div class="sliding-background">
             </div>
         </div>
-    
+        
         <nav class="navbar navbar-expand-lg navbar-light">
             
             <a class="navbar-brand" href="../index.html">Javascripting</a>
@@ -98,10 +98,10 @@
                             <li class="dropdown-submenu">
                                 <a onclick="menuLinks6()" class="menu-list" href="#">Functions<span class="caret"></span></a>
                                 <ul class="dropdown-menu" id="menu6" style="display:none">
-                                <li><a href="the-basics.html">The Basics</a></li>
-                                <li><a href="function-expressions.html">Function Expressions</a></li>
-                                <li><a href="function-callbacks.html">Function Callbacks</a></li>
-                                <li><a href="challenges.html">Challenges</a></li>
+                                <li><a href="../functions/the-basics.html">The Basics</a></li>
+                                <li><a href="../functions/function-expressions.html">Function Expressions</a></li>
+                                <li><a href="../functions/function-callbacks.html">Function Callbacks</a></li>
+                                <li><a href="../functions/challenges.html">Challenges</a></li>
                                 </ul>
                             </li>
 
@@ -131,8 +131,8 @@
                             <li class="dropdown-submenu">
                                 <a onclick="menuLinks9()" class="menu-list" href="#">jQuery<span class="caret"></span></a>
                                 <ul class="dropdown-menu" id="menu9" style="display:none">
-                                <li><a href="../jQuery/dom-from-console.html">Manipulating the DOM from the console</a></li>
-                                <li><a href="../jQuery/jQuery-methods.html">jQuery Methods</a></li>
+                                <a class="menu-list" href="dom-from-console.html">Manipulating the DOM from the console</a>
+                                <a class="menu-list" href="jQuery-methods.html">jQuery</a>
                                 </ul>
                             </li>
 
@@ -146,125 +146,113 @@
                 </form> -->
             </div>
         </nav>
-
+        
     </header>
 
     <main>
         <div class="container body-container">
+            <div class="theme">
+                <button class="btn button" onclick="lightTheme()">Change to Light Theme</button>
+                <button class="btn button" onclick="darkTheme()"> Change to Dark Theme</button>
+            </div>
+
             <div class="page-name">
-                <h1>The Basics:</h1>
+                <h1>DOM Manipulation from the Console:</h1>
             </div>
 
-            <div class="main-body">
-                <p><code>Functions</code> are the building blocks of coding. Indeed, they have been used throughout this website.</p>
-                <pre><code><p id="block"></p></code></pre>
-                <button onclick="button()">Click Me</button>
-                <pre><code><p id="button"></p></code></pre>
-                <p>There are different ways to "call" or operate a <code>function</code>:</p>
-                    <ol>
-                        <li>Self-declaring <code>functions</code>:</li>
-                            <pre><code><p id="selfDeclareFunction"></p></code></pre>
-                            <p>When this page loaded, it also loaded an alert asking if you're ready to learn about <code>functions</code>. That 
-                            alert was triggered by a self-declaring <code>function</code>. here is the code for it:</p>
-                            <pre><code><p id="selfDeclaredAlert"></p></code></pre>
-                            <br>
+            <section class="main-body">
+                <article>
+                <p>In previous pages we learned a little about the <code>DOM</code>. It is possible to manipulate the <code>DOM</code> via the <code>console</code>. 
+                For example, if we type <code>document</code> into it, <code>console</code> will return all the elements within the document.</p>
+                <p>From here, we can assign <code>variables</code> and access each element:</p>
+                <br>
+                <ul class="dom-manip" id="dom-manipulation">
+                    <li class="dom-manip-list first"><p><code>let lis = document.getElementsByTagName("li")</code></p></li>
+                        <p class="tab">returns all elements with the tag <code>li</code> once called.</p>
+                        <br>
 
-                        <li>Called <code>functions</code>:</li>
-                            <button onclick="calledFunction()">Click Me</button>
-                            <pre><code><p id="calledFunction"></p></code></pre>
+                <p>A more flexible way to do this is to use <code>querySelector</code></p>
+                    <li class="dom-manip-list"><p><code>let uls = document.querySelector("ul");</code></p></li>
+                        <p class="tab">returns all elements with the tag <code>ul</code> once called.</p>
+                        <br>
 
-                    </ol>
+                    <li class="dom-manip-list"><p><code>let dropdownMenu = document.querySelector(".dropdown-submenu");</code></p></li>
+                        <p class="tab">returns all elements in the class <code>dropdown-submenu</code> once called.</p>
+                        <br>
+
+                    <li class="dom-manip-list"><p><code>let dropdown = document.querySelector("#dropdown");</code></p></li>
+                        <p class="tab">returns all elements with the Id <code>dropdown</code> once called.</p>
+                        <br>
+
+                <p>From here, we can use <code>textSelector</code> to call the contents:</p>
+                    <li class="dom-manip-list"><p><code>let heading = document.querySelector("h1");</code></p></li>
+                    <pre class="tab"><code><p>&lth1&gtjQuery:&lt/h1&gt</p></code></pre>
+                    <p class="tab"><code>heading.textContent;</code></p>
+                    <pre class="tab"><code><p>jQuery:</p></code></pre>
+                    <br>
+
+                <p>We can also look for <code>child</code> or <code>parent</code> elements:</p>
+                    <li class="dom-manip-list"><p><code>let uls = document.querySelector("#dom-manipulation");</code></p></li>
+                        <p class="tab"><code>uls.children</code></p>
+                        <br>
                 
-                <p>Functions are reuseable blocks of code. If we have the correct <code>&ltscript&gt</code> on my HTML page, we could reuse any of the 
-                function already created on this website.</p>
-                <p>On the <a href="../index.html">Home</a> page, we created a function to alert "Hello World!". Click the button to see it work again:</p>
-                <button onclick="helloWorldAlert()">Alert "Hello World!"</button>
-                <p>Within the HTML for the above button is this code: <code>onclick="helloWorldAlert()"</code> where <code>helloWorldAlert()</code> is the function we have called 
-                when we click the button. The same code is contained within the <code>&ltbutton&gt</code> element on the home page.</p>
-                <br>
-                <p>Everything depends on where the <code>function</code> is created. We need to tell the HTML page where to access the function. Thus, it is perhaps 
-                a good idea to put "global" <code>functions</code> that are available to all pages in the main <code>.../scripts/index.js</code> file, and those that 
-                are more "local" or specific within their own script file.</p>
-                <br>
-                <h2>Composition of a <code>function</code>:</h2>
-                <code>function</code><span style="color:blue"> functionName</span><span>(</span><span style="color:green">parameter(s)</span><span>) {</span>
-                <p class="tab" style="color:orange">code to be executed;</p>
-                <p>}</p>
-                <br>
-                <p>Up to now on this website we have used <code>functions</code> without parameters. </p>
-                <p>Let's try a function with 2 parameters now:</p>
-                <pre><code><p id="parameters"></p></code></pre>
-                <p>Find the answer to Life, the Universe and Everything:</p>
-                <span>Insert a number:</span> <input type="number" name="a" id="a"><br>
-                <span>Insert a number:</span> <input type="number" name="b" id="b"><br>
-                <button onclick="multiply(document.getElementById('a').value,document.getElementById('b').value)">Find the answer</button>
-                <pre><code><p id="theAnswer"></p></code></pre>
-                <p id="result"></p>
+                <p>We can also look for <code>sibling</code> elements:</p>
+                    <li class="dom-manip-list"><p><code>let uls = document.querySelector("#dom-manipulation");</code></p></li>
+                        <p class="tab"><code>uls.nextElementSibling</code></p>
+                        <br>
 
-                <p>It is also possible to set a default value for a parameter of the function. We do this by simply assigning that parameter a value:</p>
-                <code>function</code><span style="color:blue"> functionName</span><span>(</span><span style="color:green">a, b=7</span><span>) {</span>
-                <p class="tab" style="color:orange">code to be executed;</p>
-                <p>}</p>
-                <p>However, that default valu will be overridden upon calling the function with a diferent value, as follows:</p>
-                <pre><code><p id="defaultValue"></p></code></pre>
-                <p>Above, although the deafult for b is set to 7, the function will nonetheless return 2*2.</p>
-                <p>Default value are set when we want to be sure that a value is assigned to a parameter, that it will not be undefined.</p>
-                <br>
-                <h2>Calling a <code>function</code>:</h2>
-                <p>Unless the function is self-declaring, it needs to be called. Throughout this website, we have used buttons to call these functions. 
-                The code within these HML buttons contains the <code>function call</code>:</p>
-                <p>&ltbutton onclick="<code>callFunction()</code>"&gt</p>
-                <p>We can tell the <code>function</code>  <strong>what</strong> to run either within or outside of the function. But the <code>function</code> still needs to be called in order to run:</p>
-                <pre><code><p id="returnOutside"></p></code></pre>
-                <p>Result: <span id="call1"></span></p>
-                <p>Above, we called the <code>function</code> and asked it to <span style="color:orange">return(6*7);</span> within the HTML element <code>&ltspan id="call1"&gt&lt/span&gt</code></p>
-                <br>
-                <button onclick="returnInside()">Call the function returnInside()</button>
-                <pre><code><p id="returnInside"></p></code></pre>
-                <p>Result: <span id="call2"></span></p>
-                <p>Again, above, we called the <code>function</code>, but this time we used a button to do so.</p>
-                <p>In both cases, within the <code>function</code> itself is the <span style="color:orange">code block to be executed</span></p>
-                <p>Note that both code blocks do the same thing (they both return 6 multipled by 7). However, since we tell the code to print the results OUTSIDE 
-                of the <code>function</code> in the first example, the code block and result are displayed automatically. We've made a non self declaring function self declare, as it were. Whereas, 
-                in the second example, we use the button to tell the <code>function</code> to run.</p>
-                <br>
-                <h2>The <code>return</code> keyword:</h2>
-                <p>Inserting <code>return</code> into the code will break the code at that point. It will run up to there, but no further:</p>
-                <pre><code><p id="returnFunction"></p></code></pre>
-                <p>Result: <span id="returnFunction1"></span></p>
-                <p>Without the keyword <code>return</code> the code would have run 6*7 and 6+7. But since we asked the code to <code>return</code> 
-                at 6*7, it stops at that point. Use of the term is a good way to stop infinite loops from running. I wish more coders - especially 
-                those who write adverts were aware of this - I'm tired of my computer heating up because of the lack of this keyword!</p>
-                <br>
-                <h2>()</h2>
-                <p>Lets run the same piece of code, but this time let's call the function WITHOUT using the () at the end of the call:</p>
-                <p>Result: <pre><code><span id="returnFunction2"></span></code></pre></p>
-                <p>When we call the <code>function()</code>, result is returned.</p>
-                <p>When we call the <code>function</code>, the code is returned.</p>
-                <br>
-                
-            </div>
+                <p>We can also create elements:</p>
+                    <li class="dom-manip-list"><p><code>let li = document.createElement("li");</code></p></li>
+                    <p class="double-tab">Adding a class name:</p>
+                    <p class="tab"><code>li.classList.add("last");</code></p>
+                    <p class="double-tab">Adding a style:</p>
+                    <p class="tab"><code>li.style.backgroundColor = "blue";</code></p>
+                    <p class="tab"><code>li.style.color = "#c13e70";</code></p>
+                    <p class="double-tab">Adding some text content:</p>
+                    <p class="tab"><code>li.textContent = "I was created!"</code></p>
+                    <p class="double-tab">Now get the parent element</p>
+                    <p class="tab"><code>let uls = document.getElementsByTagName("ul");</code></p>
+                    <p class="double-tab">Now get the parent element by Index number</p>
+                    <p class="tab"><code>let ul = uls[10];</code></p>
+                    <p class="double-tab">Now append our <code>&ltli&gt</code> to its parent element, <code>&ltul&gt</code></p>
+                    <p class="tab"><code>ul.appendChild(li)</code></p>
+
+                <p>We can also change their place. Using the above, and adding:</p>
+                    <p class="tab"><code>let li1 = ul.getElementsByTagName("li");</code></p>
+                    <p class="tab"><code>let firstLi = li1[0];</code></p>
+                    <p class="tab"><code>let lastLi = li1[8];</code></p>
+                    <p class="tab"><code>firstLi.classList.remove("first");</code></p>
+                    <p class="tab"><code>uls[10].insertBefore(lastLi, firstLi);</code></p>
+
+                </ul>
+
+                <p>However, this soon becomes cumbersome: If we want to change these elements, or their conntents, we need to do so using a loop.</p>
+                <p>It would be much easier to do so if we had an API. And that is where <code>jQuery</code> comes in:</p>
+                <p><code>jQuery</code> allows us to write "pseudo code" like:</p>
+                <p style="color:green">ul.find("li").removeClass("first").addClass("new").css("background-color: "pink")...</p>
+                </article>
+            </section>
         </div>
 
         <div class="container next-last-page-section">
             <div class="row">
                 <div class="col-sm-6">
                     <div class="Last-page">
-                        <a class="btn button" style="text-align: left" href="../loops/challenges.html" role="button"><svg width="1em" height="1em" viewbox="0 0 16 16" class="bi bi-caret-left-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <a class="btn button" style="text-align: left" href="../dom/challenges.html" role="button"><svg width="1em" height="1em" viewbox="0 0 16 16" class="bi bi-caret-left-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                         <path d="M3.86 8.753l5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"/>
-                        </svg> Loops: Challenges</a>
+                        </svg> The DOM: Challenges</a>
                     </div>
                 </div>
                 <div class="col-sm-6">
                     <div class="next-page">
-                        <a class="btn button" href="function-expressions.html" role="button">Functions: Function Expressions <svg width="1em" height="1em" viewbox="0 0 16 16" class="bi bi-caret-right-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <a class="btn button" href="jQuery-methods.html" role="button">jQuery: jQuery Methods <svg width="1em" height="1em" viewbox="0 0 16 16" class="bi bi-caret-right-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                         <path d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
                         </svg></a>
-                    </div>  
+                    </div>
                 </div> 
             </div> 
         </div>
-
+        
     </main>
 
     <footer>
@@ -289,9 +277,9 @@
         </div>
     </footer>
 
-    <script src="../scripts/functions/the-basics.js"></script>
-    <script src="../scripts/index.js"></script>
-    <script src="../scripts/nav-dropdowns.js"></script>
+    <script type="text/javascript" src="../scripts/nav-dropdowns.js"></script>
+    <script src="../scripts/light-dark-theme-keys.js"></script>
+    <script type="text/javascript" src="../scripts/jayQuery.js"></script>
     
     
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
@@ -308,6 +296,7 @@
         });
     </script>-->
 
+
     <script type="text/javascript">
     // jquery ready start
     $(document).ready(function() {
@@ -318,6 +307,8 @@
         });	
     }); // jquery end
     </script>
+
+    
     
 </body>
 </html>

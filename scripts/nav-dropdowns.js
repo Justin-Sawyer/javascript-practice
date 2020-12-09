@@ -8,6 +8,7 @@ let menu5 = document.getElementById("menu5");
 let menu6 = document.getElementById("menu6");
 let menu7 = document.getElementById("menu7");
 let menu8 = document.getElementById("menu8");
+let menu9 = document.getElementById("menu9");
 
 function dropdown() {
   document.getElementById("dropdown").addEventListener("click", closeAll);
@@ -23,6 +24,7 @@ function closeAll() {
   menu6.style.display = "none";
   menu7.style.display = "none";
   menu8.style.display = "none";
+  menu9.style.display = "none";
 }
 
 function menuLinks1() {
@@ -35,6 +37,7 @@ function menuLinks1() {
             menu6.style.display = "none";
             menu7.style.display = "none";
             menu8.style.display = "none";
+            menu9.style.display = "none";
           } else if (menu1.style.display === "block") {
                 menu1.style.display = "none";
                 menu2.style.display = "none";
@@ -44,6 +47,7 @@ function menuLinks1() {
                 menu6.style.display = "none";
                 menu7.style.display = "none";
                 menu8.style.display = "none";
+                menu9.style.display = "none";
         }
 }
 
@@ -57,6 +61,7 @@ function menuLinks2() {
             menu6.style.display = "none";
             menu7.style.display = "none";
             menu8.style.display = "none";
+            menu9.style.display = "none";
           } else {
                 menu1.style.display = "none";
                 menu2.style.display = "none";
@@ -66,6 +71,7 @@ function menuLinks2() {
                 menu6.style.display = "none";
                 menu7.style.display = "none";
                 menu8.style.display = "none";
+                menu9.style.display = "none";
         }
   }
 
@@ -79,6 +85,7 @@ function menuLinks2() {
             menu6.style.display = "none";
             menu7.style.display = "none";
             menu8.style.display = "none";
+            menu9.style.display = "none";
           } else {
                 menu1.style.display = "none";
                 menu2.style.display = "none";
@@ -88,6 +95,7 @@ function menuLinks2() {
                 menu6.style.display = "none";
                 menu7.style.display = "none";
                 menu8.style.display = "none";
+                menu9.style.display = "none";
         }
   }
 
@@ -101,6 +109,7 @@ function menuLinks2() {
             menu6.style.display = "none";
             menu7.style.display = "none";
             menu8.style.display = "none";
+            menu9.style.display = "none";
           } else {
                 menu1.style.display = "none";
                 menu2.style.display = "none";
@@ -110,6 +119,7 @@ function menuLinks2() {
                 menu6.style.display = "none";
                 menu7.style.display = "none";
                 menu8.style.display = "none";
+                menu9.style.display = "none";
         }
   }
 
@@ -123,6 +133,7 @@ function menuLinks2() {
             menu6.style.display = "none";
             menu7.style.display = "none";
             menu8.style.display = "none";
+            menu9.style.display = "none";
           } else {
                 menu1.style.display = "none";
                 menu2.style.display = "none";
@@ -132,6 +143,7 @@ function menuLinks2() {
                 menu6.style.display = "none";
                 menu7.style.display = "none";
                 menu8.style.display = "none";
+                menu9.style.display = "none";
         }
   }
 
@@ -145,6 +157,7 @@ function menuLinks2() {
             menu5.style.display = "none";
             menu7.style.display = "none";
             menu8.style.display = "none";
+            menu9.style.display = "none";
           } else {
                 menu1.style.display = "none";
                 menu2.style.display = "none";
@@ -154,6 +167,7 @@ function menuLinks2() {
                 menu6.style.display = "none";
                 menu7.style.display = "none";
                 menu8.style.display = "none";
+                menu9.style.display = "none";
         }
   }
 
@@ -167,6 +181,7 @@ function menuLinks2() {
             menu5.style.display = "none";
             menu6.style.display = "none";
             menu8.style.display = "none";
+            menu9.style.display = "none";
           } else {
                 menu1.style.display = "none";
                 menu2.style.display = "none";
@@ -176,6 +191,7 @@ function menuLinks2() {
                 menu6.style.display = "none";
                 menu7.style.display = "none";
                 menu8.style.display = "none";
+                menu9.style.display = "none";
         }
     }
 
@@ -189,6 +205,7 @@ function menuLinks2() {
             menu5.style.display = "none";
             menu6.style.display = "none";
             menu7.style.display = "none";
+            menu9.style.display = "none";
           } else {
                 menu1.style.display = "none";
                 menu2.style.display = "none";
@@ -198,5 +215,30 @@ function menuLinks2() {
                 menu6.style.display = "none";
                 menu7.style.display = "none";
                 menu8.style.display = "none";
+                menu9.style.display = "none";
+        }
+  }
+
+  function menuLinks9() {
+        if (menu9.style.display === "none") {
+            menu9.style.display = "block";
+            menu1.style.display = "none";
+            menu2.style.display = "none";
+            menu3.style.display = "none";
+            menu4.style.display = "none";
+            menu5.style.display = "none";
+            menu6.style.display = "none";
+            menu7.style.display = "none";
+            menu8.style.display = "none";
+          } else {
+                menu1.style.display = "none";
+                menu2.style.display = "none";
+                menu3.style.display = "none";
+                menu4.style.display = "none";
+                menu5.style.display = "none";
+                menu6.style.display = "none";
+                menu7.style.display = "none";
+                menu8.style.display = "none";
+                menu9.style.display = "none";
         }
   }

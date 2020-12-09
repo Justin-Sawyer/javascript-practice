@@ -408,4 +408,30 @@ footer {
         }
 }
 
+/* ---------------------------------- jQuery start */
+
+.blueBackground {
+    background-color: #047afb;
+}
+
+.pinkBackground {
+    background-color: #c13e70;
+}
+
+.pinkBorder {
+    border: solid 1px #c13e70;
+}
+
+.blue {
+    color: #047afb;
+}
+
+.pink {
+    color: #c13e70;
+}
+
+.white {
+    color: white;
+}
+
     
