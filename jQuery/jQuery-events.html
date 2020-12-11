@@ -159,16 +159,97 @@
             </div>
             
             <div class="page-name">
-                <h1>jQuery:</h1>
+                <h1>jQuery Events:</h1>
             </div>
 
             <section class="main-body">
                 <article>
-                    <p>To use <code>jQuery Methods</code>, you have to insert it into the <code>&lthead&gt</code> element. It can either be downloaded and stored on the 
-                    site from <a href="https://jquery.com/download/">here (choose the uncompressed version)</a>, or you can link to it using a <code>cdn</code> 
-                    from <a href="https://code.jquery.com/">here</a>. This is what we are using here.</p>
-                    <p>Let's see how <code>jQuery</code> works:</p>
-                    <h2>Selecting using <code>jQuery</code>:</h2>
+                    <pre><code><p id="example"></p></code></pre>
+                    <p>If you mouseover the pink text (with an HTML tag of <code>&ltcode&gt</code>) you will notice it turns purple. Likewise, when you 
+                    mouseout, it turns back to its original, pink color. Let's see how this is done:</p>
+                    <pre><code><p id="codeToPurple"></p></code></pre>
+                    <br>
+                    <p>If one clicks on a button, and then mouseouts, again the styling changes:</p>
+                    <pre><code><p id="buttonCode"></p></code></pre>
+                    <br>
+                    <p>So, let's examine what is happening in these cases:</p>
+                    <p>Everything is encapsulated within the <code>$(document).ready(function() {});</code> that starts on line 1 of the first 
+                    code block.</p>
+                    <p>Then, on line 2, we tell <code>jQuery</code> firstly what to target, and what it should "look out for".</p>
+                    <p>Thus, in these cases, we tell it to listen for either a <code>mouseover</code> or a <code>click</code>, depending on the code block 
+                    we are reading.</p>
+                    <p>Lines 3 and 4 tell <code>jQuery</code> what to do once it has "heard" the call of line 1 - in these cases, to change 
+                    the <code>CSS</code> settings.</p>
+                    <p>Line 7 then tells the code to look out for a new event - that being either a <code>mouseleave</code> or a <code>mouseout</code>.</p>
+                    <p>Lines 8 and 9 change the <code>CSS</code> styling back to as before.</p>
+                    <br>
+                    <p>Notice the use of <code>this</code> in the third code block. Effectively, it means to target <strong>only</strong> the element (etc) 
+                    that has been clicked.</p>
+                    <br>
+                    <p class="grayBackground">Also, we do not have to target the same thing as we target on line 2 in the following lines. If you mouse over this line of text, 
+                    which has a class name <code>grayBackground</code>, you'll notice that the code block backgrounds turns gray while their texts turn white.</p>
+                    <pre><code><p id="grayBackground"></p></code></pre>
+                    <br>
+                    <h2>Events:</h2>
+                    <p>There is a comprehensive list of events <a href="https://api.jquery.com/category/events/">here</a>, but let's try a few basic ones here:</p>
+                    <ol>
+                        <li><code>.fadeIn()</code> and <code>.fadeOut()</code>:</li>
+                        <button class="btn button fadeIn">Fade In</button><button class="btn button fadeOut">Fade Out</button>
+                    </ol>
+                    <div class="fadein" style="display: none">
+                        <pre><code><p id="fadeCode"></p></code></pre>
+                    </div>
+
+                    <ol start="2">
+                        <li><code>.slideIn()</code> and <code>.slideOut()</code>:</li>
+                        <button class="btn button slideDown">Slide Down</button><button class="btn button slideUp">Slide Up</button>
+                    </ol>
+                    <div class="slidedown" style="display: none">
+                        <pre><code><p id="slideCode"></p></code></pre>
+                    </div>
+
+                    <ol start="3">
+                        <li><code>.show()</code> and <code>.hide()</code>:</li>
+                        <button class="btn button show">Show</button><button class="btn button hide">Hide</button>
+                    </ol>
+                    <div class="showhide" style="display: none">
+                        <pre><code><p id="showhideCode"></p></code></pre>
+                    </div>
+
+                    <ol start="4">
+                        <li><code>.fadeTo()</code>:</li>
+                        <button class="btn button fadeTo">Fade photo</button><button class="btn button fadeToBack">Unfade photo</button>
+                        <img id="dogs" src="../assets/images/pictures/dogs1.png" alt="Dogs d'Amour band photo" style="width:100%">
+                    </ol>
+                    <div class="showFadeTo" style="display: none">
+                        <pre><code><p id="fadeToCode"></p></code></pre>
+                    </div>
+
+                    <ol start="5">
+                        <li><code>.toggle()</code>:</li>
+                        <img id="dogsdamour" src="../assets/images/pictures/dogsdamour.jpg" alt="2015 Dogs d'Amour band photo" style="display:none; width:100%">
+
+                        <div><button class="btn button toggle">Toggle photo</button></div>
+                    </ol>
+                    <div class="showToggle" style="display:none">
+                        <pre><code><p id="toggleCode"></p></code></pre>
+                    </div>
+
+                    <ol start="6">
+                        <li><code>.fade()</code>:</li>
+                        <p>Mouse over and then awat from the image.</p>
+                        <img id="dogsLogo" src="../assets/images/pictures/dogs-logo.jpg" alt="2015 Dogs d'Amour band photo" style="width:100%">
+
+                        <!--<div><button class="btn button fadeMouseenter">Toggle photo</button></div>-->
+                    </ol>
+                    <div class="showMouseenter" style="display:none">
+                        <pre><code><p id="fadeMouseenterCode"></p></code></pre>
+                    </div>
+
+
+                    
+
+                    <!--<h2>Selecting using <code>jQuery</code>:</h2>
                     <ul>
                         <li><code>$</code></li>
                         <p>The jQuery selector</p>
@@ -261,7 +342,7 @@
                         as this is a variable.</p>
                     </ul>
                     <p>You will of course notice that we have inversed the colors of this page. The buttons and links are pink, while the code sections, menu and 
-                    footer are blue. This has all been done with <code>jQuery</code>. Should you want to, you can see the script <a href="../scripts/jQuery/jayQuery.js">here</a>.</p>
+                    footer are blue. This has all been done with <code>jQuery</code>. Should you want to, you can see the script <a href="../scripts/jQuery/jayQuery.js">here</a>.</p>-->
                 </article>
             </section>
         </div>
@@ -270,17 +351,17 @@
             <div class="row">
                 <div class="col-sm-6">
                     <div class="Last-page">
-                        <a class="btn button" style="text-align: left" href="dom-from-console.html" role="button"><svg width="1em" height="1em" viewbox="0 0 16 16" class="bi bi-caret-left-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <a class="btn button" style="text-align: left" href="jQuery-methods.html" role="button"><svg width="1em" height="1em" viewbox="0 0 16 16" class="bi bi-caret-left-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                         <path d="M3.86 8.753l5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"/>
-                        </svg> jQuery: Manupulating the DOM from the console</a>
+                        </svg> jQuery: jQuery Methods</a>
                     </div>
                 </div>
                 <div class="col-sm-6">
-                    <div class="next-page">
+                    <!--<div class="next-page">
                         <a class="btn button" href="jQuery-events.html" role="button">jQuery: jQuery Events <svg width="1em" height="1em" viewbox="0 0 16 16" class="bi bi-caret-right-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                         <path d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
                         </svg></a>
-                    </div>
+                    </div>-->
                 </div> 
             </div> 
         </div>
@@ -310,12 +391,12 @@
     </footer>
 
     <script type="text/javascript" src="../scripts/nav-dropdowns.js"></script>
-    <script src="../scripts/light-dark-theme-keys.js"></script>
     <script type="text/javascript" src="../scripts/index.js"></script>
-    <script type="text/javascript" src="../scripts/jQuery/jQuery-methods.js"></script>
+    <script src="../scripts/light-dark-theme.js"></script>
+    <script type="text/javascript" src="../scripts/jQuery/jQuery-events.js"></script>
     
     
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <!--<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>-->
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 

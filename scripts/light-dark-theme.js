@@ -21,7 +21,7 @@ function darkTheme() {
     el.classList.add("dark");
 }
 
-(function classListCSS() {
+/*(function classListCSS() {
     document.getElementById("classListCSS").innerText = `<body class="light" id="changeTheme">
     
 (function timeDarkTheme() {
@@ -45,4 +45,4 @@ function darkTheme() {
     el.classList.remove("light");
     el.classList.add("dark");
 }`;
-})();
+})();*/

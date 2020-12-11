@@ -290,7 +290,6 @@ li > a {
     padding-left: 8px;
 }
 
-}
 .pre-dark {
     background-color: #0A0A24;
     color: #DEDAA0;
@@ -432,6 +431,10 @@ footer {
 
 .white {
     color: white;
+}
+
+.purple {
+    color: purple;
 }
 
     
