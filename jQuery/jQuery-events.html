@@ -135,6 +135,8 @@
                                 <li><a href="dom-from-console.html">Manipulating the DOM from the console</a></li>
                                 <li><a href="jQuery-methods.html">jQuery Methods</a></li>
                                 <li><a href="jQuery-events.html">jQuery Events</a></li>
+                                <li><a href="jQuery-chaining.html">Chaining</a></li>
+                                <li><a href="jQuery-this.html">this</a></li>
                                 </ul>
                             </li>
 
@@ -184,7 +186,7 @@
                     <p>Lines 8 and 9 change the <code>CSS</code> styling back to as before.</p>
                     <br>
                     <p>Notice the use of <code>this</code> in the third code block. Effectively, it means to target <strong>only</strong> the element (etc) 
-                    that has been clicked.</p>
+                    that has been clicked. We'll go into <code>this</code> in more depth <a href="jQuery-this.html">here</a>.</p>
                     <br>
                     <p class="grayBackground">Also, we do not have to target the same thing as we target on line 2 in the following lines. If you mouse over this line of text, 
                     which has a class name <code>grayBackground</code>, you'll notice that the code block backgrounds turns gray while their texts turn white.</p>
@@ -237,112 +239,13 @@
 
                     <ol start="6">
                         <li><code>.fade()</code>:</li>
-                        <p>Mouse over and then awat from the image.</p>
+                        <p>Mouse over and then away from the image.</p>
                         <img id="dogsLogo" src="../assets/images/pictures/dogs-logo.jpg" alt="2015 Dogs d'Amour band photo" style="width:100%">
-
-                        <!--<div><button class="btn button fadeMouseenter">Toggle photo</button></div>-->
                     </ol>
                     <div class="showMouseenter" style="display:none">
                         <pre><code><p id="fadeMouseenterCode"></p></code></pre>
                     </div>
 
-
-                    
-
-                    <!--<h2>Selecting using <code>jQuery</code>:</h2>
-                    <ul>
-                        <li><code>$</code></li>
-                        <p>The jQuery selector</p>
-                        <li><code>$(document).ready(function(){</code></li>
-                        <p class="tab"><code>});</code></p>
-                        <p>Stops jQuery from loading until the document itself has loaded</p>
-                        <li><code>$("a");</code></li>
-                        <p>Selects all anchor elements</p>
-                        <li><code>$("div");</code></li>
-                        <p>Selects all DIV elements</p>
-                        <p>...</p>
-                        <li><code>$(".class")</code></li>
-                        <p>The class selector:</p>
-                            <ul>
-                                <li><code>$(".page-name")</code></li>
-                                <li><code>$(".container")</code></li>
-                                <p>...</p>
-                            </ul>
-                        <li><code>$("#id")</code></li>
-                        <p>The Id selector:</p>
-                            <ul>
-                                <li><code>$("#menu1")</code></li>
-                                <p>...</p>
-                            </ul>
-                        <li>$("[attribute]")</li>
-                        <p>The attribute selector</p>
-                            <ul>
-                                <li><code>$("[src]")</code></li>
-                                <li><code>$("[href]")</code></li>                                
-                            </ul>
-                        <li><code>$("element&gtelement")</code></li>
-                        <p>The direct descendant selector</p>
-                            <ul>
-                                <li><code>$("article&gtp")</code></li>
-                                <p>Return all <code>&ltp&gt</code> elements that are direct descendants of the <code>&ltarticle&gt</code> element.</p>
-                                <p class="tab"><code>&ltarticle&gt</code></p>
-                                <p class="double-tab"><code>&ltp&gt</code></p>
-                                <li><code>$(article p")</code></li>
-                                <p>Return all <code>&ltp&gt</code> elements that are descendants (ie children and everything below) of the <code>&ltarticle&gt</code> element.</p>
-                                <p class="tab"><code>&ltarticle&gt</code></p>
-                                <p class="double-tab"><code>&lth2&gt</code></p>
-                                <p class="triple-tab"><code>&ltp&gt</code></p>
-                            </ul>
-                        <li><code>$("p:first")</code></li>
-                        <p>The first instance of the <code>&ltp&gt</code> element (a pseudo selector)</p>
-                        <li><code>$("p:last")</code></li>
-                        <p>The last instance of the <code>&ltp&gt</code> element (a pseudo selector)</p>
-                        <li><p>$(":header")</p></li>
-                        <p>All the header elements from <code>&lth1&gt</code> to <code>&lth6&gt</code> (a pseudo selector)</p>
-                    </ul>
-                    <h2>Selecting CSS from <code>jQuery</code></h2>
-                    <ul>
-                        <li><code>$("div").css("background-color");</code></li>
-                        <p>Returns the background color of <code>&ltdiv&gt</code> elements</p>
-                        <li><code>$("p").css("font-family");</code></li>
-                        <p>Returns the font style of <code>&ltp&gt</code>elements</p>
-                        <p>...</p>
-                        <br>
-                        <li><code>$(".footer-section").html();</code></li>
-                        <p>Returns all the <code>HTML</code> from the class <code>footer-section</code></p>
-                    </ul>
-
-                    <h2>Manipulating using <code>jQuery</code>:</h2>
-                    <ul>
-                        <li><code>$("div").css("background-color", "red");</code></li>
-                        <p>Colors the backgound of DIVs red.</p>
-                        <li><code>$("ul").css("border", "solid, 1px, black");</code></li>
-                        <p>Surrounds every <code>&ltul&gt</code> element with a solid, 1px wide balck border</p>
-                        <br>
-                        <li><code>$("h1").html("Hello World!");</code></li>
-                        <p>Replaces the h1 title (<code>jQuery</code>) with Hello World!</p>
-                        <li><code>$(".website-links").html("&lth3&gtHello World&lt/h3&gt");</code></li>
-                        <p>Replaces what is in the <code>website-links</code> class with an <code>&lth3&gt</code> element containing Hello World!</p>
-                        <br>
-                        <li><code>$(".website-links p").text("Hello World!");</code></li>
-                        <p>Replaces the text within the descendant <code>&ltp&gt</code> element in the <code>.website-links</code> with Hello World!</p>
-                        <li><code>$("h6").append("&ltspan&gt &copy 2020&lt/span&gt")</code></li>
-                        <p>Appends &copy 2020 to the <code>&lth6&gt</code> element</p>
-                        <br>
-                        <li><code>$("p").remove();</code></li>
-                        <p><strong>Removes</strong> all <code>&lt)&gt</code> elements</p>
-                        <li><code>$(".main-body h2").empty();</code></li>
-                        <p><strong>Empties</strong> all <code>&lth2&gt</code> elements of their contents</p>
-                        <br>
-                        <li><code>let green = $("code").css("color");</code></li>
-                        <p><code>$("p").css("color", green);</code></p>
-                        <p>We assign the variable green to be the color in the CSS assigned to <code>&ltcode&gt</code> elements. (The 
-                        actual color is <code>this color</code>, but we have called it "green".) Now, we use <code>jQuery</code> to target all 
-                        <code>&ltp&gt</code> elements and change their color to our new definition, green. Note that we have not used <code>""</code>, 
-                        as this is a variable.</p>
-                    </ul>
-                    <p>You will of course notice that we have inversed the colors of this page. The buttons and links are pink, while the code sections, menu and 
-                    footer are blue. This has all been done with <code>jQuery</code>. Should you want to, you can see the script <a href="../scripts/jQuery/jayQuery.js">here</a>.</p>-->
                 </article>
             </section>
         </div>
@@ -357,11 +260,11 @@
                     </div>
                 </div>
                 <div class="col-sm-6">
-                    <!--<div class="next-page">
-                        <a class="btn button" href="jQuery-events.html" role="button">jQuery: jQuery Events <svg width="1em" height="1em" viewbox="0 0 16 16" class="bi bi-caret-right-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <div class="next-page">
+                        <a class="btn button" href="jQuery-chaining.html" role="button">jQuery: Chaining <svg width="1em" height="1em" viewbox="0 0 16 16" class="bi bi-caret-right-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                         <path d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
                         </svg></a>
-                    </div>-->
+                    </div>
                 </div> 
             </div> 
         </div>

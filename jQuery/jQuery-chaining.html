@@ -161,109 +161,34 @@
             </div>
             
             <div class="page-name">
-                <h1>jQuery:</h1>
+                <h1>Method Chaining:</h1>
             </div>
 
             <section class="main-body">
                 <article>
-                    <p>To use <code>jQuery Methods</code>, you have to insert it into the <code>&lthead&gt</code> element. It can either be downloaded and stored on the 
-                    site from <a href="https://jquery.com/download/">here (choose the uncompressed version)</a>, or you can link to it using a <code>cdn</code> 
-                    from <a href="https://code.jquery.com/">here</a>. This is what we are using here.</p>
-                    <p>Let's see how <code>jQuery</code> works:</p>
-                    <h2>Selecting using <code>jQuery</code>:</h2>
                     <ul>
-                        <li><code>$</code></li>
-                        <p>The jQuery selector</p>
-                        <li><code>$(document).ready(function(){</code></li>
-                        <p class="tab"><code>});</code></p>
-                        <p>Stops jQuery from loading until the document itself has loaded</p>
-                        <li><code>$("a");</code></li>
-                        <p>Selects all anchor elements</p>
-                        <li><code>$("div");</code></li>
-                        <p>Selects all DIV elements</p>
-                        <p>...</p>
-                        <li><code>$(".class")</code></li>
-                        <p>The class selector:</p>
+                        <li>Chaining elements:</li>
                             <ul>
-                                <li><code>$(".page-name")</code></li>
-                                <li><code>$(".container")</code></li>
-                                <p>...</p>
+                                <li><code>.removeClass().addClass()</code>:</li>
+                                <div id="blueDiv" class="div-background-blue">
+                                    <p>Mouse over me.</p>
+                                </div>
                             </ul>
-                        <li><code>$("#id")</code></li>
-                        <p>The Id selector:</p>
-                            <ul>
-                                <li><code>$("#menu1")</code></li>
-                                <p>...</p>
-                            </ul>
-                        <li>$("[attribute]")</li>
-                        <p>The attribute selector</p>
-                            <ul>
-                                <li><code>$("[src]")</code></li>
-                                <li><code>$("[href]")</code></li>                                
-                            </ul>
-                        <li><code>$("element&gtelement")</code></li>
-                        <p>The direct descendant selector</p>
-                            <ul>
-                                <li><code>$("article&gtp")</code></li>
-                                <p>Return all <code>&ltp&gt</code> elements that are direct descendants of the <code>&ltarticle&gt</code> element.</p>
-                                <p class="tab"><code>&ltarticle&gt</code></p>
-                                <p class="double-tab"><code>&ltp&gt</code></p>
-                                <li><code>$(article p")</code></li>
-                                <p>Return all <code>&ltp&gt</code> elements that are descendants (ie children and everything below) of the <code>&ltarticle&gt</code> element.</p>
-                                <p class="tab"><code>&ltarticle&gt</code></p>
-                                <p class="double-tab"><code>&lth2&gt</code></p>
-                                <p class="triple-tab"><code>&ltp&gt</code></p>
-                            </ul>
-                        <li><code>$("p:first")</code></li>
-                        <p>The first instance of the <code>&ltp&gt</code> element (a pseudo selector)</p>
-                        <li><code>$("p:last")</code></li>
-                        <p>The last instance of the <code>&ltp&gt</code> element (a pseudo selector)</p>
-                        <li><p>$(":header")</p></li>
-                        <p>All the header elements from <code>&lth1&gt</code> to <code>&lth6&gt</code> (a pseudo selector)</p>
-                    </ul>
-                    <h2>Selecting CSS from <code>jQuery</code></h2>
-                    <ul>
-                        <li><code>$("div").css("background-color");</code></li>
-                        <p>Returns the background color of <code>&ltdiv&gt</code> elements</p>
-                        <li><code>$("p").css("font-family");</code></li>
-                        <p>Returns the font style of <code>&ltp&gt</code>elements</p>
-                        <p>...</p>
-                        <br>
-                        <li><code>$(".footer-section").html();</code></li>
-                        <p>Returns all the <code>HTML</code> from the class <code>footer-section</code></p>
-                    </ul>
+                            <div class="showMethodChaining" style="display:none">
+                                <pre><code><p id="methodChainingClassCode"></p></code></pre>
+                            </div>
+                            <br>
 
-                    <h2>Manipulating using <code>jQuery</code>:</h2>
-                    <ul>
-                        <li><code>$("div").css("background-color", "red");</code></li>
-                        <p>Colors the backgound of DIVs red.</p>
-                        <li><code>$("ul").css("border", "solid, 1px, black");</code></li>
-                        <p>Surrounds every <code>&ltul&gt</code> element with a solid, 1px wide balck border</p>
-                        <br>
-                        <li><code>$("h1").html("Hello World!");</code></li>
-                        <p>Replaces the h1 title (<code>jQuery</code>) with Hello World!</p>
-                        <li><code>$(".website-links").html("&lth3&gtHello World&lt/h3&gt");</code></li>
-                        <p>Replaces what is in the <code>website-links</code> class with an <code>&lth3&gt</code> element containing Hello World!</p>
-                        <br>
-                        <li><code>$(".website-links p").text("Hello World!");</code></li>
-                        <p>Replaces the text within the descendant <code>&ltp&gt</code> element in the <code>.website-links</code> with Hello World!</p>
-                        <li><code>$("h6").append("&ltspan&gt &copy 2020&lt/span&gt")</code></li>
-                        <p>Appends &copy 2020 to the <code>&lth6&gt</code> element</p>
-                        <br>
-                        <li><code>$("p").remove();</code></li>
-                        <p><strong>Removes</strong> all <code>&lt)&gt</code> elements</p>
-                        <li><code>$(".main-body h2").empty();</code></li>
-                        <p><strong>Empties</strong> all <code>&lth2&gt</code> elements of their contents</p>
-                        <br>
-                        <li><code>let green = $("code").css("color");</code></li>
-                        <p><code>$("p").css("color", green);</code></p>
-                        <p>We assign the variable green to be the color in the CSS assigned to <code>&ltcode&gt</code> elements. (The 
-                        actual color is <code>this color</code>, but we have called it "green".) Now, we use <code>jQuery</code> to target all 
-                        <code>&ltp&gt</code> elements and change their color to our new definition, green. Note that we have not used <code>""</code>, 
-                        as this is a variable.</p>
+                        <li>Chaining Events:</li>
+                            <ul>
+                                <li><code>.slideUp().slideDown();</code>:</li>
+                                    <p id="mouse-on-me">Hold mouse on me for a few seconds, then mouseout.</p>      
+                            </ul>
+                            <div class="showMethodEventChaining" style="display:none">
+                                <pre><code><p id="methodChainingEventCode"></p></code></pre>
+                            </div>
+
                     </ul>
-                    <p>You will of course notice that we have inversed the colors of this page. The buttons and links are pink, while the code sections, menu and 
-                    footer are blue. This has all been done with <code>jQuery</code>. Should you want to, you can see the script <a href="../scripts/jQuery/jayQuery.js">here</a>.</p>
                 </article>
             </section>
         </div>
@@ -272,14 +197,14 @@
             <div class="row">
                 <div class="col-sm-6">
                     <div class="Last-page">
-                        <a class="btn button" style="text-align: left" href="dom-from-console.html" role="button"><svg width="1em" height="1em" viewbox="0 0 16 16" class="bi bi-caret-left-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <a class="btn button" style="text-align: left" href="jQuery-events.html" role="button"><svg width="1em" height="1em" viewbox="0 0 16 16" class="bi bi-caret-left-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                         <path d="M3.86 8.753l5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"/>
-                        </svg> jQuery: Manupulating the DOM from the console</a>
+                        </svg> jQuery: jQuery Events</a>
                     </div>
                 </div>
                 <div class="col-sm-6">
                     <div class="next-page">
-                        <a class="btn button" href="jQuery-events.html" role="button">jQuery: jQuery Events <svg width="1em" height="1em" viewbox="0 0 16 16" class="bi bi-caret-right-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <a class="btn button" href="jQuery-this.html" role="button">jQuery: This <svg width="1em" height="1em" viewbox="0 0 16 16" class="bi bi-caret-right-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                         <path d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
                         </svg></a>
                     </div>
@@ -312,12 +237,12 @@
     </footer>
 
     <script type="text/javascript" src="../scripts/nav-dropdowns.js"></script>
-    <script src="../scripts/light-dark-theme-keys.js"></script>
     <script type="text/javascript" src="../scripts/index.js"></script>
-    <script type="text/javascript" src="../scripts/jQuery/jQuery-methods.js"></script>
+    <script src="../scripts/light-dark-theme.js"></script>
+    <script type="text/javascript" src="../scripts/jQuery/jQuery-chaining.js"></script>
     
     
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <!--<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>-->
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 
