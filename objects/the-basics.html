@@ -6,8 +6,10 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../assets/css/style.css" type="text/css">
-    <title>Javascripting</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <title>Javascripting | Objects: Introduction</title>
 </head>
+
 <body>
     <header>
         <div class="wrapper">
@@ -15,135 +17,125 @@
             </div>
         </div>
     
-        <nav class="navbar navbar-expand-lg navbar-light">
-            
-            <a class="navbar-brand" href="../index.html">Javascripting</a>
-            <button onclick="dropdown()" id="bars" class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <svg width="1em" height="1em" viewbox="0 0 16 16" class="bi bi-list" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                <path fill-rule="evenodd" d="M2.5 11.5A.5.5 0 0 1 3 11h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 7h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 3h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
-                </svg>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                <!--<li class="nav-item active">
-                    <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
-                </li>-->
-                <li class="nav-item dropdown has-megamenu" >       
-                    <a class="dropdown-toggle" data-toggle="dropdown" id="dropdown" onclick="dropdown()">Menu
-                        <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li class="dropdown-menu-no-children">
-                                <a class="menu-list" href="../code-examples.html">Code Examples</a>
-                            </li>
+        <nav class="nav" id="nav">
+            <div class="container-fluid new-nav" id="menu-bar">
+                <div class="row full-row">
+                    <div class="title">
+                        <h2 class="title-text"><a class="title-link" href="../index.html">Javascripting</a></h2>
+                        <h2 class="menu-text">Menu</h2>
+                        <p class="fontawesome-icon"><i class="fa fa-bars"></i></p>
+                    </div>
+                </div>
+            </div>
 
-                            <li class="dropdown-menu-no-children">
-                                <a class="menu-list" href="../hoisting-and-scope.html">Hoisting and Scope</a>
-                            </li>
-                        
-                            <li class="dropdown-submenu">
-                                <a onclick="menuLinks1()" class="menu-list" href="#">Numbers<span class="caret"></span></a>
-                                <ul class="dropdown-menu" id="menu1" style="display:none">
-                                <li><a href="../numbers/the-basics.html">The Basics</a></li>
-                                <li><a href="../numbers/number-methods.html">Number Methods</a></li>
-                                <li><a href="../numbers/math-methods.html">Math Methods</a></li>
-                                </ul>
-                            </li>
+            <div class="menu-dropdown" id="menu-dropdown">
+                <div class="new-dropdown-menu codeExamples dropdown-menu-no-children">
+                    <p><a class="menu-list" href="../code-examples.html">Code Examples</a></p>
+                </div>
 
-                            <li class="dropdown-submenu">
-                                <a onclick="menuLinks2()" class="menu-list" href="#">"strings"<span class="caret"></span></a>
-                                <ul class="dropdown-menu" id="menu2" style="display:none">
-                                <li><a href="../strings/the-basics.html">The Basics</a></li>
-                                <li><a href="../strings/string-methods.html">String Methods</a></li>
-                                <li><a href="../strings/concat-and-interpolation.html">Concatenation & Interpolation</a></li>
-                                <li><a href="../strings/challenges.html">Challenges</a></li>
-                                </ul>
-                            </li>
+                <div class="new-dropdown-menu hoistingAndScope dropdown-menu-no-children">
+                    <a class="menu-list" href="../hoisting-and-scope.html">Hoisting and Scope</a>
+                </div>
 
-                            <li class="dropdown-submenu">
-                                <a onclick="menuLinks3()" class="menu-list" href="#">[arrays]<span class="caret"></span></a>
-                                <ul class="dropdown-menu" id="menu3" style="display:none">
-                                <li><a href="../arrays/the-basics.html">The Basics</a></li>
-                                <li><a href="../arrays/array-methods.html">Array Methods</a></li>
-                                <li><a href="../arrays/array-methods-2.html">More Array Methods</a></li>
-                                <li><a href="../arrays/multi-dimensional-arrays.html">Multidimensional Arrays</a></li>
-                                <li><a href="../arrays/challenges.html">Challenges</a></li>
-                                </ul>
-                            </li>
-
-                            <li class="dropdown-submenu">
-                                <a onclick="menuLinks4()" class="menu-list" href="#">Booleans<span class="caret"></span></a>
-                                <ul class="dropdown-menu" id="menu4" style="display:none">
-                                <li><a href="../booleans/the-basics.html">The Basics</a></li>
-                                <li><a href="../booleans/conditionals.html">Conditionals</a></li>
-                                <li><a href="../booleans/conversions.html">Conversions</a></li>
-                                <li><a href="../booleans/challenges.html">Challenges</a></li>
-                                </ul>
-                            </li>
-
-                            <li class="dropdown-menu-no-children">
-                                <a class="menu-list" href="../type-conversion.html">Type Conversion</a>
-                            </li>
-
-                            <li class="dropdown-submenu">
-                                <a onclick="menuLinks5()" class="menu-list" href="#">Loops<span class="caret"></span></a>
-                                <ul class="dropdown-menu" id="menu5" style="display:none">
-                                <li><a href="../loops/the-basics.html">The Basics</a></li>
-                                <li><a href="../loops/loops.html">Loops</a></li>
-                                <li><a href="../loops/break-and-continue.html">Break and Continue</a></li>
-                                <li><a href="../loops/nested-loops.html">Nested Loops</a></li>
-                                <li><a href="../loops/challenges.html">Challenges</a></li>
-                                </ul>
-                            </li>
-
-                            <li class="dropdown-submenu">
-                                <a onclick="menuLinks6()" class="menu-list" href="#">Functions<span class="caret"></span></a>
-                                <ul class="dropdown-menu" id="menu6" style="display:none">
-                                <li><a href="../functions/the-basics.html">The Basics</a></li>
-                                <li><a href="../functions/function-expressions.html">Function Expressions</a></li>
-                                <li><a href="../functions/function-callbacks.html">Function Callbacks</a></li>
-                                <li><a href="../functions/challenges.html">Challenges</a></li>
-                                </ul>
-                            </li>
-
-                            <li class="dropdown-submenu">
-                                <a onclick="menuLinks7()" class="menu-list" href="#">Objects<span class="caret"></span></a>
-                                <ul class="dropdown-menu" id="menu7" style="display:none">
-                                <li><a href="the-basics.html">The Basics</a></li>
-                                <li><a href="object-constructor.html">Object Constructor</a></li>
-                                <li><a href="object-methods.html">Object Methods</a></li>
-                                <li><a href="this.html">This</a></li>
-                                <li><a href="object-values.html">Object Values</a></li>
-                                <li><a href="challenges.html">Challenges</a></li>
-                                </ul>
-                            </li>
-
-                            <li class="dropdown-submenu">
-                                <a onclick="menuLinks8()" class="menu-list" href="#">The DOM<span class="caret"></span></a>
-                                <ul class="dropdown-menu" id="menu8" style="display:none">
-                                <li><a href="../dom/document-object-model.html">on~</a></li>
-                                <li><a href="../dom/getting-setting-dom-elements.html">Getting and Setting DOM Elements</a></li>
-                                <li><a href="../dom/setting-css-in-dom.html">Setting CSS Elements from the DOM</a></li>
-                                <li><a href="../dom/dom-events.html">DOM Events</a></li>
-                                <li><a href="../dom/challenges.html">Challenges</a></li>
-                                </ul>
-                            </li>
-
-                            <li class="dropdown-submenu">
-                                <a onclick="menuLinks9()" class="menu-list" href="#">jQuery<span class="caret"></span></a>
-                                <ul class="dropdown-menu" id="menu9" style="display:none">
-                                <li><a href="../jQuery/dom-from-console.html">Manipulating the DOM from the console</a></li>
-                                <li><a href="../jQuery/jQuery-methods.html">jQuery Methods</a></li>
-                                </ul>
-                            </li>
-
-                            </ul>
-                        </li>
-                    </ul>
+                <div class="new-dropdown-menu numbers">
+                    <p class="menu-list-with-dropdown numbers-dropdown" id="numbers">Numbers</p>
+                    <div class="new-dropdown-submenu numbers-sub">
+                        <a class="sub-menu-link numbers-one" href="../numbers/the-basics.html">Introduction</a>
+                        <a class="sub-menu-link numbers-two" href="../numbers/number-methods.html">Number Methods</a>
+                        <a class="sub-menu-link numbers-three" href="../numbers/math-methods.html">Math Methods</a>
+                    </div>
+                </div> 
                 
-                <!--<form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                </form> -->
+                <div class="new-dropdown-menu strings">
+                    <p class="menu-list-with-dropdown strings-dropdown" id="strings">"strings"</p>
+                    <div class="new-dropdown-submenu strings-sub">
+                        <a class="sub-menu-link strings-one" href="../strings/the-basics.html">Introduction</a>
+                        <a class="sub-menu-link strings-two" href="../strings/string-methods.html">"string" Methods</a>
+                        <a class="sub-menu-link strings-three" href="../strings/concat-and-interpolation.html">Concatenation & Interpolation</a>
+                        <a class="sub-menu-link strings-four" href="../strings/challenges.html">Challenges</a>
+                    </div>
+                </div>
+
+                <div class="new-dropdown-menu arrays">
+                    <p class="menu-list-with-dropdown arrays-dropdown" id="arrays">[arrays]</p>
+                    <div class="new-dropdown-submenu arrays-sub">
+                        <a class="sub-menu-link arrays-one" href="../arrays/the-basics.html">Introduction</a>
+                        <a class="sub-menu-link arrays-two" href="../arrays/array-methods.html">[array] Methods</a>
+                        <a class="sub-menu-link arrays-three" href="../arrays/array-methods-2.html">More [array] Methods</a>
+                        <a class="sub-menu-link arrays-four" href="../arrays/multi-dimensional-arrays.html">Multidimensional [arrays]</a>
+                        <a class="sub-menu-link arrays-five" href="../arrays/challenges.html">Challenges</a>
+                    </div>
+                </div>
+
+                <div class="new-dropdown-menu booleans">
+                    <p class="menu-list-with-dropdown booleans-dropdown" id="booleans">Booleans</p>
+                    <div class="new-dropdown-submenu booleans-sub">
+                        <a class="sub-menu-link booleans-one" href="../booleans/the-basics.html">Introduction</a>
+                        <a class="sub-menu-link booleans-two" href="../booleans/conditionals.html">Conditionals</a>
+                        <a class="sub-menu-link booleans-three" href="../booleans/conversions.html">Conversions</a>
+                        <a class="sub-menu-link booleans-four" href="../booleans/challenges.html">Challenges</a>
+                    </div>
+                </div>
+
+                <div class="new-dropdown-menu typeConversion dropdown-menu-no-children">
+                    <a class="menu-list" href="../type-conversion.html">Type Conversion</a>
+                </div>
+
+                <div class="new-dropdown-menu loops">
+                    <p class="menu-list-with-dropdown loops-dropdown" id="loops">Loops</p>
+                    <div class="new-dropdown-submenu loops-sub">
+                        <a class="sub-menu-link loops-one" href="../loops/the-basics.html">Introduction</a>
+                        <a class="sub-menu-link loops-two" href="../loops/loops.html">Loops</a>
+                        <a class="sub-menu-link loops-three" href="../loops/break-and-continue.html">Break and Continue</a>
+                        <a class="sub-menu-link loops-four" href="../loops/nested-loops.html">Nested Loops</a>
+                        <a class="sub-menu-link loops-five" href="../loops/challenges.html">Challenges</a>
+                    </div>
+                </div>
+
+                <div class="new-dropdown-menu functions">
+                    <p class="menu-list-with-dropdown functions-dropdown" id="functions">functions()</p>
+                    <div class="new-dropdown-submenu functions-sub">
+                        <a class="sub-menu-link functions-one" href="../functions/the-basics.html">Introduction</a>
+                        <a class="sub-menu-link functions-two" href="../functions/function-expressions.html">function() Expressions</a>
+                        <a class="sub-menu-link functions-three" href="../functions/function-callbacks.html">function() Callbacks</a>
+                        <a class="sub-menu-link functions-four" href="../functions/challenges.html">Challenges</a>
+                    </div>
+                </div>
+
+                <div class="new-dropdown-menu objects">
+                    <p class="menu-list-with-dropdown objects-dropdown" id="objects">Objects</p>
+                    <div class="new-dropdown-submenu objects-sub">
+                        <a class="sub-menu-link objects-one" href="the-basics.html">Introduction</a>
+                        <a class="sub-menu-link objects-two" href="object-constructor.html">Object Constructor</a>
+                        <a class="sub-menu-link objects-three" href="object-methods.html">Object Methods</a>
+                        <a class="sub-menu-link objects-four" href="this.html">this</a>
+                        <a class="sub-menu-link objects-five" href="object-values.html">Object Values</a>
+                        <a class="sub-menu-link objects-six" href="challenges.html">Challenges</a>
+                    </div>
+                </div>
+
+                <div class="new-dropdown-menu dom">
+                    <p class="menu-list-with-dropdown dom-dropdown" id="dom">The DOM</p>
+                    <div class="new-dropdown-submenu dom-sub">
+                        <a class="sub-menu-link dom-one" href="../dom/document-object-model.html">on~</a>
+                        <a class="sub-menu-link dom-two" href="../dom/getting-setting-dom-elements.html">Getting and Setting DOM Elements</a>
+                        <a class="sub-menu-link dom-three" href="../dom/setting-css-in-dom.html">Setting CSS Elements from the DOM</a>
+                        <a class="sub-menu-link dom-four" href="../dom/dom-events.html">DOM Events</a>
+                        <a class="sub-menu-link dom-five" href="../dom/challenges.html">Challenges</a>
+                    </div>
+                </div>
+
+                <div class="new-dropdown-menu jQuery">
+                    <p class="menu-list-with-dropdown jQuery-dropdown" id="jQuery">jQuery</p>
+                    <div class="new-dropdown-submenu jQuery-sub">
+                        <a class="sub-menu-link jQuery-one" href="../jQuery/dom-from-console.html">Manipulating the DOM from the console</a>
+                        <a class="sub-menu-link jQuery-two" href="../jQuery/jQuery-methods.html">jQuery Methods</a>
+                        <a class="sub-menu-link jQuery-three" href="../jQuery/jQuery-events.html">jQuery Events</a>
+                        <a class="sub-menu-link jQuery-four" href="../jQuery/jQuery-chaining.html">Chaining</a>
+                        <a class="sub-menu-link jQuery-five" href="../jQuery/jQuery-this.html">this</a>
+                    </div>
+                </div>
+
             </div>
         </nav>
 
@@ -152,7 +144,7 @@
     <main>
         <div class="container body-container">
             <div class="page-name">
-                <h1>The Basics:</h1>
+                <h1>Introduction:</h1>
             </div>
 
             <div class="main-body">
@@ -176,7 +168,7 @@
                     <p>Also notice that we have used <code>this.key</code> to call the keys' <code>data</code> values. We shall talk more about <a href="this.html">this</a> 
                     soon.</p>
                     <p>Here, when we click the button below, we will see the results.</p>
-                    <button onclick="dogs()">Click Me</button>
+                    <button class="btn button" type="button" onclick="dogs()">Click Me</button>
                     <p id="dogsBio"></p>
                 
             </div>            
@@ -193,7 +185,7 @@
                 </div>
                 <div class="col-sm-6">
                     <div class="next-page">
-                        <a class="btn button" href="constructor-function.html" role="button">Objects: Constructor Function <svg width="1em" height="1em" viewbox="0 0 16 16" class="bi bi-caret-right-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <a class="btn button" href="object-constructor.html" role="button">Objects: Object Constructor <svg width="1em" height="1em" viewbox="0 0 16 16" class="bi bi-caret-right-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                         <path d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
                         </svg></a>
                     </div> 
@@ -229,34 +221,11 @@
         </div>
     </footer>
 
+    <script type="text/javascript" src="../scripts/new-menu.js"></script>
     <script src="../scripts/objects/objects.js"></script>
-    <script src="../scripts/nav-dropdowns.js"></script>
     
-    
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-
-    <!--<script>
-        $(document).ready(function(){
-        $('.dropdown-submenu a.menu-list').on("click", function(e){
-            $(this).next('ul').toggle();
-            e.stopPropagation();
-            e.preventDefault();
-        });
-        });
-    </script>-->
-
-    <script type="text/javascript">
-    // jquery ready start
-    $(document).ready(function() {
-	// jQuery code
-        //////////////////////// Prevent closing from click inside dropdown
-        $(document).on('click', '.dropdown-menu', function (e) {
-            e.stopPropagation();
-        });	
-    }); // jquery end
-    </script>
-    
+   
 </body>
 </html>

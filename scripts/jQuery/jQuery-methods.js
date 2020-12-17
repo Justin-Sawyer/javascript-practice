@@ -17,7 +17,7 @@ $(document).ready(function() {
     We can add more than one element/class/id/attribute to the target:
     */
    
-    $(".footer-section, .navbar, .dropdown-menu, .dropdown-submenu").addClass("blueBackground");
+    $(".footer-section").addClass("blueBackground");
     //$(".navbar").addClass("blueBackground");
     //$(".dropdown-menu").addClass("blueBackground");
     //$(".dropdown-submenu").addClass("blueBackground");
@@ -26,5 +26,9 @@ $(document).ready(function() {
     $("code").addClass("blue");
     $(".body-container a").addClass("pink");
     $(".footer-section a").addClass("white");
+    $(".new-nav").removeClass("new-nav").addClass("new-nav-blue");
+    $(".new-dropdown-menu").addClass("new-dropdown-menu-blue");
+    $(".new-dropdown-submenu").addClass("new-dropdown-submenu-blue")
+
 
 })

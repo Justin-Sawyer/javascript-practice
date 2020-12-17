@@ -1,53 +1,99 @@
-/*
-*
-* ==========================================
-* CUSTOM UTIL CLASSES
-* ==========================================
-*
-*/
-
-.dropdown-submenu {
-  position: relative;
+/*------------------------------------------------------------------------------------- new nav bar */
+.new-nav {
+    height: 50px;
+    display: flex;
+    flex-flow: row wrap;
+    box-sizing: border-box;
+    margin-right: auto;
+    margin-left: auto;
+    background-color: #c13e70;
+    padding-left: 0;
+    padding-right: 0;
 }
 
-.dropdown-submenu>a:after {
-  content: "\f0da";
-  float: right;
-  border: none;
-  font-family: 'FontAwesome';
+.full-row {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
 }
 
-.dropdown-submenu>.dropdown-menu {
-  top: 0;
-  left: 100%;
-  margin-top: 0px;
-  margin-left: 0px;
+.title,
+.menu {
+    vertical-align: middle;
 }
 
-/*
-*
-* ==========================================
-* FOR DEMO PURPOSES
-* ==========================================
-*
-*/
-
-body {
-  background: #4568DC;
-  background: -webkit-linear-gradient(to right, #4568DC, #B06AB3);
-  background: linear-gradient(to right, #4568DC, #B06AB3);
-  min-height: 100vh;
+.title-text,
+.menu-text {
+    margin: 8px;
+    vertical-align: middle;
 }
 
-code {
-  color: #B06AB3;
-  background: #fff;
-  padding: 0.1rem 0.2rem;
-  border-radius: 0.2rem;
+.title {
+    flex: 1;
+    display: flex;
+    flex-flow: row;
+    color:white;
 }
 
-@media (min-width: 991px) {
-  .dropdown-menu {
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
+.fontawesome-icon {
+    font-size: 34px;
+    color: black;
+    margin: 0 8px 0;
+    position: absolute;
+    right: 0;
+}
+
+.menu-text {
+    color:black;
+    /*width: 80%;*/
+}
+
+.menu-list,
+.menu-list-with-dropdown {
+    font-size: 24px;
+    color: black;
+    text-decoration: none;
+}
+
+.menu-text-white {
+    color:white;
+}
+
+.new-dropdown-menu {
+    display: none;
+    background-color: #c13e70;
+    position: static;
+    padding-left: 24px;
+    font-size: 24px;
+}
+
+.new-dropdown-menu>p {
+    color: black;
+}
+
+.new-dropdown-submenu  {
+    display: none;
+    background-color: #c13e70;
+    position: static;
+    padding-left: 32px;
+    font-size: 18px;
+
+}
+
+.sub-menu-link {
+    /*text-decoration: none;*/
+    color: black;
+    display: block;
+}
+
+@media all and (min-width: 992px) {
+    .fontawesome-icon {
+        display: none;
+    }
+}
+
+@media all and (max-width: 991px) {
+    .menu-text {
+        display: none;
+    }
 }

@@ -6,6 +6,10 @@ body {
     overflow: auto;
 }
 
+main {
+    min-height: 360px;
+}
+
 * {
     font-family: Menlo, monospace;
 }
@@ -129,7 +133,7 @@ blockquote {
   }
 }
 
-/* ---------------------------------- Navigation */
+/* ---------------------------------- Navigation 
 
 
 .navbar, .form-inline, .dropdown-toggle, .dropdown-submenu, .navbar-brand {
@@ -159,7 +163,7 @@ blockquote {
 /*.menu-list {
     font-size: 24px;
     color: black;
-}*/
+}
 
 .dropdown-menu {
     padding: 0 12px 12px 12px;
@@ -195,7 +199,7 @@ li > a:hover {
 }
 li > a {
     color: black;
-}
+}*/
 
 /* ---------------------------------- Body */
 .body-container {
@@ -301,8 +305,8 @@ li > a {
 /* ---------------------------------- Footer */
 
 footer {
-    position: absolute;
     width: 100%;
+    bottom: 0;
 }
 .footer-section {
     background-color: #c13e70;
@@ -531,6 +535,18 @@ footer {
     padding-right: 0;
 }
 
+.new-nav-blue {
+    height: 50px;
+    display: flex;
+    flex-flow: row wrap;
+    box-sizing: border-box;
+    margin-right: auto;
+    margin-left: auto;
+    background-color: #047afb;
+    padding-left: 0;
+    padding-right: 0;
+}
+
 .full-row {
     width: 100%;
     margin-left: 0;
@@ -546,6 +562,10 @@ footer {
 .menu-text {
     margin: 8px;
     vertical-align: middle;
+}
+
+.title-link {
+    color: white;
 }
 
 .title {
@@ -568,6 +588,15 @@ footer {
     /*width: 80%;*/
 }
 
+.menu-dropdown {
+    width: 100%;
+}
+
+.menu-dropdown-blue {
+    width: 100%;
+    background-color: #047afb;
+}
+
 .menu-list,
 .menu-list-with-dropdown {
     font-size: 24px;
@@ -587,6 +616,10 @@ footer {
     font-size: 24px;
 }
 
+.new-dropdown-menu-blue {
+    background-color: #047afb;
+}
+
 .new-dropdown-menu>p {
     color: black;
 }
@@ -597,17 +630,16 @@ footer {
     position: static;
     padding-left: 32px;
     font-size: 18px;
-
 }
 
-.sub-menu-link-black {
-    /*text-decoration: none;*/
-    color: black
+.new-dropdown-submenu-blue {
+    background-color: #047afb;
 }
 
-.sub-menu-link-white {
+.sub-menu-link {
     /*text-decoration: none;*/
-    color: white;
+    color: black;
+    display: block;
 }
 
 @media all and (min-width: 992px) {
