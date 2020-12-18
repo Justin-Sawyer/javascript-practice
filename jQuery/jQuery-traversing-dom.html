@@ -7,16 +7,16 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../assets/css/style.css" type="text/css">
     <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
-    <title>Javascripting | Objects: this</title>
+    <title>Javascripting | jQuery: Traversing the DOM</title>
 </head>
 
-<body>
+<body class="light" id="changeTheme">
     <header>
         <div class="wrapper">
-            <div class="sliding-background strings">
+            <div class="sliding-background">
             </div>
         </div>
-    
+        
         <nav class="nav" id="nav">
             <div class="container-fluid new-nav" id="menu-bar">
                 <div class="row full-row">
@@ -105,12 +105,12 @@
                 <div class="new-dropdown-menu objects">
                     <p class="menu-list-with-dropdown objects-dropdown" id="objects">Objects</p>
                     <div class="new-dropdown-submenu objects-sub">
-                        <a class="sub-menu-link objects-one" href="the-basics.html">Introduction</a>
-                        <a class="sub-menu-link objects-two" href="object-constructor.html">Object Constructor</a>
-                        <a class="sub-menu-link objects-three" href="object-methods.html">Object Methods</a>
-                        <a class="sub-menu-link objects-four" href="this.html">this</a>
-                        <a class="sub-menu-link objects-five" href="object-values.html">Object Values</a>
-                        <a class="sub-menu-link objects-six" href="challenges.html">Challenges</a>
+                        <a class="sub-menu-link objects-one" href="../objects/the-basics.html">Introduction</a>
+                        <a class="sub-menu-link objects-two" href="../objects/object-constructor.html">Object Constructor</a>
+                        <a class="sub-menu-link objects-three" href="../objects/object-methods.html">Object Methods</a>
+                        <a class="sub-menu-link objects-four" href="../objects/this.html">this</a>
+                        <a class="sub-menu-link objects-five" href="../objects/object-values.html">Object Values</a>
+                        <a class="sub-menu-link objects-six" href="../objects/challenges.html">Challenges</a>
                     </div>
                 </div>
 
@@ -128,81 +128,54 @@
                 <div class="new-dropdown-menu jQuery">
                     <p class="menu-list-with-dropdown jQuery-dropdown" id="jQuery">jQuery</p>
                     <div class="new-dropdown-submenu jQuery-sub">
-                        <a class="sub-menu-link jQuery-one" href="../jQuery/dom-from-console.html">Manipulating the DOM from the console</a>
-                        <a class="sub-menu-link jQuery-two" href="../jQuery/jQuery-methods.html">jQuery Methods</a>
-                        <a class="sub-menu-link jQuery-three" href="../jQuery/jQuery-events.html">jQuery Events</a>
-                        <a class="sub-menu-link jQuery-four" href="../jQuery/jQuery-chaining.html">Chaining</a>
-                        <a class="sub-menu-link jQuery-five" href="../jQuery/jQuery-this.html">this</a>
-                        <a class="sub-menu-link jQuery-six" href="../jQuery/jQuery-traversing-dom.html">Traversing the DOM</a>
+                        <a class="sub-menu-link jQuery-one" href="dom-from-console.html">Manipulating the DOM from the console</a>
+                        <a class="sub-menu-link jQuery-two" href="jQuery-methods.html">jQuery Methods</a>
+                        <a class="sub-menu-link jQuery-three" href="jQuery-events.html">jQuery Events</a>
+                        <a class="sub-menu-link jQuery-four" href="jQuery-chaining.html">Chaining</a>
+                        <a class="sub-menu-link jQuery-five" href="jQuery-this.html">this</a>
+                        <a class="sub-menu-link jQuery-six" href="jQuery-traversing-dom.html">Traversing the DOM</a>
                     </div>
                 </div>
 
             </div>
         </nav>
-
+        
     </header>
 
     <main>
         <div class="container body-container">
+            <div class="theme">
+                <button class="btn button" type="button" onclick="lightTheme()">Change to Light Theme</button>
+                <button class="btn button" type="button" onclick="darkTheme()"> Change to Dark Theme</button>
+            </div>
+            
             <div class="page-name">
-                <h1>this:</h1>
+                <h1>Traversing the DOM:</h1>
             </div>
 
-            <div class="main-body">
-                <p>Objects store data, but to reference and access this data we use the <code>this</code> keyword, as we saw on the previous pages.</p>
-                <pre><code><p id="thisExplain"></p></code></pre>
-                <button class="btn button" type="button" onclick="thisExplain()">Who are the main characters in The Hitchhikers Guide to the Galaxy?</button>
-                <p id="characters"></p>
-                <br>
-                <p>We can also call these details using the name of the function and the keys (<code>hitchhikers.key()</code>):</p>
-                <pre><code><p id="detailsExplain"></p></code></pre>
-                <button class="btn button" type="button" onclick="detailsExplain()">Who are the main characters in The Hitchhikers Guide to the Galaxy?</button>
-                <p id="characters1"></p>
-                <br>
-                <p>So why it <code>this</code> so useful?</p>
-                <p>Maybe we are working on the code and we update the name of the <code>Object</code> but forget to change the code to be executed:</p>
-                <pre><code><p id="detailsExplain1"></p></code></pre>
-                <button class="btn button" type="button" onclick="detailsExplain1()">Who are the main characters in The Hitchhikers Guide to the Galaxy?</button>
-                <p id="characters2"></p>
-                <br>
-                <p>But, if we use the <code>this</code> keyword, the not-updated code to be executed still runs:</p>
-                <pre><code><p id="thisExplain1"></p></code></pre>
-                <button class="btn button" type="button" onclick="thisExplain1()">Who are the main characters in The Hitchhikers Guide to the Galaxy?</button>
-                <p id="characters3"></p>
-                <br>
-                <p>However, make sure to us <code>this</code> <strong>within</strong> its object. Otherwise if we try not to, as in the code below, we call the <code>[Object Window]</code>.</p>
-                
-                <pre><code><p id="thisOutsideObject"></p></code></pre>
-                <button class="btn button" type="button" onclick="thisOutsideObject()">Try Me</button>
-                <p id="thisOutsideObjectResult"></p>
-                <p>(Open <code>console</code> and then click the arrow to see the results)</p>
-                <br>
-                <p><code>this</code> is set when we call (execute) the function, not when we define it.</p>
-                <p>What does this mean?</p> 
-                <p>That it is not <a href="../hoisting-and-scope.html#hoisting">hoisted</a>.</p>
-                <p>Let's create a variable, set that vairable as a function expression of the original <code>Object</code> 
-                and then call the function:</p>
-                <pre><code><p id="newHitchhikers"></p></code></pre>
-                <button class="btn button" type="button" onclick="newHitchhikersResult()">Try Me</button>
-                <p id="newHitchhikersResult"></p>
-            </div>
+            <section class="main-body">
+                <article>
+                    
+
+                </article>
+            </section>
         </div>
 
         <div class="container next-last-page-section">
             <div class="row">
                 <div class="col-sm-6">
                     <div class="Last-page">
-                        <a class="btn button" style="text-align: left" href="object-methods.html" role="button"><svg width="1em" height="1em" viewbox="0 0 16 16" class="bi bi-caret-left-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <a class="btn button" style="text-align: left" href="jQuery-this.html" role="button"><svg width="1em" height="1em" viewbox="0 0 16 16" class="bi bi-caret-left-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                         <path d="M3.86 8.753l5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"/>
-                        </svg> Objects: Object Methods</a>
+                        </svg> jQuery: this</a>
                     </div>
                 </div>
                 <div class="col-sm-6">
-                    <div class="next-page">
-                        <a class="btn button" href="object-values.html" role="button">Objects: Object Values <svg width="1em" height="1em" viewbox="0 0 16 16" class="bi bi-caret-right-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <!--<div class="next-page">
+                        <a class="btn button" href="jQuery-traversing-dom.html" role="button">jQuery: Traversing the DOM <svg width="1em" height="1em" viewbox="0 0 16 16" class="bi bi-caret-right-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                         <path d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
                         </svg></a>
-                    </div>
+                    </div>-->
                 </div> 
             </div> 
         </div>
@@ -225,21 +198,19 @@
                     </ul>
                 </div>
                 <div class="container outside-links">
-                    <ul class="footer-menu">
-                            <li class="footer-menu-link">
-                                <a class="footer-menu-list" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String#Escape_notation" target="_blank">String Escape Notation</a>
-                            </li>
-                    </ul>
+                    <p>Hi</p>
                 </div>
             </div>
         </div>
     </footer>
 
     <script type="text/javascript" src="../scripts/new-menu.js"></script>
-    <script src="../scripts/objects/this.js"></script>
+    <script type="text/javascript" src="../scripts/index.js"></script>
+    <script src="../scripts/light-dark-theme.js"></script>
+    <script type="text/javascript" src="../scripts/jQuery/jQuery-traversing-dom.js"></script>
     
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-   
+    
 </body>
 </html>
