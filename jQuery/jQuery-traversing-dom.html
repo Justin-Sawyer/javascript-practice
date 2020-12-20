@@ -155,7 +155,124 @@
 
             <section class="main-body">
                 <article>
+                    <p>We can traverse the HTML tree in <code>jQuery</code> using different commands:</p>
+                    <ol>
+                        <li>Up and Down:</li>
+                            <ol type="i">
+                                <li>Up:</li>
+                                <p><code>.parent()</code></p>
+                                <p class="tab">Let the console return the parents of all the elements with class name <code>.sub-menu-link</code>:</p>
+                                <pre><code><p id="parent1"></p></code></pre>
+                                <div class="btn button parent1" type="button">Open console and click me</div>
+                                <p class="tab">Let the console return the parents of all the elements with class name <code>.jQuery-one</code></p>
+                                <pre><code><p id="parent2"></p></code></pre>
+                                <div class="btn button parent2" type="button">Open console and click me</div>
+                                <p class="tab">Similarly, we can look for grandparent elements by chaining:</p>
+                                
+                                <p><code>.parent().parent()</code></p>
+                                <pre><code><p id="grandparent"></p></code></pre>
+                                <div class="btn button grandparent" type="button">Open console and click me</div>
+                                <br>
+                                <br>
+
+                                <li>Down:</li>
+                                <p><code>.children()</code></p>
+                                <p class="tab">Let the console return the <strong>direct</strong> children of all the elements with class name <code>.new-dropdown-menu</code>:</p>
+                                <pre><code><p id="children1"></p></code></pre>
+                                <div class="btn button children1" type="button">Open console and click me</div>
+                                <p class="tab">In the console, we can see that we have returned ALL the elements and all their tags that are children of the class.</p>
+                                
+                                <p><code>.children("p")</code></p>
+                                <p class="tab">Let the console return the paragraph tags of all the elements with class name <code>.new-dropdown-menu</code></p>
+                                <pre><code><p id="children2"></p></code></pre>
+                                <div class="btn button children2" type="button">Open console and click me</div>
+                                <p class="tab">Similarly, we can look for grandchildren elements by chaining:</p>
+                                
+                                <p><code>.children("div").children("a")</code></p>
+                                <pre><code><p id="grandchildren"></p></code></pre>
+                                <p>Here, we are looking for <code>&ltdiv&gt</code> children with <code>&lta&gt</code> children of their own:</p>
+                                <div class="btn button grandchildren" type="button">Open console and click me</div>
+                            </ol>
+                        <br>
+                        <li>Sideways:</li>
+                            <ol type="i">
+                                <li>Next:</li>
+                                <p><code>.next()</code></p>
+                                <p>Return the next element in the <strong>DOM tree</strong>:</p>
+                                <pre><code><p id="next1"></p></code></pre>
+                                <div class="btn button next1" type="button">Open console and click me</div>
+                                <p>Return the next &ltdiv&gt element in the <strong>DOM tree</strong> (not the next element in the selection):</p>
+                                <pre><code><p id="next2"></p></code></pre>
+                                <div class="btn button next2" type="button">Open console and click me</div>
+
+                                <li>Previous:</li>
+                                <p><code>.prev()</code></p>
+                                <p>Return the previous element in the <strong>DOM tree</strong>:</p>
+                                <pre><code><p id="prev1"></p></code></pre>
+                                <div class="btn button prev1" type="button">Open console and click me</div>
+                                <p>Return the previous &ltdiv&gt element in the <strong>DOM tree</strong> (not the previous element in the selection):</p>
+                                <pre><code><p id="prev2"></p></code></pre>
+                                <div class="btn button prev2" type="button">Open console and click me</div>
+
+                                <li>First:</li>
+                                <p><code>.first()</code></p>
+                                <p>Return the first element in the selection:</p>
+                                <pre><code><p id="first1"></p></code></pre>
+                                <div class="btn button first1" type="button">Open console and click me</div>
+
+                                <li>Second:</li>
+                                <p><code>.first().next()</code></p>
+                                <p>Return the first then next (i.e., the second) element in the selection:</p>
+                                <pre><code><p id="second"></p></code></pre>
+                                <div class="btn button second" type="button">Open console and click me</div>
+                                <p>From here we can keep <code>chaining</code> more <code>.next()</code>s until:</p>
+
+                                <li>Last:</li>
+                                <p><code>.last()</code></p>
+                                <p>Return the last element in the selection:</p>
+                                <pre><code><p id="last"></p></code></pre>
+                                <div class="btn button last" type="button">Open console and click me</div>
+
+                                <li>Siblings:</li>
+                                <p><code>.siblings()</code></p>
+                                <p>Return the sibling elements in the selection:</p>
+                                <pre><code><p id="siblings"></p></code></pre>
+                                <div class="btn button siblings" type="button">Open console and click me</div>
+                            </ol>
+                    </ol>
+                    <br>
+
+                    <p>We can assign elements with classes or text or states from here, by assigning them as <code>variables</code>:</p>
+                    <pre><code><p id="changeHoistingColor"></p></code></pre>
+                    <p>Open the navigation menu then click the button below:</p>
+                    <div class="btn button changeHoistingColor" type="button">Change second menu item background-color</div>
+                    <br>
+
+                    <p>But there is no point changing something if we cannot change it back!</p>
+                    <p>We could either reset the menu item:</p>
+                    <div class="btn button resetHoistingColor" type="button">Reset the menu item</div>
+                    <pre><code><p id="resetHoistingColor"></p></code></pre>
                     
+                    <p>But a better solution would be to toggle the class on or off. <code>jQuery</code> allows us to do this:</p>
+                    <p><code>.toggleClass("classToToggle");</code></p>
+                    <pre><code><p id="toggleHoistingColor"></p></code></pre>
+                    <div class="btn button toggleHoistingColor" type="button">Toggle the menu item's background color</div>
+                    <br>
+
+                    <!--<div class="col-12 full-box">
+                        <h4>Click the boxes below and watch me change color</h4>
+                    </div>-->
+                    <div class="container boxes">
+                        <div class="row">
+                            <div class="col-12 new-box resetColor" id="full-box"><h4>Click the boxes below and watch me change color</h4></div>
+                            <div class="col-4 new-box new-box1"><p>Pink</p></div>
+                            <div class="col-4 new-box new-box2"><p>Blue</p></div>
+                            <div class="col-4 new-box new-box3"><p>Purple</p></div>
+                            <div class="col-4 new-box new-box4"><p>Yellow</p></div>
+                            <div class="col-4 new-box new-box5"><p>Brown</p></div>
+                            <div class="col-4 new-box new-box6"><p>Green</p></div>
+                        </div>
+                    </div>
 
                 </article>
             </section>

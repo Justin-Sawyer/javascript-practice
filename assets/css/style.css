@@ -522,6 +522,53 @@ footer {
     text-align: center;
     color: white;
 }
+/*------------------------------------------------------------------------------------- boxes change div color */
+.full-box {
+    border: solid 1px black;
+    max-width: 100%;
+    margin-bottom: 8px;
+    padding:20px;
+    text-align: center;
+    /*background-color: white;*/
+    color: black;
+}
+
+.new-box {
+    margin: 0 auto;
+    padding:20px;
+    text-align: center;
+}
+
+.new-box1 {
+    background-color: #c13e70;
+    color: white;
+}
+
+.new-box2 {
+    background-color: #047afb;
+    color: white;
+}
+
+.new-box3 {
+    background-color: purple;
+    color: white;
+}
+
+.new-box4 {
+    background-color: yellow;
+    color: black;
+}
+
+.new-box5 {
+    background-color: brown;
+    color: white;
+}
+
+.new-box6 {
+    background-color: green;
+    color: white;
+}
+
 /*------------------------------------------------------------------------------------- new nav bar */
 .new-nav {
     height: 50px;
@@ -616,6 +663,14 @@ footer {
     font-size: 24px;
 }
 
+.new-dropdown-menu-purple {
+    display: none;
+    background-color: purple;
+    position: static;
+    padding-left: 24px;
+    font-size: 24px;
+}
+
 .new-dropdown-menu-blue {
     background-color: #047afb;
 }
@@ -652,5 +707,22 @@ footer {
     .menu-text {
         display: none;
     }
+}
+
+.arrays-container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: flex-start;
+    align-content: center;
+    padding: 0;
+    margin: 0 auto;
+
+}
+
+.item {
+    width: 48%;
+    margin: 5px;
+    flex: none;
 }
     
