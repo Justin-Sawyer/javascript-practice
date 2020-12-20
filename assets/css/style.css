@@ -523,14 +523,16 @@ footer {
     color: white;
 }
 /*------------------------------------------------------------------------------------- boxes change div color */
-.full-box {
+#full-box {
     border: solid 1px black;
     max-width: 100%;
     margin-bottom: 8px;
     padding:20px;
     text-align: center;
-    /*background-color: white;*/
+    background-color: white;
     color: black;
+    margin: 0 auto;
+    text-align: center;
 }
 
 .new-box {
@@ -695,6 +697,10 @@ footer {
     /*text-decoration: none;*/
     color: black;
     display: block;
+}
+
+.yellow-text {
+    color: yellow;
 }
 
 @media all and (min-width: 992px) {

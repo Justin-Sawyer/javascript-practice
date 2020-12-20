@@ -105,6 +105,19 @@ $(document).ready(function() {
         console.log($(".new-dropdown-menu").siblings());
     });
 
+//Filtering things
+    document.getElementById("filter").innerText = `$(".new-dropdown-menu").filter(".dropdown-menu-no-children");`
+    $(".filter").on("click", function() {
+        //console.clear();
+        console.log(`Filters everything except .dropdown-menu-no-children from .new-dropdown-menu:`);
+        console.log($(".new-dropdown-menu").filter(".dropdown-menu-no-children"));
+    });
+
+    document.getElementById("filter1").innerText = `$(".new-dropdown-menu").filter(".dropdown-menu-no-children").addClass("yellow-text");`
+    $(".filter1").on("click", function() {
+        $(".new-dropdown-menu").filter(".dropdown-menu-no-children").children().addClass("yellow-text");
+    });
+
 //changeHoistingColor
     document.getElementById("changeHoistingColor").innerText = `$(".changeHoistingColor").on("click", function() {
     let changeHoistingColor = $(".new-dropdown-menu").first();
@@ -137,33 +150,103 @@ $(document).ready(function() {
         $(toggleHoistingColor).next().toggleClass("new-dropdown-menu-purple");
     });
 
+
+
 //Change box color and reset
-    /*let reset;
-    $(".full-box").css("background-color", "white", function() {
-        reset = $(this).css("background-color");
-        console.log(reset);
-        $(".resetColor").click().css("background-color", reset);
-    });*/
-    /*document.getElementById("full-box").style.backgroundColor = "white";
-        let reset = $(this).css("background-color");
-        $("#full-box").css("background-color", reset);*/
-    
-    $(".new-box1").on("click", function() {
-        $(".new-box").siblings().first().css("background-color", "#c13e70");
+    let panelColor;
+    $(".new-box").click(function() {
+        panelColor = $(this).css("background-color");
+        console.log(panelColor);
+        $("#full-box").click(function() {
+            $(this).css("background-color", panelColor);
+            if ($("#full-box").css("background-color") != "white") {
+                $(this).click(function() {
+                    $(this).css("background-color", "white");
+                })
+            }
+        });
     })
-    $(".new-box2").on("click", function() {
-        $(".new-box").siblings().first().css("background-color", "#047afb");
-    })
-    $(".new-box3").on("click", function() {
-        $(".new-box").siblings().first().css("background-color", "purple");
-    })
-    $(".new-box4").on("click", function() {
-        $(".new-box").siblings().first().css("background-color", "yellow");
-    })
-    $(".new-box5").on("click", function() {
-        $(".new-box").siblings().first().css("background-color", "brown");
-    })
-    $(".new-box6").on("click", function() {
-        $(".new-box").siblings().first().css("background-color", "green");
-    })
+
+    document.getElementById("boxesCodeHTML").innerText = `<div class="container boxes">
+    <div class="row">
+        <div class="col-12" id="full-box"><h5>Click any box below, then click me to change to that color</h5></div>
+        <div class="col-4 new-box new-box1"><p>Pink</p></div>
+        <div class="col-4 new-box new-box2"><p>Blue</p></div>
+        <div class="col-4 new-box new-box3"><p>Purple</p></div>
+        <div class="col-4 new-box new-box4"><p>Yellow</p></div>
+        <div class="col-4 new-box new-box5"><p>Brown</p></div>
+        <div class="col-4 new-box new-box6"><p>Green</p></div>
+    </div>
+</div>`
+
+    document.getElementById("boxesCodeCSS").innerText = `#full-box {
+    border: solid 1px black;
+    max-width: 100%;
+    margin-bottom: 8px;
+    padding:20px;
+    text-align: center;
+    background-color: white;
+    color: black;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.new-box {
+    margin: 0 auto;
+    padding:20px;
+    text-align: center;
+}
+
+.new-box1 {
+    background-color: #c13e70;
+    color: white;
+}
+
+.new-box2 {
+    background-color: #047afb;
+    color: white;
+}
+
+.new-box3 {
+    background-color: purple;
+    color: white;
+}
+
+.new-box4 {
+    background-color: yellow;
+    color: black;
+}
+
+.new-box5 {
+    background-color: brown;
+    color: white;
+}
+
+.new-box6 {
+    background-color: green;
+    color: white;
+}`
+
+    document.getElementById("boxesCodejQuery").innerText = `let panelColor;
+$(".new-box").click(function() {
+    panelColor = $(this).css("background-color");
+    console.log(panelColor);
+    $("#full-box").click(function() {
+        $(this).css("background-color", panelColor);
+    });
+});`
+
+    document.getElementById("boxesCodejQueryIf").innerText = `let panelColor;
+$(".new-box").click(function() {
+    panelColor = $(this).css("background-color");
+    console.log(panelColor);
+    $("#full-box").click(function() {
+        $(this).css("background-color", panelColor);
+        if ($("#full-box").css("background-color") != "white") {
+            $(this).click(function() {
+                $(this).css("background-color", "white");
+            })
+        }
+    });
+})`
 })

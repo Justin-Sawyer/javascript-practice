@@ -30,7 +30,7 @@
 
             <div class="menu-dropdown" id="menu-dropdown">
                 <div class="new-dropdown-menu codeExamples dropdown-menu-no-children">
-                    <p><a class="menu-list" href="../code-examples.html">Code Examples</a></p>
+                    <a class="menu-list" href="../code-examples.html">Code Examples</a>
                 </div>
 
                 <div class="new-dropdown-menu hoistingAndScope dropdown-menu-no-children">
@@ -239,6 +239,17 @@
                                 <pre><code><p id="siblings"></p></code></pre>
                                 <div class="btn button siblings" type="button">Open console and click me</div>
                             </ol>
+                            <br>
+
+                        <li>Filtering:</li>
+                            <p><code>.filter()</code></p>
+                            <p>Allows us to filter things out:</p>
+                            <pre><code><p id="filter"></p></code></pre>
+                            <p>The above code block keeps only class <code>.dropdown-menu-no-children</code> within class <code>.new-dropdown-menu</code></p>
+                            <div class="btn button filter" type="button">Open console and click me</div>
+                            <p>So, for example, if we then wanted to color the text of the filtered class yellow, we could do this:</p>
+                            <pre><code><p id="filter1"></p></code></pre>
+                            <div class="btn button filter1" type="button">Click me and then open the navigation menu</div>
                     </ol>
                     <br>
 
@@ -258,13 +269,15 @@
                     <pre><code><p id="toggleHoistingColor"></p></code></pre>
                     <div class="btn button toggleHoistingColor" type="button">Toggle the menu item's background color</div>
                     <br>
+                    <p>Toggling works well for toggling between two classes. But what if we have more than one option to toggle between?
+                    Below, we have a large white box with instructions inside it. Clearly, we have six color options to togle between.</p>
+                    <p>So here, we need to memorise each of those colors as an option. We do this by assigning the color of each to a <code>variable</code>.</p>
+                    <p>Click one of the colored boxes and see what console logs, then click the large white box.</p>
+                    <br>
 
-                    <!--<div class="col-12 full-box">
-                        <h4>Click the boxes below and watch me change color</h4>
-                    </div>-->
                     <div class="container boxes">
                         <div class="row">
-                            <div class="col-12 new-box resetColor" id="full-box"><h4>Click the boxes below and watch me change color</h4></div>
+                            <div class="col-12" id="full-box"><h5>Click any box below, then click me to change me to that color</h5></div>
                             <div class="col-4 new-box new-box1"><p>Pink</p></div>
                             <div class="col-4 new-box new-box2"><p>Blue</p></div>
                             <div class="col-4 new-box new-box3"><p>Purple</p></div>
@@ -273,7 +286,25 @@
                             <div class="col-4 new-box new-box6"><p>Green</p></div>
                         </div>
                     </div>
+                    <br>
 
+                    <p>So what is happening here?</p>
+                    <pre><code><p id="boxesCodeHTML"></p></code></pre>
+                    <p>we can see the <code>HTML</code> above, where we have our boxes. Each of the colored boxes has been set a "global" claas name of <code>.new-box</code> 
+                    and a second class name <code>.new-box1, 2, 3</code>etc. which dictates the individual box's <code>CSS</code> styling:</p>
+                    <br>
+                    <pre><code><p id="boxesCodeCSS"></p></code></pre>
+                    <p>Now, we can add the <code>jQuery</code>, which with ONE single <code>variable</code> keeps each box's color in its memory as we click on it:</p>
+                    <pre><code><p id="boxesCodejQuery"></p></code></pre>
+                    <p>So, above, our <code>variable</code> named <code>panelColor</code> records the color value of the boxes as we click on them - you can see this happening in 
+                    the console, using the <code>console.log(panelColor);</code> command.</p>
+                    <p>From here, when we click on the white box, that color value is then applied to the background color of the white box.</p>
+                    <br>
+                    <p>But what if we want to reset the original white box's color as white?</p>
+                    <p>We can just add an <code>if</code> statement into the <code>jQuery</code>:</p>
+                    <pre><code><p id="boxesCodejQueryIf"></p></code></pre>
+                    <p>Now go back and click that box a second time!</p>
+                    <br>
                 </article>
             </section>
         </div>
