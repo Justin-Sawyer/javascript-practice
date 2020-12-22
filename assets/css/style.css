@@ -308,6 +308,7 @@ footer {
     width: 100%;
     bottom: 0;
 }
+
 .footer-section {
     background-color: #c13e70;
     height: auto;
@@ -351,6 +352,14 @@ footer {
 .footer-menu-list {
     font-size: 1rem;
     color: white;
+}
+.footer-menu-link>a:hover,
+.footer-menu-link>a:active,
+.footer-menu-link>a:focus,
+.footer-menu-link>a:focus-within,
+.footer-menu-link>a:focus-visible {
+    font-size: 1rem;
+    color: black;
 }
 
 /* ---------------------------------- Responsiveness */
@@ -571,6 +580,11 @@ footer {
     color: white;
 }
 
+/*------------------------------------------------------------------------------------- star wars api result expand */
+/*#swapi:hover {
+  -webkit-transform: scale(2,2);
+}
+
 /*------------------------------------------------------------------------------------- new nav bar */
 .new-nav {
     height: 50px;
@@ -634,7 +648,6 @@ footer {
 
 .menu-text {
     color:black;
-    /*width: 80%;*/
 }
 
 .menu-dropdown {
@@ -694,7 +707,6 @@ footer {
 }
 
 .sub-menu-link {
-    /*text-decoration: none;*/
     color: black;
     display: block;
 }

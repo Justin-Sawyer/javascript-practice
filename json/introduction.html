@@ -7,13 +7,13 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../assets/css/style.css" type="text/css">
     <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
-    <title>Javascripting | Objects: Challenges</title>
+    <title>Javascripting | JSON: JSON Introduction</title>
 </head>
 
-<body>
+<body class="light" id="changeTheme">
     <header>
         <div class="wrapper">
-            <div class="sliding-background strings">
+            <div class="sliding-background">
             </div>
         </div>
     
@@ -105,12 +105,12 @@
                 <div class="new-dropdown-menu objects">
                     <p class="menu-list-with-dropdown objects-dropdown" id="objects">Objects</p>
                     <div class="new-dropdown-submenu objects-sub">
-                        <a class="sub-menu-link objects-one" href="the-basics.html">Introduction</a>
-                        <a class="sub-menu-link objects-two" href="object-constructor.html">Object Constructor</a>
-                        <a class="sub-menu-link objects-three" href="object-methods.html">Object Methods</a>
-                        <a class="sub-menu-link objects-four" href="this.html">this</a>
-                        <a class="sub-menu-link objects-five" href="object-values.html">Object Values</a>
-                        <a class="sub-menu-link objects-six" href="challenges.html">Challenges</a>
+                        <a class="sub-menu-link objects-one" href="../objects/the-basics.html">Introduction</a>
+                        <a class="sub-menu-link objects-two" href="../objects/object-constructor.html">Object Constructor</a>
+                        <a class="sub-menu-link objects-three" href="../objects/object-methods.html">Object Methods</a>
+                        <a class="sub-menu-link objects-four" href="../objects/this.html">this</a>
+                        <a class="sub-menu-link objects-five" href="../objects/object-values.html">Object Values</a>
+                        <a class="sub-menu-link objects-six" href="../objects/challenges.html">Challenges</a>
                     </div>
                 </div>
 
@@ -140,11 +140,11 @@
                 <div class="new-dropdown-menu json">
                     <p class="menu-list-with-dropdown json-dropdown" id="json">JSON</p>
                     <div class="new-dropdown-submenu json-sub">
-                        <a class="sub-menu-link json-one" href="../json/introduction.html">Introduction</a>
-                        <a class="sub-menu-link json-two" href="../json/json.html">JavaScript Object Notation: JSON</a>
+                        <a class="sub-menu-link json-one" href="introduction.html">Introduction</a>
+                        <a class="sub-menu-link json-two" href="json.html">JavaScript Object Notation: JSON</a>
                     </div>
                 </div>
-
+                
             </div>
         </nav>
 
@@ -152,75 +152,97 @@
 
     <main>
         <div class="container body-container">
+            <div class="theme">
+                <button class="btn button" type="button" onclick="lightTheme()">Change to Light Theme</button>
+                <button class="btn button" type="button" onclick="darkTheme()"> Change to Dark Theme</button>
+            </div>
+
             <div class="page-name">
-                <h1>Challenges:</h1>
+                <h1>Introduction:</h1>
             </div>
 
             <div class="main-body">
-                <ol>
-                    <li>Define an <code>Object</code> using an object literal:</li>
-                        <p class="codepen" data-editable data-height="265" data-theme-id="dark" data-default-tab="html,result" data-user="JustinSawyer" data-slug-hash="poEjPXX" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Object 1">
-                        <span>See the Pen <a href="https://codepen.io/JustinSawyer/pen/poEjPXX">
-                        Object 1</a> by Justin Sawyer (<a href="https://codepen.io/JustinSawyer">@JustinSawyer</a>)
-                        on <a href="https://codepen.io">CodePen</a>.</span>
+                <article>
+                    <ol>
+                    <li id="api">API</li>
+                        <p>An <code>API</code> is an Application Programming Interface.
+                            They are what gives the internet its tremendous power these days.
+                            They are like plug adaptors in that they allow different programs, codes, software and hardware to talk to each other, thus greatly 
+                            enlarging the internet's power to transfer information.
+                            but how do we access <code>API</code>s?
+                            We can use the <code>Command Line Interface</code>, and <code>cURL</code>.  
                         </p>
-                        <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+                        <br>
 
-                    <li>Define a new <code>Object</code> using an object literal:</li>
-                        <p class="codepen" data-editable data-height="265" data-theme-id="dark" data-default-tab="html,result" data-user="JustinSawyer" data-slug-hash="eYdpROm" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Object 2">
-                        <span>See the Pen <a href="https://codepen.io/JustinSawyer/pen/eYdpROm">
-                        Object 2</a> by Justin Sawyer (<a href="https://codepen.io/JustinSawyer">@JustinSawyer</a>)
-                        on <a href="https://codepen.io">CodePen</a>.</span>
+                    <li id="curl">cURL</li>
+                        <p>The internet is not just what you se on your screen. Behind that screen lies many other things, and ways to obtain information. 
+                            One of those is to use <code>cURL</code> from the <code>CLI</code>.
+                            We can acces information via <code>cURL</code> through web consoles or applications such as the Mac's Terminal.
+                            We can get web pages, structured data and information in <code>JavaScript Object Notation</code> format, or <code>JSON</code>.
+                            So, from Terminal we can use the command line as such:
                         </p>
-                        <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+                        <pre><code><p id="curlCommand"></p></code></pre>
+                        <p>This will print out to the Terminal most of the code found at the Google home page:
+                        </p>
+                        <img src="../assets/images/curl/curl.png" alt="Google code from Terminal" width="100%">
+                        <br>
+                        <br>
 
-                    <li>Define a new <code>Object</code> using an object constructor:</li>
-                        <p class="codepen" data-editable data-height="265" data-theme-id="dark" data-default-tab="html,result" data-user="JustinSawyer" data-slug-hash="BaLoZBO" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Object 3">
-                        <span>See the Pen <a href="https://codepen.io/JustinSawyer/pen/BaLoZBO">
-                        Object 3</a> by Justin Sawyer (<a href="https://codepen.io/JustinSawyer">@JustinSawyer</a>)
-                        on <a href="https://codepen.io">CodePen</a>.</span>
+                        <p>
+                            From here, we can direct this information into a file system, as such:
                         </p>
-                        <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+                        <pre><code><p id="curlToFile"></p></code></pre>
+                        <img src="../assets/images/curl/curltofile.png" alt="Google code to index.html file from Terminal" width="100%">
+                        <br>
+                        <br>
 
-                    <li>Define a new multi-level <code>Object</code>:</li>
-                        <p class="codepen" data-editable data-height="265" data-theme-id="dark" data-default-tab="html,result" data-user="JustinSawyer" data-slug-hash="LYRpLYy" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Object  - multilevel">
-                        <span>See the Pen <a href="https://codepen.io/JustinSawyer/pen/LYRpLYy">
-                        Object  - multilevel</a> by Justin Sawyer (<a href="https://codepen.io/JustinSawyer">@JustinSawyer</a>)
-                        on <a href="https://codepen.io">CodePen</a>.</span>
+                        <p>From here, should we be using things such as <code>gitpod</code> we can then visualise the contents. 
+                            However, as things such as the <code>CSS</code> are not included, we will not get the formatting
                         </p>
-                        <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+                        <img src="../assets/images/curl/google-from-terminal.png" alt="Google result from Terminal" width="100%">
+                        <br>
+                        <br>
+                        <p>So, we can use <code>cURL</code> as a client for web pages.</p>
+                        <br>
 
-                    <li>Define a new multi-level <code>Object and then loop though its second level entries</code></li>
-                        <p class="codepen" data-editable data-height="265" data-theme-id="dark" data-default-tab="html,result" data-user="JustinSawyer" data-slug-hash="mdrewJx" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Object  - multilevel loop">
-                        <span>See the Pen <a href="https://codepen.io/JustinSawyer/pen/mdrewJx">
-                        Object  - multilevel loop</a> by Justin Sawyer (<a href="https://codepen.io/JustinSawyer">@JustinSawyer</a>)
-                        on <a href="https://codepen.io">CodePen</a>.</span>
+                    <li id="link">Links</li>
+                        <p>This is another client for web pages, accessed from the Terminal. We type the command <code>links</code> into Terminal and 
+                        we are presented with:
                         </p>
-                        <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
-                </ol>
-                <br>
+                        <img src="../assets/images/links/links.png" alt="link browser from Terminal" width="100%">
+                        <br>
+                        <br>
+                        <p>From here, we use the arrow keys to navigate and browse.</p>
+                    
+                    </ol>
+                        <p>These are some of the many ways we can retrieve data from the web, especially <code>API</code>s. Next, 
+                        we'll see how to retireve and use <code>JSON</code> data.</p>
+                        <br>
+
+                </article>
+                               
             </div>
         </div>
-                
-        <div class="container next-last-page-section">
-            <div class="row">
-                <div class="col-sm-6">
-                    <div class="Last-page">
-                        <a class="btn button" style="text-align: left" href="object-values.html" role="button"><svg width="1em" height="1em" viewbox="0 0 16 16" class="bi bi-caret-left-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M3.86 8.753l5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"/>
-                        </svg> Objects: Object Values</a>
+
+            <div class="container next-last-page-section">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="Last-page">
+                            <a class="btn button" style="text-align: left" href="../jQuery/jQuery-traversing-dom.html" role="button"><svg width="1em" height="1em" viewbox="0 0 16 16" class="bi bi-caret-left-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3.86 8.753l5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"/>
+                            </svg> jQuery: Traversing the DOM with jQuery</a>
+                        </div>
                     </div>
-                </div>
-                <div class="col-sm-6">
-                    <div class="next-page">
-                        <a class="btn button" href="../dom/document-object-model.html" role="button">The DOM: The Document Object Model <svg width="1em" height="1em" viewbox="0 0 16 16" class="bi bi-caret-right-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
-                        </svg></a>
+                    <div class="col-sm-6">
+                        <div class="next-page">
+                            <a class="btn button" href="json.html" role="button">JSON: JavaSrcipt Object Notation<svg width="1em" height="1em" viewbox="0 0 16 16" class="bi bi-caret-right-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+                            </svg></a>
+                        </div>  
                     </div>
                 </div> 
             </div> 
-        </div>
-        
+          
     </main>
 
     <footer>
@@ -231,7 +253,7 @@
 
             <div class="container links-and-outside-links">
                 <div class="container website-links">
-                    <p>In-site code links:</p>
+                    <p>Sections:</p>
                     <ul class="footer-menu">
                             <li class="footer-menu-link"><a class="footer-menu-list" href="../numbers.html">Numbers</a></li>
                             <li class="footer-menu-link"><a class="footer-menu-list" href="../strings.html">"strings"</a></li>
@@ -246,16 +268,23 @@
                     </ul>
                 </div>
                 <div class="container outside-links">
-                    <p>Hi</p>
+                    <p>Links</p>
+                        <ul class="footer-menu">
+                            <li class="footer-menu-link"><a class="footer-menu-list" href="https://flaviocopes.com/http-curl/" target="_blank">cURL HTTP Request</a></li>
+                            <li class="footer-menu-link"><a class="footer-menu-list" href="http://macappstore.org/links/" target="_blank">links install for Mac</a></li>
+                        </ul>
                 </div>
             </div>
         </div>
     </footer>
 
     <script type="text/javascript" src="../scripts/menu.js"></script>
+    <script type="text/javascript" src="../scripts/light-dark-theme.js"></script>
+    <script type="text/javascript" src="../scripts/json/introduction.js"></script>
+    <script type="text/javascript" src="../scripts/json/json.js"></script>
     
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-  
+   
 </body>
 </html>

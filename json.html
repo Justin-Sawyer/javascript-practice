@@ -7,16 +7,16 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="assets/css/style.css" type="text/css">
     <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
-    <title>Javascripting: Home</title>
+    <title>Javascripting: JSON</title>
 </head>
 
 <body>
     <header>
         <div class="wrapper">
-            <div class="sliding-background">
+            <div class="sliding-background strings">
             </div>
         </div>
-        
+    
         <nav class="nav" id="nav">
             <div class="container-fluid new-nav" id="menu-bar">
                 <div class="row full-row">
@@ -147,185 +147,18 @@
 
             </div>
         </nav>
-        
+
     </header>
 
     <main>
         <div class="container body-container">
             <div class="page-name">
-                <h1>The Basics:</h1>
+                <h1>JSON</h1>
             </div>
 
-            <div class="main-body">
-                <p>For the sake of learning and not getting skewed results, I am scripting each piece of code within its own function.
-                Within the foot of each page, the reader will find associated pages - for example "array methods" will feature in the 
-                foot of the array pages.
-                The reader will also find links to useful sites such as <a href="https://www.w3schools.com/js/default.asp" target="_blank">w3schools/js</a>. However, in the code examples pages, 
-                I hope to write code for each example - for example, all the DOM methods.</p>
-                <h2>Comments within code:</h2>
-                    <ol>
-                        <li><code>// This is a single line comment.</code></li>
-                        <li><code><p>/* This is a multi-line comment.</p>
-                        <p>For larger comments that take more sentences. */</p></code></li>
-                    </ol>
-
-                <h2>Outputting code on this website:</h2>
-                    <ol>
-                        <li><code>console.log</code>
-                            <div class="tab">
-                                <p>Writes or returns code in the <code>console</code>. 
-                                To see code here, use the dev tools to inspect these pages and choose "console".</p>
-                                <p>An example:</p>
-                                <button class="btn button" type="button" onclick="helloWorldInConsole()">Write "Hello World!" in the console</button>
-                            </div>
-                        </li>
-
-                        <li><code>alert</code>
-                            <div class="tab">
-                                <p>Writes or returns code as a popup alert.</p>
-                                <p>An example:</p>
-                                <button class="btn button" type="button" onclick="helloWorldAlert()">Alert "Hello World!"</button>
-                            </div>
-                        </li>
-
-                        <li><code>document.write</code>
-                            <ol>
-                                <li class="indented-list">Writing text in the browser:
-                                    <div class="tab">
-                                        <p>An example:</p>
-                                        <button class="btn button" type="button" onclick="helloWorldBrowserWrite()">Insert "Hello World!" in the browser</button>
-                                        <p id="write-text"></p>
-                                    </div>
-                                </li>
-
-                                <li class="indented-list">Replacing text in the browser:
-                                    <div class="tab">
-                                        <p>An example:</p>
-                                        <button class="btn button" type="button" onclick="helloWorldBrowserWriteTextReplace()">Replace text with "Hello World!" in the browser</button>
-                                        <p id="replace-text">This text will be replaced</p>
-                                        <button class="btn button" type="button" onclick="resetToOriginal()">Reset</button>
-                                    </div>
-                                </li>
-                            </ol>
-                        </li>
-                    </ol>
-                    <p>Throughout this site, I will use the various methods, but especially <code>document.write();</code> and <code>alert();</code>
-                    because these will not need the reader going to the console. 
-                    At times, I may refer to an outside code host such as codepen:</p>
-                    <div class="codepen-box">
-                        <p class="codepen" data-height="265" data-theme-id="dark" data-default-tab="js,result" data-user="JustinSawyer" data-slug-hash="PozPaKw" 
-                        style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid black; margin: 1em 0; padding: 1em;" 
-                        data-pen-title="PozPaKw">
-                            <span>See the Pen <a href="https://codepen.io/JustinSawyer/pen/PozPaKw">
-                            PozPaKw</a> by Justin Sawyer (<a href="https://codepen.io/JustinSawyer">@JustinSawyer</a>)
-                            on <a href="https://codepen.io">CodePen</a>.</span>
-                        </p>
-                        <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
-                    </div>
-
-                <h2 id="variables">Variables:</h2>
-                    <ol>
-                        <li><code>var</code>
-                            <div class="tab">
-                                <p><code>var</code> can be redeclared.</p>
-                            </div>
-                        </li>
-
-                        <li><code>let</code>
-                            <div class="tab">
-                                <p><code>let</code> can not be redclared. Common practice dictates that <code>let</code> is the best to use,
-                                so unless stated, all variabled here will be declared using <code>let</code>.</p>
-                            </div>
-                        </li>
-
-                        <li><code>const</code>
-                            <div class="tab">
-                                <p><code>const</code> can not be redeclared. Ever. 
-                                (When I say ever, I mean within its own script and those that communicate with it.)</p>
-                            </div>
-                        </li>
-                    </ol>
-                    <p>They also have different levels of <a href="hoisting-and-scope.html#scope">scope</a>.</p>
-
-                <h2 class="data-types">Data Types:</h2>
-                    <ol>
-                        <li><a class="data-types" href="numbers.html">Numbers</a></li>
-                            <ol>
-                                <li class="indented-list"><code>integer</code>
-                                    <div class="tab">
-                                        <p>A real number</p>
-                                    </div>
-                                </li>
-
-                                <li class="indented-list"><code>floating-point number</code> or <code>float</code>
-                                    <div class="tab">
-                                        <p>A number with decimal points.</p>
-                                    </div>
-                                </li>
-
-                                <li class="indented-list">Special numbers
-                                    <div class="tab">
-                                        <p><code>infinity, -infinity, NaN.</code></p>
-                                    </div>
-                                </li>
-                            </ol>
-                        
-                        <li><a class="data-types" href="strings.html"><code>"strings"</code></a></li>
-                            <div class="tab">
-                                <p>`Textual data. A sentence, a word, number or character. Always enclosed with some kind of speech marks.
-                                The template literals surrounding this paragraph are the best to use, as they allow much more flexibility when writing code.`</p>
-                            </div>
-                        
-
-                        <li><a class="data-types" href="strings.html"><code>[arrays]</code></a>
-                            <div class="tab">
-                                <p>[A set. Can be any type of data type, or a mixture of. Always enclosed with square brackets.]</p>
-                            </div>
-
-                        <li><a class="data-types" href="objects.html"><code>Objects</code></a></li>
-                            <div class="tab">
-                                <p>Data that represents things rather than values. Object oriented principles are based on objects, instead of the actions and data.</p>
-                            </div>
-                        </li>
-                    </ol>
-
-                <h2 id="function">Functions:</h2>
-                    <ol>
-                        <li><code>name function()</code>
-                            <div class="tab">
-                                <p>A function expression.</p>
-                            </div>
-                        </li>
-
-                        <li><code>function name()</code>
-                            <div class="tab">
-                                <p>A function declaration.</p>
-                            </div>
-                        </li>
-                        <p>The two give very different results. More information <a href="/functions/function-expressions.html">here</a>.</p>
-                    </ol>
-            </div>
-        </div>
-
-        <div class="container next-last-page-section">
-            <div class="row">
-                <div class="col-sm-6">
-                    <div class="Last-page">
-                        <!--<a class="btn button" style="text-align: left" href="string-methods.html" role="button"><svg width="1em" height="1em" viewbox="0 0 16 16" class="bi bi-caret-left-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M3.86 8.753l5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"/>
-                        </svg> String methods</a>-->
-                    </div>
-                </div>
-                <div class="col-sm-6">
-                    <div class="next-page">
-                        <a class="btn button" href="code-examples.html" role="button">Code Examples <svg width="1em" height="1em" viewbox="0 0 16 16" class="bi bi-caret-right-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
-                        </svg></a>
-                    </div>  
-                </div> 
-            </div> 
-        </div>
-        
+            <div class="main-bpdy">
+            </div>           
+        </div>        
     </main>
 
     <footer>
@@ -358,10 +191,10 @@
     </footer>
 
     <script type="text/javascript" src="scripts/menu.js"></script>
-    <script type="text/javascript" src="scripts/index.js"></script>
+    <script type="text/javascript" src="scripts/json/introduction.js"></script>
     
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-    
+  
 </body>
 </html>
