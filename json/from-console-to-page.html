@@ -143,6 +143,10 @@
                         <a class="sub-menu-link json-one" href="introduction.html">Introduction</a>
                         <a class="sub-menu-link json-two" href="json.html">JavaScript Object Notation: JSON</a>
                         <a class="sub-menu-link json-three" href="from-console-to-page.html">From the Console to the Page</a>
+                        <a class="sub-menu-link json-four" href="unpacking-data.html">Unpacking the Data</a>
+                        <a class="sub-menu-link json-five" href="object-keys.html">Object.keys()</a>
+                        <a class="sub-menu-link json-six" href="tabular-data.html">Tabular Data</a>
+                        <a class="sub-menu-link json-seven" href="pagination.html">Pagination</a>
                     </div>
                 </div>
                 
@@ -163,186 +167,54 @@
             </div>
 
             <div class="main-body">
-                <article>
-                    <p><code>JSON</code> allows us to share and structure data across the web. It can be read by <code>API</code>s 
-                    and manipulated using any programming language.</p>
-                    <p>It is called <code>JSON</code> because it very much resembles <code>Objects</code> in <code>JavaScript</code>, 
-                    as we can see if we visit the <a href="https://ci-swapi.herokuapp.com" target="_blank">Star Wars API website</a>:</p>
-                    <img src="../assets/images/swapi/swapi.png" alt="Star Wars API example 1" width="100%">
-                    <br>
-                    <br>
-                    <p>
-                    We can retrieve this information using <a href="introduction.html#curl">cURL</a>, by using the command <code>curl</code> 
-                    and then typing in the address of the <code>API</code> listing:
-                    </p>
-                    <pre><code><p id="starwarsapi"></p></code></pre>
-                    <img id="swapi" src="../assets/images/swapi/apiexample.png" alt="Star Wars API example 2" width="100%">
-                    <br>
-                    <br>
-                    <p>From here of course, we can add the information we're looking for:</p>
-                    <pre><code><p id="starwarsapipeople2"></p></code></pre>
-                    <img id="c3po" src="../assets/images/swapi/c3po.png" alt="Star Wars API C-3PO information" width="100%">
-                    <br>
-                    <br>
-                    <p>But how can we make this information more <i>readable</i>?</p>
-                    <p>We use the <code>python</code> command and <code>json.tool</code>:</p>
-                    <pre><code><p id="jsontool"></p></code></pre>
-                    <img id="c3pojson" src="../assets/images/swapi/pythonjsontool.png" alt="Star Wars API C-3PO information pretty printed" width="100%">
-                    <br>
-                    <br>
-                    <p>But this information is still in Terminal, or its equivalents. How do we actually retrieve this information and make it available 
-                    for consumers? We instantiate <code>XMLHttpRequest</code> (or <code>XHR</code> ) a built in <code>JavaScript Object</code> which allows us to call 
-                    external <code>API</code>s. It gives us the method to open, send and close connections to <code>API</code>s.
-                    </p>
-                    <p>First, in our <code>.js</code> script we set a <code>variable</code> and assign it a <code>new</code> instance of the <code>XMLHttpRequest</code></p>
-                    <pre><code><p id="variablexhr"></p></code></pre>
-                    <br>
-                    <p>in our <code>HTML</code> we create a <code>&ltdiv&gt</code> with <code>id="data"</code>.</p>
-                    <pre><code><p id="divData"></p></code></pre>
-                    <p>Beneath this entire explanation is a <code>&ltdiv&gt</code> with that id where the result will be displayed. <a href="#result" id="goToResult">Click here to go there directly.</a></p>
-                    <br>
-                    <p>Back in the <code>JavaScript</code> file, we now create a function that checks for changes in the state of our <code>variable</code>:</p>
-                    <pre><code><p id="checkChange"></p></code></pre>
-                    <p>To explain the code:</p>
-                    <p>We create a new <function:code> xhr.onreadystatechange()</function:code>, and whenever the state changes of our <code>xhr Object</code>, we want to run a check.
-                    If the <a href="https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/readyState" target="_blank">ready state is equal to 4</a> and  <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/200" target="_blank">the status is 200</a>, then what we want to do is use <code>JavaScript</code> to do <code>document.getElementByID()</code> and retrieve our data div.
-                    And then we're going to change the innerHTML to be equal to the response text that comes back from our xhr object.
-                    </p>
-                    <p>Now we have our listener in place, we need to <code>open()</code> a connection to the <code>API</code> and then <code>send()</code> for that information:</p>
-                    <pre><code><p id="openConnection"></p></code></pre>
+
+                <article class=" articles articleOne" style="display:block">
                     
-                    <div class="btn button result" id="result" type="button">Click to see the results</div>
-                    <div id="data" style="background-color: lightgray;"></div>
+                    <p>So we now have our function that logs the <code>API</code> in a <code>JSON</code> format to the <code>console</code>.</p>
+                    <pre><code><p id="function"></p></code></pre>
+                    <p>But how does this look if we try to insert it onto the page?</p>
+                    <p>If we add the following line of code to the <code>printDataToConsole(data)</code> function, we can see:</p>
+                    <pre><code><p id="pageResultCode"></p></code></pre>
+                    <div class="btn button pageResult" type="button">Click To See Result</div>
+                    <pre><code><p id="dataDiv"></p></code></pre>
                     <br>
-                    <!-- Popup from https://stackoverflow.com/questions/1328723/how-to-generate-a-simple-popup-using-jquery -->
-                    <button class="btn button open-button" popup-open="popup-1" href="javascript:void(0)">Click here for in depth explanation of the code</button>
-                    <div class="popup" popup-name="popup-1">
-                        <div class="popup-content">
-                            <ul class="ul-margin">
-                                <li><code>XML</code></li>
-                                    <p class="light">The very first thing that we do on line 1 is to create a <code>new</code> instance of the <code>XMLHttpRequest Object</code>.</p>
-                                    <p class="light">XML stands for <code>Extensible Markup Language</code>, which is similar to <code>HTML</code> in the way it structures its data, and it's a precursor to <code>JSON</code>.</p>
-                                    <br>
-                                <li><code>open("GET", "API link address")</code></li>
-                                    <p class="light">We use the <code>xhr.open()</code> method, and the first argument that we parse in is <code>"GET"</code>.</p>
-                                    <p class="light">There are several different methods that we can use to communicate with a web server.
-                                    The two that are most often used are <code>"GET"</code> and <code>"POST"</code>.
-                                    The <code>"GET"</code> method is used when we're retrieving data from the server.
-                                    This is a standard method that a browser users when retrieving a web page.
-                                    <code>"POST"</code> is used when sending data to the server, such as an uploaded file or form data.
-                                    Since in this instance we want to retrieve data from the Star Wars API, we use the <code>"GET"</code> method.</p>
-                                    <br>
-                                    <p class="light">The second argument is the <code>URL</code> that we want to retrieve, here it's "https://ci-swapi.herokuapp.com/api/"
-                                    (we're making a request to the Star Wars API).</p>
-                                    <br>
-                                <li><code>send()</code></li>
-                                    <p class="light">We use <code>xhr.send()</code> to send the request.</p>
-                                    <br>
-                                <li id="states"><code>onreadystatechange()</code></li>
-                                    <p class="tab light"><code>readyState == 4</code></p>
-                                    <p class="light">The <code>xhr Object</code> maintains an internal state as it's completing various parts of our request operation.
-                                    "<code>readyState = 4</code>" means that the operation has been completed.
-                                    We can see that in the <a href="https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/readyState" target="_blank">Mozilla Developer Network</a>, there are five different states:</p>
-                                    <p class="tab light">0: <code>open()</code> has not been called yet.</p>
-                                    <p class="tab light">1: the <code>open()</code> method has been called.</p>
-                                    <p class="tab light">2: <code>send()</code> has been called.</p>
-                                    <p class="tab light">3: the <code>responseText</code> now has some data in it.</p>
-                                    <p class="tab light">4: the entire operation is complete.</p>
-                                    <a id="goBack" popup-close="popup-1" popup-open="popup-2" href="#states">See this in action here</a>
-                                    <p class="light">In our code, we're checking to see that everything has completed.</p>
-                                    <br>
-                                <li><code>onreadystatechange()</code></li>
-                                    <p class="tab light"><code>status == 200</code></p>
-                                    <p class="light">The HTTP status code of 200 means "OK".
-                                    Other common HTTP status codes can be seen <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status" target="_blank">here</a>.</p>
-                                    <p class="light">We then use some <code>JavaScript</code> to <code>getElementById()</code> from the <code>DOM</code> and change its <code>innerHTML</code> to the <code>responseText</code> that comes back from our <code>xhr Object</code>.</p>
-                                </ul>
-                            <a class="close-button" popup-close="popup-1" href="javascript:void(0)">x</a>
-                        </div>
-                    </div>
-                    <!-- end of popup -->
-
-                    <p>But the results are still not very readable to humans, and they are a <code>"string</code> instead of an <code>Object</code>. 
-                    You can see so by opening console. So now we will use the <code>JSON parse()</code> method to make them so.</p>
-                    <pre><code><p id="JSONparse"></p></code></pre>
-                    <div class="btn button JSONParseResult" id="JSONParseResult" type="button">Open console then click to see the results</div>
-                    <p>We would expect from here to be able to create a <code>variable</code> and then call that <code>variable</code> to show the results, but we cannot.
-                     So how do we get the results?</p>
-                     <p>We can create such a <code>variable</code> and call it from <i>within</i> the <code>xhr.onreadystatechange</code> function, but that would 
-                    mean we would always have to contain our code <i>within that function</i>. This is not ideal. So, we need to find a way to access what is <i>inside</i> 
-                    the function and make it available <i>outside</i> of that function.</p>
-                    <p>We can create another (<code>callback</code>) function and pass the data into it (the new lines of code are indicated with "--&gt"):</p>
-                    <pre><code><p id="dataFunction"></p></code></pre>
-                    <p>Again, however, we would only be making the data available <i>inside <strong>this</strong> function</i>. Again, this is not ideal.</p>
-                    <p>So how <strong><i>do</i></strong> we make the data available <i>outside</i> of the function?</p>
-                    <p>We can use either <a href="#timeout"><code>setTimeout()</code></a> or <a href="#callback"><code>callback()</code></a> functions.</p>
-                    <p>But first, lets examine what is happening inside the code:</p>
-
-                    <!-- Popup from https://stackoverflow.com/questions/1328723/how-to-generate-a-simple-popup-using-jquery -->
-                    <button class="btn button open-button" popup-open="popup-2" href="javascript:void(0)">Click here for in depth explanation of the code</button>
-                    <div class="popup" popup-name="popup-2">
-                        <div class="popup-content">
-                            <ul class="ul-margin">
-                                <p class="light">The code below is the same as before, but I've added 1) and 2) <code>console.log</code> to show the order in which the 
-                                code is being read:</p>
-                                <pre><code><p id="theCodeWithConsoleLog"></p></code></pre>
-                                <li class="light">1):</li>
-                                    <p class="light">We expect that we can attain the results from the function by calling the results here. But the returned result is 
-                                    <code>undefined</code>. This is because this piece of code is being run <i>before</i> the function <code>xhr.onreadystatechange()</code> 
-                                    is being executed.</p>
-                                    <br>
-                                <li class="light">2):</li>
-                                    <p class="light">Here we can see the steps the <code>xhr.onreadystatechange()</code> function is going through. As mentioned <a id="return" popup-close="popup-2" popup-open="popup-1" href="#states">before</a>, the code is executing through 
-                                    the different states. We can see this in the numbers printed to the console. So, the function <code>xhr.onreadystatechange()</code> is actually 
-                                    being called <i>five</i> times.</p>
-                            </ul>     
-                            <div class="btn button theCodeWithConsoleLog" type="button">Open console then click to see the results</div>
-                            <p class="light">So, to stop the code from reading the first part (<code>console.log(data)</code>) first, we can set a <a popup-close="popup-2" href="timeout">setTimeout()</a> function</p>
-                            <a class="close-button" popup-close="popup-2" href="javascript:void(0)">x</a>
-                        </div>
-                    </div>
-                    <!-- end of popup -->
-
+                    <p>The code is returning to the page the <code>typeof()</code> rather than the result - the inner details of the <code>Object</code>.</p>
+                    <p>So where do we go from here?</p>
+                    <p>Firstly, note that in the <code>API</code> there are many, many different <code>Objects</code>: People, Planets, etc.</p>
+                    <p>So we need to be able to retrieve <i>these</i> details and not just the global <code>Object</code>. So let's rewrite the code a little first.</p>
+                    <p>We are going to replace the <code>printDataToConsole(data)</code> with a more aptly named one, that being <code>writeToDocument()</code> and then align 
+                    the rest of the code with this function:</p>
+                    <pre><code><p id="writeToDocumentCode"></p></code></pre>
+                    <p>Step by step process:</p>
+                    <p class="tab">1: Replace printDataToConsole(data) with writeToDocument(type) function. This tells the function to return the type (the film, the people, the planet etc from the API) to the page</p>
+                    <p class="tab">2: Call the <code>getData()</code> function and tell it to insert the type from the <code>API</code> onto the page as its first argument. 
+                    Argument 2 is an <a href="https://en.wikipedia.org/wiki/Anonymous_function#:~:text=In%20computer%20programming%2C%20an%20anonymous,not%20bound%20to%20an%20identifier.&text=If%20the%20function%20is%20only,than%20using%20a%20named%20function." target="_blank">anonymous function</a> 
+                    that calls for the data within the type from the <code>API</code> - Luke Skywalker, for example.</p>
+                    <p class="tab">3: Insert the data from within the type from the <code>API</code> into the element <code>&ltdiv id="dataDiv"&gt&lt/div&gt</code> (that we shall create after this explanation).</p>
+                    <p class="tab">4: Modify the <code>getData()</code> to include the type from the <code>API</code>.</p>
+                    <p class="tab">5a: Remove the <code>API</code> URL from the <code>xhr.open()</code> function.</p>
+                    <p class="tab">5b: Create <a href="../index.html#const">const</a> <code>baseURL</code> and assign it the <a href="../strings/the-basics.html">"string"</a> value of the base URL of the <code>API</code>.</p>
+                    <p class="tab">5c: Rewrite <code>xhr.open()</code> to call <code>baseURL</code> and its type. Thus, when called, it will call 
+                    https://ci-swapi.herokuapp.com<code>/people/</code> or <code>/planets/</code> etc.</p>
+                    <p>The code fully rewritten:</p>
+                    <pre><code><p id="writeToDocumentFull"></p></code></pre>
                     <br>
-                    <ol>
-                        <li id="timeout"><code>setTimeout()</code>:</li>
-                        <p>The <code>setTimeout()</code> function allows us to tell our application to stop executing for a period of time, through the use of a second argument. Again, the new code is indicated with "--&gt" in the code block below:</p>
-                        <pre><code><p id="timeoutFunction"></p></code></pre>
-                        <p>We added a second argument to the new function <code>setTimeout()</code>, that being <code>500</code>. This tells the function to stop logging to the 
-                        console for 500 milliseconds, which effectively gives the <code>xhr.onreadystatechange()</code> time to execute <i>before</i> the data is logged.</p>
-                        <div class="btn button theTimeoutCodeWithConsoleLog" type="button">Open console then click to see the results</div>
-                        <br>
-                        <p>This means we can get rid of the <code>setData()</code> function and set <code>data = JSON.parse(this.responseText</code> inside the <code>xhr.onreadystatechange()</code> function:</p>
-                        <pre><code><p id="dataEquals"></p></code></pre>
-                        <p>However, the problem with <code>setTimeout()</code> functions is that not all networks run at the same speed. Nowadays, most of people in cities have 
-                        fibre-optic connections that run at high speed, but this is not universal - rural areas still use broadband, while some still use dial-up.</p>
-                        <br>
-                        <p>So, we need a different, more robust solution, which is the <code>callback()</code> function:</p>
-                        <br>
-                        <li id="callback">Callback</li>
-                        <p>Since everything in <code>JavaScript</code> is an <code>Object</code>, it follows that <code>funtions()</code> are <code>Objects</code>. Because of this, 
-                        a <code>function()</code> can be passed to another <code>function()</code> as an <code>argument</code>. This means effectively that we can call data from one <code>function()</code> 
-                        by calling the other <code>function()</code>.</p>
-                        <p>So, let's now rewrite our code as a <code>function()</code>:</p>
-                        <pre><code><p id="function"></p></code></pre>
-                        <p>And create our <code>callback</code> function:</p>
-                        <pre><code><p id="callbackfunction"></p></code></pre>
-                        <p>Now, we add in the argument and tell the code to execute to the console:</p>
-                        <pre><code><p id="callbackfunctionArgument"></p></code></pre>
-                        <p>Above, we have added the argument <code>cb</code> to the function <code>getData()</code>. We are telling the lower lines of code (<code>getData(function(data){});</code> to act as the conduit for <code>cb</code> 
-                        in the first line of code.</p>
-                        <p>Perhaps a more elegant solution is to write a separate function instead of using <code>getData()</code> as a function with <code>data</code> as an argument. To do this, we delete the 
-                        <code>getData(function(data)</code> function and write a new function called <code>printDataToConsole</code>. Then, beneath, we tell the code to execute with 
-                        <code>printDataToConsole</code> as an argument to the <code>getData()</code> function:</p>
-                        <pre><code><p id="newCallbackFunction"></p></code></pre>
-                        <br>
-                        <p>The entire code block now reads:</p>
-                        <pre><code><p id="fullCode"></p></code></pre>
-                        <div class="btn button callbackLog" type="button">Open console then click to see the results</div>
-                    </ol>
-                    <p>But we still cannot see the results on the page. We'll cover that <a href="from-console-to-page.html">next</a>.</p>
+                    <p>Now, we need to write some <code>HTML</code> to reflect these changes. We need 6 <code>&ltbutton&gt</code>s, one for each ot the 
+                    type <code>"strings"</code> in the <code>API</code>. These buttons call the <code>writeToDocument(type)</code> function:</p>
+                    <pre><code><p id="newButtons"></p></code></pre>
+
+                    <button class="btn button endText" onclick="writeToDocument('people')">People</button>
+                    <button class="btn button endText" onclick="writeToDocument('planets')">Planets</button>
+                    <button class="btn button endText" onclick="writeToDocument('species')">Species</button>
+                    <button class="btn button endText" onclick="writeToDocument('starships')">Starships</button>
+                    <button class="btn button endText" onclick="writeToDocument('vehicles')">Vehicles</button>
+                    <button class="btn button endText" onclick="writeToDocument('films')">Films</button>
+                    <div class="light" id="newDataDiv0" style="background-color:lightgray"></div>
+                    <br>
+                    <p class="response" style="display:none"></p>
+                    <br>
                 </article>
-                               
+
             </div>
         </div>
 
@@ -356,11 +228,11 @@
                         </div>
                     </div>
                     <div class="col-sm-6" style="position: revert;">
-                        <!--<div class="next-page">
-                            <a class="btn button" href="from-console-to-page.html" role="button">JSON: From the Console to the Page<svg width="1em" height="1em" viewbox="0 0 16 16" class="bi bi-caret-right-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <div class="next-page">
+                            <a class="btn button" href="unpacking-data.html" role="button">JSON: Unpacking the Data<svg width="1em" height="1em" viewbox="0 0 16 16" class="bi bi-caret-right-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                             <path d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
                             </svg></a>
-                        </div>-->
+                        </div>
                     </div>
                 </div> 
             </div> 
@@ -394,7 +266,7 @@
                         <ul class="footer-menu">
                             <li class="footer-menu-link"><a class="footer-menu-list" href="https://ci-swapi.herokuapp.com" target="_blank">Star Wars API website</a></li>
                             <br>
-                            <li class="footer-menu-link"><a class="footer-menu-list" href="https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest" target="_blank">XMLHttpRequest</a></li>
+                            <li class="footer-menu-link"><a class="footer-menu-list" href="https://en.wikipedia.org/wiki/Anonymous_function#:~:text=In%20computer%20programming%2C%20an%20anonymous,not%20bound%20to%20an%20identifier.&text=If%20the%20function%20is%20only,than%20using%20a%20named%20function." target="_blank">Anonymous functions()</a></li>
                             <li class="footer-menu-link"><a class="footer-menu-list" href="https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/readyState" target="_blank">XMLHttpRequest.readyState properties</a></li>
                             <li class="footer-menu-link"><a class="footer-menu-list" href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status" target="_blank">HTTP status codes</a></li>
                         </ul>
@@ -405,7 +277,6 @@
 
     <script type="text/javascript" src="../scripts/menu.js"></script>
     <script type="text/javascript" src="../scripts/light-dark-theme.js"></script>
-    <script type="text/javascript" src="../scripts/json/json.js"></script>
     <script type="text/javascript" src="../scripts/json/from-console-to-page.js"></script>
     
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>

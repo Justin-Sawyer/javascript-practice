@@ -7,13 +7,13 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../assets/css/style.css" type="text/css">
     <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
-    <title>Javascripting | Strings: Concatenation and Interpolation</title>
+    <title>Javascripting | JSON: Object.keys()</title>
 </head>
 
-<body>
+<body class="light" id="changeTheme">
     <header>
         <div class="wrapper">
-            <div class="sliding-background strings">
+            <div class="sliding-background">
             </div>
         </div>
     
@@ -49,10 +49,10 @@
                 <div class="new-dropdown-menu strings">
                     <p class="menu-list-with-dropdown strings-dropdown" id="strings">"strings"</p>
                     <div class="new-dropdown-submenu strings-sub">
-                        <a class="sub-menu-link strings-one" href="the-basics.html">Introduction</a>
-                        <a class="sub-menu-link strings-two" href="string-methods.html">"string" Methods</a>
-                        <a class="sub-menu-link strings-three" href="concat-and-interpolation.html">Concatenation & Interpolation</a>
-                        <a class="sub-menu-link strings-four" href="challenges.html">Challenges</a>
+                        <a class="sub-menu-link strings-one" href="../strings/the-basics.html">Introduction</a>
+                        <a class="sub-menu-link strings-two" href="../strings/string-methods.html">"string" Methods</a>
+                        <a class="sub-menu-link strings-three" href="../strings/concat-and-interpolation.html">Concatenation & Interpolation</a>
+                        <a class="sub-menu-link strings-four" href="../strings/challenges.html">Challenges</a>
                     </div>
                 </div>
 
@@ -140,16 +140,16 @@
                 <div class="new-dropdown-menu json">
                     <p class="menu-list-with-dropdown json-dropdown" id="json">JSON</p>
                     <div class="new-dropdown-submenu json-sub">
-                        <a class="sub-menu-link json-one" href="../json/introduction.html">Introduction</a>
-                        <a class="sub-menu-link json-two" href="../json/json.html">JavaScript Object Notation: JSON</a>
-                        <a class="sub-menu-link json-three" href="../json/from-console-to-page.html">From the Console to the Page</a>
-                        <a class="sub-menu-link json-four" href="../json/unpacking-data.html">Unpacking the Data</a>
-                        <a class="sub-menu-link json-five" href="../json/object-keys.html">Object.keys()</a>
-                        <a class="sub-menu-link json-six" href="../json/tabular-data.html">Tabular Data</a>
-                        <a class="sub-menu-link json-seven" href="../json/pagination.html">Pagination</a>
+                        <a class="sub-menu-link json-one" href="introduction.html">Introduction</a>
+                        <a class="sub-menu-link json-two" href="json.html">JavaScript Object Notation: JSON</a>
+                        <a class="sub-menu-link json-three" href="from-console-to-page.html">From the Console to the Page</a>
+                        <a class="sub-menu-link json-four" href="unpacking-data.html">Unpacking the Data</a>
+                        <a class="sub-menu-link json-five" href="object-keys.html">Object.keys()</a>
+                        <a class="sub-menu-link json-six" href="tabular-data.html">Tabular Data</a>
+                        <a class="sub-menu-link json-seven" href="pagination.html">Pagination</a>
                     </div>
                 </div>
-
+                
             </div>
         </nav>
 
@@ -157,115 +157,63 @@
 
     <main>
         <div class="container body-container">
+            <div class="theme">
+                <button class="btn button" type="button" onclick="lightTheme()">Change to Light Theme</button>
+                <button class="btn button" type="button" onclick="darkTheme()"> Change to Dark Theme</button>
+            </div>
+
             <div class="page-name">
-                <h1>String Methods:</h1>
+                <h1><code>Object.keys()</code>:</h1>
             </div>
 
             <div class="main-body">
-                <p>For this page, all functions will use the following strings:</p>
-                <br>
-                <p>let firstString = <code>`I am`;</code></p>
-                <p>let secondString = <code>`in love with Javascript`;</code></p>
-                <p>let thirdString = <code>`even though I am finding it challenging!`;</code></p>
-                <br>
-                <ul>
-                    <li>Concatenation:</li>
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-sm-9">
-                                    <p>The + operator:</p>
-                                    <p><code>let newString = firstString + secondString + thirdString;</code></p>
-                                    </div>
-                                    <!--<div class="col-sm-4">
-                                        <p>First index of "o"</p>
-                                    </div>-->
-                                    <div class="col-sm-3">
-                                        <button class="btn button" type="button" onclick="join()">Try Me</button>
-                                    </div>
-                                    <pre><code><p id="join1"></p></code></pre>
 
-                                    <div class="col-sm-9">
-                                        <p>The .concat() method:</p>
-                                        <p><code>let newString = firstString.concat(secondString, thirdString);</code></p>
-                                    </div>
-                                    <!--<div class="col-sm-4">
-                                        <p>Last index of "o"</p>
-                                    </div>-->
-                                    <div class="col-sm-3">
-                                        <button class="btn button" type="button" onclick="concat()">Try Me</button>
-                                    </div>
-                                    <pre><code><p id="concat1"></p></code></pre>
-                                    <p id="concat2"></p>
+                <article class="articles articleThree">
+                    <p>Allows us to fnd those "undefined" items.</p>
+                    <p>The code so far:</p>
+                    <pre><code><p id="codeBlockShowItemsInList"></p></code></pre>
+                    <br>
+                    <p>Effectively, what we want to do is to iterate over these items <i>without</i> having to specify a certain property. Up to 
+                    now, we've been looking for the <code>key</code> "name", but now we are going to look for all the <code>keys</code>.</p>
+                    <p>Lets find out what the <code>key</code> values are in the console:</p>
+                    <pre><code><p id="findKeys"></p></code></pre>
+                    <p>Our code now looks like this:</p>
+                    <pre><code><p id="findKeysInConsole"></p></code></pre>
+                    <button class="btn button endText" onclick="writeToDocument6('people')">People</button>
+                    <button class="btn button endText" onclick="writeToDocument6('planets')">Planets</button>
+                    <button class="btn button endText" onclick="writeToDocument6('species')">Species</button>
+                    <button class="btn button endText" onclick="writeToDocument6('starships')">Starships</button>
+                    <button class="btn button endText" onclick="writeToDocument6('vehicles')">Vehicles</button>
+                    <button class="btn button endText" onclick="writeToDocument6('films')">Films</button>
+                    <div class="light" id="newDataDiv6" style="background-color:lightgray"></div>
+                    <br>
+                    <p class="response"></p>
+                    <br>
 
-                                    <div class="col-sm-9">
-                                        <p>The ES6 template literal method:</p>
-                                        <p><code>let newString = ${firstString secondString thirdString};</code></p>
-                                    </div>
-                                    <!--<div class="col-sm-4">
-                                        <p>Last index of "o"</p>
-                                    </div>-->
-                                    <div class="col-sm-3">
-                                        <button class="btn button" type="button" onclick="concatTemLit()">Try Me</button>
-                                    </div>
-                                    <pre><code><p id="concatTemLit1"></p></code></pre>
-                                    <p id="concatTemLit2"></p>
-                                    <pre><code><p id="concatTemLit3"></p></code></pre>
-                            </div>
-                        </div>
-                    <li>Interpolation</li>
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-sm-9">
-                                    <p>The + operator:</p>
-                                    <p><code>let newString = "text" + \n + "text" + firstString + " " + secondString + ", " + thirdString;</code></p>
-                                </div>
-                                <!--<div class="col-sm-4">
-                                    <p>First index of "o"</p>
-                                </div>-->
-                                <div class="col-sm-3">
-                                    <button class="btn button" type="button" onclick="interpo()">Try Me</button>
-                                </div>
-                                <pre><code><p id="interpo1"></p></code></pre>
-                                <p id="interpo2"></p>
-
-                                <div class="col-sm-9">
-                                    <p>The ES6 template literal method:</p>
-                                    <p><code>let newString = `text ${firstString} ${secondString}, ${thirdString};</code></p>
-                                </div>
-                                <!--<div class="col-sm-4">
-                                    <p>First index of "o"</p>
-                                </div>-->
-                                <div class="col-sm-3">
-                                    <button class="btn button" type="button" onclick="interpoTemLit()">Try Me</button>
-                                </div>
-                                <pre><code><p id="interpoTemLit1"></p></code></pre>
-                            
-                        </div>
-                    </div>
-                </ul>
-                <br>
+                </article>
+                             
             </div>
         </div>
 
-        <div class="container next-last-page-section">
-            <div class="row">
-                <div class="col-sm-6">
-                    <div class="Last-page">
-                        <a class="btn button" style="text-align: left" href="string-methods.html" role="button"><svg width="1em" height="1em" viewbox="0 0 16 16" class="bi bi-caret-left-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M3.86 8.753l5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"/>
-                        </svg> Strings: String methods</a>
+            <div class="container next-last-page-section">
+                <div class="row">
+                    <div class="col-sm-6" style="position: revert;">
+                        <div class="Last-page">
+                            <a class="btn button" style="text-align: left" href="unpacking-data.html" role="button"><svg width="1em" height="1em" viewbox="0 0 16 16" class="bi bi-caret-left-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3.86 8.753l5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"/>
+                            </svg> JSON: Unpacking the Data</a>
+                        </div>
                     </div>
-                </div>
-                <div class="col-sm-6">
-                    <div class="next-page">
-                        <a class="btn button" href="challenges.html" role="button">Strings: Challenges <svg width="1em" height="1em" viewbox="0 0 16 16" class="bi bi-caret-right-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
-                        </svg></a>
-                    </div>  
+                    <div class="col-sm-6" style="position: revert;">
+                        <div class="next-page">
+                            <a class="btn button" href="tabular-data.html" role="button">JSON: Tabular Data<svg width="1em" height="1em" viewbox="0 0 16 16" class="bi bi-caret-right-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+                            </svg></a>
+                        </div>
+                    </div>
                 </div> 
             </div> 
-        </div>       
-        
+          
     </main>
 
     <footer>
@@ -276,7 +224,7 @@
 
             <div class="container links-and-outside-links">
                 <div class="container website-links">
-                    <p>In-site code links:</p>
+                    <p>Sections:</p>
                     <ul class="footer-menu">
                             <li class="footer-menu-link"><a class="footer-menu-list" href="../numbers.html">Numbers</a></li>
                             <li class="footer-menu-link"><a class="footer-menu-list" href="../strings.html">"strings"</a></li>
@@ -291,17 +239,25 @@
                     </ul>
                 </div>
                 <div class="container outside-links">
-                    <p>Hi</p>
+                    <p>Links</p>
+                        <ul class="footer-menu">
+                            <li class="footer-menu-link"><a class="footer-menu-list" href="https://ci-swapi.herokuapp.com" target="_blank">Star Wars API website</a></li>
+                            <br>
+                            <li class="footer-menu-link"><a class="footer-menu-list" href="https://en.wikipedia.org/wiki/Anonymous_function#:~:text=In%20computer%20programming%2C%20an%20anonymous,not%20bound%20to%20an%20identifier.&text=If%20the%20function%20is%20only,than%20using%20a%20named%20function." target="_blank">Anonymous functions()</a></li>
+                            <li class="footer-menu-link"><a class="footer-menu-list" href="https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/readyState" target="_blank">XMLHttpRequest.readyState properties</a></li>
+                            <li class="footer-menu-link"><a class="footer-menu-list" href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status" target="_blank">HTTP status codes</a></li>
+                        </ul>
                 </div>
             </div>
         </div>
     </footer>
 
     <script type="text/javascript" src="../scripts/menu.js"></script>
-    <script type="text/javascript" src="../scripts/strings/concat-and-interpolation.js"></script>
+    <script type="text/javascript" src="../scripts/light-dark-theme.js"></script>
+    <script type="text/javascript" src="../scripts/json/object-keys.js"></script>
     
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-  
+   
 </body>
 </html>

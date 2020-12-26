@@ -7,13 +7,13 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="assets/css/style.css" type="text/css">
     <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
-    <title>Javascripting: Type Conversion</title>
+    <title>Javascripting: jQuery</title>
 </head>
 
 <body>
     <header>
         <div class="wrapper">
-            <div class="sliding-background">
+            <div class="sliding-background numbers">
             </div>
         </div>
     
@@ -158,56 +158,12 @@
     <main>
         <div class="container body-container">
             <div class="page-name">
-                <h1>Type Conversion:</h1>
+                <h1>jQuery:</h1>
             </div>
 
             <div class="main-body">
-                <p>A litle note about converting from one data type to another in <code>JavaScript</code>:</p>
-                <p>What happens if you add a <code>"string"</code> to a <code>boolean</code>, <code>Number</code> or another <code>"string"</code>?</p>
-                
-                <ol>
-                    <li><code>"string"</code> + <code>boolean</code>:</li>
-                    <pre><code><p id="stringBoolean"></p></code></pre>
-                    <p class="tab"><code>JavaScript</code> assumes that the <code>boolean</code> should be converted to a <code>"string"</code>. Once done so, 
-                    the two are concatenated.</p>
-                    
-                    <li><code>"string"</code> + <code>Number</code>:</li>
-                    <pre><code><p id="stringNumber"></p></code></pre>
-                    <p class="tab"><code>JavaScript</code> assumes that the <code>Number</code> should be converted to a <code>"string"</code>. Once done so, 
-                    the two are concatenated.</p>
-                    
-                    <li><code>Boolean</code> * <code>Number</code>:</li>
-                    <pre><code><p id="booleanNumber"></p></code></pre>
-                    <p class="tab"><code>JavaScript</code> assumes that the <code>boolean</code> should be converted to a <code>Number</code>. Once done so, 
-                    the two are mathematically operated upon.</p>
-
-                    <li><code>"string"</code> * <code>Number</code>:</li>
-                    <pre><code><p id="stringMathNumber"></p></code></pre>
-                    <p class="tab"><code>JavaScript</code> cannot be mathematically operated on by <code>Numbers</code>, thus we have NaN.</p>
-                    
-                </ol>
             </div>
-        </div>
-
-        <div class="container next-last-page-section">
-            <div class="row">
-                <div class="col-sm-6">
-                    <div class="Last-page">
-                        <a class="btn button" style="text-align: left" href="../booleans/challenges.html" role="button"><svg width="1em" height="1em" viewbox="0 0 16 16" class="bi bi-caret-left-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M3.86 8.753l5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"/>
-                        </svg> Type Conversion</a>
-                    </div>
-                </div>
-                <div class="col-sm-6">
-                    <div class="next-page">
-                        <a class="btn button" href="loops/the-basics.html" role="button">Loops: The Basics <svg width="1em" height="1em" viewbox="0 0 16 16" class="bi bi-caret-right-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
-                        </svg></a>
-                    </div>
-                </div> 
-            </div> 
-        </div>       
-        
+        </div>            
     </main>
 
     <footer>
@@ -240,10 +196,10 @@
     </footer>
 
     <script type="text/javascript" src="scripts/menu.js"></script>
-    <script src="../scripts/type-conversion/type-conversion.js"></script>
+    <script type="text/javascript" src="scripts/index.js"></script>
     
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-    
+   
 </body>
 </html>

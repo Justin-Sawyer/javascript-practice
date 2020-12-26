@@ -58,8 +58,8 @@ button,
 
 button:hover,
 .button:hover {
-    font-family: Menlo, sans-serif;
     color: white;
+    background-color: #c13e70;
 }
 
 pre {
