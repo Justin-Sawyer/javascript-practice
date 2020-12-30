@@ -7,16 +7,18 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../assets/css/style.css" type="text/css">
     <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
-    <title>Javascripting | Functions: function() Callbacks</title>
+    <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyArz5vvr7bavUpwd5YKJyl3jhqEmGo4s-k&callback=initMap"></script>
+    <script src="https://unpkg.com/@googlemaps/markerclustererplus/dist/index.min.js"></script>
+    <title>Javascripting: APIs: Google Maps</title>
 </head>
 
-<body>
+<body class="light" id="changeTheme">
     <header>
         <div class="wrapper">
             <div class="sliding-background">
             </div>
         </div>
-    
+        
         <nav class="nav" id="nav">
             <div class="container-fluid new-nav" id="menu-bar">
                 <div class="row full-row">
@@ -95,10 +97,10 @@
                 <div class="new-dropdown-menu functions">
                     <p class="menu-list-with-dropdown functions-dropdown" id="functions">functions()</p>
                     <div class="new-dropdown-submenu functions-sub">
-                        <a class="sub-menu-link functions-one" href="the-basics.html">Introduction</a>
-                        <a class="sub-menu-link functions-two" href="function-expressions.html">function() Expressions</a>
-                        <a class="sub-menu-link functions-three" href="function-callbacks.html">function() Callbacks</a>
-                        <a class="sub-menu-link functions-four" href="challenges.html">Challenges</a>
+                        <a class="sub-menu-link functions-one" href="../functions/the-basics.html">Introduction</a>
+                        <a class="sub-menu-link functions-two" href="../functions/function-expressions.html">function() Expressions</a>
+                        <a class="sub-menu-link functions-three" href="../functions/function-callbacks.html">function() Callbacks</a>
+                        <a class="sub-menu-link functions-four" href="../functions/challenges.html">Challenges</a>
                     </div>
                 </div>
 
@@ -147,48 +149,66 @@
                         <a class="sub-menu-link json-five" href="../json/object-keys.html">Object.keys()</a>
                         <a class="sub-menu-link json-six" href="../json/tabular-data.html">Tabular Data</a>
                         <a class="sub-menu-link json-seven" href="../json/pagination.html">Pagination</a>
+                        <a class="sub-menu-link json-seven" href="../json/tidying.html">Tying Up Loose Ends</a>
                     </div>
                 </div>
 
                 <div class="new-dropdown-menu api">
                     <p class="menu-list-with-dropdown api-dropdown" id="api">APIs</p>
                     <div class="new-dropdown-submenu api-sub">
-                        <a class="sub-menu-link api-one" href="../apis/google-maps.html">Google Maps</a>
-                        <a class="sub-menu-link api-two" href="../apis/github.html">GitHub</a>
-                        <!--<a class="sub-menu-link api-two" href="../apis/emailjs.html">emailJS</a>-->
+                        <a class="sub-menu-link api-one" href="google-maps.html">Google Maps</a>
+                        <a class="sub-menu-link api-two" href="github.html">GitHub</a>
+                        <!--<a class="sub-menu-link api-two" href="emailjs.html">emailJS</a>-->
                     </div>
                 </div>
 
             </div>
         </nav>
-
+        
     </header>
 
     <main>
         <div class="container body-container">
+            <div class="theme">
+                <button class="btn button" type="button" onclick="lightTheme()">Change to Light Theme</button>
+                <button class="btn button" type="button" onclick="darkTheme()"> Change to Dark Theme</button>
+            </div>
             <div class="page-name">
-                <h1>Function Callbacks:</h1>
+                <h1>Google Maps:</h1>
             </div>
 
             <div class="main-body">
-                <p>Call backs are functions passed into another function as an argument. This callback function is then invoked from inside the outer function to complete some routine or action:</p>
-                <pre><code><p id="callback"></p></code></pre>
-                <button class="btn button" type="button" onclick="callback()">Are you ok?</button>
-                <p id="callbackAnswer"></p>
+                
+                <p>To access the Google Maps <code>API</code>, you need a billing account and a Google account. Then, you need to get the 
+                <a href="https://developers.google.com/maps/gmp-get-started#quickstart" target="_blank">API key</a>.</p>
+                <p>Once your site is live, make sure to <a href="https://developers.google.com/maps/documentation/javascript/get-api-key" target="_blank">restrict access</a> to the key</p>
                 <br>
-                <p>The function <code>ask()</code> has 3 paramenters, <code>question, yes, no</code> within it, plus an <code>if... else</code> comprarator, 
-                with its function <code>confirm</code> and parameter being the <code>ask</code> function parameter <code>question</code>.</p>
-                <p>Inside the <code>if... else</code> comparator is another function, either <code>yes()</code> or <code>no()</code>.</p>
-                <p>These functions have been set outside of the function <code>ask()</code> but are calling inside it, and thus are callback functions.</p>
+                <p>Once you have the key, you can then insert it into your <code>HTML</code> page, within <code>&ltscript&gt</code> tags</p>
+                <pre><code><p id="googlemapsscript"></p></code></pre>
+                <p>In the script there are two words before the <code>src=""</code> reference:</p>
+                <p class="tab"><code>async</code>:</p>
+                <p class="tab">Loads the scripts at the same time as the <code>HTML</code> is loading, and then there's just a brief pause while the script is executed.</p>
+                <p class="tab"><code>defer</code>:</p>
+                <p class="tab">Waits until the page has finished loading before the <code>&ltscript&ht</code> is executed.</p>
+                <p>Loading these in the top <code>&lthead&gt</code> element increases page load time for these scripts. When loading in the <code>&lthead&gt</code> element, 
+                use <code>defer</code>. That is what we have done on this page.</p>
+                <p>At the end of the script is:</p>
+                <p class="tab"><code>&callback=initMap</code>:</p>
+                <p class="tab">This is a reference to a <code>callback function()</code> that needs to be created. We shall do that soon.</p>
+                <p>First, however, we need to select our API from the many choices Google offers. We can do this <a href="https://developers.google.com/maps/documentation" target="_blank">here</a>. 
+                For this project, we shall use the <a href="https://developers.google.com/maps/documentation/javascript/overview?hl=en_US" target="_blank">Maps JavaScript API</a> and from the side bar, 
+                we shall choose <a href="https://developers.google.com/maps/documentation/javascript/marker-clustering?hl=en_US" target="_blank">Marker Clustering</a>, as this one requires an additinal 
+                script to be inserted:</p>
+                <pre><code><p id="markerClustering"></p></code></pre>
+                <p>Again, this script has been inserted into the <code>&lthead&gt</code> element.</p>
+                <p>Now, all we have to do in our <code>HTML</code> is to create the following:</p>
+                <pre><code><p id="mapCode"></p></code></pre>
+                <p>Now we style the element in the <code>CSS</code> file:</p>
+                <pre><code><p id="mapCodeCSS"></p></code></pre>
+                <p>And from here, we can follow the Google documentation.</p>
+                <div id="map"></div>
                 <br>
-                <p>Outside of this function, the functions <code>yes()</code> or <code>no()</code> (which are parameters of the <code>ask()</code> function) will do what the attributed code says.</p>
-                <br>
-                <p>Outside of the functions, we call the function using <code>ask("Are you ok?", yes, no);</code> and the according answer displays beneath our button.</p>
-                <br>
-                <p>An alert box asks the question and gives us options.</p>
-                <p>Depending on the option we choose, the results of the <code>if... else</code> comparators are logged.</p>
-                <br>
-                  
+                
             </div>
         </div>
 
@@ -196,18 +216,18 @@
             <div class="row">
                 <div class="col-sm-6">
                     <div class="Last-page">
-                        <a class="btn button" style="text-align: left" href="function-expressions.html" role="button"><svg width="1em" height="1em" viewbox="0 0 16 16" class="bi bi-caret-left-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <a class="btn button" style="text-align: left" href="json/tidying.html" role="button"><svg width="1em" height="1em" viewbox="0 0 16 16" class="bi bi-caret-left-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                         <path d="M3.86 8.753l5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"/>
-                        </svg> Functions: Function Expressions</a>
+                        </svg> JSON: Tying Up Loose Ends</a>
                     </div>
                 </div>
                 <div class="col-sm-6">
                     <div class="next-page">
-                        <a class="btn button" href="challenges.html" role="button">Functions: Challenges <svg width="1em" height="1em" viewbox="0 0 16 16" class="bi bi-caret-right-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <a class="btn button" href="github.html" role="button">APIs: GitHub <svg width="1em" height="1em" viewbox="0 0 16 16" class="bi bi-caret-right-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                         <path d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
                         </svg></a>
                     </div>  
-                </div>
+                </div> 
             </div> 
         </div>
         
@@ -225,20 +245,29 @@
                 <div class="container website-links">
                     <h5>Sections:</h5>
                     <ul class="footer-menu">
-                            <li class="footer-menu-link"><a class="footer-menu-list" href="../numbers.html">Numbers</a></li>
-                            <li class="footer-menu-link"><a class="footer-menu-list" href="../strings.html">"strings"</a></li>
-                            <li class="footer-menu-link"><a class="footer-menu-list" href="../arrays.html">[arrays]</a></li>
-                            <li class="footer-menu-link"><a class="footer-menu-list" href="../booleans.html">Booleans</a></li>
-                            <li class="footer-menu-link"><a class="footer-menu-list" href="../loops.html">Loops</a></li>
-                            <li class="footer-menu-link"><a class="footer-menu-list" href="../functions.html">functions()</a></li>
-                            <li class="footer-menu-link"><a class="footer-menu-list" href="../objects.html">Objects</a></li>
-                            <li class="footer-menu-link"><a class="footer-menu-list" href="../dom.html">The DOM</a></li>
-                            <li class="footer-menu-link"><a class="footer-menu-list" href="../jQuery.html">jQuery</a></li>
-                            <li class="footer-menu-link"><a class="footer-menu-list" href="../json.html">JSON</a></li>
+                            <li class="footer-menu-link"><a class="footer-menu-list" href="numbers.html">Numbers</a></li>
+                            <li class="footer-menu-link"><a class="footer-menu-list" href="strings.html">"strings"</a></li>
+                            <li class="footer-menu-link"><a class="footer-menu-list" href="arrays.html">[arrays]</a></li>
+                            <li class="footer-menu-link"><a class="footer-menu-list" href="booleans.html">Booleans</a></li>
+                            <li class="footer-menu-link"><a class="footer-menu-list" href="loops.html">Loops</a></li>
+                            <li class="footer-menu-link"><a class="footer-menu-list" href="functions.html">functions()</a></li>
+                            <li class="footer-menu-link"><a class="footer-menu-list" href="objects.html">Objects</a></li>
+                            <li class="footer-menu-link"><a class="footer-menu-list" href="dom.html">The DOM</a></li>
+                            <li class="footer-menu-link"><a class="footer-menu-list" href="jQuery.html">jQuery</a></li>
+                            <li class="footer-menu-link"><a class="footer-menu-list" href="json.html">JSON</a></li>
+                            <li class="footer-menu-link"><a class="footer-menu-list" href="api.html">APIs</a></li>
                     </ul>
                 </div>
                 <div class="container outside-links">
                     <h5>Links:</h5>
+                        <ul class="footer-menu">
+                            <li class="footer-menu-link"><a class="footer-menu-list" href="#" target="_blank"></a></li>
+                            <li class="footer-menu-link"><a class="footer-menu-list" href="https://developers.google.com/maps/gmp-get-started#quickstart" target="_blank">Google Maps API key set up</a></li>
+                            <li class="footer-menu-link"><a class="footer-menu-list" href="https://developers.google.com/maps/documentation/javascript/get-api-key" target="_blank">Restrict Access to Google Maps API key</a></li>
+                            <li class="footer-menu-link"><a class="footer-menu-list" href="https://developers.google.com/maps/documentation" target="_blank">Google Maps Platform - Documentation for API keys</a></li>
+                            <li class="footer-menu-link"><a class="footer-menu-list" href="https://developers.google.com/maps/documentation/javascript/overview?hl=en_US" target="_blank">Maps JavaScript API</a></li>
+                            <li class="footer-menu-link"><a class="footer-menu-list" href="https://developers.google.com/maps/documentation/javascript/marker-clustering?hl=en_US" target="_blank">Marker Clustering</a></li>
+                        </ul>
                 </div>
             </div>
 
@@ -249,10 +278,11 @@
     </footer>
 
     <script type="text/javascript" src="../scripts/menu.js"></script>
-    <script type="text/javascript" src="../scripts/functions/function-callbacks.js"></script>
+    <script type="text/javascript" src="../scripts/light-dark-theme.js"></script>
+    <script type="text/javascript" src="../scripts/api/google-maps.js"></script>
     
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
- 
+    
 </body>
 </html>
