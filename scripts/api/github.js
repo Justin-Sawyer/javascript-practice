@@ -102,7 +102,8 @@ document.getElementById("throttling").innerText = `} else if (errorResponse.stat
     $("#gh-user-data").html("<p>Too many requests, please wait until " + resetTime.toLocaleTimeString() + "</p>");
 }`
 
-document.getElementById("allTheCode").innerText = `function userInformationHTML(user) {
+$(".gitHubAPICode").on("click", function() {
+    $("#gitHubAPICodeText").text(`function userInformationHTML(user) {
     return "
         <h2>" + user.name +
             "<span class='small-name'>
@@ -182,8 +183,10 @@ function fetchGitHubInformation(event) {
 }
 
 
-$(document).ready(fetchGitHubInformation);
-`
+$(document).ready(fetchGitHubInformation);`);
+})
+
+document.getElementById("curl-entry").innerText = `$ curl -i https://api.github.com/users/(username eg "octocat");`
 
 //----------------------------------------------------------------------------------------------------------------------------------------GitHub code
 function userInformationHTML(user) {

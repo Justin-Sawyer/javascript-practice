@@ -158,7 +158,13 @@
                     <div class="new-dropdown-submenu api-sub">
                         <a class="sub-menu-link api-one" href="google-maps.html">Google Maps</a>
                         <a class="sub-menu-link api-two" href="github.html">GitHub</a>
-                        <!--<a class="sub-menu-link api-two" href="emailjs.html">emailJS</a>-->
+                    </div>
+                </div>
+
+                <div class="new-dropdown-menu sdk">
+                    <p class="menu-list-with-dropdown sdk-dropdown" id="sdk">SDKs</p>
+                    <div class="new-dropdown-submenu sdk-sub">
+                        <a class="sub-menu-link api-two" href="../sdk/emailjs.html">emailJS</a>
                     </div>
                 </div>
 
@@ -179,106 +185,127 @@
 
             <div class="main-body">
                 
-                    <p>Lets now integrate the <a href="https://docs.github.com/en/free-pro-team@latest/rest/overview/api-previews" target="_blank">GitHUb API</a> 
-                    and use it to get GitHubs users' repositories.</p>
+                <p>Lets now integrate the <a href="https://docs.github.com/en/free-pro-team@latest/rest/overview/api-previews" target="_blank">GitHUb API</a> 
+                and use it to get GitHubs users' repositories.</p>
+                <ol>
+                    <li>The <code>HTML</code> code:</li>
                     <ol>
-                        <li>The <code>HTML</code> code:</li>
+                        <li>The body:</li>
+                            <pre><code><p id="gitHubHTMLCode"></p></code></pre>
+                            <p><code>.center-form</code> is the enclosing <code>&ltdiv&gt</code>, and is for the styling of the input element and results.</p>
+                            <p><code>octocat</code> is the GitHub mascot and publicly facing user, while <code>oninput="fetchGitHubInformation()"</code> calls the function when data is inputted 
+                            into the input box.</p>
+                            <p>The two <code>&ltdiv&gt</code> beneath is where we display the information we shall retrieve from GitHub:</p>
+                            <p class="tab"><code>#gh-user-data</code> is where the user's data will be displayed. The user's name, follow and following count and number of repos.</p>
+                            <p class="tab"><code>#gh-repo-data</code> will be the stylised repos.</p>
+                        <li>The head:</li>
+                            <p>In the <code>&lthead&gt</code> element we add the following:</p>
+                            <pre><code><p id="gitHubHeadCode"></p></code></pre>
+                            <p>This is of course to tell our page to load the <code>JavaScript</code> page and thus be able to call <code>fetchGitHubInformation()</code>. 
+                            We also need a <code>jQuery</code> script.</p>
+                    </ol>
+                    <br>
+                    <li>The <code>JavaScript</code>:</li> 
                         <ol>
-                            <li>The body:</li>
-                                <pre><code><p id="gitHubHTMLCode"></p></code></pre>
-                                <p><code>.center-form</code> is the enclosing <code>&ltdiv&gt</code>, and is for the styling of the input element and results.</p>
-                                <p><code>octocat</code> is the GitHub mascot and publicly facing user, while <code>oninput="fetchGitHubInformation()"</code> calls the function when data is inputted 
-                                into the input box.</p>
-                                <p>The two <code>&ltdiv&gt</code> beneath is where we display the information we shall retrieve from GitHub:</p>
-                                <p class="tab"><code>#gh-user-data</code> is where the user's data will be displayed. The user's name, follow and following count and number of repos.</p>
-                                <p class="tab"><code>#gh-repo-data</code> will be the stylised repos.</p>
-                            <li>The head:</li>
-                                <p>In the <code>&lthead&gt</code> element we add the following:</p>
-                                <pre><code><p id="gitHubHeadCode"></p></code></pre>
-                                <p>This is of course to tell our page to load the <code>JavaScript</code> page and thus be able to call <code>fetchGitHubInformation()</code>. 
-                                We also need a <code>jQuery</code> script.</p>
-                            </ol>
-                        <li>The <code>JavaScript</code></li> 
-                            <ol>
-                                <li><code>fetchGitHubInformation()</code></li>
-                                    <pre><code><p id="gitHubJSCode"></p></code></pre>
-                                    <p>We have created the function and given it the argument <code>event</code>. The function contains the variable <code>username</code>, which is assigned the  
-                                    <code>val()</code> being filled in in the inout field.</p>
-                                    <p>If the <code>username</code> is empty (ie, like deleting the "octocat" text before filling it with a username stem), the <code>HTML</code> of the 
-                                    <code>#gh-user-data</code> filled with a <code>&ltp&gt</code> element containg the text "Please enter a GitHub username"</p>
-                                    <p>In the second part of the function, <code>#gh-repo-data</code> is being filled with the <code>&ltdiv&gt</code> element classes stated in the code. 
-                                    These fetch the slider from the CSS, and the slider is displayed. (The CSS code can be viewed as a text file 
-                                    <a href="../assets/css/github-styles.css" target="_blank">here</a>.)</p>
-                                
-                                <li>Pomises:</li>
-                            <p>A promise in code is very much like a promise in real life:</p>
-                            <p><code>.when()</code> you do this, <code>.then()</code> I will do that.</p>
-                            <p>It is this that we now insert into the code:</p>
-                            <pre> <code><p id="promises"></p></code></pre>
-                            <p>The <code>.when()</code> block says that when the jQuery command <code>getJSON</code> finds the <code>username</code> being tyoped into the <code>input</code> 
-                            box on the page, <code>.then()</code> it should action either of the arguments <code>response</code> or <code>errorResponse</code> of its function:</p>
-                            <p class="tab"><code>function(response)</code></p>
-                            <p class="tab">Fill the <code>#gh-user-data</code> div's with the function <code>userInformationHTML()</code> with the <code>userData</code> information, that 
-                            being the user's name and <code>@</code> tag.</p>
-                            <p class="tab"><code>function(errorResponse)</code></p>
-                            <p class="tab">either fill the <code>#gh-user-data</code> div with "No info found for t"user-name")" if a <code>404</code> error is returned, or</p>
-                            <p class="tab">display in console the error number, and return the appropriate <code>responseJSON.message</code> message. <strong>This is a good way to find errors 
-                            when debugging code.</strong></p>
-                        <li><code>userInformationHTML()</code></li>
-                            <p>Above is mentioned the function <code>userInformationHTML()</code> that 
-                            contains the promises. But this function has not yet been written. This is our next step. It will be written above the existing function <code>fetchGitHubInformation()</code>.</p>
-                            <pre><code><p id="fetchInfo"></p></code></pre>
-                            <p>This function simply fills the div <code>#gh-user-data</code> with tags to be populated with the user's name, <code>@</code> tag, avatar etc. 
-                            <a href="https://docs.github.com/en/free-pro-team@latest/rest/reference/users">Here is a list of the different properties one can return</a>.</p>
-                        
-                        <li>Getting the repositories</li>
-                            <p>We add a second command to the <code>.when().then()</code> promise.:</p>
-                            <pre><code><p id="repos"></p></code></pre>
-                            <p>Notice that the variables <code>userData</code> and <code>repoData</code> have been assigned an <code>index#</code>. This is because 
-                            the <code>.when()</code> method packs its response as <code>[array]</code>, and thus we need to call its first index.</p>
-                        
-                        <li><code>repoInformationHTML()</code></li>
-                            <p>Now, we need to display the repo data. So we create a function and call it <code>repoInformationHTML(repos)</code>, where <code>(repos)</code> 
-                            is the argument. We call it this as the function will call for the repo information, and then display it in the <code>HTML</code> of this page.</p>
-                            <pre><code><p id="repoInfoCode"></p></code></pre>
-                            <p>The function calls the <code>Object</code> "repos" which is the list of repositories for that user on GitHub. The data is returned as 
-                            an <code>[array]</code>, thus we can both find its <code>.length</code> and iterate through it, and this is what 
-                            <a href="https://www.w3schools.com/jsref/jsref_map.asp" target="_blank">.map()</a> is doing. For each of the entries in repos, in other words, 
-                            for each <code>repo</code>, the map function is returning a <code>li</code> entry. These entries are an <code>[array]</code>, thus the 
-                            variable <code>listItemsHTML</code> is being converted to a <code>"string"</code>, with each separating comma of the <code>"string"</code> 
-                            being replaced, using the <code>.join("")</code> method.</p>
-                            
-                        <li>Bug squashing</li>
-                            <p>There is a bug in the code so far, in that when the input box is cleared, the last entry's repos are still displayed. So lets squash the bug. 
-                            To do so, we just need to clear the entries with an empty <code>"string"</code> for when the input box is empty. Within <code>fetchGitHubInformation(event)</code>, 
-                            we insert these two lines of code at the beginning of the function:</p>
-                            <pre><code><p id="bugSquash1"></p></code></pre>
-                            <p>Now, we want the default GitHub username "octocat" displayed when we load the page. For this, we can add one line of <code>jQuery</code> 
-                            outside of the functions at the bottom of all of the code:</p>
-                            <pre><code><p id="octocat"></p></code></pre>
-                            <p>Thus, when the page loads, the <code>jQuery</code> runs the function <code>fetchGitHubInformation()</code>, which then calls the <code>value="octocat"</code> 
-                            within the code of the <code>HTML</code> input element.</p>
-
-                        <li>API throttling</li>
-                            <p>The Gitub API throttles access to it if one tries to access it too often. Because of this, we need to add a more friendly 
-                            message for the user if (s)he tries to retrieve data too often. The error that is returned if we access too often is a 
-                            <code>403</code> error. Thus, we need to add an <code>if</code> statement containing a message to the user if a <code>403</code> 
-                            error is returned:</p>
-                            <pre><code><p id="throttling"></p></code></pre>
+                            <li><code>fetchGitHubInformation()</code>:</li>
+                                <pre><code><p id="gitHubJSCode"></p></code></pre>
+                                <p>We have created the function and given it the argument <code>event</code>. The function contains the variable <code>username</code>, which is assigned the  
+                                <code>val()</code> being filled in in the inout field.</p>
+                                <p>If the <code>username</code> is empty (ie, like deleting the "octocat" text before filling it with a username stem), the <code>HTML</code> of the 
+                                <code>#gh-user-data</code> filled with a <code>&ltp&gt</code> element containg the text "Please enter a GitHub username"</p>
+                                <p>In the second part of the function, <code>#gh-repo-data</code> is being filled with the <code>&ltdiv&gt</code> element classes stated in the code. 
+                                These fetch the slider from the CSS, and the slider is displayed. (The CSS code can be viewed as a text file 
+                                <a href="../assets/css/github-styles.css" target="_blank">here</a>.)</p>
+                                <br>
+                            <li>Pomises:</li>
+                                <p>A promise in code is very much like a promise in real life:</p>
+                                <p><code>.when()</code> you do this, <code>.then()</code> I will do that.</p>
+                                <p>It is this that we now insert into the code:</p>
+                                <pre> <code><p id="promises"></p></code></pre>
+                                <p>The <code>.when()</code> block says that when the jQuery command <code>getJSON</code> finds the <code>username</code> being tyoped into the <code>input</code> 
+                                box on the page, <code>.then()</code> it should action either of the arguments <code>response</code> or <code>errorResponse</code> of its function:</p>
+                                <p class="tab"><code>function(response)</code></p>
+                                <p class="tab">Fill the <code>#gh-user-data</code> div's with the function <code>userInformationHTML()</code> with the <code>userData</code> information, that 
+                                being the user's name and <code>@</code> tag.</p>
+                                <p class="tab"><code>function(errorResponse)</code></p>
+                                <p class="tab">either fill the <code>#gh-user-data</code> div with "No info found for t"user-name")" if a <code>404</code> error is returned, or</p>
+                                <p class="tab">display in console the error number, and return the appropriate <code>responseJSON.message</code> message. <strong>This is a good way to find errors 
+                                when debugging code.</strong></p>
+                                <br>
+                            <li><code>userInformationHTML()</code>:</li>
+                                <p>Above is mentioned the function <code>userInformationHTML()</code> that 
+                                contains the promises. But this function has not yet been written. This is our next step. It will be written above the existing function <code>fetchGitHubInformation()</code>.</p>
+                                <pre><code><p id="fetchInfo"></p></code></pre>
+                                <p>This function simply fills the div <code>#gh-user-data</code> with tags to be populated with the user's name, <code>@</code> tag, avatar etc. 
+                                <a href="https://docs.github.com/en/free-pro-team@latest/rest/reference/users">Here is a list of the different properties one can return</a>.</p>
+                                <br>
+                            <li>Getting the repositories:</li>
+                                <p>We add a second command to the <code>.when().then()</code> promise.:</p>
+                                <pre><code><p id="repos"></p></code></pre>
+                                <p>Notice that the variables <code>userData</code> and <code>repoData</code> have been assigned an <code>index#</code>. This is because 
+                                the <code>.when()</code> method packs its response as <code>[array]</code>, and thus we need to call its first index.</p>
+                                <br>
+                            <li><code>repoInformationHTML()</code>:</li>
+                                <p>Now, we need to display the repo data. So we create a function and call it <code>repoInformationHTML(repos)</code>, where <code>(repos)</code> 
+                                is the argument. We call it this as the function will call for the repo information, and then display it in the <code>HTML</code> of this page.</p>
+                                <pre><code><p id="repoInfoCode"></p></code></pre>
+                                <p>The function calls the <code>Object</code> "repos" which is the list of repositories for that user on GitHub. The data is returned as 
+                                an <code>[array]</code>, thus we can both find its <code>.length</code> and iterate through it, and this is what 
+                                <a href="https://www.w3schools.com/jsref/jsref_map.asp" target="_blank">.map()</a> is doing. For each of the entries in repos, in other words, 
+                                for each <code>repo</code>, the map function is returning a <code>li</code> entry. These entries are an <code>[array]</code>, thus the 
+                                variable <code>listItemsHTML</code> is being converted to a <code>"string"</code>, with each separating comma of the <code>"string"</code> 
+                                being replaced, using the <code>.join("")</code> method.</p>
+                                <br>
+                            <li>Bug squashing:</li>
+                                <p>There is a bug in the code so far, in that when the input box is cleared, the last entry's repos are still displayed. So lets squash the bug. 
+                                To do so, we just need to clear the entries with an empty <code>"string"</code> for when the input box is empty. Within <code>fetchGitHubInformation(event)</code>, 
+                                we insert these two lines of code at the beginning of the function:</p>
+                                <pre><code><p id="bugSquash1"></p></code></pre>
+                                <p>Now, we want the default GitHub username "octocat" displayed when we load the page. For this, we can add one line of <code>jQuery</code> 
+                                outside of the functions at the bottom of all of the code:</p>
+                                <pre><code><p id="octocat"></p></code></pre>
+                                <p>Thus, when the page loads, the <code>jQuery</code> runs the function <code>fetchGitHubInformation()</code>, which then calls the <code>value="octocat"</code> 
+                                within the code of the <code>HTML</code> input element.</p>
+                                <br>
+                            <li>API throttling:</li>
+                                <p>The Gitub API throttles access to it if one tries to access it too often. Because of this, we need to add a more friendly 
+                                message for the user if (s)he tries to retrieve data too often. The error that is returned if we access too often is a 
+                                <code>403</code> error. Thus, we need to add an <code>if</code> statement containing a message to the user if a <code>403</code> 
+                                error is returned:</p>
+                                <pre><code><p id="throttling"></p></code></pre>
+                                <p>So what does this mean?</p>
+                                <ol>
+                                    <li><code>let resetTime = new Date</code></li>
+                                    <p>Assigns the variable <code>resetTime</code> as a new time <code>Object</code></p>
+                                    <li><code>(errorResponse.getResponseHeader(`X-RateLimit-Reset`)</code></li>
+                                    <p>Tells that new time <code>Object</code> to be the result <code>X-RateLimit-Reset</code> that is given in the 
+                                    <code>responseHeaders</code> of the <code>username</code>'s API entry.</p>
+                                    <li><code>*1000);</code></li>
+                                    <p>The time given is in the <a href="https://www.unixtimestamp.com/index.php">UNIX timestamp</a> format. This is the number of seconds 
+                                    elapsed since 01/01/1970. As <code>JavaScript</code> works in <strong>milliseconds</strong> since that date, we multiply the <code>UNIX 
+                                    timestamp</code> by 1000.</p>
+                                    <li><code>resetTime.toLocaleTimeString()</code></li>
+                                    <p>Converts the <code>UNIX timestamp</code> to local time.</p>
+                                </ol>
+                            <p>Thus, instead of seeing garbled numbers appear in front of us when we exceed the number of requests allowed, the error message we see on the 
+                            screen is presented to us in our local time. So, we can try again, for example, at 17:31.26...</p>
+                            <p>But, how do we know where to look for these details?</p>
+                            <p>We use <a href="../json/introduction.html#curl">cURL</a>.</p>
+                            <p>We type into the console:</p>
+                            <pre><code><p id="curl-entry"></p></code></pre>
                         </ol>
                     </ol>
 
-                    <p>The entire code:</p>
-                    <pre><code><p id="allTheCode"></p></code></pre>
-                    <p>And the final result:</p>
+                <button class="btn button gitHubAPICode">Click to see the entire code</button>
+                <pre><code><p id="gitHubAPICodeText"></p></code></pre>
+                <p>And the final result:</p>
 
-                    <!--GitHub HTML-->
-                    <div class="center-form">
-                        <input type="text" id="gh-username" value="octocat" oninput="fetchGitHubInformation()" />
-                        <div id="gh-user-data" style="height:fit-content;"></div>
-                        <div id="gh-repo-data"></div>
-                    </div>
-                    
+                <!--GitHub HTML-->
+                <div class="center-form">
+                    <input type="text" id="gh-username" value="octocat" oninput="fetchGitHubInformation()" />
+                    <div id="gh-user-data" style="height:fit-content;"></div>
+                    <div id="gh-repo-data"></div>
+                </div>
             </div>
         </div>
 
@@ -293,7 +320,7 @@
                 </div>
                 <div class="col-sm-6">
                     <div class="next-page">
-                        <a class="btn button" href="emailjs.html" role="button">APIs: emailJS <svg width="1em" height="1em" viewbox="0 0 16 16" class="bi bi-caret-right-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <a class="btn button" href="../sdk/emailjs.html" role="button">SDKs: emailJS <svg width="1em" height="1em" viewbox="0 0 16 16" class="bi bi-caret-right-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                         <path d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
                         </svg></a>
                     </div>  
@@ -340,10 +367,10 @@
                             <li class="footer-menu-link"><a class="footer-menu-list" href="#" target="_blank"></a></li>
                             <li class="footer-menu-link"><a class="footer-menu-list" href="https://docs.github.com/en/free-pro-team@latest/rest/overview/api-previews" target="_blank">GitHub API</a></li>
                             <li class="footer-menu-link"><a class="footer-menu-list" href="https://docs.github.com/en/free-pro-team@latest/rest/reference/users" target="_blank">GitHub API user details example</a></li>
-                            <!--<li class="footer-menu-link"><a class="footer-menu-list" href="https://developers.google.com/maps/documentation/javascript/get-api-key" target="_blank">Restrict Access to Google Maps API key</a></li>
-                            <li class="footer-menu-link"><a class="footer-menu-list" href="https://developers.google.com/maps/documentation" target="_blank">Google Maps Platform - Documentation for API keys</a></li>
-                            <li class="footer-menu-link"><a class="footer-menu-list" href="https://developers.google.com/maps/documentation/javascript/overview?hl=en_US" target="_blank">Maps JavaScript API</a></li>
-                            <li class="footer-menu-link"><a class="footer-menu-list" href="https://developers.google.com/maps/documentation/javascript/marker-clustering?hl=en_US" target="_blank">Marker Clustering</a></li>-->
+                            <br>
+                            <li class="footer-menu-link"><a class="footer-menu-list" href="https://www.w3schools.com/jsref/jsref_map.asp" target="_blank">map()</a></li>
+                            <br>
+                            <li class="footer-menu-link"><a class="footer-menu-list" href="https://www.unixtimestamp.com/index.php" target="_blank">UNIX Timestamp converter</a></li>
                         </ul>
                 </div>
             </div>
