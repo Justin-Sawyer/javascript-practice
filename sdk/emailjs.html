@@ -7,6 +7,14 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../assets/css/style.css" type="text/css">
     <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+        (function(){
+            emailjs.init("user_enSK9cNbO7MRSFtgsJkdH");
+        })();
+    </script>
     
     <title>Javascripting: SDKs: emailJS</title>
 </head>
@@ -184,35 +192,72 @@
 
             <div class="main-body">
                 
-                    <!--<p>To access the Google Maps <code>API</code>, you need a billing account and a Google account. Then, you need to get the 
-                    <a href="https://developers.google.com/maps/gmp-get-started#quickstart" target="_blank">API key</a>.</p>
-                    <p>Once your site is live, make sure to <a href="https://developers.google.com/maps/documentation/javascript/get-api-key" target="_blank">restrict access</a> to the key</p>
-                    <br>
-                    <p>Once you have the key, you can then insert it into your <code>HTML</code> page, within <code>&ltscript&gt</code> tags</p>
-                    <pre><code><p id="googlemapsscript"></p></code></pre>
-                    <p>In the script there are two words before the <code>src=""</code> reference:</p>
-                    <p class="tab"><code>async</code>:</p>
-                    <p class="tab">Loads the scripts at the same time as the <code>HTML</code> is loading, and then there's just a brief pause while the script is executed.</p>
-                    <p class="tab"><code>defer</code>:</p>
-                    <p class="tab">Waits until the page has finished loading before the <code>&ltscript&ht</code> is executed.</p>
-                    <p>Loading these in the top <code>&lthead&gt</code> element increases page load time for these scripts. When loading in the <code>&lthead&gt</code> element, 
-                    use <code>defer</code>. That is what we have done on this page.</p>
-                    <p>At the end of the script is:</p>
-                    <p class="tab"><code>&callback=initMap</code>:</p>
-                    <p class="tab">This is a reference to a <code>callback function()</code> that needs to be created. We shall do that soon.</p>
-                    <p>First, however, we need to select our API from the many choices Google offers. We can do this <a href="https://developers.google.com/maps/documentation" target="_blank">here</a>. 
-                    For this project, we shall use the <a href="https://developers.google.com/maps/documentation/javascript/overview?hl=en_US" target="_blank">Maps JavaScript API</a> and from the side bar, 
-                    we shall choose <a href="https://developers.google.com/maps/documentation/javascript/marker-clustering?hl=en_US" target="_blank">Marker Clustering</a>, as this one requires an additinal 
-                    script to be inserted:</p>
-                    <pre><code><p id="markerClustering"></p></code></pre>
-                    <p>Again, this script has been inserted into the <code>&lthead&gt</code> element.</p>
-                    <p>Now, all we have to do in our <code>HTML</code> is to create the following:</p>
-                    <pre><code><p id="mapCode"></p></code></pre>
-                    <p>Now we style the element in the <code>CSS</code> file:</p>
-                    <pre><code><p id="mapCodeCSS"></p></code></pre>
-                    <p>And from here, we can follow the Google documentation.</p>
-                    <div id="map"></div>
-                    <br>-->
+                <p>It's all very well having a website, but what purpose would it serve without a way of contacting the developer, or the business? This is where 
+                <code>SDKs</code> like <a href="https://www.emailjs.com/" target="_blank">emailJS</a> come in useful.</p>
+                <p>Let's set up an account. First we need some <code>HTML</code> code:</p>
+                <pre><code><p id="emailJSHTMLCode"></p></code></pre>
+                
+                <p>And a little <code>CSS</code>:</p>
+                <pre><code><p id="emailJSCSSCode"></p></code></pre>
+                <br>
+                <p>Now we sign up to the <a href="https://www.emailjs.com/" target="_blank">emailJS account</a>. We then configure a host service and template within 
+                the site itself. This is a good example of an edited template:</p>
+                <img src="../assets/images/emailJS/emailJS-edited-template.png" alt="Edited emailJS template example" width="100%" style="margin:0 auto">
+                <p>When the mail service is configured, we send a test mail. In the test mail popup, in the top right hand side is some 
+                <code>JavaScript</code> code:</p>
+                <img src="../assets/images/emailJS/emailJS-test.png" alt="emaiJS test image with JavaScript code in top right" width="100%">
+                <p>And, as we fill in the details, we can see that the <code>JavaScript</code> code is being added to with <code>key</code> and <code>value</code> pairs:</p>
+                <img src="../assets/images/emailJS/emailJS-JS filled.png" alt="emaiJS test image with JavaScript code in top right filled in" width="100%">
+                <p>Now we need to go to the <a href="https://www.emailjs.com/docs/" target="_blank">Documentation</a> page to learn how to install the service. 
+                From here, we click on the <a href="https://www.emailjs.com/docs/sdk/installation/" target="_blank">install EmailJS SDK</a> link and find the 
+                <code>scripts</code> that are needed:</p>
+                <pre><code><p id="emailJSBrowserScripts"></p></code></pre>
+                <p>We insert these snippets into the <code>&lthead&gt</code> element of the page, and add the <code>user_id</code> given in the service.</p>
+                <p>Back in the emailJS <a href="https://dashboard.emailjs.com/admin" target="_blank"></a> dashboard, we can retrieve the <code>user_id</code> 
+                from the <a href="https://dashboard.emailjs.com/admin/integration/browser" target="_blank">intergration then browser</a> option.</p>
+                <p>We then paste and copy the <code>user_id</code> into the above <code>script</code>.</p>
+                
+                <p>With this script in the <code>&lthead&gt</code> element, it is a self-invoking function. Now we need to write a script in a <code>.js</code> file.</p>
+                <p>But first, we need to change the <code>HTML</code> (above) a little:</p>
+                <pre><code><p id="emailJSHTMLChange"></p></code></pre>
+                <p>We have changed the <code>&ltform&gt</code> element to make it <code>return this</code> data, the data that will be 
+                entered in the contact form.</p>
+                <p>Now, we need to add the <code>.js</code> script at the bottom of the page, beneath the <code>&ltfooter&gt</code> element. We call it 
+                <code>sendMail.js</code></p>
+                <p>It is within this <code>.js</code> script file that we create <code>sendEmail()</code>, and we then copy and delete the self-declaring function 
+                from the <code>HTML</code> and paste it into <code>sendEmail()</code> of the <code>.js</code> script. We are sending in the <code>&ltform&gt</code> 
+                as a parameter, thus we can add the argument <code>contactForm</code> to the function.</p>
+                <p>Then we add the "send" script that we find on <a href="https://www.emailjs.com/docs/sdk/send/">here</a>, which has the same first two values as in 
+                the second image above.</p>
+                <pre><code><p id="emailJSSendScript"></p></code></pre>
+                <p>For the <code>templateParams</code> we add <code>{key: value}</code> pairs, the <code>keys</code> being <code>"from_name"</code>, <code>"from_email"</code> and 
+                <code>"project_request"</code> - just as in the template above. We then add the values that we find from the <code>HTML</code> form <code>ids</code>.</p>
+                <p>Thus, the <code>.js</code> script now reads as follows:</p>
+                <pre><code><p id="emailJSFunctionScriptCompleted"></p></code></pre>
+                <p>We also add the <code>.when()</code> and <code>.then()</code> promises from the <a href="https://www.emailjs.com/docs/sdk/send/" target="blank">/send</a> emailJS link:</p>
+                <pre><code><p id="promises"></p></code></pre>
+                <p>Lastly, we add a <code>return false</code> statement which blocks the function from loading a new page.</p>
+                <pre><code><p id="return"></p></code></pre>
+                <button class="btn button emailJSCode">Click to see the code in full</button>
+                <pre><code><p id="fullEmailJSCode"></p></code></pre>
+
+                <br>
+                <p>The result:</p>
+
+                <div class="center-form">
+                    <form onsubmit="return sendMail(this);">
+                        <input type="text" name="name" id="fullname" class="form-control" placeholder="Name" required />
+                        <input type="email" name="email" id="emailaddress" class="form-control" placeholder="Email" required />
+                        <textarea name="projectsummary" id="projectsummary" rows="5" class="form-control" placeholder="Project description" required></textarea>
+                        <div class="form-row text-center">
+                            <div class="col">
+                                <br>
+                                <button type="submit" class="btn button">Send Project Request</button>
+                            </div>
+                        </div>
+                    </form>
+                    <p id="successOrFailure"></p>
+                </div>
                     
             </div>
         </div>
@@ -268,11 +313,10 @@
                     <h5>Links:</h5>
                         <ul class="footer-menu">
                             <li class="footer-menu-link"><a class="footer-menu-list" href="#" target="_blank"></a></li>
-                            <li class="footer-menu-link"><a class="footer-menu-list" href="https://developers.google.com/maps/gmp-get-started#quickstart" target="_blank">Google Maps API key set up</a></li>
-                            <li class="footer-menu-link"><a class="footer-menu-list" href="https://developers.google.com/maps/documentation/javascript/get-api-key" target="_blank">Restrict Access to Google Maps API key</a></li>
-                            <li class="footer-menu-link"><a class="footer-menu-list" href="https://developers.google.com/maps/documentation" target="_blank">Google Maps Platform - Documentation for API keys</a></li>
-                            <li class="footer-menu-link"><a class="footer-menu-list" href="https://developers.google.com/maps/documentation/javascript/overview?hl=en_US" target="_blank">Maps JavaScript API</a></li>
-                            <li class="footer-menu-link"><a class="footer-menu-list" href="https://developers.google.com/maps/documentation/javascript/marker-clustering?hl=en_US" target="_blank">Marker Clustering</a></li>
+                            <li class="footer-menu-link"><a class="footer-menu-list" href="https://nordicapis.com/what-is-the-difference-between-an-api-and-an-sdk/" target="_blank">Differnce between API and SDK</a></li>
+                            <br>
+                            <li class="footer-menu-link"><a class="footer-menu-list" href="https://www.emailjs.com/" target="_blank">emailJS</a></li>
+                            
                         </ul>
                 </div>
             </div>
@@ -286,6 +330,7 @@
     <script type="text/javascript" src="../scripts/menu.js"></script>
     <script type="text/javascript" src="../scripts/light-dark-theme.js"></script>
     <script type="text/javascript" src="../scripts/sdk/emailjs.js"></script>
+    <script type="text/javascript" src="../scripts/sdk/sendEmail.js"></script>
     
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
