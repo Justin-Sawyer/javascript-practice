@@ -101,6 +101,10 @@ blockquote {
     text-align: right;
 }
 
+.table-overflow {
+    overflow: scroll;
+}
+
 /* ---------------------------------- Hero banner */
 .wrapper {
     overflow: hidden;
@@ -731,6 +735,7 @@ footer {
 
 .menu-dropdown {
     width: 100%;
+    background-color: #c13e70;
 }
 
 .menu-dropdown-blue {
@@ -804,6 +809,13 @@ footer {
     .menu-text {
         display: none;
     }
+    .card-title {
+        font-size: 1rem;
+    }
+
+    .card-text {
+        font-size:0.8rem;
+    }
 }
 
 .arrays-container {
@@ -821,5 +833,19 @@ footer {
     width: 48%;
     margin: 5px;
     flex: none;
+}
+
+.card-col {
+    padding:0;
+}
+
+.card {
+    min-width: 100%;
+    margin:0;
+    padding:0;
+}
+
+.body-container-main-pages {
+    align-items: stretch;
 }
     

@@ -1,0 +1,33 @@
+button {
+    -webkit-appearance: none;
+    border-radius: 0;
+}
+
+.btn-default {
+    background-color: #c13e70;
+}
+
+code {
+    color:#c13e70;
+    font-size: 100%;
+}
+
+button,
+.button {
+    font-family: 'Times New Roman', Times, serif;
+    background-color: #047afb;
+    border: 2px solid #c13e70;
+    border-radius: 3px;
+    color: white;
+    margin-bottom: 8px;
+    margin-right: 8px;
+    line-height: 1;
+}
+
+button:hover,
+.button:hover {
+    color: white;
+    background-color: #c13e70;
+    border: 2px solid #047afb;
+}
+

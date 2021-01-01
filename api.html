@@ -174,7 +174,7 @@
     </header>
 
     <main>
-        <div class="container body-container">
+        <div class="container body-container body-container-main-pages">
             <div class="theme">
                 <button class="btn button" type="button" onclick="lightTheme()">Change to Light Theme</button>
                 <button class="btn button" type="button" onclick="darkTheme()"> Change to Dark Theme</button>
@@ -184,41 +184,56 @@
                 <h1>APIs:</h1>
             </div>
 
-            <div class="main-body">
-                <!--<ol>
-                    <li>Google Maps</li>
-                    <p>To access the Google Maps <code>API</code>, you need a billing account and a Google account. Then, you need to get the 
-                    <a href="https://developers.google.com/maps/gmp-get-started#quickstart" target="_blank">API key</a>.</p>
-                    <p>Once your site is live, make sure to <a href="https://developers.google.com/maps/documentation/javascript/get-api-key" target="_blank">restrict access</a> to the key</p>
-                    <br>
-                    <p>Once you have the key, you can then insert it into your <code>HTML</code> page, within <code>&ltscript&gt</code> tags</p>
-                    <pre><code><p id="googlemapsscript"></p></code></pre>
-                    <p>In the script there are two words before the <code>src=""</code> reference:</p>
-                    <p class="tab"><code>async</code>:</p>
-                    <p class="tab">Loads the scripts at the same time as the <code>HTML</code> is loading, and then there's just a brief pause while the script is executed.</p>
-                    <p class="tab"><code>defer</code>:</p>
-                    <p class="tab">Waits until the page has finished loading before the <code>&ltscript&ht</code> is executed.</p>
-                    <p>Loading these in the top <code>&lthead&gt</code> element increases page load time for these scripts. When loading in the <code>&lthead&gt</code> element, 
-                    use <code>defer</code>. That is what we have done on this page.</p>
-                    <p>At the end of the script is:</p>
-                    <p class="tab"><code>&callback=initMap</code>:</p>
-                    <p class="tab">This is a reference to a <code>callback function()</code> that needs to be created. We shall do that soon.</p>
-                    <p>First, however, we need to select our API from the many choices Google offers. We can do this <a href="https://developers.google.com/maps/documentation" target="_blank">here</a>. 
-                    For this project, we shall use the <a href="https://developers.google.com/maps/documentation/javascript/overview?hl=en_US" target="_blank">Maps JavaScript API</a> and from the side bar, 
-                    we shall choose <a href="https://developers.google.com/maps/documentation/javascript/marker-clustering?hl=en_US" target="_blank">Marker Clustering</a>, as this one requires an additinal 
-                    script to be inserted:</p>
-                    <pre><code><p id="markerClustering"></p></code></pre>
-                    <p>Again, this script has been inserted into the <code>&lthead&gt</code> element.</p>
-                    <p>Now, all we have to do in our <code>HTML</code> is to create the following:</p>
-                    <pre><code><p id="mapCode"></p></code></pre>
-                    <p>Now we style the element in the <code>CSS</code> file:</p>
-                    <pre><code><p id="mapCodeCSS"></p></code></pre>
-                    <p>And from here, we can follow the Google documentation.</p>
-                    <div id="map"></div>
-                    <br>
-                    <li>GitHub:</li>
-                </ol>-->
+            <div class="main-body light">
+                <div class="row">
+                    <div class="card-col col-sm-4 col-6">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h5 class="card-title">Introduction to [arrays]</h5>
+                                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                <a a href="arrays/the-basics.html" class="btn button">Go somewhere</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-col col-sm-4 col-6">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h5 class="card-title">[array] Methods]</h5>
+                                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                <a href="arrays/array-methods.html" class="btn button">Go somewhere</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-col col-sm-4 col-6">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h5 class="card-title">More [array] Methods</h5>
+                                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                <a href="arrays/more-array-methods.html" class="btn button">Go somewhere</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-col col-sm-6 col-6">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h5 class="card-title">Multi-dimensional [arrays]</h5>
+                                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                <a href="arrays/multi-dimensional-arrays.html" class="btn button">Go somewhere</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-col col-sm-6 col-12">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h5 class="card-title">Challenges</h5>
+                                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                <a href="arrays/challenges.html" class="btn button">Go somewhere</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
+
         </div>
 
         <div class="container next-last-page-section">
@@ -259,21 +274,30 @@
             <div class="container links-and-outside-links">
                 <div class="container website-links">
                     <h5>Sections:</h5>
-                    <ul class="footer-menu">
-                            <li class="footer-menu-link"><a class="footer-menu-list" href="numbers.html">Numbers</a></li>
-                            <li class="footer-menu-link"><a class="footer-menu-list" href="strings.html">"strings"</a></li>
-                            <li class="footer-menu-link"><a class="footer-menu-list" href="arrays.html">[arrays]</a></li>
-                            <li class="footer-menu-link"><a class="footer-menu-list" href="booleans.html">Booleans</a></li>
-                            <li class="footer-menu-link"><a class="footer-menu-list" href="loops.html">Loops</a></li>
-                            <li class="footer-menu-link"><a class="footer-menu-list" href="functions.html">functions()</a></li>
-                            <li class="footer-menu-link"><a class="footer-menu-list" href="objects.html">Objects</a></li>
-                            <li class="footer-menu-link"><a class="footer-menu-list" href="dom.html">The DOM</a></li>
-                            <li class="footer-menu-link"><a class="footer-menu-list" href="jQuery.html">jQuery</a></li>
-                            <li class="footer-menu-link"><a class="footer-menu-list" href="json.html">JSON</a></li>
-                            <li class="footer-menu-link"><a class="footer-menu-list" href="api.html">APIs</a></li>
-                            <li class="footer-menu-link"><a class="footer-menu-list" href="sdk.html">SDKs</a></li>
-                    </ul>
+                    <div class="row">
+                        <div class="col-6">
+                            <ul class="footer-menu">
+                                <li class="footer-menu-link"><a class="footer-menu-list" href="numbers.html">Numbers</a></li>
+                                <li class="footer-menu-link"><a class="footer-menu-list" href="strings.html">"strings"</a></li>
+                                <li class="footer-menu-link"><a class="footer-menu-list" href="arrays.html">[arrays]</a></li>
+                                <li class="footer-menu-link"><a class="footer-menu-list" href="booleans.html">Booleans</a></li>
+                                <li class="footer-menu-link"><a class="footer-menu-list" href="loops.html">Loops</a></li>
+                                <li class="footer-menu-link"><a class="footer-menu-list" href="functions.html">functions()</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-6">
+                            <ul class="footer-menu">
+                                <li class="footer-menu-link"><a class="footer-menu-list" href="objects.html">Objects</a></li>
+                                <li class="footer-menu-link"><a class="footer-menu-list" href="dom.html">The DOM</a></li>
+                                <li class="footer-menu-link"><a class="footer-menu-list" href="jQuery.html">jQuery</a></li>
+                                <li class="footer-menu-link"><a class="footer-menu-list" href="json.html">JSON</a></li>
+                                <li class="footer-menu-link"><a class="footer-menu-list" href="api.html">APIs</a></li>
+                                <li class="footer-menu-link"><a class="footer-menu-list" href="sdk.html">SDKs</a></li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
+                
                 <div class="container outside-links">
                     <h5>Links:</h5>
                         <ul class="footer-menu">

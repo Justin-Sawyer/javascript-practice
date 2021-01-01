@@ -6,8 +6,14 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="assets/css/style.css" type="text/css">
-    <link rel="stylesheet" href="assets/css/github-styles.css" type="text/css">
+    <link rel="stylesheet" href="assets/css/main-pages-style.css" type="text/css">
     <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <!-- Compiled and minified CSS -->
+    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">-->
+
+    <!-- Compiled and minified JavaScript -->
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>-->
+     
     
     <title>Javascripting: [arrays]</title>
 </head>
@@ -174,22 +180,62 @@
     </header>
 
     <main>
-        <div class="container body-container">
+        <div class="container body-container body-container-main-pages">
             <div class="page-name">
                 <h1>Arrays:</h1>   
             </div>
 
-            <div class="main-body">
-                <div class="container arrays-container">
-                        <div class="item" style="border: solid 1px black; height:200px"></div>
-                        <div class="item" style="border: solid 1px black; height:200px"></div>
-                        <div class="item" style="border: solid 1px black; height:200px"></div>
-                        <div class="item" style="border: solid 1px black; height:200px"></div>
+            <div class="main-body light">
+                <div class="row">
+                    <div class="card-col col-sm-4 col-6">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h5 class="card-title">Introduction to [arrays]</h5>
+                                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                <a a href="arrays/the-basics.html" class="btn button">Go somewhere</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-col col-sm-4 col-6">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h5 class="card-title">[array] Methods</h5>
+                                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                <a href="arrays/array-methods.html" class="btn button">Go somewhere</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-col col-sm-4 col-6">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h5 class="card-title">More [array] Methods</h5>
+                                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                <a href="arrays/more-array-methods.html" class="btn button">Go somewhere</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-col col-sm-6 col-6">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h5 class="card-title">Multi-dimensional [arrays]</h5>
+                                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                <a href="arrays/multi-dimensional-arrays.html" class="btn button">Go somewhere</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-col col-sm-6 col-12">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h5 class="card-title">Challenges</h5>
+                                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                <a href="arrays/challenges.html" class="btn button">Go somewhere</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
 
-                      
+        </div>
     </main>
 
     <footer>
@@ -209,20 +255,31 @@
             <div class="container links-and-outside-links">
                 <div class="container website-links">
                     <h5>Sections:</h5>
-                    <ul class="footer-menu">
-                            <li class="footer-menu-link"><a class="footer-menu-list" href="numbers.html">Numbers</a></li>
-                            <li class="footer-menu-link"><a class="footer-menu-list" href="strings.html">"strings"</a></li>
-                            <li class="footer-menu-link"><a class="footer-menu-list" href="arrays.html">[arrays]</a></li>
-                            <li class="footer-menu-link"><a class="footer-menu-list" href="booleans.html">Booleans</a></li>
-                            <li class="footer-menu-link"><a class="footer-menu-list" href="loops.html">Loops</a></li>
-                            <li class="footer-menu-link"><a class="footer-menu-list" href="functions.html">functions()</a></li>
-                            <li class="footer-menu-link"><a class="footer-menu-list" href="objects.html">Objects</a></li>
-                            <li class="footer-menu-link"><a class="footer-menu-list" href="dom.html">The DOM</a></li>
-                            <li class="footer-menu-link"><a class="footer-menu-list" href="jQuery.html">jQuery</a></li>
-                            <li class="footer-menu-link"><a class="footer-menu-list" href="json.html">JSON</a></li>
-                            <li class="footer-menu-link"><a class="footer-menu-list" href="api.html">APIs</a></li>
-                            <li class="footer-menu-link"><a class="footer-menu-list" href="sdk.html">SDKs</a></li>
-                    </ul>
+                    <div class="container website-links">
+                    <h5>Sections:</h5>
+                    <div class="row">
+                        <div class="col-6">
+                            <ul class="footer-menu">
+                                <li class="footer-menu-link"><a class="footer-menu-list" href="numbers.html">Numbers</a></li>
+                                <li class="footer-menu-link"><a class="footer-menu-list" href="strings.html">"strings"</a></li>
+                                <li class="footer-menu-link"><a class="footer-menu-list" href="arrays.html">[arrays]</a></li>
+                                <li class="footer-menu-link"><a class="footer-menu-list" href="booleans.html">Booleans</a></li>
+                                <li class="footer-menu-link"><a class="footer-menu-list" href="loops.html">Loops</a></li>
+                                <li class="footer-menu-link"><a class="footer-menu-list" href="functions.html">functions()</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-6">
+                            <ul class="footer-menu">
+                                <li class="footer-menu-link"><a class="footer-menu-list" href="objects.html">Objects</a></li>
+                                <li class="footer-menu-link"><a class="footer-menu-list" href="dom.html">The DOM</a></li>
+                                <li class="footer-menu-link"><a class="footer-menu-list" href="jQuery.html">jQuery</a></li>
+                                <li class="footer-menu-link"><a class="footer-menu-list" href="json.html">JSON</a></li>
+                                <li class="footer-menu-link"><a class="footer-menu-list" href="api.html">APIs</a></li>
+                                <li class="footer-menu-link"><a class="footer-menu-list" href="sdk.html">SDKs</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
                 </div>
                 <div class="container outside-links">
                     <h5>Links:</h5>

@@ -9,16 +9,16 @@
     <link rel="stylesheet" href="assets/css/github-styles.css" type="text/css">
     <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
     
-    <title>Javascripting: functions()</title>
+    <title>Javascripting: The DOM</title>
 </head>
 
-<body>
+<body class="light" id="changeTheme">
     <header>
         <div class="wrapper">
             <div class="sliding-background">
             </div>
         </div>
-    
+        
         <nav class="nav" id="nav">
             <div class="container-fluid new-nav" id="menu-bar">
                 <div class="row full-row">
@@ -170,13 +170,18 @@
 
             </div>
         </nav>
-
+        
     </header>
 
     <main>
         <div class="container body-container body-container-main-pages">
+            <div class="theme">
+                <button class="btn button" type="button" onclick="lightTheme()">Change to Light Theme</button>
+                <button class="btn button" type="button" onclick="darkTheme()"> Change to Dark Theme</button>
+            </div>
+            
             <div class="page-name">
-                <h1>Functions:</h1>
+                <h1>The DOM:</h1>
             </div>
 
             <div class="main-body light">
@@ -229,7 +234,27 @@
                 </div>
             </div>
 
-        </div>       
+        </div>
+
+        <div class="container next-last-page-section">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="Last-page">
+                        <a class="btn button" style="text-align: left" href="json/tidying.html" role="button"><svg width="1em" height="1em" viewbox="0 0 16 16" class="bi bi-caret-left-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M3.86 8.753l5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"/>
+                        </svg> JSON: Tying Up Loose Ends</a>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="next-page">
+                        <a class="btn button" href="github.html" role="button">APIs: GitHub <svg width="1em" height="1em" viewbox="0 0 16 16" class="bi bi-caret-right-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+                        </svg></a>
+                    </div>  
+                </div> 
+            </div> 
+        </div>
+        
     </main>
 
     <footer>
@@ -279,6 +304,19 @@
                     <h5>Links:</h5>
                         <ul class="footer-menu">
                             <li class="footer-menu-link"><a class="footer-menu-list" href="#" target="_blank"></a></li>
+                            <li class="footer-menu-link"><a class="footer-menu-list" href="https://developers.google.com/maps/gmp-get-started#quickstart" target="_blank">Google Maps API key set up</a></li>
+                            <li class="footer-menu-link"><a class="footer-menu-list" href="https://developers.google.com/maps/documentation/javascript/get-api-key" target="_blank">Restrict Access to Google Maps API key</a></li>
+                            <li class="footer-menu-link"><a class="footer-menu-list" href="https://developers.google.com/maps/documentation" target="_blank">Google Maps Platform - Documentation for API keys</a></li>
+                            <li class="footer-menu-link"><a class="footer-menu-list" href="https://developers.google.com/maps/documentation/javascript/overview?hl=en_US" target="_blank">Maps JavaScript API</a></li>
+                            <li class="footer-menu-link"><a class="footer-menu-list" href="https://developers.google.com/maps/documentation/javascript/marker-clustering?hl=en_US" target="_blank">Marker Clustering</a></li>
+                            <br>
+                            <li class="footer-menu-link"><a class="footer-menu-list" href="https://docs.github.com/en/free-pro-team@latest/rest/overview/api-previews" target="_blank">GitHub API</a></li>
+                            <li class="footer-menu-link"><a class="footer-menu-list" href="https://docs.github.com/en/free-pro-team@latest/rest/reference/users" target="_blank">GitHub API user details example</a></li>
+                            <br>
+                            <li class="footer-menu-link"><a class="footer-menu-list" href="https://www.w3schools.com/jsref/jsref_map.asp" target="_blank">map()</a></li>
+                            <br>
+                            <li class="footer-menu-link"><a class="footer-menu-list" href="https://www.unixtimestamp.com/index.php" target="_blank">UNIX Timestamp converter</a></li>
+                        
                         </ul>
                 </div>
             </div>
@@ -290,10 +328,11 @@
     </footer>
 
     <script type="text/javascript" src="scripts/menu.js"></script>
+    <script type="text/javascript" src="scripts/light-dark-theme.js"></script>
     <script type="text/javascript" src="scripts/github-repos.js"></script>
     
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
- 
+    
 </body>
 </html>
